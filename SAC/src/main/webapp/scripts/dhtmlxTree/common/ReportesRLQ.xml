@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0">
+    <!-- Modificacion: Marca de inicio    SAS-DRT F-52-8063-16  -->
+    <item text="Reportes de Liquidacion" id="reporte_1" im0="TransExtemp.png"
+          im1="TransExtemp.png" im2="TransExtemp.png">
+        <item text="SICLIQ0020 Reporte Liquidacion Circuito Local"
+              id="rep_SICLIQ0020" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0020</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <item text="SICLIQ0030 Reporte Consolidado de la Liquidacion Circuito Local"
+              id="rep_SICLIQ0030" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0030</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <item text="SICLIQ0040 Reporte de Saldos Diarios"
+              id="rep_SICLIQ0040" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0040</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <item text="SICLIQ0077 Consolidado Saliente E-Global"
+              id="rep_SICLIQ0077" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0077</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <item text="SICLIQ0087 Consolidado Entrante E-Global"
+              id="rep_SICLIQ0087" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0087</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <item text="SICLIQ0090 Reporte de Liquidacion"
+              id="rep_SICLIQ0090" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0090</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <item text="SICLIQ0320 Reporte Consolidado de Saldos Diarios"
+              id="rep_SICLIQ0320" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0320</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <!--Marca del Cambio : AXIA  Inicia  la Modificacion  P-53-2933-14    28/03/2016 -->
+        <item text="SICLIQR320 Reporte Consolidado de Saldos Diarios Restantes"
+              id="rep_SICLIQR320" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQR320</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <!--Marca del Cambio : AXIA  Termina la Modificacion  P-53-2933-14    28/03/2016 -->
+        <item text="SICLIQ0500 Reporte Entidades Prorrateo"
+              id="rep_SICLIQ0500" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0500</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <item text="SICLIQ0510 Reporte Partidas sin liquidar"
+              id="rep_SICLIQ0510" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIQ0510</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+        <item text="Montos Prorrateo" id="rlqMontos" im0="datos_complementarios.png" >
+            <userdata name="href">rlqMontosHeader</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepLIQ</userdata>
+        </item>
+    </item>
+    <!-- Modificacion: Marca de fin    SAS-DRT F-52-8063-16  -->
+</tree>

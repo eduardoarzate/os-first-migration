@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Matriz de Escalamiento</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #000080;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #000080;
+ text-decoration: underline;
+}
+span.rvts6 /* Font Hint */
+{
+ color: #a0a0a0;
+}
+span.rvts7 /* Font Hint Title */
+{
+ font-size: 15pt;
+ font-family: 'Tahoma', 'Geneva', sans-serif;
+ font-weight: bold;
+ color: #696969;
+}
+span.rvts8 /* Font Hint Bold */
+{
+ font-weight: bold;
+ color: #a0a0a0;
+}
+span.rvts9 /* Font Hint Italic */
+{
+ font-style: italic;
+ color: #a0a0a0;
+}
+span.rvts10
+{
+ font-size: 30pt;
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts11
+{
+ font-size: 14pt;
+ font-weight: bold;
+}
+span.rvts12
+{
+}
+span.rvts13
+{
+ font-size: 8pt;
+ font-family: 'Tahoma', 'Geneva', sans-serif;
+ font-weight: bold;
+ color: #ffffff;
+}
+span.rvts14
+{
+ font-size: 8pt;
+ font-weight: bold;
+}
+span.rvts15
+{
+ font-size: 8pt;
+ color: #000000;
+}
+a.rvts16, span.rvts16
+{
+ font-size: 8pt;
+ color: #000000;
+ text-decoration: underline;
+}
+span.rvts17
+{
+ font-size: 8pt;
+ color: #000000;
+ text-decoration: underline;
+}
+span.rvts18
+{
+ font-family: 'Franklin Gothic Medium Cond';
+}
+span.rvts19
+{
+ color: #000000;
+}
+span.rvts20
+{
+ font-size: 8pt;
+}
+span.rvts21
+{
+ font-size: 12pt;
+ font-family: 'Times New Roman', 'Times', serif;
+}
+span.rvts22
+{
+ font-size: 8pt;
+}
+a.rvts23, span.rvts23
+{
+ font-size: 8pt;
+ text-decoration: underline;
+}
+span.rvts24 /* Font Style */
+{
+ font-size: 16pt;
+ font-family: 'Tahoma', 'Geneva', sans-serif;
+ color: #ffffff;
+}
+span.rvts25 /* Font Style */
+{
+ font-family: 'MS Sans Serif', 'Geneva', sans-serif;
+ color: #808080;
+}
+span.rvts26 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts27, span.rvts27 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ text-align: left;
+ text-indent: 0px;
+ page-break-after: avoid;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps3
+{
+ margin: 0px 0px 0px 24px;
+}
+.rvps4
+{
+ text-align: left;
+ text-indent: 0px;
+ line-height: 1.50;
+ page-break-after: avoid;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps5
+{
+ text-indent: -24px;
+ margin: 0px 0px 0px 48px;
+}
+.rvps6
+{
+ text-align: center;
+ margin: 0px 0px 16px 0px;
+}
+.rvps7
+{
+ text-align: center;
+ margin: 7px 0px 7px 0px;
+}
+.rvps8 /* Paragraph Style */
+{
+ background: #FF0000;
+ padding: 5px 5px 2px 5px;
+ margin: -5px -5px 18px -5px;
+}
+.rvps9 /* Paragraph Style */
+{
+ text-align: center;
+ background: #e4e4e4;
+ margin: 20px 0px 0px 0px;
+}
+.rvps10 /* Paragraph Style */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-bottom: none;
+ border-left: none;
+ background: #ffffff;
+ padding: 3px 0px 0px 0px;
+ margin: 27px 0px 0px 0px;
+}
+--></style>
+<link rel="StyleSheet" href="hnd.css" type="text/css"/>
+<script type="text/javascript">if(top.frames.length == 0) { top.location.href="../Manual Ayuda SAC 2.html?MatrizdeEscalamiento.html"; }</script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.cookie.js"></script>
+<script type="text/javascript" src="hnd.js"></script>
+<meta name="generator" content="HelpNDoc Freeware Edition"></head>
+<body>
+<p class=rvps8><span class=rvts24>Ayuda Sistema Adquirente Carnet SAC</span></p>
+<h1 class=rvps2><img border=0 alt="" hspace=1 vspace=1 src="img_56.jpg"></h1>
+<h1 class=rvps2><a name="RichViewCheckpoint0"></a>
+<span class=rvts0><span class=rvts10><br></span></span></h1>
+<h1 class=rvps4><span class=rvts0><span class=rvts10>II. Matriz de Escalamiento</span></span></h1>
+<h1 class=rvps4><span class=rvts0><span class=rvts10><br></span></span></h1>
+</table>
+</div></div>
+<p><span class=rvts12><br></span></p>
+<p><span class=rvts12><br></span></p>
+<ol type="a" style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li value=1 class=rvps5 style="margin-left: 0; text-indent: 0px"><span class=rvts11>Operación</span></li>
+</ol>
+<p class=rvps5><span class=rvts11><br></span></p>
+<p class=rvps5><span class=rvts11><br></span></p>
+<p class=rvps3><span class=rvts12><br></span></p>
+<div class=rvps1><div align=center><table width=647 border=1 cellpadding=0 cellspacing=-1 style="border-width: 0px; border-collapse: collapse;">
+<tr valign=top>
+<td width=30 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color: #969696;"><p class=rvps1><span class=rvts13>Nivel</span></p>
+</td>
+<td width=80 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color: #969696;"><p class=rvps1><span class=rvts13>Nombre</span></p>
+</td>
+<td width=101 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color: #969696;"><p class=rvps1><span class=rvts13>Business Champion</span></p>
+</td>
+<td width=113 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color: #969696;"><p class=rvps1><span class=rvts13>Teléfono </span></p>
+</td>
+<td width=104 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color: #969696;"><p class=rvps1><span class=rvts13>Celular</span></p>
+</td>
+<td width=163 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color: #969696;"><p class=rvps1><span class=rvts13>Correo Electrónico</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=30 height=18 valign=bottom style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts14><br></span></p>
+</td>
+<td width=80 height=18 valign=bottom style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts14><br></span></p>
+</td>
+<td width=101 height=18 valign=bottom style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts14><br></span></p>
+</td>
+<td width=113 height=18 valign=bottom style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts14><br></span></p>
+</td>
+<td width=104 height=18 valign=bottom style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts14><br></span></p>
+</td>
+<td width=163 height=18 valign=bottom style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts14><br></span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=30 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid;"><p class=rvps1><span class=rvts15>1</span></p>
+</td>
+<td width=80 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-left: none;"><p class=rvps1><span class=rvts15>Mariza López Estevez</span></p>
+</td>
+<td width=101 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-left: none;"><p class=rvps1><span class=rvts15>Operación Internacional (Visa y MasterCard)</span></p>
+</td>
+<td width=113 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-left: none;"><p class=rvps1><span class=rvts15>[01 55] 52 68 12 12 Ext. 3269</span></p>
+</td>
+<td width=104 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-left: none;"><p class=rvps1><span class=rvts15>N/A</span></p>
+</td>
+<td width=163 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-left: none;"><p class=rvps1><a class=rvts16 href="mailto:mariza.lopez@prosa.com.mx">mariza.lopez@prosa.com.mx</a></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=30 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none;"><p class=rvps1><span class=rvts15>1</span></p>
+</td>
+<td width=80 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Yonatan Pérez Lago</span></p>
+</td>
+<td width=101 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Operación Interredes y Facturación extemporánea</span></p>
+</td>
+<td width=113 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>[01 55] 52 68 12 12 Ext. 3388</span></p>
+</td>
+<td width=104 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>044-55-30-35-82-64</span></p>
+</td>
+<td width=163 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><a class=rvts16 href="mailto:yonatan.perez@prosa.com.mx">yonatan.perez@prosa.com.mx</a></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=30 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none;"><p class=rvps1><span class=rvts15>1</span></p>
+</td>
+<td width=80 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Yesica Cuellar Flores</span></p>
+</td>
+<td width=101 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Operación Local (Circuito Local, E-Global)</span></p>
+</td>
+<td width=113 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>[01 55] 52 68 12 12&nbsp; Ext. 3386</span></p>
+</td>
+<td width=104 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>044-55-30-18-95-27</span></p>
+</td>
+<td width=163 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts17 href="mailto:yesica.cuellar@prosa.com.mx">yesica.cuellar@prosa.com.mx</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td colspan=6 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color: #de0808;"><p class=rvps1><span class=rvts15> </span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=30 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none;"><p class=rvps1><span class=rvts15>2</span></p>
+</td>
+<td width=80 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Paola Pérez Jaimes</span></p>
+</td>
+<td width=101 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Proceso integral de compensación POS e Interredes</span></p>
+</td>
+<td width=113 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>[01 55] 52 68 12 12&nbsp; Ext. 3286</span></p>
+</td>
+<td width=104 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>044-55-10-78-00-99</span></p>
+</td>
+<td width=163 height=45 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><a class=rvts16 href="mailto:paola.perez@prosa.com.mx">paola.perez@prosa.com.mx</a></p>
+</td>
+</tr>
+<tr valign=top>
+<td colspan=6 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color:#de0808;"><p class=rvps1><span class=rvts15> </span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=30 height=75 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none;"><p class=rvps1><span class=rvts15>3</span></p>
+</td>
+<td width=80 height=75 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Verónica Puente Domínguez</span></p>
+</td>
+<td width=101 height=75 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps6><span class=rvts15>Responsable del Proceso Integral de Intercambio</span></p>
+</td>
+<td width=113 height=75 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>[01 55] 52 68 12 12 Ext. 7775</span></p>
+</td>
+<td width=104 height=75 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>044 55 30 19 21 57</span></p>
+</td>
+<td width=163 height=75 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><a class=rvts16 href="mailto:vpuented@prosa.com.mx?subject=">vpuented@prosa.com.mx</a></p>
+</td>
+</tr>
+<tr valign=top>
+<td colspan=6 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color:#de0808;"><p class=rvps1><span class=rvts15> </span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=30 height=68 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none;"><p class=rvps1><span class=rvts15>4</span></p>
+</td>
+<td width=80 height=68 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Sergio Vera</span></p>
+</td>
+<td width=101 height=68 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Responsable de los Procesos Operativos</span></p>
+</td>
+<td width=113 height=68 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>[01 55] 52 68 12 12 Ext. 1571</span></p>
+</td>
+<td width=104 height=68 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>044 55 30 35 82 44</span></p>
+</td>
+<td width=163 height=68 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><a class=rvts16 href="mailto:sergio.vera@prosa.com.mx">sergio.vera@prosa.com.mx</a></p>
+</td>
+</tr>
+<tr valign=top>
+<td colspan=6 height=17 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; background-color:#de0808;"><p class=rvps1><span class=rvts15> </span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=30 height=69 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none;"><p class=rvps1><span class=rvts15>5</span></p>
+</td>
+<td width=80 height=69 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none; background-color: #ffffff;"><p class=rvps1><span class=rvts15>Álvaro Ontiveros</span></p>
+</td>
+<td width=101 height=69 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>Responsable de la Unidad de Negocios Operación Sistemas PROSA.</span></p>
+</td>
+<td width=113 height=69 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>[01 55] 52 68 7725</span></p>
+</td>
+<td width=104 height=69 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none;"><p class=rvps1><span class=rvts15>044 55 25 58 84 61</span></p>
+</td>
+<td width=163 height=69 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-left: none; background-color: #ffffff;"><p class=rvps1><a class=rvts16 href="mailto:alvaro.ontiveros@prosa.com.mx">alvaro.ontiveros@prosa.com.mx</a></p>
+</td>
+</tr>
+</table>
+</div></div>
+<p><span class=rvts12><br></span></p>
+<p class=rvps9><span class=rvts25>Copyright © 2010,WELLCOM</span></p>
+<p class=rvps10><span class=rvts26>Created with the Freeware Edition of HelpNDoc: </span><a class=rvts27 href="http://www.helpndoc.com" target="_blank">Single source CHM, PDF, DOC and HTML Help creation</a></p>
+</body></html>

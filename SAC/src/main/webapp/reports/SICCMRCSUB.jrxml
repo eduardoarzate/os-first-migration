@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nuevo" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="752" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<parameter name="titulo" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombreBanco" class="java.lang.String"/>
+	<field name="entidad" class="java.lang.Integer"/>
+	<field name="ttrDs" class="java.lang.String"/>
+	<field name="importe" class="java.lang.Double"/>
+	<field name="ttr" class="java.lang.Integer"/>
+	<title>
+		<band height="20"/>
+	</title>
+	<summary>
+		<band height="120">
+			<crosstab>
+				<reportElement x="0" y="0" width="752" height="100"/>
+				<crosstabParameter name="titulo1">
+					<parameterValueExpression><![CDATA[$P{titulo}]]></parameterValueExpression>
+				</crosstabParameter>
+				<crosstabHeaderCell>
+					<cellContents>
+						<textField isStretchWithOverflow="true">
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="152" height="16"/>
+							<box>
+								<bottomPen lineWidth="1.0"/>
+							</box>
+							<textElement/>
+							<textFieldExpression><![CDATA[$P{titulo1}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabHeaderCell>
+				<rowGroup name="ds_entidad" width="152" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{entidad} + " " + $F{nombreBanco}]]></bucketExpression>
+						<orderByExpression><![CDATA[$V{num_entidadMeasure}]]></orderByExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="150" height="15"/>
+								<textElement textAlignment="Left">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{ds_entidad}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque">
+							<staticText>
+								<reportElement x="0" y="0" width="150" height="15"/>
+								<textElement verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="ds_liq" height="16" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{ttrDs}]]></bucketExpression>
+						<orderByExpression><![CDATA[$V{ttrMeasure}]]></orderByExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Opaque">
+							<textField isStretchWithOverflow="true">
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="100" height="15"/>
+								<box>
+									<bottomPen lineWidth="1.0"/>
+								</box>
+								<textElement>
+									<font size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{ds_liq}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents mode="Opaque">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15"/>
+								<box>
+									<bottomPen lineWidth="1.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="importeMeasure" class="java.lang.Double">
+					<measureExpression><![CDATA[$F{importe}==null?0.0:$F{importe}]]></measureExpression>
+				</measure>
+				<measure name="num_entidadMeasure" class="java.lang.Integer">
+					<measureExpression><![CDATA[$F{entidad}]]></measureExpression>
+				</measure>
+				<measure name="ttrMeasure" class="java.lang.Integer">
+					<measureExpression><![CDATA[$F{ttr}]]></measureExpression>
+				</measure>
+				<measure name="tituloMeasure" class="java.lang.String">
+					<measureExpression><![CDATA[$P{titulo}]]></measureExpression>
+				</measure>
+				<measure name="importe2Measure" class="java.lang.Double" calculation="Sum">
+					<measureExpression><![CDATA[$F{importe}]]></measureExpression>
+				</measure>
+				<crosstabCell width="101" height="16">
+					<cellContents mode="Opaque">
+						<textField pattern="$###,###,###,##0.00">
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="100" height="15"/>
+							<textElement textAlignment="Right">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{importeMeasure}==null?0.0:$V{importe2Measure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="101" height="25" rowTotalGroup="ds_entidad">
+					<cellContents mode="Opaque">
+						<textField pattern="$###,###,###,##0.00">
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="100" height="15"/>
+							<box>
+								<topPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Right">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{importe2Measure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="101" height="16" columnTotalGroup="ds_liq">
+					<cellContents mode="Opaque">
+						<textField pattern="$###,###,###,##0.00" isBlankWhenNull="true">
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="100" height="15"/>
+							<textElement textAlignment="Right">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{importe2Measure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="101" height="25" rowTotalGroup="ds_entidad" columnTotalGroup="ds_liq">
+					<cellContents mode="Opaque">
+						<textField pattern="$###,###,###,##0.00" isBlankWhenNull="true">
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="100" height="15"/>
+							<box>
+								<topPen lineWidth="1.0"/>
+							</box>
+							<textElement textAlignment="Right">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{importe2Measure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+		</band>
+	</summary>
+</jasperReport>

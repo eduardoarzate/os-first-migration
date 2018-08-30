@@ -1,0 +1,2306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">MyEclipse Report Designer Version 1.0</property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <html-property name="description">Creates a blank report with no predefined content.</html-property>
+    <method name="initialize"><![CDATA[function redondeo (valor,numDecimales){
+	var multiploDiez=Math.pow(10,numDecimales);
+	var k=valor*multiploDiez;
+	var result;
+	if(k<0)
+		result=(-1.0)*Math.round(Math.abs(k))/multiploDiez;
+	else
+		result=Math.round(k)/multiploDiez;
+	return result;
+}	
+
+reportContext.setPersistentGlobalVariable("redondeo",redondeo);]]></method>
+    <text-property name="displayName">Blank Report</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <parameters>
+        <scalar-parameter name="initDate" id="2283">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">22/06/2011</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="endDate" id="2284">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">22/06/2011</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="banco" id="2285">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">85</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="ejecuto" id="2342">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">acastillo</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="initDateHabAnt" id="2361">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">21/06/2011</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="endDateHabAnt" id="2362">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">21/06/2011</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgLcl" id="2365">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgRmt" id="2366">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="role" id="2367">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="1016">
+            <!--<property name="meDriver">PMTUDBP</property>-->
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">PMTUDBP</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="siclif065" id="2282">
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr">if ((row["LIQ"]==21 || row["LIQ"]==27) &amp;&amp; (row["ENTIDAD"]==5 || row["ENTIDAD"]==41))
+{
+	false;
+}
+else
+{
+	true;
+}</expression>
+                    <simple-property-list name="value1">
+                        <value>true</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">Data Source</property>
+            <method name="beforeOpen"><![CDATA[this.queryText=
+" SELECT CASE "+
+"             WHEN DATOS.LIQ = 31 THEN 22 "+
+"             WHEN DATOS.LIQ = 32 THEN 32 "+
+"             WHEN DATOS.LIQ = 33 THEN 33 "+
+"             WHEN DATOS.LIQ = 35 THEN 26 "+
+"             WHEN DATOS.LIQ = 21 THEN 36 "+
+"             WHEN DATOS.LIQ = 27 THEN 27 "+
+"        END LIQ "+
+"       ,CASE "+
+"             WHEN DATOS.LIQ = 31 THEN 'LIQUIDACION EN DOLARES CIRCUITO LOCAL' "+
+"             WHEN DATOS.LIQ = 32 THEN 'LIQUIDACION EN DOLARES ENTRANTE' "+
+"             WHEN DATOS.LIQ = 33 THEN 'LIQUIDACION EN DOLARES SALIENTE' "+
+"             WHEN DATOS.LIQ = 35 THEN 'LIQUIDACION EN DOLARES INTERREDES' "+
+"             WHEN DATOS.LIQ = 21 THEN (SELECT NCI_NSI_CLR_D FROM SETTLEMENT.SV_NSI_CLR_ID WHERE NCI_NSI_CLR_ID = 21) "+
+"             WHEN DATOS.LIQ = 27 THEN (SELECT NCI_NSI_CLR_D FROM SETTLEMENT.SV_NSI_CLR_ID WHERE NCI_NSI_CLR_ID = 27) "+
+"        END DESC_LIQ "+
+"       ,DATOS.ENTIDAD "+
+"       ,(SELECT PE.DESCRIPCION FROM PMADMIN.PRSA_ENTIDADES PE WHERE PE.NUMERO_PROSA = DATOS.ENTIDAD) NOMBRE "+
+"       ,(SELECT DECODE(VBE.BU_TX_PARENT,641,522,VBE.BU_TX_PARENT) BU FROM PMADMIN.VW_BUS_EMI VBE WHERE VBE.NUMERO_PROSA = DATOS.ENTIDAD UNION SELECT VBA.BU_TX_PARENT FROM PMADMIN.VW_BUS_ACQ VBA WHERE VBA.NUMERO_PROSA = DATOS.ENTIDAD) BU "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN DATOS.LIQ = 35 THEN DATOS.NETO_COM "+
+"             WHEN DATOS.LIQ IN (31,32,33,21,27) THEN DATOS.NETO_INT "+
+"             ELSE 0 "+
+"        END),2) IMPORTE "+
+" FROM ( "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,CASE "+
+"             WHEN PP.TLI_NUMERO = 35 AND PP.ENT_NUMERO_PROSA_EMI IN (SELECT PE.NUMERO_PROSA FROM PMADMIN.PRSA_ENTIDADES PE WHERE PE.TIE_NUMERO = 1 AND PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+")) THEN PP.ENT_NUMERO_PROSA_EMI "+
+"             WHEN PP.TLI_NUMERO = 35 AND PP.ENT_NUMERO_PROSA_ADQ IN (SELECT PE.NUMERO_PROSA FROM PMADMIN.PRSA_ENTIDADES PE WHERE PE.TIE_NUMERO = 1 AND PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+")) THEN PP.ENT_NUMERO_PROSA_ADQ "+
+"             WHEN PP.TLI_NUMERO IN (32,33) AND PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") THEN PP.ENT_NUMERO_PROSA_ADQ "+
+"             WHEN PP.TLI_NUMERO IN (32,33) AND PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+") THEN PP.ENT_NUMERO_PROSA_EMI "+
+"             ELSE 0 "+
+"        END ENTIDAD "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,PP.TIPO_TARJETA NAT "+
+"       ,SUM(PP.NUMERO_TRANSACCIONES) NUM "+
+"       ,SUM(PP.TOTAL_IMPORTE) IMPORTE "+
+"       ,SUM(PP.IMPORTE_COMISION_COMERCIO) COM_COM "+
+"       ,SUM(PP.IVA_COMISION_COMERCIO) IVA_COM "+
+"       ,SUM(PP.IMPORTE_COMISION_INTERCAMB) COM_INT "+
+"       ,SUM(PP.IVA_COMISION_INTERCAMB) IVA_INT "+
+"       ,SUM(CASE "+
+"			  WHEN PP.TLI_NUMERO = 35 AND PP.TTR_NUMERO = 23 AND PP.ENT_NUMERO_PROSA_EMI = 31 THEN (PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_INTERCAMB-PP.IVA_COMISION_INTERCAMB) "+
+"             WHEN PP.TLI_NUMERO IN (32,33,35) AND PP.TTR_NUMERO IN (11,16,20,21) AND PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") THEN -(PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_INTERCAMB-PP.IVA_COMISION_INTERCAMB) "+
+"             WHEN PP.TLI_NUMERO IN (32,33,35) AND PP.TTR_NUMERO IN (11,16,20,21) AND PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+") THEN (PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_INTERCAMB-PP.IVA_COMISION_INTERCAMB) "+
+"             WHEN PP.TLI_NUMERO IN (32,33,35) AND PP.TTR_NUMERO NOT IN (11,16,20,21) AND PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") THEN -(PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_INTERCAMB-PP.IVA_COMISION_INTERCAMB) "+
+"             WHEN PP.TLI_NUMERO IN (32,33,35) AND PP.TTR_NUMERO NOT IN (11,16,20,21) AND PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+") THEN PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_INTERCAMB-PP.IVA_COMISION_INTERCAMB "+
+"             ELSE 0 "+
+"        END) NETO_INT "+
+"       ,SUM(CASE "+
+"			  WHEN PP.TLI_NUMERO = 35 AND PP.TTR_NUMERO = 23 AND PP.ENT_NUMERO_PROSA_EMI = 31 THEN (PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_INTERCAMB-PP.IVA_COMISION_INTERCAMB) "+
+"             WHEN PP.TLI_NUMERO IN (32,33,35) AND PP.TTR_NUMERO IN (11,16,20,21,23) AND PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") THEN -(PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_COMERCIO-PP.IVA_COMISION_COMERCIO) "+
+"             WHEN PP.TLI_NUMERO IN (32,33,35) AND PP.TTR_NUMERO IN (11,16,20,21,23) AND PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+") THEN (PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_COMERCIO-PP.IVA_COMISION_COMERCIO) "+
+"             WHEN PP.TLI_NUMERO IN (32,33,35) AND PP.TTR_NUMERO NOT IN (11,16,20,21,23) AND PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") THEN -(PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_COMERCIO-PP.IVA_COMISION_COMERCIO) "+
+"             WHEN PP.TLI_NUMERO IN (32,33,35) AND PP.TTR_NUMERO NOT IN (11,16,20,21,23) AND PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+") THEN PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_COMERCIO-PP.IVA_COMISION_COMERCIO "+
+"             ELSE 0 "+
+"        END) NETO_COM "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE (( ((PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO NOT IN (20,40)) OR (PP.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO IN (20,40))) "+
+" 		  AND PP.TLI_NUMERO = 35 AND ((PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+")) OR (PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+")))) "+
+"         OR "+
+"        ( ((PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO IN (1,21,10,11,15,18,9,16,19)) "+
+"            OR "+
+"           (PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDateHabAnt"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDateHabAnt"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO IN (20,24)) "+
+"          ) "+
+"                            AND PP.TLI_NUMERO = 32 "+
+"                            AND (PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+") OR PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+")) "+
+"                            AND ((PP.TTR_NUMERO IN (10,11) AND PP.STTR_NUMERO NOT IN (100)) OR (PP.TTR_NUMERO NOT IN (10,11))) "+
+"        ) "+
+"         OR "+
+"        ( "+
+"             PP.TLI_NUMERO = 33 "+ 
+"             AND PP.FECHA_PROCESO+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+ 
+"             AND PP.TTR_NUMERO IN (1,21,20,15,9,18,16) "+
+"             AND (PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") OR PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+")) "+
+"        ) "+
+"       ) "+
+" GROUP BY PP.TLI_NUMERO "+
+"       ,PP.ENT_NUMERO_PROSA_EMI "+
+"       ,PP.ENT_NUMERO_PROSA_ADQ "+
+"       ,PP.TTR_NUMERO "+
+"       ,PP.TIPO_TARJETA "+
+" UNION ALL "+
+" SELECT 32 LIQ "+
+"       ,PRT.PRT_PROSA_ACQ_ENTITY ENTIDAD "+
+"       ,PRT.PRT_TRAN_TYP TTR "+
+"       ,'' NAT "+
+"       ,COUNT(1) NUM "+
+"       ,SUM(PRT.PRT_TRAN_AMT) IMPORTE "+
+"       ,SUM(PRT.PRT_MRCH_FEE_AMT) COM_COM "+
+"       ,SUM(PRT.PRT_MRCH_IVA_AMT) IVA_COM "+
+"       ,SUM(PRT.PRT_INTCHG_FEE_AMT) COM_INT "+
+"       ,SUM(PRT.PRT_INTCHG_IVA_AMT) IVA_INT "+
+"       ,SUM(CASE "+
+"             WHEN PRT.PRT_TRAN_TYP IN (20,21) THEN -(PRT.PRT_TRAN_AMT-PRT.PRT_INTCHG_FEE_AMT-PRT.PRT_INTCHG_IVA_AMT) "+
+"             ELSE (PRT.PRT_TRAN_AMT-PRT.PRT_INTCHG_FEE_AMT-PRT.PRT_INTCHG_IVA_AMT) "+
+"        END) NETO_INT "+
+"       ,SUM(CASE "+
+"             WHEN PRT.PRT_TRAN_TYP IN (20,21) THEN -(PRT.PRT_TRAN_AMT-PRT.PRT_MRCH_FEE_AMT-PRT.PRT_MRCH_IVA_AMT) "+
+"             ELSE (PRT.PRT_TRAN_AMT-PRT.PRT_MRCH_FEE_AMT-PRT.PRT_MRCH_IVA_AMT) "+
+"        END) NETO_COM "+
+" FROM PMADMIN.PRSA_REJECTED_TXN PRT "+
+" WHERE PRT.PRT_ARCH_NBR IN (45,46) "+// VALIDAR CON QUE FUENTES LLEGAN LAS TRANSACCIONES QUE SE VAN A RECHAZAR DE DOLARES
+" AND PRT.PRT_PROSA_ACQ_ENTITY IN ("+params["banco"]+") "+ 
+" AND PRT.PRT_TRAN_TYP NOT IN (51,52,53) "+
+" AND (PRT.PRT_PROC_DTE BETWEEN TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') "+ 
+"         AND PRT.PRT_TRAN_TYP NOT IN (20, 24) "+
+"          OR PRT.PRT_PROC_DTE >= TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') - 1  "+
+"         AND PRT.PRT_PROC_DTE <= TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') - 1 "+ 
+"         AND PRT.PRT_TRAN_TYP IN (20, 24)) "+
+" GROUP BY PRT.PRT_PROSA_ACQ_ENTITY "+
+"       ,PRT.PRT_TRAN_TYP "+
+" UNION ALL "+
+" SELECT 32 LIQ  "+// VALIDAR TODO EL SEGMENTO DEL QUERY "RECHAZADAS ENTRANTES QUE SE PRESENTAN COMO ORIGINALES"
+"       ,CASE  "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (94,98,95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+ 
+"             ELSE PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+ 
+"        END ENTIDAD  "+
+"       ,PTRV.PTRV_TTR_NUMERO TTR  "+
+"       ,PTRV.PTRV_NATURALEZA_CONTABLE NAT "+ 
+"       ,COUNT(1) NUM  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_TOTAL_TRANSAC) IMPORTE  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_CUOTA_COMERCIO) COM_COM  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_IVA_COMERCIO) IVA_COM  "+
+"       ,SUM(PTRV.PTRV_IMP_CUOTA_INTERCAMBIO) COM_INT  "+
+"       ,SUM(PTRV.PTRV_IMP_IVA_INTERCAMBIO) IVA_INT  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_TOTAL_TRANSAC-PTRV.PTRV_IMP_CUOTA_INTERCAMBIO-PTRV.PTRV_IMP_IVA_INTERCAMBIO) NETO_INT  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_TOTAL_TRANSAC-PTRV.PTRV_IMPORTE_CUOTA_COMERCIO-PTRV.PTRV_IMPORTE_IVA_COMERCIO) NETO_COM "+ 
+" FROM PMADMIN.PRSA_TXN_RECHAZADAS_VAL PTRV  "+
+" WHERE (PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (94,98,95,96,97) OR PTRV.PTRV_ENT_NUMERO_PROSA_EMI IN (94,98,95,96,97))  "+ 
+" AND PTRV.PTRV_FECHA_PROCESO_TRANSAC BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+ 
+" AND PTRV.PTRV_TLI_NUMERO = 32  "+
+" AND (PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") OR PTRV.PTRV_ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+")) "+  
+" GROUP BY CASE  "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (94,98,95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+ 
+"             ELSE PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+ 
+"        END  "+
+"       ,PTRV.PTRV_TTR_NUMERO  "+
+"       ,PTRV.PTRV_NATURALEZA_CONTABLE "+
+" UNION ALL "+
+" SELECT 33 LIQ  "+// VALIDAR TODO EL SEGMENTO DEL QUERY "RECHAZADAS SALIENTES QUE SE PRESENTAN COMO ORIGINALES"
+"       ,CASE  "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (94,98,95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+ 
+"             ELSE PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+ 
+"        END ENTIDAD  "+
+"       ,PTRV.PTRV_TTR_NUMERO TTR  "+
+"       ,PTRV.PTRV_NATURALEZA_CONTABLE NAT "+ 
+"       ,COUNT(1) NUM  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_TOTAL_TRANSAC) IMPORTE  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_CUOTA_COMERCIO) COM_COM  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_IVA_COMERCIO) IVA_COM  "+
+"       ,SUM(PTRV.PTRV_IMP_CUOTA_INTERCAMBIO) COM_INT  "+
+"       ,SUM(PTRV.PTRV_IMP_IVA_INTERCAMBIO) IVA_INT  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_TOTAL_TRANSAC-PTRV.PTRV_IMP_CUOTA_INTERCAMBIO-PTRV.PTRV_IMP_IVA_INTERCAMBIO) NETO_INT  "+
+"       ,SUM(PTRV.PTRV_IMPORTE_TOTAL_TRANSAC-PTRV.PTRV_IMPORTE_CUOTA_COMERCIO-PTRV.PTRV_IMPORTE_IVA_COMERCIO) NETO_COM "+ 
+" FROM PMADMIN.PRSA_TXN_RECHAZADAS_VAL PTRV  "+
+" WHERE (PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (94,98,95,96,97) OR PTRV.PTRV_ENT_NUMERO_PROSA_EMI IN (94,98,95,96,97))   "+
+" AND PTRV.PTRV_FECHA_PROCESO_TRANSAC+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+ 
+" AND PTRV.PTRV_TLI_NUMERO = 32  "+
+" AND (PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") OR PTRV.PTRV_ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+")) "+  
+" GROUP BY CASE  "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (94,98,95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+ 
+"             ELSE PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+ 
+"        END  "+
+"       ,PTRV.PTRV_TTR_NUMERO  "+
+"       ,PTRV.PTRV_NATURALEZA_CONTABLE "+
+" UNION All "+
+" SELECT 33 LIQ "+// QUERY DE MISCELANEOS SALIENTES CON CONDICION A DOLARES
+"       ,VISTA.NUMERO_PROSA ENTIDAD "+
+"       ,PTS.PTS_TXN_TYP TTR "+
+"       ,CASE  "+
+"             WHEN VISTA.NOMBRE LIKE 'DB' THEN 'D' "+ 
+"             ELSE 'C'  "+
+"       END NAT "+
+"       ,SUM(PTS.PTS_CR_CNT+PTS.PTS_DB_CNT) NUM "+
+"       ,SUM(CASE "+
+" 			WHEN PTS.PTS_CR_CNT > 0 THEN -PTS.PTS_CR_TXN_AMT "+
+" 			ELSE PTS.PTS_DB_TXN_AMT "+
+" 		 END) IMPORTE "+
+"       ,0 COM_COM "+
+"       ,0 IVA_COM "+
+"       ,0 COM_INT "+
+"       ,0 IVA_INT "+
+"       ,SUM(CASE "+
+" 			WHEN PTS.PTS_CR_CNT > 0 THEN -PTS.PTS_CR_TXN_AMT "+
+" 			ELSE PTS.PTS_DB_TXN_AMT "+
+" 		 END) NETO_INT "+
+"       ,SUM(CASE "+
+" 			WHEN PTS.PTS_CR_CNT > 0 THEN -PTS.PTS_CR_TXN_AMT "+
+" 			ELSE PTS.PTS_DB_TXN_AMT "+
+" 		 END) NETO_COM "+
+" FROM PMADMIN.PRSA_TXN_SUMMARY PTS  "+
+" INNER JOIN PMADMIN.PRSA_TXN_SUMMARY PTS2 "+ 
+"     ON PTS.PTS_CYCLE_ID = PTS2.PTS_CYCLE_ID     "+
+"     AND PTS.PTS_CYCLE_DT = PTS2.PTS_CYCLE_DT     "+
+"     AND PTS.PTS_NSI = PTS2.PTS_NSI     "+
+"     AND PTS.PTS_NSI_CLR_ID = PTS2.PTS_NSI_CLR_ID "+    
+"     AND PTS.PTS_SRCE_C = PTS2.PTS_SRCE_C     "+
+"     AND PTS.PTS_PROC_CD = PTS2.PTS_PROC_CD     "+
+"     AND PTS.PTS_TXN_TYP = PTS2.PTS_TXN_TYP     "+
+"     AND PTS.PTS_FROM_ACCT = PTS2.PTS_FROM_ACCT    "+ 
+"     AND PTS.PTS_TO_ACCT = PTS2.PTS_TO_ACCT     "+
+"     AND PTS.PTS_TXN_CD_SFX = PTS2.PTS_TXN_CD_SFX  "+   
+"     AND PTS.PTS_CR_CNT = PTS2.PTS_DB_CNT     "+
+"     AND PTS.PTS_CR_TXN_AMT = PTS2.PTS_DB_TXN_AMT "+    
+"     AND PTS.PTS_CR_MRCH_FEE_AMT = PTS2.PTS_DB_MRCH_FEE_AMT "+    
+"     AND PTS.PTS_CR_MRCH_IVA_AMT = PTS2.PTS_DB_MRCH_IVA_AMT    "+ 
+"     AND PTS.PTS_CR_INTCHG_FEE_AMT = PTS2.PTS_DB_INTCHG_FEE_AMT "+    
+"     AND PTS.PTS_CR_INTCHG_IVA_AMT = PTS2.PTS_DB_INTCHG_IVA_AMT    "+ 
+"     AND PTS.PTS_DB_CNT = PTS2.PTS_CR_CNT     "+
+"     AND PTS.PTS_DB_TXN_AMT = PTS2.PTS_CR_TXN_AMT "+    
+"     AND PTS.PTS_DB_MRCH_FEE_AMT = PTS2.PTS_CR_MRCH_FEE_AMT "+    
+"     AND PTS.PTS_DB_MRCH_IVA_AMT = PTS2.PTS_CR_MRCH_IVA_AMT    "+ 
+"     AND PTS.PTS_DB_INTCHG_FEE_AMT = PTS2.PTS_CR_INTCHG_FEE_AMT   "+  
+"     AND PTS.PTS_DB_INTCHG_IVA_AMT = PTS2.PTS_CR_INTCHG_IVA_AMT     "+
+" INNER JOIN PMADMIN.SZ_TC_GRP_RELATION STGR  "+
+"     ON STGR.TCGR_PROC_CD = PTS.PTS_PROC_CD  "+
+"     AND STGR.TCGR_SRCE_C = PTS.PTS_SRCE_C  "+
+"     AND STGR.TCGR_TO_ACCT = PTS.PTS_TO_ACCT  "+
+"     AND STGR.TCGR_TXN_CD_SFX = PTS.PTS_TXN_CD_SFX "+ 
+"     AND STGR.TCGR_TXN_TYP = PTS.PTS_TXN_TYP  "+
+" INNER JOIN (SELECT VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE FROM PMADMIN.VW_BUS_ACQ VBA "+ 
+"             UNION   "+
+"             SELECT VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE FROM PMADMIN.VW_BUS_EMI VBE "+ 
+"            ) VISTA  "+
+"     ON VISTA.BU = PTS.PTS_CLR_BU "+ 
+" INNER JOIN (SELECT VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE FROM PMADMIN.VW_BUS_ACQ VBA "+ 
+"             UNION   "+
+"             SELECT VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE FROM PMADMIN.VW_BUS_EMI VBE "+ 
+"            ) VISTA2  "+
+"     ON VISTA2.BU = PTS2.PTS_CLR_BU "+ 
+" WHERE PTS.PTS_NSI_CLR_ID = 33  "+
+" AND STGR.TCGR_GRP_ID IN (111,112)  "+
+" AND PTS.PTS_CYCLE_DT+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND VISTA.NUMERO_PROSA IN ("+params["banco"]+") "+
+" AND PTS.PTS_CRNCY_CD = 840 "+// CONDICION DOLARES
+" GROUP BY VISTA.NUMERO_PROSA "+
+"       ,PTS.PTS_TXN_TYP "+
+"       ,CASE  "+
+"             WHEN VISTA.NOMBRE LIKE 'DB' THEN 'D' "+ 
+"             ELSE 'C'  "+
+"       END "+
+" UNION ALL "+
+" SELECT 33 LIQ "+// MISCELANEOS SALIENTE CON CONDICION DOLARES
+"       ,CASE  "+
+"             WHEN VISTA.NUMERO_PROSA IN (95,96,97) THEN VISTA2.NUMERO_PROSA "+ 
+"             ELSE VISTA.NUMERO_PROSA  "+
+"        END ENTIDAD "+
+"       ,CASE   "+
+"             WHEN VISTA.BU_TX_PARENT = 93 THEN 10 "+  
+"             ELSE 11 "+
+"       END TTR   "+
+"       ,CASE   "+
+"             WHEN VISTA.NOMBRE LIKE '%DB%' THEN 'D' "+  
+"             ELSE 'C'   "+
+"       END NAT   "+
+"       ,COUNT(1) NUM "+
+"       ,SUM(CASE    "+
+"             WHEN VISTA.BU_TX_PARENT = 93 THEN -(SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-FMI_VAT_AMT) "+   
+"             ELSE SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-FMI_VAT_AMT  "+
+"        END) IMPORTE "+
+"       ,0 COM_COM "+
+"       ,0 IVA_COM "+
+"       ,0 COM_INT "+
+"       ,0 IVA_INT "+
+"       ,SUM(CASE    "+
+"             WHEN VISTA.BU_TX_PARENT = 93 THEN -(SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-FMI_VAT_AMT) "+   
+"             ELSE SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-FMI_VAT_AMT  "+
+"        END) NETO_INT "+
+"       ,SUM(CASE    "+
+"             WHEN VISTA.BU_TX_PARENT = 93 THEN -(SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-FMI_VAT_AMT) "+   
+"             ELSE SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-FMI_VAT_AMT  "+
+"        END) NETO_COM "+
+" FROM SETTLEMENT.SV_FM_INT_TXN SFIT "+  
+" INNER JOIN (SELECT VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE FROM PMADMIN.VW_BUS_ACQ VBA "+  
+"             UNION    "+
+"             SELECT VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE FROM PMADMIN.VW_BUS_EMI VBE "+  
+"            ) VISTA   "+
+"     ON VISTA.BU = SFIT.FMI_CR_CLR_BU "+  
+" INNER JOIN (SELECT VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE FROM PMADMIN.VW_BUS_ACQ VBA "+  
+"             UNION    "+
+"             SELECT VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE FROM PMADMIN.VW_BUS_EMI VBE "+  
+"            ) VISTA2   "+
+"     ON VISTA2.BU = SFIT.FMI_DB_CLR_BU "+  
+" WHERE SFIT.FMI_DT+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND (VISTA.NUMERO_PROSA IN ("+params["banco"]+") OR VISTA2.NUMERO_PROSA IN ("+params["banco"]+")) "+
+" AND FMI_NSI_CLR_ID = 33 "+
+" AND TRIM(FMI_OPER_ID) <> 'CZDCS030' "+
+" AND SFIT.FMI_CHRG_CRNCY = 840 "+//CONDICION DOLARES
+" GROUP BY CASE  "+
+"             WHEN VISTA.NUMERO_PROSA IN (95,96,97) THEN VISTA2.NUMERO_PROSA "+ 
+"             ELSE VISTA.NUMERO_PROSA  "+
+"        END "+
+"       ,CASE   "+
+"             WHEN VISTA.BU_TX_PARENT = 93 THEN 10 "+  
+"             ELSE 11 "+
+"       END   "+
+"       ,CASE   "+
+"             WHEN VISTA.NOMBRE LIKE '%DB%' THEN 'D' "+  
+"             ELSE 'C'   "+
+"       END "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PP.ENT_NUMERO_PROSA_ADQ ENTIDAD "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,PP.TIPO_TARJETA NAT "+
+"       ,SUM(PP.NUMERO_TRANSACCIONES) NUM "+
+"       ,SUM(PP.TOTAL_IMPORTE) IMPORTE "+
+"       ,SUM(PP.IMPORTE_COMISION_COMERCIO) COM_COM "+
+"       ,SUM(PP.IVA_COMISION_COMERCIO) IVA_COM "+
+"       ,SUM(PP.IMPORTE_COMISION_INTERCAMB) COM_INT "+
+"       ,SUM(PP.IVA_COMISION_INTERCAMB) IVA_INT "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (21,20,15,18) THEN (PP.TOTAL_IMPORTE-NVL(PP.IMPORTE_COMISION_INTERCAMB,0)-NVL(PP.IVA_COMISION_INTERCAMB,0)) "+
+"             ELSE -(PP.TOTAL_IMPORTE-NVL(PP.IMPORTE_COMISION_INTERCAMB,0)-NVL(PP.IVA_COMISION_INTERCAMB,0)) "+
+"        END) NETO_INT "+
+"       ,SUM(PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_COMERCIO-PP.IVA_COMISION_COMERCIO) NETO_COM "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.TLI_NUMERO = 31 "+
+" AND ( (PP.FECHA_PROCESO+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO NOT IN (23)) "+
+"       OR "+
+"       (PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO = 23 ) "+
+"     ) "+
+" AND PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") "+
+" AND PP.TTR_NUMERO NOT IN (51,52,53,11) "+
+" AND PP.ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98) "+
+" AND PP.ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98) "+
+" AND PP.CODIGO_MONEDA = 840 "+
+" AND PP.ARCH_NUMERO NOT IN (48,49,1006,2148) "+
+" GROUP BY PP.TLI_NUMERO "+
+"       ,PP.ENT_NUMERO_PROSA_ADQ "+
+"       ,PP.TTR_NUMERO "+
+"       ,PP.TIPO_TARJETA "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PP.ENT_NUMERO_PROSA_EMI ENTIDAD "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,PP.TIPO_TARJETA NAT "+
+"       ,SUM(PP.NUMERO_TRANSACCIONES) NUM "+
+"       ,SUM(PP.TOTAL_IMPORTE) IMPORTE "+
+"       ,SUM(PP.IMPORTE_COMISION_COMERCIO) COM_COM "+
+"       ,SUM(PP.IVA_COMISION_COMERCIO) IVA_COM "+
+"       ,SUM(PP.IMPORTE_COMISION_INTERCAMB) COM_INT "+
+"       ,SUM(PP.IVA_COMISION_INTERCAMB) IVA_INT "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (21,20,15,18) THEN -(PP.TOTAL_IMPORTE-NVL(PP.IMPORTE_COMISION_INTERCAMB,0)-NVL(PP.IVA_COMISION_INTERCAMB,0)) "+
+"             ELSE (PP.TOTAL_IMPORTE-NVL(PP.IMPORTE_COMISION_INTERCAMB,0)-NVL(PP.IVA_COMISION_INTERCAMB,0)) "+
+"        END) NETO_INT "+
+"       ,SUM(PP.TOTAL_IMPORTE-PP.IMPORTE_COMISION_COMERCIO-PP.IVA_COMISION_COMERCIO) NETO_COM "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.TLI_NUMERO = 31 "+
+" AND ( (PP.FECHA_PROCESO+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO NOT IN (23)) "+
+"       OR "+
+"       (PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO = 23 ) "+
+"     ) "+
+" AND PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+") "+
+" AND PP.TTR_NUMERO NOT IN (51,52,53,11) "+
+" AND PP.ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98) "+
+" AND PP.ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98) "+
+" AND PP.CODIGO_MONEDA = 840 "+
+" AND PP.ARCH_NUMERO NOT IN (48,49,1006,2148) "+
+" GROUP BY PP.TLI_NUMERO "+
+"       ,PP.ENT_NUMERO_PROSA_EMI "+
+"       ,PP.TTR_NUMERO "+
+"       ,PP.TIPO_TARJETA "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PP.ENT_NUMERO_PROSA_EMI ENTIDAD "+
+"       ,99 TTR "+
+"       ,'' NAT "+
+"       ,0 NUM "+
+"       ,SUM(PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) IMPORTE "+
+"       ,0 COM_COM "+
+"       ,0 IVA_COM "+
+"       ,0 COM_INT "+
+"       ,0 IVA_INT "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO = 21 THEN (PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) "+
+"             ELSE -(PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) "+
+"        END) NETO_INT "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO = 21 THEN (PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) "+
+"             ELSE -(PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) "+
+"        END) NETO_COM "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.TLI_NUMERO = 31 "+
+" AND PP.FECHA_PROCESO+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND PP.ENT_NUMERO_PROSA_EMI IN ("+params["banco"]+") "+
+" AND PP.TTR_NUMERO IN (1,21) "+
+" AND PP.TTR_NUMERO NOT IN (51,52,53,11) "+
+" AND PP.ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98) "+
+" AND PP.ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98) "+
+" AND PP.CODIGO_MONEDA = 840 "+
+" AND PP.ARCH_NUMERO NOT IN (48,49,1006,2148) "+
+" GROUP BY PP.TLI_NUMERO "+
+"       ,PP.ENT_NUMERO_PROSA_EMI "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PP.ENT_NUMERO_PROSA_ADQ ENTIDAD "+
+"       ,99 TTR "+
+"       ,'' NAT "+
+"       ,0 NUM "+
+"       ,SUM(PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) IMPORTE "+
+"       ,0 COM_COM "+
+"       ,0 IVA_COM "+
+"       ,0 COM_INT "+
+"       ,0 IVA_INT "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO = 21 THEN -(PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) "+
+"             ELSE (PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) "+
+"        END) NETO_INT "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO = 21 THEN -(PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) "+
+"             ELSE (PP.IMP_SOBRETASA+PP.IMP_IVA_SOBRETASA) "+
+"        END) NETO_COM "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.TLI_NUMERO = 31 "+
+" AND PP.FECHA_PROCESO+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND PP.ENT_NUMERO_PROSA_ADQ IN ("+params["banco"]+") "+
+" AND PP.TTR_NUMERO IN (1,21) "+
+" AND PP.TTR_NUMERO NOT IN (51,52,53,11) "+
+" AND PP.ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98) "+
+" AND PP.ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98) "+
+" AND PP.CODIGO_MONEDA = 840 "+
+" AND PP.ARCH_NUMERO NOT IN (48,49,1006,2148) "+
+" GROUP BY PP.TLI_NUMERO "+
+"       ,PP.ENT_NUMERO_PROSA_ADQ "+
+" UNION ALL "+
+" SELECT 31 LIQ "+//LIQUIDACION COMPLEMENTARIA CIRCUITO LOCAL DOLARES
+"       ,VISTA.NUMERO_PROSA ENTIDAD "+
+"       ,23 TTR "+
+"       ,'' NAT "+
+"       ,COUNT(1) NUM "+
+"       ,SUM(SFIT.FMI_CHRG_AMT) IMPORTE "+
+"       ,SUM(SFIT.FMI_COMM_AMT) COM_COM "+
+"       ,SUM(SFIT.FMI_VAT_AMT) IVA_COM "+
+"       ,SUM(SFIT.FMI_COMM_AMT) COM_INT "+
+"       ,SUM(SFIT.FMI_VAT_AMT) IVA_INT "+
+"       ,-SUM(SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-SFIT.FMI_VAT_AMT) NETO_INT "+
+"       ,-SUM(SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-SFIT.FMI_VAT_AMT) NETO_COM "+
+" FROM SETTLEMENT.SV_FM_INT_TXN SFIT "+
+" INNER JOIN (SELECT VBA.BU_TX_ADQ BU, VBA.NUMERO_PROSA FROM PMADMIN.VW_BUS_ACQ VBA UNION SELECT VBE.BU_TX_ISS, VBE.NUMERO_PROSA FROM PMADMIN.VW_BUS_EMI VBE ) VISTA "+
+"     ON VISTA.BU = SFIT.FMI_CR_CLR_BU "+
+" WHERE SFIT.FMI_DT BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND SFIT.FMI_CR_TC_GRP = 225 "+
+" AND SFIT.FMI_DB_TC_GRP = 225 "+
+" AND SFIT.FMI_NSI_CLR_ID = 22 "+
+" AND SFIT.FMI_TYP_C <> 15 "+
+" AND VISTA.NUMERO_PROSA IN ("+params["banco"]+") "+
+" AND SFIT.FMI_CHRG_CRNCY = 840 "+
+" GROUP BY VISTA.NUMERO_PROSA "+
+" UNION ALL "+
+" SELECT 31 LIQ "+//LIQUIDACION COMLEMENTARIA DOLARES CIRCUITO LOCAL
+"       ,VISTA.NUMERO_PROSA ENTIDAD "+
+"       ,23 TTR "+
+"       ,'' NAT "+
+"       ,COUNT(1) NUM "+
+"       ,SUM(SFIT.FMI_CHRG_AMT) IMPORTE "+
+"       ,SUM(SFIT.FMI_COMM_AMT) COM_COM "+
+"       ,SUM(SFIT.FMI_VAT_AMT) IVA_COM "+
+"       ,SUM(SFIT.FMI_COMM_AMT) COM_INT "+
+"       ,SUM(SFIT.FMI_VAT_AMT) IVA_INT "+
+"       ,SUM(SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-SFIT.FMI_VAT_AMT) NETO_INT "+
+"       ,SUM(SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-SFIT.FMI_VAT_AMT) NETO_COM "+
+" FROM SETTLEMENT.SV_FM_INT_TXN SFIT "+
+" INNER JOIN (SELECT VBA.BU_TX_ADQ BU, VBA.NUMERO_PROSA FROM PMADMIN.VW_BUS_ACQ VBA UNION SELECT VBE.BU_TX_ISS, VBE.NUMERO_PROSA FROM PMADMIN.VW_BUS_EMI VBE ) VISTA "+
+"     ON VISTA.BU = SFIT.FMI_DB_CLR_BU "+
+" WHERE SFIT.FMI_DT BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND SFIT.FMI_CR_TC_GRP = 225 "+
+" AND SFIT.FMI_DB_TC_GRP = 225 "+
+" AND SFIT.FMI_NSI_CLR_ID = 22 "+
+" AND SFIT.FMI_TYP_C <> 16 "+
+" AND VISTA.NUMERO_PROSA IN ("+params["banco"]+") "+
+" AND SFIT.FMI_CHRG_CRNCY = 840 "+
+" GROUP BY VISTA.NUMERO_PROSA "+
+" UNION ALL "+
+" SELECT CASE "+ 
+"             WHEN S.TLI_NUMERO = 36 THEN 21 "+ 
+"             WHEN S.TLI_NUMERO = 6 THEN 27  "+
+"        END TLI_NUMERO "+
+"       ,E.NUMERO_PROSA "+
+"       ,0 TTR "+
+"       ,S.TIPO_IMPORTE NAT "+
+"       ,0 NUM "+
+"       ,SUM(CASE "+
+"             WHEN S.TIPO_IMPORTE = 'A' THEN S.TOTAL_IMPORTE "+
+"             WHEN S.TIPO_IMPORTE = 'C' THEN S.TOTAL_IMPORTE "+
+"        END) IMPORTE "+
+"       ,0 COM_COM "+
+"       ,0 IVA_COM "+
+"       ,0 COM_INT "+
+"       ,0 IVA_INT "+
+"       ,SUM(CASE "+
+"             WHEN S.TIPO_IMPORTE = 'A' THEN S.TOTAL_IMPORTE "+
+"             WHEN S.TIPO_IMPORTE = 'C' THEN S.TOTAL_IMPORTE "+
+"        END) NETO_INT "+
+"       ,SUM(CASE "+
+"             WHEN S.TIPO_IMPORTE = 'A' THEN S.TOTAL_IMPORTE "+
+"             WHEN S.TIPO_IMPORTE = 'C' THEN S.TOTAL_IMPORTE "+
+"        END) NETO_COM "+
+"  FROM SUPERSIC.SALDOS@LG_PMTU_SIC S "+ 
+"  INNER JOIN ( "+
+" SELECT VE.NUMERO_PROSA, VE.DESCRIPCION NOMBRE, decode(bu_tx_parent,522,641,bu_tx_parent) BU_TX_PARENT FROM PMADMIN.VW_BUS_EMI VE "+ 
+" UNION  "+
+" SELECT VA.NUMERO_PROSA, VA.DESCRIPCION NOMBRE, decode(bu_tx_parent,522,641,bu_tx_parent) BU_TX_PARENT FROM PMADMIN.VW_BUS_ACQ VA "+ 
+"      ) E ON E.NUMERO_PROSA  = S.ENT_NUMERO_PROSA  "+
+"  INNER JOIN SUPERSIC.TIPOS_LIQUIDACION@LG_PMTU_SIC TL "+ 
+"      ON TL.NUMERO = TLI_NUMERO   "+
+"  WHERE S.TLI_NUMERO IN (36,6) "+// SE MODIFICA 16 POR 36, LA LIQUIDACION 6 ESTA PENDIENTE 
+"  AND S.ENT_NUMERO_PROSA NOT IN (3,5,6,11,13,15,17,62,75,79,91,18) "+ 
+"  AND S.FECHA_MOVIMIENTO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+ 
+"  AND E.NUMERO_PROSA IN("+params["banco"]+")  "+
+"  GROUP BY CASE  "+
+"             WHEN S.TLI_NUMERO = 36 THEN 21 "+ 
+"             WHEN S.TLI_NUMERO = 6 THEN 27  "+
+"           END "+
+"          ,E.NUMERO_PROSA "+
+"          ,S.TIPO_IMPORTE  "+
+" UNION ALL "+
+" SELECT PF.TLI_NUMERO LIQ "+
+"       ,PE.NUMERO_PROSA ENTIDAD "+
+"       ,PF.TTR_NUMERO TTR "+
+"       ,PF.TIPO_TARJETA NAT "+
+"       ,SUM(PF.NUMERO_TRANSACCIONES_ADQ+PF.NUMERO_TRANSACCIONES_EMI) NUM "+
+"       ,0 IMPORTE "+
+"       ,SUM(PF.TOTAL_COMISION_EMI+PF.IMPORTE_ADMON_BENEFICIOS) COM_COM "+
+"       ,SUM(PF.TOTAL_IVA_COMISION_EMI+PF.IVA_ADMON_BENEFICIOS) IVA_COM "+
+"       ,0 COM_INT "+
+"       ,0 IVA_INT "+
+"       ,SUM(PF.TOTAL_COMISION_EMI+PF.IMPORTE_ADMON_BENEFICIOS+PF.TOTAL_IVA_COMISION_EMI+PF.IVA_ADMON_BENEFICIOS) NETO_INT "+
+"       ,SUM(PF.TOTAL_COMISION_EMI+PF.IMPORTE_ADMON_BENEFICIOS+PF.TOTAL_IVA_COMISION_EMI+PF.IVA_ADMON_BENEFICIOS) NETO_COM "+ 
+" FROM SUPERSIC.POSICIONES_FINALES@LG_PMTU_SIC PF "+ 
+"     INNER JOIN PMADMIN.PRSA_ENTIDADES PE  "+
+"         ON PF.ENT_NUMERO_PROSA = PE.NUMERO_PROSA "+ 
+" WHERE PF.TTR_NUMERO = 20  "+
+"       AND PF.FECHA BETWEEN TO_DATE('"+params["initDate"]+"','dd-MM-yyyy') and TO_DATE('"+params["endDate"]+"','dd-MM-yyyy') "+ 
+"       AND PF.TIPO_TARJETA = 'C'  "+
+"       AND PF.TLI_NUMERO = 35  "+
+"       AND PE.TIE_NUMERO = 1  "+
+"       AND PE.NUMERO_PROSA IN ("+params["banco"]+") "+ 
+" GROUP BY PF.TLI_NUMERO "+
+"       ,PE.NUMERO_PROSA "+
+"       ,PF.TTR_NUMERO "+
+"       ,PF.TIPO_TARJETA "+
+" ) DATOS ";
+
+if(params["role"]=="banco")
+{
+this.queryText+=
+" INNER JOIN ( "+
+" SELECT DISTINCT PSI.PSI_IND PSI_IND "+
+"                ,CASE "+
+"                     WHEN PSI.PSI_NSI_CLR_ID = 22 THEN 1 "+
+"                     WHEN PSI.PSI_NSI_CLR_ID = 32 THEN 2 "+
+"                     WHEN PSI.PSI_NSI_CLR_ID = 33 THEN 3 "+
+"                     WHEN PSI.PSI_NSI_CLR_ID = 26 THEN 5 "+
+"                     ELSE PSI.PSI_NSI_CLR_ID "+
+"                 END PSI_NSI_CLR_ID  "+
+" FROM PMADMIN.PRSA_SETL_IND PSI "+
+"     ,PMADMIN.PRSA_RPT_IND PRI  "+
+" WHERE PRI.PRI_NSI_CLR_ID = PSI.PSI_NSI_CLR_ID "+ 
+" AND TRUNC(PSI_CHNG_DT) BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+ 
+" AND PRI.PRI_RPT_ID = 'SICLIF0060' "+
+" ) BANDERA "+
+"     ON BANDERA.PSI_NSI_CLR_ID = DATOS.LIQ ";
+}
+else
+{
+	this.queryText+="";
+}
+
+this.queryText+=
+" GROUP BY CASE "+
+"             WHEN DATOS.LIQ = 1 THEN 22 "+
+"             WHEN DATOS.LIQ = 2 THEN 32 "+
+"             WHEN DATOS.LIQ = 3 THEN 33 "+
+"             WHEN DATOS.LIQ = 5 THEN 26 "+
+"             WHEN DATOS.LIQ = 21 THEN 21 "+
+"             WHEN DATOS.LIQ = 27 THEN 27 "+
+"          END "+
+"         ,DATOS.LIQ "+
+"         ,DATOS.ENTIDAD ";]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">LIQ</property>
+                    <property name="nativeName">LIQ</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">DESC_LIQ</property>
+                    <property name="nativeName">DESC_LIQ</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ENTIDAD</property>
+                    <property name="nativeName">ENTIDAD</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">NOMBRE</property>
+                    <property name="nativeName">NOMBRE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">BU</property>
+                    <property name="nativeName">BU</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">IMPORTE</property>
+                    <property name="nativeName">IMPORTE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText"></property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.1in</property>
+            <property name="leftMargin">0.1in</property>
+            <property name="bottomMargin">0.1in</property>
+            <property name="rightMargin">0.1in</property>
+            <property name="showHeaderOnFirst">false</property>
+            <property name="headerHeight">1.4in</property>
+            <page-header>
+                <grid id="1936">
+                    <property name="width">100%</property>
+                    <column id="1937">
+                        <property name="width">22%</property>
+                    </column>
+                    <column id="1938">
+                        <property name="width">56%</property>
+                    </column>
+                    <column id="1939">
+                        <property name="width">22%</property>
+                    </column>
+                    <row id="1940">
+                        <cell id="1941">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <image id="2353">
+                                <property name="height">104px</property>
+                                <property name="width">140px</property>
+                                <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.URI=params['srvImgRmt']+'/Carnet_header.jpg';
+else
+this.URI=params['srvImgLcl']+'/pmr/reports/images/Carnet_header.jpg';]]></method>
+                                <property name="source">url</property>
+                                <expression name="uri">''</expression>
+                            </image>
+                        </cell>
+                        <cell id="1942">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="textAlign">center</property>
+                            <text id="1949">
+                                <property name="fontSize">16pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[PROMOCION Y OPERACION S.A. DE C.V.]]></text-property>
+                            </text>
+                            <text id="1950">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Consulta de Saldos por Grupo]]></text-property>
+                            </text>
+                            <grid id="1951">
+                                <property name="width">65%</property>
+                                <column id="1952">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="1953">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="1954">
+                                    <property name="width">5%</property>
+                                </column>
+                                <column id="1955">
+                                    <property name="width">20%</property>
+                                </column>
+                                <row id="1956">
+                                    <cell id="1957">
+                                        <text id="1961">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Fecha del:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1958">
+                                        <data id="1931">
+                                            <property name="fontSize">12pt</property>
+                                            <structure name="dateTimeFormat">
+                                                <property name="category">Custom</property>
+                                                <property name="pattern">dd-MM-yyy</property>
+                                            </structure>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">initDate</property>
+                                                    <expression name="expression">params["initDate"]</expression>
+                                                    <property name="dataType">any</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">initDate</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1959">
+                                        <text id="1962">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[al]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1960">
+                                        <data id="1935">
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">endDate</property>
+                                                    <expression name="expression">params["endDate"]</expression>
+                                                    <property name="dataType">any</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">endDate</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="1943">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <grid id="1963">
+                                <property name="width">100%</property>
+                                <column id="1964">
+                                    <property name="width">1.4375in</property>
+                                </column>
+                                <column id="1965"/>
+                                <row id="1966">
+                                    <cell id="1967">
+                                        <property name="textAlign">center</property>
+                                        <text id="1975">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Fecha de proceso:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1968">
+                                        <property name="textAlign">center</property>
+                                        <text id="1768">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="dd-MM-yyyy">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="1969">
+                                    <cell id="1970">
+                                        <property name="textAlign">center</property>
+                                        <text id="1976">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Hora de proceso:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1971">
+                                        <property name="textAlign">center</property>
+                                        <text id="2354">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="marginTop">0pt</property>
+                                            <property name="paddingTop">1pt</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="HH:mm">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="1972">
+                                    <cell id="1973">
+                                        <property name="textAlign">center</property>
+                                        <text id="1977">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Página]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1974">
+                                        <property name="textAlign">center</property>
+                                        <grid id="1978">
+                                            <property name="width">100%</property>
+                                            <column id="1979"/>
+                                            <column id="1980"/>
+                                            <column id="1981"/>
+                                            <row id="1982">
+                                                <cell id="1983">
+                                                    <auto-text id="1784">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="type">page-number</property>
+                                                    </auto-text>
+                                                </cell>
+                                                <cell id="1984">
+                                                    <text id="1986">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="fontWeight">bold</property>
+                                                        <property name="contentType">auto</property>
+                                                        <text-property name="content"><![CDATA[de]]></text-property>
+                                                    </text>
+                                                </cell>
+                                                <cell id="1985">
+                                                    <auto-text id="1788">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="type">total-page</property>
+                                                    </auto-text>
+                                                </cell>
+                                            </row>
+                                        </grid>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="1944"/>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="1711">
+                    <property name="verticalAlign">top</property>
+                    <property name="width">100%</property>
+                    <column id="1712"/>
+                    <column id="1713">
+                        <property name="textAlign">right</property>
+                    </column>
+                    <row id="1714">
+                        <cell id="1715">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text id="1717">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[SICLIFD065]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1716">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <grid id="1719">
+                                <property name="verticalAlign">top</property>
+                                <property name="height">0.2708333333in</property>
+                                <property name="width">2.0729166667in</property>
+                                <column id="1720">
+                                    <property name="width">1.0520833333in</property>
+                                </column>
+                                <column id="1721">
+                                    <property name="width">1.0208333333in</property>
+                                </column>
+                                <row id="1722">
+                                    <cell id="1723">
+                                        <property name="textAlign">left</property>
+                                        <text id="1725">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Usuario:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1724">
+                                        <property name="textAlign">left</property>
+                                        <data id="1718">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">center</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">ejecuto</property>
+                                                    <expression name="expression">params["ejecuto"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">ejecuto</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1987">
+            <property name="pageBreakAfter">always</property>
+            <property name="width">100%</property>
+            <column id="1988"/>
+            <row id="2347">
+                <cell id="2348">
+                    <property name="textAlign">center</property>
+                    <text id="2349">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[  ]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="1989">
+                <cell id="1990">
+                    <property name="textAlign">center</property>
+                    <image id="1993">
+                        <property name="height">120px</property>
+                        <property name="width">162px</property>
+                        <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.URI=params['srvImgRmt']+'/Carnet_portada.jpg';
+else
+this.URI=params['srvImgLcl']+'/pmr/reports/images/Carnet_portada.jpg';]]></method>
+                        <property name="source">url</property>
+                        <expression name="uri">''</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="2034">
+                <property name="height">2.1in</property>
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="2035">
+                    <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.getStyle().backgroundImage=params['srvImgRmt']+'/reportHeader.png';
+else
+this.getStyle().backgroundImage=params['srvImgLcl']+'/pmr/reports/images/reportHeader.png';]]></method>
+                    <property name="backgroundImage">reports\images\reportHeader.png</property>
+                    <property name="backgroundPositionX">center</property>
+                    <property name="backgroundPositionY">center</property>
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="paddingTop">1pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="2036">
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[PROMOCION Y OPERACION S.A. DE C.V.]]></text-property>
+                    </text>
+                    <text id="2037">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Consulta de Saldos por Grupo]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="1991">
+                <cell id="1992">
+                    <property name="textAlign">center</property>
+                    <grid id="1994">
+                        <property name="width">40%</property>
+                        <column id="1995"/>
+                        <column id="1996"/>
+                        <row id="1997">
+                            <cell id="1998">
+                                <text id="2018">
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Archivo:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="1999">
+                                <text id="2364">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[SICLIFD065]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="2000">
+                            <cell id="2001">
+                                <text id="2019">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">normal</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Ejecutó:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2002">
+                                <data id="1575">
+                                    <property name="textAlign">left</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ejecuto</property>
+                                            <expression name="expression">params["ejecuto"]</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ejecuto</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="2003">
+                            <cell id="2004">
+                                <text id="2020">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Fecha de Ejecución:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2005">
+                                <text id="1410">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<value-of format="dd-MM-yyy HH:mm">new Date()</value-of>]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="2006">
+                            <cell id="2007">
+                                <text id="2021">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Fecha del:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2008">
+                                <property name="textAlign">left</property>
+                                <grid id="2025">
+                                    <property name="width">100%</property>
+                                    <column id="2026"/>
+                                    <column id="2027"/>
+                                    <column id="2028"/>
+                                    <row id="2029">
+                                        <cell id="2030">
+                                            <data id="1508">
+                                                <structure name="dateTimeFormat">
+                                                    <property name="category">Custom</property>
+                                                    <property name="pattern">dd-MM-yyy</property>
+                                                </structure>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">initDate</property>
+                                                        <expression name="expression">params["initDate"]</expression>
+                                                        <property name="dataType">any</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">initDate</property>
+                                            </data>
+                                        </cell>
+                                        <cell id="2031">
+                                            <text id="2033">
+                                                <property name="fontSize">9pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="textAlign">center</property>
+                                                <property name="contentType">auto</property>
+                                                <text-property name="content"><![CDATA[al]]></text-property>
+                                            </text>
+                                        </cell>
+                                        <cell id="2032">
+                                            <data id="1727">
+                                                <property name="textAlign">right</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">endDate</property>
+                                                        <expression name="expression">params["endDate"]</expression>
+                                                        <property name="dataType">any</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">endDate</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="2009">
+                            <cell id="2010">
+                                <text id="2022">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Banco:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2011">
+                                <property name="textAlign">left</property>
+                                <data id="2341">
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">banco</property>
+                                            <expression name="expression">params["banco"]</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">banco</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="2350">
+                <cell id="2351">
+                    <property name="textAlign">center</property>
+                    <text id="2352">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[   ]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <grid id="2368">
+            <property name="width">100%</property>
+            <column id="2369"/>
+            <row id="2370">
+                <cell id="2371"/>
+            </row>
+            <row id="2372">
+                <cell id="2373">
+                    <property name="textAlign">center</property>
+                    <table id="2376">
+                        <property name="fontSize">8pt</property>
+                        <property name="width">50%</property>
+                        <property name="dataSet">siclif065</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">LIQ</property>
+                                <expression name="expression">dataSetRow["LIQ"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DESC_LIQ</property>
+                                <expression name="expression">dataSetRow["DESC_LIQ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ENTIDAD</property>
+                                <expression name="expression">dataSetRow["ENTIDAD"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NOMBRE</property>
+                                <expression name="expression">dataSetRow["NOMBRE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">BU</property>
+                                <expression name="expression">dataSetRow["BU"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">IMPORTE</property>
+                                <expression name="expression">if (dataSetRow["LIQ"]==33)
+{
+	-dataSetRow["IMPORTE"];
+}
+else
+{
+	dataSetRow["IMPORTE"];
+}</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">titulo</property>
+                                <property name="displayName">titulo</property>
+                                <expression name="expression">row["ENTIDAD"]+' '+row["NOMBRE"]+' '+row["BU"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">00</property>
+                                <property name="displayName">00</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>entidad</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["IMPORTE"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                        </list-property>
+                        <column id="2389"/>
+                        <column id="2390"/>
+                        <column id="2391"/>
+                        <group id="2392">
+                            <property name="groupName">entidad</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["ENTIDAD"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["ENTIDAD"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">always-excluding-last</property>
+                            <property name="pageBreakBefore">always-excluding-first</property>
+                            <property name="pageBreakInside">auto</property>
+                            <header>
+                                <row id="2412">
+                                    <cell id="2413">
+                                        <property name="colSpan">3</property>
+                                        <property name="rowSpan">1</property>
+                                        <data id="2416">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="resultSetColumn">titulo</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                                <row id="2393">
+                                    <cell id="2394">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">1px</property>
+                                        <label id="2417">
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">No. Liq.</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2395">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">1px</property>
+                                        <label id="2419">
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Descripción</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2396">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">1px</property>
+                                        <label id="2418">
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Importe</text-property>
+                                        </label>
+                                    </cell>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="2397">
+                                    <cell id="2398"/>
+                                    <cell id="2399">
+                                        <label id="2423">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <text-property name="text">SALDO TOTAL</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="2400">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <data id="2424">
+                                            <property name="fontWeight">bold</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Currency</property>
+                                                <property name="pattern">$#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">00</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </footer>
+                        </group>
+                        <group id="2402">
+                            <property name="groupName">liq</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["LIQ"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["LIQ"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <header>
+                                <row id="2403">
+                                    <cell id="2404"/>
+                                    <cell id="2405"/>
+                                    <cell id="2406"/>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="2407">
+                                    <cell id="2408"/>
+                                    <cell id="2409"/>
+                                    <cell id="2410"/>
+                                </row>
+                            </footer>
+                        </group>
+                        <detail>
+                            <row id="2381">
+                                <cell id="2382">
+                                    <data id="2420">
+                                        <property name="resultSetColumn">LIQ</property>
+                                    </data>
+                                </cell>
+                                <cell id="2383">
+                                    <data id="2421">
+                                        <property name="resultSetColumn">DESC_LIQ</property>
+                                    </data>
+                                </cell>
+                                <cell id="2384">
+                                    <data id="2422">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">IMPORTE</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="2374">
+                <cell id="2375"/>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">Carnet_header.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAgEBLAEsAAD/4Q80RXhpZgAASUkqAAgAAAAHABIBAwABAAAAAQAAABoBBQABAAAA
+                YgAAABsBBQABAAAAagAAACgBAwABAAAAAgAAADEBAgAcAAAAcgAAADIBAgAUAAAAjgAAAGmHBAABAAAA
+                pAAAANAAAADAxi0AECcAAMDGLQAQJwAAQWRvYmUgUGhvdG9zaG9wIENTMiBXaW5kb3dzADIwMDg6MTA6
+                MjIgMTE6NTk6MzQAAAADAAGgAwABAAAA//8AAAKgBAABAAAAjAAAAAOgBAABAAAAaAAAAAAAAAAAAAYA
+                AwEDAAEAAAAGAAAAGgEFAAEAAAAeAQAAGwEFAAEAAAAmAQAAKAEDAAEAAAACAAAAAQIEAAEAAAAuAQAA
+                AgIEAAEAAAD+DQAAAAAAAEgAAAABAAAASAAAAAEAAAD/2P/gABBKRklGAAECAABIAEgAAP/tAAxBZG9i
+                ZV9DTQAC/+4ADkFkb2JlAGSAAAAAAf/bAIQADAgICAkIDAkJDBELCgsRFQ8MDA8VGBMTFRMTGBEMDAwM
+                DAwRDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAENCwsNDg0QDg4QFA4ODhQUDg4ODhQRDAwMDAwR
+                EQwMDAwMDBEMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM/8AAEQgAaACMAwEiAAIRAQMRAf/dAAQA
+                Cf/EAT8AAAEFAQEBAQEBAAAAAAAAAAMAAQIEBQYHCAkKCwEAAQUBAQEBAQEAAAAAAAAAAQACAwQFBgcI
+                CQoLEAABBAEDAgQCBQcGCAUDDDMBAAIRAwQhEjEFQVFhEyJxgTIGFJGhsUIjJBVSwWIzNHKC0UMHJZJT
+                8OHxY3M1FqKygyZEk1RkRcKjdDYX0lXiZfKzhMPTdePzRieUpIW0lcTU5PSltcXV5fVWZnaGlqa2xtbm
+                9jdHV2d3h5ent8fX5/cRAAICAQIEBAMEBQYHBwYFNQEAAhEDITESBEFRYXEiEwUygZEUobFCI8FS0fAz
+                JGLhcoKSQ1MVY3M08SUGFqKygwcmNcLSRJNUoxdkRVU2dGXi8rOEw9N14/NGlKSFtJXE1OT0pbXF1eX1
+                VmZ2hpamtsbW5vYnN0dXZ3eHl6e3x//aAAwDAQACEQMRAD8A5RJJJZr36kkkklKSSSSUpJJJJSkkkklK
+                SSSSUpJJJJSkkkklKSSSSU//0OUSSSWa9+pJJO1rnuDWAuc4gNaNSSeGhJRWV7pvQ+rdUdtwMZ9o4L4h
+                g+Njoau2+rH+L2mutmZ1tvqWu1bifmNHb1o+m/8AkLf6l9afq90Vv2ey5u9ggY1A3ER+btZ7K/7Snjg0
+                uZ4Q4/MfGCZnFymM55jTjq4f4Ij8zyWF/ivz7AHZ2XXRPLKwXu/zvYxbFH+LLobB+muyLj39zWj/AKLV
+                mZv+NG4y3AwmsHZ9zpP/AG3X/wCTWRf/AIwvrPb9HIrpB7V1t/8ARnqI8WCOw4mH2vjGbWUxhB6WIf8A
+                Q43s2/4u/qwB/NWn42uUX/4uPq04e1tzD4i0n/qty4Q/XH60O1+32fINH5GKdf14+tFZ/pzjHZ7GH8rE
+                fcw/ufgj7h8S3HNxv+/P/vHqMr/FdhOBOHm2VnsLWh4/6HprA6j/AIvfrBhgupazNrHek+7/ALbftd/m
+                o2L/AIyuv1EfaG05De8t2H/OYf8Avq3+nf4zOl3kNz6H4h/fafUZ/wBHa/8A6KFYJf1U8Xxjl9SBniN9
+                sn/R4cj5vbTbTY6q5jq7G6Oa8FpHycoL2bKwPq99Z8Tc708phHsvrI9Rn9oe5v8AUevNfrN9VMzoFwcT
+                62FYYqyAI1/0dv7tiZkxGOo9Ue7c5L4pjzy9ucTizfuS2l/cP/cuGkkkonSUkkkkp//R5RJJJZr36l2H
+                +LvpuK7Iyes5pa2jp7fY5/0Q8jcbT/xbAuPWv0q3qObh/wDN3BZLs28WWO7bWtiH/wDBs/nHp+M1IGr7
+                D+t0avPQlPl5QEuASrjn+5iv9ZL/ABHY+sX136j1a84PR99OM47WmsH1re35vuYx37jUuk/4t+q5YFvU
+                LG4TDrt+nYf7I9rF13SOidF+qmCci+xguj9PmWwCT+5V+6z91jFi9W/xnUscauk4/qxp690tb/YqHu/z
+                1MYxHqzSsn9Fx8fMZZD2fhuHhxjQ55D1TP73FJ1cL/F79XMYA2VPynjl1rjH+YzY1a9XSei4jf0eJjUg
+                d9jB/wBJwXlOd9cPrHmki3Nexh/Mqisf9D3LJsuutM22PsPi9xd/1RQ96A+WH7GQfCOcy65+aI8BxT/7
+                x9uOT0dntNmM3ylgSH7IyNIx7Z7Qxy8NT/BL7z/VH2p/0CenMyB/uf8Aob7RlfVX6u5gPq4FOv51bdh+
+                +rauf6j/AIsenWgu6dkPxn9mWfpGff7XtXA43VOpYjg7GyrqiOA17o/zZ2rf6d/jF6/iEDJLM2vuLBtd
+                /wBuVpe7ilpKNI/0f8Rwa4OY4/6pP/cz4oNXK6R9Z/qpkfambqmg6ZFJ3VuHhb/5G1q7Don1hwPrd0+3
+                pHUWNrzHsIc0fRfH+Go/dfX9LarnRvrp0TrQ+zWH7PfYIOPfG10/msf9CxYP1p+qj+j3N6/0Oa247xZb
+                Q38yD/OV/wDA/wCkYnAcI4oHix/pRYp5fvEhh5rH935sfzOcekSn+hxPD5WO/Fyrsaz6dL3Vu+LTtQlY
+                6jl/bc/IzC3acix1m3w3GVXVY76PQwMjCJkKlQ4h/WUkkkguf//S5RJJJZr36l2X1GycHpHTeo9dy9XV
+                FtFTR9Ik+/02f8Y7auNRPtF32b7LvIp3+rs7b42bv81OhLhN/Y1+awe/iOK6jIx4/wC5GXFKLd6313qH
+                W8o5GY/2g/oqR9Bg8GN/7+s5JJAkkknqy48cMcRCERGMdBEKSSSQXqSSSSUpJJJJSl3P1M+uD3vb0TrD
+                /WouHp0XWakbtPQtJ+kx/wCY5cMnaS1wc0wQZB8wnQmYmw1+b5XHzGMwmNf0JfpQl+9Fs9UxRh9SysRv
+                0aLXsb8GkhqqomRfbkXPvudutscXPd4k8oaB30ZoCQjESNyAHEfFSSSSC5//0+UW19Xvqn1LrxL6Ipxm
+                GHZFkxP7tbR/OOWKvUHOdgf4uhZgnY8YodvboQXn9K+f3vc5UcURIknaIt7H4jzOTDDHHFQyZpjFGUvl
+                hf6Tk/8Aja4zw6ujqzH5IGrNoOvm1r965TrPRM/ouZ9kzWgOI3V2N1Y9v7zCq+FkZWNl1ZGG4tyWPBrL
+                fpFxPH8rerfWup9cz7WjqzrHPrnZXYzZtnna3a1CRgY6RMT/AM0qw4+bx5gMmeObEY3LiAhkif6nB+i2
+                fqx9WL/rBkXMbZ6FNDQX2lu73O+gwBN9Z/qzf9X8mqt9nr1Xt3V2gQJBh9Z/qru+ldNzegfVFzcKk29U
+                uZ6ha0CfVs9rJn82hql1jpmX1/6ptbl0mnqdTBaGOjd6rBDxp+be1S+yODb11xf+guf/AKVn974uMfde
+                P2eH08X+1/f4Xgvqv9XT9YMu7HF/2f0a/U3bd067Y5C33f4taGOLHdWqa8cgtAP3b0L/ABXiOrZgIg+g
+                JB/rtWv1D6n/AFf6x1zKeeouGa9267GYWFzYDR9F3uShjBgDwiUj3NJ5znc0ObyY/elixRjGQ4MccvzP
+                M9f+ovUej4js5lzMvGbHqOYCHNB/P26+xG6L9Q7er9HZ1GrLFb7A/ZU5uktJbG/d+dtW79beq4nQuhj6
+                u47LbLLafSZZYDtFZ+m71D/OP/ks+grX1Vzf2f8AUZmcWeoMdtthYDBID3SiMeP3DHoI2dflK2XPc59y
+                jlEvXLMIY58Mby4iJfovnOP026zqtfTL5oudcKX7hq0k7eFqfWH6qHoudh4hyfW+2GN+3bt9za+JO76S
+                7LqfRcXrWT036ydKh7xZW64DTfWCPcf+GoWd/jD/AOXOjfH/ANGVppxCMZE66jhPcSZcfxKebmMMYng/
+                V5PexVrHNjjJBZ/ixZVBt6oysHjcyJ/znob/APF1jNY537XqO0ExA7f9cXUfW7F+r2TRjjruQcatr3Gk
+                gxLiBvH0Xrk83pX+LxmJc/Fz3PyGscaWFx1eB7B/N/vJ04QBI4Y6d5atfluc5rLGMjmzXI16MEcmPf8A
+                fQ9J+o9HUen05jup10G4E+k4CRBLf3/JX7P8WDawHWdTYxp0BcyB+L1wrPpt07helf4yf/E7iz/pmf8A
+                UOTYDGYyPB8vi2eaPN4+Yw448weHmJS/Qh+rEdv7zxf1k6FX0TJqorym5YtZvL2QANS3bo5yyEklFceK
+                69Pa3S9vL7Pt+6fdr+e4Rv34Plf/1OUXYfVb654uFgHpHWKzbhEFrHgboa76VVtf51a49JZ8ZGJsPccz
+                y2PmIcGQaWJAg+qMv3ovoGJb/i36ZkjqNFj7LWHdXWd7w0/yKnD6X9ZUMn60dP659ZMXJ6iTjdLwJfVW
+                4FznuGrfUDN303Ljkk45SdKAF3Qa0fhkAZSllyZMhiYRyTlcscZb8D231m+v+U/MYzoWQWYrGe95YJc8
+                /wDGD8xP9Wfr/lMzHs69eX4z2eywMEseD4Vj6L2riEkvenxcV/T9FP8AorlfZ9rgG1e5/lf73E930jrn
+                1b6Z9Z8/OpyIwcuoOZDHe2wu3WV7dv8AbXOda6sH/WXI6r024ibRZRaJB0a0fRcsdJCWQkVoNeLRfh5D
+                HjyHIZSmZYxikJ0RKEX0DP8ArN9WvrF0JuP1Sw4ucBLSGOcGWgfTrc0O/RWfuqrgfWLo+P8AUm7pFl/6
+                6a7mNYGuIJc52z37dvuXEpI+9K7oXXCxD4XiEPbE5jGMgzRhp6JR6R/qvT/Uv61/sW92LmOJ6fcZJGpr
+                f/pGt/df/hFZ+uPX+ldT6p0zIw7TZVjGbnFpEe9j/wA4futXHpIe5Lg4OjKeQwnmfvIuMyDEgfLLijwG
+                X959L6z1/wCovW66q8/Ise2klzNrbG6kQfotWX6H+LD/AEt332/+RXEJJxzE6mMT9GCHwqOOPDDmM0Ij
+                9GMqCR3ptvOz+bDjt/qz7V2n12+svR+q9GoxcG422sta5zS1zdA1zTq4Lh0kwTIEhXzbtrLysMuTDlkT
+                xYCTGut/vKSSSTWy/wD/1eUSXKpLNe/eqSXKpJKeqSXKpJKeqSXKpJKeqSXKpJKeqSXKpJKeqSXKpJKe
+                qSXKpJKeqSXKpJKf/9n/7RPoUGhvdG9zaG9wIDMuMAA4QklNBCUAAAAAABAAAAAAAAAAAAAAAAAAAAAA
+                OEJJTQPtAAAAAAAQASwAAAABAAIBLAAAAAEAAjhCSU0EJgAAAAAADgAAAAAAAAAAAAA/gAAAOEJJTQQN
+                AAAAAAAEAAAAHjhCSU0EGQAAAAAABAAAAB44QklNA/MAAAAAAAkAAAAAAAAAAAEAOEJJTQQKAAAAAAAB
+                AAA4QklNJxAAAAAAAAoAAQAAAAAAAAACOEJJTQP1AAAAAABIAC9mZgABAGxmZgAGAAAAAAABAC9mZgAB
+                AKGZmgAGAAAAAAABADIAAAABAFoAAAAGAAAAAAABADUAAAABAC0AAAAGAAAAAAABOEJJTQP4AAAAAABw
+                AAD/////////////////////////////A+gAAAAA/////////////////////////////wPoAAAAAP//
+                //////////////////////////8D6AAAAAD/////////////////////////////A+gAADhCSU0ECAAA
+                AAAAEAAAAAEAAAJAAAACQAAAAAA4QklNBB4AAAAAAAQAAAAAOEJJTQQaAAAAAANRAAAABgAAAAAAAAAA
+                AAAAaAAAAIwAAAAOAEMAYQByAG4AZQB0AF8AcABvAHIAdABhAGQAYQAAAAEAAAAAAAAAAAAAAAAAAAAA
+                AAAAAQAAAAAAAAAAAAAAjAAAAGgAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA
+                AQAAAAAAAG51bGwAAAACAAAABmJvdW5kc09iamMAAAABAAAAAAAAUmN0MQAAAAQAAAAAVG9wIGxvbmcA
+                AAAAAAAAAExlZnRsb25nAAAAAAAAAABCdG9tbG9uZwAAAGgAAAAAUmdodGxvbmcAAACMAAAABnNsaWNl
+                c1ZsTHMAAAABT2JqYwAAAAEAAAAAAAVzbGljZQAAABIAAAAHc2xpY2VJRGxvbmcAAAAAAAAAB2dyb3Vw
+                SURsb25nAAAAAAAAAAZvcmlnaW5lbnVtAAAADEVTbGljZU9yaWdpbgAAAA1hdXRvR2VuZXJhdGVkAAAA
+                AFR5cGVlbnVtAAAACkVTbGljZVR5cGUAAAAASW1nIAAAAAZib3VuZHNPYmpjAAAAAQAAAAAAAFJjdDEA
+                AAAEAAAAAFRvcCBsb25nAAAAAAAAAABMZWZ0bG9uZwAAAAAAAAAAQnRvbWxvbmcAAABoAAAAAFJnaHRs
+                b25nAAAAjAAAAAN1cmxURVhUAAAAAQAAAAAAAG51bGxURVhUAAAAAQAAAAAAAE1zZ2VURVhUAAAAAQAA
+                AAAABmFsdFRhZ1RFWFQAAAABAAAAAAAOY2VsbFRleHRJc0hUTUxib29sAQAAAAhjZWxsVGV4dFRFWFQA
+                AAABAAAAAAAJaG9yekFsaWduZW51bQAAAA9FU2xpY2VIb3J6QWxpZ24AAAAHZGVmYXVsdAAAAAl2ZXJ0
+                QWxpZ25lbnVtAAAAD0VTbGljZVZlcnRBbGlnbgAAAAdkZWZhdWx0AAAAC2JnQ29sb3JUeXBlZW51bQAA
+                ABFFU2xpY2VCR0NvbG9yVHlwZQAAAABOb25lAAAACXRvcE91dHNldGxvbmcAAAAAAAAACmxlZnRPdXRz
+                ZXRsb25nAAAAAAAAAAxib3R0b21PdXRzZXRsb25nAAAAAAAAAAtyaWdodE91dHNldGxvbmcAAAAAADhC
+                SU0EKAAAAAAADAAAAAE/8AAAAAAAADhCSU0EEQAAAAAAAQEAOEJJTQQUAAAAAAAEAAAAAThCSU0EDAAA
+                AAAOGgAAAAEAAACMAAAAaAAAAaQAAKqgAAAN/gAYAAH/2P/gABBKRklGAAECAABIAEgAAP/tAAxBZG9i
+                ZV9DTQAC/+4ADkFkb2JlAGSAAAAAAf/bAIQADAgICAkIDAkJDBELCgsRFQ8MDA8VGBMTFRMTGBEMDAwM
+                DAwRDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAENCwsNDg0QDg4QFA4ODhQUDg4ODhQRDAwMDAwR
+                EQwMDAwMDBEMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM/8AAEQgAaACMAwEiAAIRAQMRAf/dAAQA
+                Cf/EAT8AAAEFAQEBAQEBAAAAAAAAAAMAAQIEBQYHCAkKCwEAAQUBAQEBAQEAAAAAAAAAAQACAwQFBgcI
+                CQoLEAABBAEDAgQCBQcGCAUDDDMBAAIRAwQhEjEFQVFhEyJxgTIGFJGhsUIjJBVSwWIzNHKC0UMHJZJT
+                8OHxY3M1FqKygyZEk1RkRcKjdDYX0lXiZfKzhMPTdePzRieUpIW0lcTU5PSltcXV5fVWZnaGlqa2xtbm
+                9jdHV2d3h5ent8fX5/cRAAICAQIEBAMEBQYHBwYFNQEAAhEDITESBEFRYXEiEwUygZEUobFCI8FS0fAz
+                JGLhcoKSQ1MVY3M08SUGFqKygwcmNcLSRJNUoxdkRVU2dGXi8rOEw9N14/NGlKSFtJXE1OT0pbXF1eX1
+                VmZ2hpamtsbW5vYnN0dXZ3eHl6e3x//aAAwDAQACEQMRAD8A5RJJJZr36kkkklKSSSSUpJJJJSkkkklK
+                SSSSUpJJJJSkkkklKSSSSU//0OUSSSWa9+pJJO1rnuDWAuc4gNaNSSeGhJRWV7pvQ+rdUdtwMZ9o4L4h
+                g+Njoau2+rH+L2mutmZ1tvqWu1bifmNHb1o+m/8AkLf6l9afq90Vv2ey5u9ggY1A3ER+btZ7K/7Snjg0
+                uZ4Q4/MfGCZnFymM55jTjq4f4Ij8zyWF/ivz7AHZ2XXRPLKwXu/zvYxbFH+LLobB+muyLj39zWj/AKLV
+                mZv+NG4y3AwmsHZ9zpP/AG3X/wCTWRf/AIwvrPb9HIrpB7V1t/8ARnqI8WCOw4mH2vjGbWUxhB6WIf8A
+                Q43s2/4u/qwB/NWn42uUX/4uPq04e1tzD4i0n/qty4Q/XH60O1+32fINH5GKdf14+tFZ/pzjHZ7GH8rE
+                fcw/ufgj7h8S3HNxv+/P/vHqMr/FdhOBOHm2VnsLWh4/6HprA6j/AIvfrBhgupazNrHek+7/ALbftd/m
+                o2L/AIyuv1EfaG05De8t2H/OYf8Avq3+nf4zOl3kNz6H4h/fafUZ/wBHa/8A6KFYJf1U8Xxjl9SBniN9
+                sn/R4cj5vbTbTY6q5jq7G6Oa8FpHycoL2bKwPq99Z8Tc708phHsvrI9Rn9oe5v8AUevNfrN9VMzoFwcT
+                62FYYqyAI1/0dv7tiZkxGOo9Ue7c5L4pjzy9ucTizfuS2l/cP/cuGkkkonSUkkkkp//R5RJJJZr36l2H
+                +LvpuK7Iyes5pa2jp7fY5/0Q8jcbT/xbAuPWv0q3qObh/wDN3BZLs28WWO7bWtiH/wDBs/nHp+M1IGr7
+                D+t0avPQlPl5QEuASrjn+5iv9ZL/ABHY+sX136j1a84PR99OM47WmsH1re35vuYx37jUuk/4t+q5YFvU
+                LG4TDrt+nYf7I9rF13SOidF+qmCci+xguj9PmWwCT+5V+6z91jFi9W/xnUscauk4/qxp690tb/YqHu/z
+                1MYxHqzSsn9Fx8fMZZD2fhuHhxjQ55D1TP73FJ1cL/F79XMYA2VPynjl1rjH+YzY1a9XSei4jf0eJjUg
+                d9jB/wBJwXlOd9cPrHmki3Nexh/Mqisf9D3LJsuutM22PsPi9xd/1RQ96A+WH7GQfCOcy65+aI8BxT/7
+                x9uOT0dntNmM3ylgSH7IyNIx7Z7Qxy8NT/BL7z/VH2p/0CenMyB/uf8Aob7RlfVX6u5gPq4FOv51bdh+
+                +rauf6j/AIsenWgu6dkPxn9mWfpGff7XtXA43VOpYjg7GyrqiOA17o/zZ2rf6d/jF6/iEDJLM2vuLBtd
+                /wBuVpe7ilpKNI/0f8Rwa4OY4/6pP/cz4oNXK6R9Z/qpkfambqmg6ZFJ3VuHhb/5G1q7Don1hwPrd0+3
+                pHUWNrzHsIc0fRfH+Go/dfX9LarnRvrp0TrQ+zWH7PfYIOPfG10/msf9CxYP1p+qj+j3N6/0Oa247xZb
+                Q38yD/OV/wDA/wCkYnAcI4oHix/pRYp5fvEhh5rH935sfzOcekSn+hxPD5WO/Fyrsaz6dL3Vu+LTtQlY
+                6jl/bc/IzC3acix1m3w3GVXVY76PQwMjCJkKlQ4h/WUkkkguf//S5RJJJZr36l2X1GycHpHTeo9dy9XV
+                FtFTR9Ik+/02f8Y7auNRPtF32b7LvIp3+rs7b42bv81OhLhN/Y1+awe/iOK6jIx4/wC5GXFKLd6313qH
+                W8o5GY/2g/oqR9Bg8GN/7+s5JJAkkknqy48cMcRCERGMdBEKSSSQXqSSSSUpJJJJSl3P1M+uD3vb0TrD
+                /WouHp0XWakbtPQtJ+kx/wCY5cMnaS1wc0wQZB8wnQmYmw1+b5XHzGMwmNf0JfpQl+9Fs9UxRh9SysRv
+                0aLXsb8GkhqqomRfbkXPvudutscXPd4k8oaB30ZoCQjESNyAHEfFSSSSC5//0+UW19Xvqn1LrxL6Ipxm
+                GHZFkxP7tbR/OOWKvUHOdgf4uhZgnY8YodvboQXn9K+f3vc5UcURIknaIt7H4jzOTDDHHFQyZpjFGUvl
+                hf6Tk/8Aja4zw6ujqzH5IGrNoOvm1r965TrPRM/ouZ9kzWgOI3V2N1Y9v7zCq+FkZWNl1ZGG4tyWPBrL
+                fpFxPH8rerfWup9cz7WjqzrHPrnZXYzZtnna3a1CRgY6RMT/AM0qw4+bx5gMmeObEY3LiAhkif6nB+i2
+                fqx9WL/rBkXMbZ6FNDQX2lu73O+gwBN9Z/qzf9X8mqt9nr1Xt3V2gQJBh9Z/qru+ldNzegfVFzcKk29U
+                uZ6ha0CfVs9rJn82hql1jpmX1/6ptbl0mnqdTBaGOjd6rBDxp+be1S+yODb11xf+guf/AKVn974uMfde
+                P2eH08X+1/f4Xgvqv9XT9YMu7HF/2f0a/U3bd067Y5C33f4taGOLHdWqa8cgtAP3b0L/ABXiOrZgIg+g
+                JB/rtWv1D6n/AFf6x1zKeeouGa9267GYWFzYDR9F3uShjBgDwiUj3NJ5znc0ObyY/elixRjGQ4MccvzP
+                M9f+ovUej4js5lzMvGbHqOYCHNB/P26+xG6L9Q7er9HZ1GrLFb7A/ZU5uktJbG/d+dtW79beq4nQuhj6
+                u47LbLLafSZZYDtFZ+m71D/OP/ks+grX1Vzf2f8AUZmcWeoMdtthYDBID3SiMeP3DHoI2dflK2XPc59y
+                jlEvXLMIY58Mby4iJfovnOP026zqtfTL5oudcKX7hq0k7eFqfWH6qHoudh4hyfW+2GN+3bt9za+JO76S
+                7LqfRcXrWT036ydKh7xZW64DTfWCPcf+GoWd/jD/AOXOjfH/ANGVppxCMZE66jhPcSZcfxKebmMMYng/
+                V5PexVrHNjjJBZ/ixZVBt6oysHjcyJ/znob/APF1jNY537XqO0ExA7f9cXUfW7F+r2TRjjruQcatr3Gk
+                gxLiBvH0Xrk83pX+LxmJc/Fz3PyGscaWFx1eB7B/N/vJ04QBI4Y6d5atfluc5rLGMjmzXI16MEcmPf8A
+                fQ9J+o9HUen05jup10G4E+k4CRBLf3/JX7P8WDawHWdTYxp0BcyB+L1wrPpt07helf4yf/E7iz/pmf8A
+                UOTYDGYyPB8vi2eaPN4+Yw448weHmJS/Qh+rEdv7zxf1k6FX0TJqorym5YtZvL2QANS3bo5yyEklFceK
+                69Pa3S9vL7Pt+6fdr+e4Rv34Plf/1OUXYfVb654uFgHpHWKzbhEFrHgboa76VVtf51a49JZ8ZGJsPccz
+                y2PmIcGQaWJAg+qMv3ovoGJb/i36ZkjqNFj7LWHdXWd7w0/yKnD6X9ZUMn60dP659ZMXJ6iTjdLwJfVW
+                4FznuGrfUDN303Ljkk45SdKAF3Qa0fhkAZSllyZMhiYRyTlcscZb8D231m+v+U/MYzoWQWYrGe95YJc8
+                /wDGD8xP9Wfr/lMzHs69eX4z2eywMEseD4Vj6L2riEkvenxcV/T9FP8AorlfZ9rgG1e5/lf73E930jrn
+                1b6Z9Z8/OpyIwcuoOZDHe2wu3WV7dv8AbXOda6sH/WXI6r024ibRZRaJB0a0fRcsdJCWQkVoNeLRfh5D
+                HjyHIZSmZYxikJ0RKEX0DP8ArN9WvrF0JuP1Sw4ucBLSGOcGWgfTrc0O/RWfuqrgfWLo+P8AUm7pFl/6
+                6a7mNYGuIJc52z37dvuXEpI+9K7oXXCxD4XiEPbE5jGMgzRhp6JR6R/qvT/Uv61/sW92LmOJ6fcZJGpr
+                f/pGt/df/hFZ+uPX+ldT6p0zIw7TZVjGbnFpEe9j/wA4futXHpIe5Lg4OjKeQwnmfvIuMyDEgfLLijwG
+                X959L6z1/wCovW66q8/Ise2klzNrbG6kQfotWX6H+LD/AEt332/+RXEJJxzE6mMT9GCHwqOOPDDmM0Ij
+                9GMqCR3ptvOz+bDjt/qz7V2n12+svR+q9GoxcG422sta5zS1zdA1zTq4Lh0kwTIEhXzbtrLysMuTDlkT
+                xYCTGut/vKSSSTWy/wD/1eUSXKpLNe/eqSXKpJKeqSXKpJKeqSXKpJKeqSXKpJKeqSXKpJKeqSXKpJKe
+                qSXKpJKeqSXKpJKf/9k4QklNBCEAAAAAAFUAAAABAQAAAA8AQQBkAG8AYgBlACAAUABoAG8AdABvAHMA
+                aABvAHAAAAATAEEAZABvAGIAZQAgAFAAaABvAHQAbwBzAGgAbwBwACAAQwBTADIAAAABADhCSU0EBgAA
+                AAAABwAIAAEAAQEA/+E6bGh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94cGFja2V0IGJlZ2lu
+                PSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJh
+                ZG9iZTpuczptZXRhLyIgeDp4bXB0az0iMy4xLjEtMTExIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJo
+                dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNj
+                cmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eGFwPSJodHRwOi8vbnMuYWRvYmUu
+                Y29tL3hhcC8xLjAvIj4KICAgICAgICAgPHhhcDpNb2RpZnlEYXRlPjIwMDgtMTAtMjJUMTE6NTk6MzQt
+                MDU6MDA8L3hhcDpNb2RpZnlEYXRlPgogICAgICAgICA8eGFwOkNyZWF0b3JUb29sPkFkb2JlIFBob3Rv
+                c2hvcCBDUzIgV2luZG93czwveGFwOkNyZWF0b3JUb29sPgogICAgICAgICA8eGFwOkNyZWF0ZURhdGU+
+                MjAwOC0xMC0yMlQxMTo1OTozNC0wNTowMDwveGFwOkNyZWF0ZURhdGU+CiAgICAgICAgIDx4YXA6TWV0
+                YWRhdGFEYXRlPjIwMDgtMTAtMjJUMTE6NTk6MzQtMDU6MDA8L3hhcDpNZXRhZGF0YURhdGU+CiAgICAg
+                IDwvcmRmOkRlc2NyaXB0aW9uPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAg
+                ICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAg
+                IDxleGlmOkNvbG9yU3BhY2U+LTE8L2V4aWY6Q29sb3JTcGFjZT4KICAgICAgICAgPGV4aWY6UGl4ZWxY
+                RGltZW5zaW9uPjE0MDwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURp
+                bWVuc2lvbj4xMDQ8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpOYXRpdmVEaWdl
+                c3Q+MzY4NjQsNDA5NjAsNDA5NjEsMzcxMjEsMzcxMjIsNDA5NjIsNDA5NjMsMzc1MTAsNDA5NjQsMzY4
+                NjcsMzY4NjgsMzM0MzQsMzM0MzcsMzQ4NTAsMzQ4NTIsMzQ4NTUsMzQ4NTYsMzczNzcsMzczNzgsMzcz
+                NzksMzczODAsMzczODEsMzczODIsMzczODMsMzczODQsMzczODUsMzczODYsMzczOTYsNDE0ODMsNDE0
+                ODQsNDE0ODYsNDE0ODcsNDE0ODgsNDE0OTIsNDE0OTMsNDE0OTUsNDE3MjgsNDE3MjksNDE3MzAsNDE5
+                ODUsNDE5ODYsNDE5ODcsNDE5ODgsNDE5ODksNDE5OTAsNDE5OTEsNDE5OTIsNDE5OTMsNDE5OTQsNDE5
+                OTUsNDE5OTYsNDIwMTYsMCwyLDQsNSw2LDcsOCw5LDEwLDExLDEyLDEzLDE0LDE1LDE2LDE3LDE4LDIw
+                LDIyLDIzLDI0LDI1LDI2LDI3LDI4LDMwOzQ4MjkyMEJCMDBGRDdGQkNERDY1Q0Y4QzI0NEFDN0JEPC9l
+                eGlmOk5hdGl2ZURpZ2VzdD4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgICAgIDxyZGY6RGVzY3Jp
+                cHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnhhcE1NPSJodHRwOi8vbnMuYWRvYmUu
+                Y29tL3hhcC8xLjAvbW0vIgogICAgICAgICAgICB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNv
+                bS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyI+CiAgICAgICAgIDx4YXBNTTpEb2N1bWVudElEPnV1
+                aWQ6OTc3M0VEQUE1QUEwREQxMUFDQ0NCQUFDRkJBMDREMkQ8L3hhcE1NOkRvY3VtZW50SUQ+CiAgICAg
+                ICAgIDx4YXBNTTpJbnN0YW5jZUlEPnV1aWQ6OTg3M0VEQUE1QUEwREQxMUFDQ0NCQUFDRkJBMDREMkQ8
+                L3hhcE1NOkluc3RhbmNlSUQ+CiAgICAgICAgIDx4YXBNTTpEZXJpdmVkRnJvbSByZGY6cGFyc2VUeXBl
+                PSJSZXNvdXJjZSI+CiAgICAgICAgICAgIDxzdFJlZjppbnN0YW5jZUlEPnV1aWQ6OTY3M0VEQUE1QUEw
+                REQxMUFDQ0NCQUFDRkJBMDREMkQ8L3N0UmVmOmluc3RhbmNlSUQ+CiAgICAgICAgICAgIDxzdFJlZjpk
+                b2N1bWVudElEPnV1aWQ6OTY3M0VEQUE1QUEwREQxMUFDQ0NCQUFDRkJBMDREMkQ8L3N0UmVmOmRvY3Vt
+                ZW50SUQ+CiAgICAgICAgIDwveGFwTU06RGVyaXZlZEZyb20+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9u
+                PgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczpkYz0i
+                aHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPgogICAgICAgICA8ZGM6Zm9ybWF0PmltYWdl
+                L2pwZWc8L2RjOmZvcm1hdD4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgICAgIDxyZGY6RGVzY3Jp
+                cHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFk
+                b2JlLmNvbS9waG90b3Nob3AvMS4wLyI+CiAgICAgICAgIDxwaG90b3Nob3A6Q29sb3JNb2RlPjM8L3Bo
+                b3Rvc2hvcDpDb2xvck1vZGU+CiAgICAgICAgIDxwaG90b3Nob3A6SGlzdG9yeS8+CiAgICAgIDwvcmRm
+                OkRlc2NyaXB0aW9uPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAg
+                ICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZm
+                Ok9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9u
+                PjMwMDAwMDAvMTAwMDA8L3RpZmY6WFJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9u
+                PjMwMDAwMDAvMTAwMDA8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25V
+                bml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDx0aWZmOk5hdGl2ZURpZ2VzdD4yNTYs
+                MjU3LDI1OCwyNTksMjYyLDI3NCwyNzcsMjg0LDUzMCw1MzEsMjgyLDI4MywyOTYsMzAxLDMxOCwzMTks
+                NTI5LDUzMiwzMDYsMjcwLDI3MSwyNzIsMzA1LDMxNSwzMzQzMjs4NzExMzhBRTE2N0IyMTkxMjJDQjRE
+                QkQ2OTQzOUM5RTwvdGlmZjpOYXRpdmVEaWdlc3Q+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8
+                L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAog
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                IAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAog
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                IAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSJ3Ij8+/+4ADkFkb2JlAGRAAAAAAf/bAIQAAQEBAQEBAQEB
+                AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEB
+                AQEBAQEBAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD
+                /8AAEQgAaACMAwERAAIRAQMRAf/dAAQAEv/EALoAAAEDBQEBAAAAAAAAAAAAAAABCQoCAwYHCAUEAQAB
+                AwUBAQAAAAAAAAAAAAAAAQIIAwUGBwkEChAAAAUDAwMBBgQDBgUFAAAAAQIDBAURBgcAIQgxEgkTQVFh
+                IhQKcYGRMqFSFfCxwSMWF9FCYiQmQzQYGRoRAAIBAgUCBAIHBgMGBQUAAAECAxEEACESBQYxB0FREwhh
+                InGBkTIjFAmhscHRQlLwYhXhcoKiMxbxssJTo0MkNEQX/9oADAMBAAIRAxEAPwCPvqDOPswwaMGDRgwa
+                MGDRgwaMGDRgwaMGDRgwaMGDRgwaMGDRgwaMGDRgwaMGDRgwaMGP/9CPvqDOPswwaMGDRgwoAI9P8A/v
+                0YBmaVFfpwn5D/h+umlgCATmcNDgsyitR8D+/pgoPWm2l1CtPHDv6Wf+kdcKACIVDpWnUOv66CwBArnh
+                NQ9My1/D88FBpWm3/DQSAaEiv04NX4fq0Oinkf3dcIG/9v7bacRQAkih+IwyKVJgTHX7CP3jC9o/2EK/
+                pWugCudRTFTIdSPtGDtH3e2lPbX3U6+zTSQBUnB0FT0wnX+38Px0KQ5oCK/ZhodT0r9hwUHTXdUND1+A
+                r+7D1GoEjoMGnahl4fTlhgYMKiv2HBpcOwaMGDRgwaMGP//Rj76gzj7MMGjBg0YMVgJewxRAO4TFMBh6
+                gBQGpa/HVMqxlRwflANR9OKcptihjlhHrHNXyyp1UHzYnIU8MyMViJg7S07qhsmbca7DUCgIbUGtdUnc
+                tKFjWp8xhVluvy6aYDq6enJmT0zUKaU8cz0x1Vxu4P8ALDlu+Mx4+YSvS+2CS4N5C6CNCQdjxxu/0lDv
+                7wnTsIIvpHChiprKKAO3brINr49v/IZEh27aZKA09QCifSzVPn4fDGke63uK7Pdk4Jk55zO3tdx9L1Da
+                ax68opX5IiKnUPukkA+eH3cKfbA53uBBhJZ55CY+xqmsBVXtsWJByuQ7gahtVutLvFrbt1Jz8UheEDrU
+                emtmbd2Z3BF1bzuCrqH/AOvUsQfBvUTSfjQ/Rjn3z/8AVS4fbWxi7a8CvppASVbcVjSA0zDgQXRkpXP5
+                lBw5BY32zXByEapmvnJPIW/XvaQ63ZdNr2jHibtEDCk1g7U+vRTMYNimdnENtx1lln2c4zGazNKw+OjP
+                /wCPEbt6/VK7/wC7O0ez7Dx+3Q/1RpfEj4gm+p4f243cx+3f8Y7VMU1LByu9ES/Mo8zPegnER2r/AJbp
+                JMnx7CgHw1c17T8OEvzWQkFOhIP1/d6/zxrO7/UN9z8tw6Jy5YqitEWQKB5ZzE48KY+3F8askmcjCFzb
+                biqlQK4icvy7syVenpknWMq2ASj/ADJjXXnuu03FJV0wh4f90qP3ocXTZv1GvcTtU4nur7bb4j+m4juS
+                P/juoz+3HIeUvtdcKySDlXC/JzJdpujeodo0yTbVt3xHFP3D6aJ3Nup2a/ImUP8A1BBQwdaD01Yrnsts
+                tWNvu10J6ZVMZj+ukYb7Mbn45+qv3PNxBFy3t1ss1iG+ZrVLpJNHjT1r2RS3lUgYaL5F/b4eQHCSTyVs
+                eBtHkZbTUVVjO8VS6iVzptiUPVayrnRiZdwuUoiJiMzOwGnyiYRANYHvHavkdipltYobuP8Ati1GT7GC
+                jEy+2v6lfYDm91Hsu/XN7sF3pJaW+ESW4oM/nimnIz6agMuuGVbotG6bGn5O1b0t2btK5IdY7aUgroh5
+                OAl49dMTAcjqOlWrR2jTtGhhJ2m6gIhrALmK62x2tby0e23BajS9Awp5gE9PHE6+O8i2Hle02u/cW3y0
+                3Lj06Bo7qMl4WBp91qCueWQOeWPA2of5hEwVAaCAlpQaCYfccQ2947aoAstP9SUGY/8ATI8/r+vpi/LM
+                ju0cDP6gFXIppK1+2ladcWtVcPwaMGDRgwaMGP/Sj76gzj7MMGjB9GF2230mHECgIOePujIuSmZBhEwz
+                B7LTEo/aRkTExrVZ7JSkm/WK1YRsczbkUXdv37tQiSKRCidVQwFABEQ0qq8skdvCpa4c0VQKliTQAAZk
+                k5AAVJyxb903G22bbL3edwuIoNvtUMkskrrHHHGgLM7u5CqqgEksQtOpAGJk3jH+3ys22oO3s188odK8
+                L0lW7eWg+OwuDns+1Gi6KTlipkx0zVTVuO50hOY6sUkcI5qJfTX+pERKXffD+2rWlta7hvDV3BwG9HTk
+                gOYD9KtTqCoocs8cPvdZ+ovyPkF9uvC+xdw1jxuhhmv2SJ5rs5rKsMUsUvpRKR+FcRuHkBLIEoCXb+SH
+                lJ8fPBGOSx3ceRbZ/rtux5Y+OwthKJZ3JMRCbJIiLWKdRVuenblpmT9MEhSfOGxiFCvZTrnG7cy4txqB
+                4Zr9HCNp9KEK7rQUowQ1XpQ6iD54h5219q3uN733v+obVxS7FrNEJRd7n61vHMrfdaOWeMtKCDUenqUg
+                GhwxRmz7ou73Znsfx54wwtvNwWORhcmXbqPMPzgUOxNQ1o2mgzbJCf8AcIGkTiAbU661nfd47tXdtp2K
+                OS2ANGaVi48iyKp0065mnnlifPBf0n4X262vO5XcuaHdifntraCNox5BJmmV2r0/6S+Yw3Be33B3k2uw
+                VSsMv2Dj9BYTAVrZWKbJRUS3+QgPbsa3Y9AxC7VA4CIDvTWJ3Pc7lu4upgvGjXw0RI/70J/biTuxfp3+
+                1zjtkF5Dsv565H9Vxe3lsT9IivkQfUoxo5bzD+T+WMZ1/wDLTIphAwgYY+JspqiXevb6UfaiSBPgFNeQ
+                8652wCm9vGWvhbAftEWMgT2g+yeCP0JeKbBHID/VvVyWp/xX9ce9B+bzyf2u5SUJypnnxm4gJmdzWTjW
+                ZROAVp6xH9nCsoX8T6rR865zB8x3GcAf3QR/+qPFKb2X+yrdwYLHhm3GY5Vi3W9b7Am4Y65xh9yhz2tN
+                2gbIkJhPLkSUyQOEXFmuLKlnJAEO/smLVkyMElVgDejA1BHYtNtXaz7t8kt1C3lvDdSA/eYiJgPoRKU+
+                NMas5h+mB2U3is/FOQX+yVX/AOkHvI6/TcXLn/h118cO68dfuYuLt+qtozkPiy+8BvlTIonuGIeI5Mss
+                rk5iB3OAjGsZdMe0SOIiKgsVOzqbaus+2ru/tF2Eh3WzNvKfFSXUfXRf2/ViHPc79Mju9xtrm/7fchst
+                82NVJHr+nZ3ZoOiwKZtVSKD8QeHww6BlPBPj68ruI05Z8fG+cINZmJLdyrj2XYJZDsh05J3Inaz0b6M5
+                Bv0DFqpHSaYInDZZAwDTWW3m3cV5raFtSXAFKSRmrKaVAJRqqRXMMPqyyirw/nfuB9rHKYruxt922HdN
+                LIYLy1b0J01UcRx3UTRsCa/jQjUtTpcYhG+TTxV5g8dl3tn7h0vkbj/d0kq0sHLTRiZoKTwe5ZKz78Zk
+                70IK8AQKY6QJmFq/TROoiIHA6RI78w4XunFJ5J5G/MbW2UT0owPXSyitKDxJz8K47te1b3ecW9xux/6X
+                LBBtncmzFbmzaYESgHSJYJGEZlD5M6Rx/hnJhmpZqoS0DrUdvwGoAOw+2tevwHWIChjRq/MfDEyXOklf
+                Gn25f4zxTowLqIBYUNMGjC4NGDH/04++oM4+zDAGw6Q4cpANTisC1r02Cu+1en8dITinDqkaQ+AxI++3
+                i444vlch5t5x5zeQkdjniZANTwMpcx0UoGAvOYYv5SRvd966Z0zKWfbEep9NSqhHTwhiAKgJ62t2u2rb
+                3udz5LuIUptwBGoAhKqWaXOpqgUkafmqMscuP1I+5/M49m4F2P4Ek53Xlk7o6wuyPNGrpCLcEMilZ5JQ
+                rhzoKKQ1FJIs+Qzzc8hOZV8yHH/hKlfVhYjmZJzbcYtY7SWNmvNZTKrMlFTlhCKzVu2zKpn7kY9kBHZ0
+                RD6xQKnRInL+5O+73fCz4ujRbcWKrIuTzUNARQq6KaZBhXPqMUvbZ7Fu2fZvj1v3V79z2t9y2K19V7a5
+                WOaxsIzENccsDpPHcTwsW/HjYqrgFFyDGzxR+3A5WZiQa3ZyQu+G4124/FGQGEMi2v7Kb9u5/wA9QzuJ
+                YvywVtPnBD94lcunC5DCIHTAwGAHbT2o5Bubrdb3PFal2rIukNIc881crU+ZNcHdL9S7tRwKK54/2i2V
+                t5uYI9EM0YNvZRsMgojlhjfQtKaY1C/2PTD+WE/t8/HNixJg5uawLwzlcDUqai8rk67pE8a4cp7HOlbF
+                sHgYdJGtBBFUHFK/u1s3au2PE9oZfStpJ2NNWtgVPnUUGXwzGOenPv1A/cXz4ND/ANzQbVb1JB2+OWCU
+                DqF9Qyuaj+4Bc+lMOIW1xR4WYajyEt7j9xusJu2ApCuhx9jqKdFKBQEoOJSSjivljbVETKmMI7jUd9ZS
+                vH+LWB1xbTaRAeUcXh5fLljQl93f79crctf90+VzwHLSb+/cH6hKV/Zj1lclcQIRQGK958bokxA7PpVJ
+                nGTTsENhKKXrEEohSlKar/mthjHyyW4PlRR/LFpaDuhdt6wffpVP9Za5Yk/STXH0Il4kZFAWREOOF7A4
+                +UGv0eLrhKv37AHoHSc+pXt6CA1pqi8ewX1Fa0tpVPmIz+8HFe35D3g484ksN25LZyr/AFR3F3ER9aOp
+                xovKfiy8eObGrkLs4nYdIq77xPL2Fb7fH8mVdQv/ALgsjYR4URW3r3HExdeSXhvFr0FX2W1UEeEaBh8Q
+                ygU+jGX7H7nfcNxO7hnj7u8iZY21CK6vby4iJ8millcEHxyGGhuQ/wBsjx5u5BxKcasx3th6cICp0Lbv
+                xJDI9mKODd3YiD5L+mXNFtzj8vcKrs5aiNDBQo6+3fs3szrJLtN7NBOTl6ja48/8oANMTN7dfqldz9kv
+                oP8A+mcY23eNkRPvWcZtbgUGXzSvMrEnNjpWvmDnhhPJ3EnybeIDIKWWYQLqseIZPwQaZkxHKK3NjO5m
+                BHAelG3wzTQ9NlHvtgMynmKKZhGiChz7hrXcNm5h28vYbu2umi24OPxULejK3WjRK+rPydaeZxPjjXd3
+                2w+93YBxfc9tsm5ZLaufylzApv7dcjIbe7kt/TjK01aoZa0ApQ0GJHPCbyF4L80HH3IXC/k7blu2jne4
+                bDftZiDZh/4/fCbVusdnk3FYOTKOYm5bQeJov12PrHcNRJ6iKiqAKejtrj/J7Tn+33my7xahN2MJXSSG
+                jbp+IgOoKQx6VLChIPlzS78e3PnXsx7gcf7wduN8muOCRX6yRyhmWa3BZiLG6ZHRp0ljQhpVRYnDCNwG
+                +9CMynj6YxPk7IWLbk2nsc3lc9kTBw7QKs/teWeRC6pfTE5BFdRqCtAEQADddRzuraWz3Tc7BhnC5H2f
+                xp1+OO+/EuSWfM+NcW5XYuGtL7b0mBHnJGrL4CpqTXKlca+H2fgGqMecdfHUf4YyYmun/dFfp8cJp2Ew
+                aMGP/9SPvqDOPswwaMGLhRpuI/KNCiFOtdg/iOmEr0PXCRMIVeev4BGY8/8AH04cU4rXXyFzxh83jP4/
+                QDhzJ8js+wF/3bKIrrIs3NvW1bYMk2VyOEimBhZ1uvmwTUgscDFODNMgFMfsIbKtjk3HdYJOH7VCPUvJ
+                kkd86KsWVXIrRBqBJ0n9oxE7vVs3AO3vK9r9zncS9CbXxrZr22toqIWa5u3V4zb6yga5YRtDEnqAP6hB
+                8xNN4k8I+Fvh/wAHOciX7dlnR98pRRTZP5IZHcMI+YlX7ht3urWsUXdVoeAMsicjKNjyqPXRTB64rKjt
+                IHYeN8e4Dth3C5KLOF/FnkPzseh0dBoqfl6EgmtTjh33e73d6feXzyHYtms7u9skkY2O1WiGVYkUUM0m
+                nW7StGA0zsxiQj8MKvVr3ld9zbaEE/f2tw2w+re3oAs2Tyrl4r6AgzLAU6P1cBYLBYk5IIkEvcktIOWR
+                jV+ZvTYcO3rvLagz22xWhe5ViA8lAjfEaXJ+sj6hiWfZ79LPkm+ix3LvDyhNusHgVhb2DFrqJjmY5/zN
+                qI1YDJlTVQ9HPXDBebfMD5Fs8qSCF3cmLut+DfCp/wCN4xIzxxDoJnGpEyHtojSXVAAES1O8OIl+IjrW
+                t/z3mG4tIZ91lgjcEaYKaaHKh1LWlMjnjoPwj2Q+2rg0FrZpwCy3W7h6XF4XkuGbKhcCQR1BzGlVHww3
+                ncN5Xjd653V23hdt1uVDCY69z3RPXCsYwmE9RUmZF6cfmGvXWKyySTGszlj8c8Se2Xi/HeOQC12HaIrS
+                2HRY9QUfQNRAxjPYTb5C7eztCn5hSg6oCGIGojWv0YvmhKaaZYuEMZM5FEjHSUTHuIdI5kjlH3lOkJDA
+                P56FhiU1WNQfgBhJo47mMwzrqiPh0/dTG+MZ8oeSOHXzeTxfnvMFkumZiGboQeQrpTjSAmJRJ3xKsotF
+                imWmxTIGIIBSmrla7vuO2rSw3ea3atdKFaH40IP8sap5d2R7P85b0+Y8A2/cHK0BmRm/5tYYfVh3Pjx9
+                xPz2xC8aNMqvbM5JWwQ6YLMr2hG1tXYCAB/mKM7ttFJmZRz6QfKLlo4T7v3azbZ+7vJ9uQRXsP5qID7z
+                r8/2rpH7MQ57m/ptdjeWXj3fDp7nj27OtFgtWVrY+RKziZ/Kulh9VMSW+Gvmh4Sc6GyeLbkWRxHkm52S
+                kTJYjzMSJG2LuO9TM1dQltXSqKltXei6TOJQZOCs3qgVo2MG+twce7gbLyQDbblY4LyUU9KUgaw39vzH
+                UT4igxy371+yHvr2IMnJrXaxu2wwM8rXu3LcSC1WJhWS6rDH6BH3tSl0BGbDphpXyl+KaW4S3hB+RjgI
+                i/s+KxLd0Pfd/wCLoc7kUsdmYv0XTi77MChzIY7XRKq3mYo3qkat3JlEf+3A6ZMK5fw1uMXVvybi0Zit
+                LOT1pIqVppyLIKMWBBowLAAVOJf+1/3WW/fTYb320e4S/F1JvNs9jY7gzKpnEpotvcMGjVHUUEDRRM7v
+                Svzj54xHIXK588Z1y9mlWLCEWyvkO5L9Uie4qgRqlxyK0iZmCxPkXKiKv7gAKiOtObjfnetyvtzhpFLK
+                xZ9PjX6a5eVMdX+0/CW7ZduON8HllMq2CiGNz1KazobotflIPQ/XjTRh3EvuEd/fv1/PVvRo80RKUzxs
+                oroquqvzHPzPicJqphMGjBj/1Y++oM4+zDBowYrKFflr213AduvsDfbfVMhSanrhoAdPybHSCOp/x/HE
+                ljwcZEwfwx448zPITmNIrqSst3auFcfRDUyIzs/LTbRa4z2jbQqpKi2k7tlSsk1XFBIgybKqqAKaZtbg
+                7cTQbJtfI9+kRWu43jWMGgLVUkopNQus0BahAGdDQY5W+/jjvOu83cnsR2B4pLJHt99+Zu7pgTojSGWK
+                MTSx1QSLCjSMimT53ZUFGYHDOXNbnXn7nllF7kjNFyLGjGzpb/QmM4107SsHHMSJzlbR8BEHX+mUlCNR
+                7XckqQ7x6epjmIAgmXXnKOS7ryDdWu9wuWKEkLCp+SNakhdS/K5FfvFatQHLE0ewPtx7edh+H2m1cP2u
+                J97UVur6WP8AGuZ9Kh3/ABWkaFWKkrFHIY0BooGdeNQ7ArQu3vA1KgHQaUARqH9+rFIyt+CvzQjoaaSR
+                8T1+3G/oljmWrxFT8JCT9gpinr0EKU9oB7PjpAt3H/8AjlRGetSGy8aV6ZeWHLNaSErUh181I/bQVxTq
+                oCD0NcPBB6HBTS4MGkqPPBi4QDbiAF9le7tD8KCbTW9QEMIwV8yQD9mFPqKKxRKz1zBIXLzBP8MVdxgD
+                tAQDuqI1IFQHpsYQruHu0jSM+b0X7MNJkNUhcK/iSgqPoY9fqOEGgGIJflMmdJUpgOImTWTOByLpnAQM
+                VQqgdwCUe4ghUB01dZUqrFpa1VwTGU+z71PpGPNc2dvcW5tb2zRrRgRIjESqwOWoqQQdZzKUOnEqvwz+
+                X6VnpaB4H81Z/wD17jvIjBXHuLslXo6B3Jx604gtGo4wyDJPAMtO27cSC/0kc/cn9dmsYjdY50lCChvL
+                gHOLiRE43yh1niuSIopMq5igRwATQ5/OzZGgPnjj573PZpt2wrd9+Ox9pJZ7ttzG+vbaHWigoxdru3Hq
+                BUeOin8vDEAQGYANWscnk7i1nhfknnvDscqKkbjPLWQLMiTmACnNFW/cUkyjO4AMJQ7WSKZRABGgh7a1
+                1qbe7AWW8bzb266Y0lZR4D6q+XhTHT7svzM9yO2XBeTSmtxfbXHKxy/6gQBugUZOpoAABjQ3sCob1Gur
+                RAF9Bcvn1Gvx6Y2VETpKs1WBIP04TVTFUkDqcGjBUda5Y//Wj76gzj7MMKACIh+NB+Fdt/dX46Y8sUSl
+                5SdA8uuEKNIQkbUcnFwBAT9vaU3Z7AEANUP213qA19+lCrKBJDC1PjSuE1q92YJlRhEMss69PH6cZr/u
+                FeH+3JcTFnniOPyXqORBtvvMRmveJYE9tJzKhSDRRw3h1DIEAwUIBzCWgjqvHd3P5ae1jv5I4Cw1IWOZ
+                pQHLLIeeMVk4hxt+WWHO5rJP+5ILSW3hmkALJDIys8aELqVWdFJFcyB5Ywr5jiAj8pRE1A3EDGERqNfb
+                vvX2hvtrzR6FQxQqGnPjTP8AhjKa3E5jnuSYrcE5dAxPiaVB/ZgAo17ewo/L8xgCghvQR7hoFQEdIwWB
+                Q0j6pvFfI/X/ADwsaS+voFvEIQvzOBQg186/wxSFPTNXtA3eAAJuv7qCAD8P79KrpKQGUonl5/v64prN
+                B+TcyOpf1AqlszUmgFfppgApQ2qYTf8AT0r+mmOY4iBDG2n6sKDar+BLchbnyWo/gcAbfzd3x6UGtBH8
+                RDVULJ9+jAU8fjhpeKMiJ2f1K5EkfN/l+v7MVCQQqAlEDjQQDag9KiHwL7dPa3uqep+WTR50z/fis0MR
+                mBMsqzCnyhgFb6RTPT9OEp1A/d3CIAA1DYR3CvtpTVKIySq3yAsDT6P24YQTNouwwNciCNPwqDU1xUJD
+                iYCGETV/bQdv0H2BpBrkPpmAfZ/tw2WO7N1DFPI7IehQ0Uf7wbP7MWxLQRCpdhEPb7Py0pEakr+ZUU8M
+                8vh08MVW9RGZflyNOhx9LJ06j3jOQYOTtX0e7ayDF0gYxF2r1i4TdNHKBw7RIs3colOQahQxQHT42VJI
+                3juQZFNRStajp5fvx47+2jv7G7sru2jmtZUKvGy1DqeqkHIg+IOR6HGUX5ety5HvO6r+vOTNK3feM4/u
+                W45hUpSLSkvLqndyDxYiYAX1XCyhhGmwV1Uupbq9dprieVixzq3j54tvGOMbLwjYbHjGx2kNpaWgYxqq
+                6RodmkZRpA/up0GXn1xiRSl7QExTCWoiYSiUDAWny7m27a6phJfuwqztTxoafuxkECII1kmWkZdmJTL5
+                SMq1rimhRL3AUw1TEQEabDXrptAp/H1qK+YH88UYyjxD0o2eQwswLUJBBoPLCVJ3V37aU9le6lPwp3fw
+                0tYaV1t6XnUV+2mF/MRel6tPlpSn+bp/5sf/14/IFEaiG9BAB/vrvtTUF9Q9N5P6VH8K5Y+y8sKygMKo
+                aNn0qK1PkKeJw6B49/FByS8hjmSnLCCIx/iK3n5Yudy1ezaQ/oa0mFFHMHaUYwID66pxm1UIov6Zk2rc
+                qhQUWA/+XrNuK8G3bkyRXkDxR7YSQXdiGFB4LpNfprTwxEL3I+8jtx7do5Nov1k3HnUkHqQ2UOkgKSul
+                rmQSardHRi0TGNvV0kKpFSHff/zX43nm8na+PvINZNxZWYNlBdWsa2LdfINXqBRBckhGQl8vrkatElQA
+                DGO27yAO4V21l0PaHZb1pEg5gf8AUUrVAsZAPxGvVSp/tyxDN/1NO5ey2ltvW/8At2nteLXDDTdSS3Uc
+                bo3TRJLarC7EZgCTPwNM8R+OZfCnOnBTLi2H85wzNvIrsv63ad2Qiq7qzr5tz1hQLNWzIOUW6yhGy4ek
+                6bKkKuzX+RQKCQxtXb/xvcNg3OOy3mM+PpPQhHWtCQ1AOtMs6VHmK9Guw/f/AIP7gOFpyfgt8FeKQLc2
+                82iO4t5FrlJFrkZUcAtE7UEi5joQOjPGP4yb48kt+5EgYq9EcaWRjK3mMjc9+vLfWnkf6/Ouvp7btZgw
+                TdMCOXb9Bs6crGFUBQboBsPqlreuKcLl5jeXdvBcrDDAoLMPmrUkUHhUUqRlTIeONV+7j3WWPts2Tj9x
+                BtC7vyfdLhljtnkEKrFEqNJKWXU+ijBYz6dHPRsjiz5N/GjfPjfyLYltTF3JZKsrJdsupy1L+YwK8KzU
+                moV4VncVqvWi7h6mSSiSuWrotFTCq3ekEAqUaN5Zwybht3ElvK00cqallddCnOhUnMeoCK6R/TQ1x7Pa
+                n7rNq90HHeSXqbbDtnJNvufTNkswmfQUQpJmFcxMxK69HyuCprkTZ8YHjtX8kGVckY1Qygjio9gWA3vY
+                ZRa21LmLLA4n2MF/T/pySMd9OZIHnq99TdwhSm+n8Q4mebm4je8SJ4QDUHV40yHw6k4o+7T3TXvti2Hj
+                O/WfEY90O5XDwFXmMSrpTUW1BHqfCgANTU+OHepL7bOx4V66iJPyDYzh5pn8jmPlLahmMg1WEAEibtg7
+                vhJw3MPcWpTFA1BD36zV+022W9Y5+Xqs4amkiIGvlQmv7MQ6tf1OO597ZQXm1e2u4lhkWqzI928bDzV1
+                tGVuh6HHCHPTwY8h+FWKJPPcLkOys8YihDMP9VydqR0lDXNakbLLoNGU+7hnB5BjI28LtdMirls4qj6x
+                DHIJO45LByftluvH9uG6wX6z2QI1ZadKn+rpnT4EDPPG+Pbv+oPw/vNy624FyPjcmzczuiYoUZ1eGST/
+                ANoOSjLKTkkZi1OagGtAdj8K/A9c/NLh/bnJm0c/xFq3DeLK907fx9M2c7cMBmbTnZWBYsXtyITYAi2m
+                XEWBjqlbGFv6te01BDVbYe1Kch2iHd7TfXEr6qIyKAWU5jVU0FfHGOd9f1ArfsJ3wvu1Nz2+hudjt0sn
+                e8FzIJEW6hjmuD6WgqTEJGAX1Ksy0+WtMNC2BxuvC4eU1pcVcgJvMZ3xMZfiMQXOlMMzKv7RmJC4EoVy
+                s4jxWb/Vg2OqCxOw5SLpCUxREDAI4Vt2wS3PJrXZ9wZ7e7ef0ANOWoV+YlqZeVBniZfJO73HrDspu/ef
+                j0kO67DDtTX8CxyqWlj0BljX0y41Z0bMlM6j5SMd7eQnxSK8Es38asOL5pSyEbkM+BgSeTtE8EW1hNd0
+                Hah1jx4y8iaUTIM2C3YCqdfS7f8AmrrIeUcEi4/uW02U24u0144VCFGkMWVBqJpQEmpNDQYj57cPeBuX
+                fjtl3T51uHD4dtu+MIzmCOdplmQWs1yuktGjA0hKkAdSKHDnVw/bIw1pEbK3Vztsy10XyqqLFW47Gawi
+                TtVEhVVkWq0neDVJyqimYBOBBESgICIBrNJ+z1pZpAb7lxiZ+mqOMAkfeoWYVA8PPrTEUNs/VJ5pvs9z
+                b7D2ClvXhALiCeeYopJCl/Stm01pQV6moFaYweW+3WxnFxUpJl8jGI3Z42NfyBGqEVbgquDsmizoqBKX
+                6YwGWFLtDYRCvQdeC77XbPDbTyLzeNnVCwWkNWoK0FHrnSgpjJ7D9RnuvdX9jay+2bckilmRCwF4SAzA
+                Vp+Uzp1Armcq540RxQ8HticmOP8AjbNUlzgxrjR/fzGSeLWLMxkK4loFSPuOVgiN3IubwZODGeBHFXLV
+                IggVYKVCmvHtXbPar2COSTl2ktXILGT1p/djOu8Hvn7g9uebb1w/b/b9e7ht1kts6XCG70MZ7aK4kBpb
+                uBoeRkb5jQo1aUoOs537YuOthmjKXJzos63YxdUjVF7P2K3hWK6xyHUTRReSF3NkVFlCEExSAYRMUBEK
+                hq/S9ldutBW45XJExzBaOMA/AEuAfjTPGnNs/VJ5hv18YNq7DPeXaJ80UE88rKFyJKx2xYAEgVIpXLDK
+                nkd4KW/wKyXYWP7fzxbOe0L3shS81p+2WzBqzgV0puRhjwrkGE1NJnVODEHAGOch+04B20oOtbcq45Bx
+                i8t7NN7Ny7pUaVQjr40JIOJ8e1zvzyvv9xLk/IeTcBk47e2m5iCKOUyjWnoRyah60UWWtyKgHMUr4Ybp
+                7j93UO+nb3bdtaUrWlO3406axmkuimr8Sv7P/DEoPVlpr0D1aU+FelenTxrT44//0I/IGMQpzBuYAEe3
+                +YKCI/mOoIXFVtSFHjn9hx9lsCKsskiiraDUHMOuVa+BOVATU06ZYnjyL6R48fbrM7gwK/XtubbcVYWX
+                Lc9tKGZycc9v6Zanv65Gr5qCS6EwilMvDGcBRRMxK1qQKSfmc7X2ut59piOsWy10kK1H0q7BvA5k6uuW
+                PnctY7bud+ofe2vci7MliN/nQxT1kiEVlFIbOAxvqRkX0kUJQq3TTQ0xCPwvkDKGLct2HknC8rMReWYO
+                7It/ZL+30XDmefXC8fops44jYhTuJcbgdOPplWQlU+rI4FM4CBh1HKx3LfI7+2O2PIsqS6lJfUxbPJm1
+                AuPHSepx3Z5/287a712/5FtXLNg2x+ItaMJFFvDCIrcD/qRsU/BZB91lAkQZimRHQ/NHkrze5D3ZDNOZ
+                UxkSQuG1F5Ilr2petjpWMFvLygolft4SFJAxDlIz0W6RTkEyomMmUKgIBW68m3zft/uYo+Rt/wDexODG
+                oj9MU8QAMqkgVz69RjXvYTtd2N7TcY3bcOzEccmy3wEl1Mbj1iRGHCOxejBUVnIBGYJINDUzIuKnGzM3
+                jp8R03G4KxrKXzzIyFZql+OoWCj49eVLlrIaDGMt0sglIuGbVWKxRBukDOk1FBD1GS5SAYVNb+4/td3x
+                Tg80mzbd6u8yfiMvyhtUrAZk0qEU9K+BGOIfebuTxn3H+6p5e4HKlsO1FjO9lHdKJdC2toJm1pGgMim8
+                lUKGRKqsiFgQhx6/L/jLlTyK+J6DYZfxxL2Fy7sOyGWRo637gasUZ5LMGP4x0wuNikpHrum4ReUIpJyC
+                ZUzCURepGAnciUNejkuy7nynhkNvulqsO/LH6wA0nQ61GioPiDnRqE9egxQ7Gd2ONe3L3XS7hwjlH5vt
+                LfX35IzenIgks55I2WYoVD6rdwFq0fqaFcLTXXDLn2vqSjXldySScoLN3CWAmiSzVymZNds4RyDCJroO
+                ETgUyayRwEpiiACU4do6112Yjto923RYCw/B6GvUMA1Qfj/sricn6sEol7c9qLxSot5NxlamRFGhBBBG
+                RyNTTxw4dyC8QXALm1zez1MuuZ86hyDnrhSuLImDrRkseO56z12tvwceqinDSjJadBqWOQbLHMJTiUFu
+                41CiGsy3Tg3GuQbvdz3e83Ee5lySiSkAU8lFafHEQ+De7Lvh2g7U8O26z7T7TLxCGALb311ZrMHUr8ru
+                5rQtlStC1QKZjGO+WrlVifx9cH2njNxvb2T7puq88Ot8dQF331GSitusMdyDoSXFNnvaRQbx93XACaqr
+                ZFlGdyUaoqmRQUU0k0j+LuBvm1cb45JxmIzzXUtqYlMhdloaguWZSGbqAa18a5Yzj2Y9qOU+4LvvF7i9
+                zO2bfs23bmt1JHZpDEj3cITRClpHIHgjpR2YoVc1zJc43t4q8zp8cvBrbOfHEA4upliSAzTfL622rpOP
+                eTTGHyXcS0i0aOlKppOjsQOZHvAKqAUBpXV17e3ibV27tNzlzMPrMfo9Rsuh+jofoxgvvQ4tec69727c
+                RsikLbjFtkCMyhyZZLGEIwBK0DvSoJGRoxHXFXJnhfjHnRkbhF5QuIacZO3AwyHiO48htYxZqyNfeNI6
+                4o8zqYkUDAl6eQsVnSWaPUTAC67ZMyJ926WmblsFhym84nzLZJgtLhJJKChZKf8ACQVIHXqK0Hn4eBd7
+                eSdhOL99/az3ds5hYSW13bWdHL/lL06YysboJh+VlEepEiKxCRnfX+IxHGX3DIgHODxoAUoCJpmoBQAK
+                UoZgsPuoHQBGodPyrrG+6hFzyXhkanIPqB8yJYwP44kJ+ncGHt891ojGvcXtHXPoF/0y9C0r8oJJ6g1y
+                zw6/5bMWePXKtk4aY+QjLsriG1Ya77ocY1exc28iVJy4XURGoz7JwZpbdyGXK1jUkDlASJAXv/cNaBmv
+                OrTiksGzryfcJ4l1SaSjSAk0WtdCsaU09aePxxDr2m8g78bPvXNB2B4ztu77jJFCLxbyK2dY0V5fSKfm
+                57cAl2cHQWqAKgADEfPM3Fj7euExJkuaxLy5uifyfE2Lcz/HkC5vGWcIy95NIl0vbscs2WxozSdJvpQi
+                aQkFRMDd37g661Zuu39sINtvLiz3m9k3BYi0amScguPug1jpSvUEgY6EcH5t7+pOacOtOX9oONRbBLfw
+                rcSJbbWrLblwJGUpfOwYKSQQrGvQHEbKFIQ0vCAoiioYZFiY4nTIaihnCHqDuFSql94fMAAG9dawsZZn
+                uLJoL6RaypUam/uGXUdcdQ+VbLtX/b/ILiTYbF5v9MudTtBCzEmBs9TKT8vQeQAp0xN5+5HAP/rwwX6p
+                AOUM047EpDABihXHtxB2mAagYA76hXcB6dNSF7rssfGttd7hkkEy0KlgT8mea+efXHC/9Nq0hufcLzyK
+                9s4biD8hNpWREdc7pR0cMARXI08TiDuBCG7UwApBoJTgUtAE4iNRoFA3KP8ADUdVf83cxyyzs7gZVJP/
+                AJsd9INn260VbSxsYbWMirrEiRhpOmohAoJ05VNfpwVHv6BX9lKBT+TprzVl9Pr8/qfs1fyx6/zQ0+p6
+                X+Sn/JX+OP/Rj9gUwiPaUdhqNK7f9QiUDGCnwAdQTkMiB0y0t51qMqZY+y2VJ3SSS3ib1ozWijrQVr51
+                6AdMSRvFt5msW4HwQ84W82LMk764+OmU3AW1csfDBdqsDal1AuM9YF7WiZUjqXs/6h8udquz9Z03Bc6Y
+                onIUpybb4Xz2z2zbk47v0aNtJVlZm66CMl+8ARnTpkK9Tjlt7uvY/wAm5tz21769j91ituZRCKa4tyWW
+                R7q3CelLbiK2kHrsV+czSaWKp935ietcU3N9uFxRyRH8mcfXldd2Xpbbpa4rJtWSTyffba3Jo5juGbq3
+                7JlYpskhLRqpv+zO8UN9GYCmAxTlKYMgsb3tPtk7bltk0ZuEbXHHUERvXqorWo6CrHL7cR15PtP6j3dP
+                j54Byfjt/a7NfD0J5ZIzGJo2FG/MEaz6Z6v6SAmmWWWOTcieT/j5z48jmDMp8mJF/h3hnxdXf3VYFqzM
+                A/uu5b/u9o7bPYta8I+2m0uVs5uGZatFFG3eq0bR8eKPec66g6xq55Rs/JeX7Hf7wyR7ZZhs2pUsGVhW
+                lRpqPhQVGeN+bX7W+6Pty9tXO+MdtbJ967xcrkjtbyS2FYLe3kjmhcQs6QSgLDK2kyq/4rk6QtAuwPJb
+                598qTGY7ZhvHtl1zbuH4K0ETXHdDywmH114XrIvHDl4mVnekOpIs4+3Y5FFEvammVZU6g/NQB1dObd0b
+                v/UreLid7G1po+ZhnU/DOopn4DGO+1j9PHZG4huu9e4XjM3/AHHLcmKK2cgCOKIAByQAS8jEk/OVoFoF
+                NRi740/P3k+EzDc0P5CctOrixHO2eopbN2MbFjiPLJvKHepum5XMfZsOi+kYq5o1VZucwkU9ByigIAUD
+                qCBxDunL/qi2PJrxRbN0kYZ18K0Picsl+nphfdR+nbsUPC7DdewPFGfkNtdAzQajWS3ZWDaPlI1o5jYV
+                ZRpDjNioxmHEvm742+Kvk55a57s3MDhhx3z9i6Nl7b+lx5exT2/kiYvFjNXpaP8ARU4ErxvHfXsl5Foo
+                CYIFRdlRAwnIIarbLyThuwc15BeJfqllcxfIaUVWyLKv0mp8ifLGC94Oynud7se2rtDwzfe3d9dcy2C8
+                mjnLUZntyGS2eutqlIhHGwIUgqWC6CDhl3mnywSl/JTmDl7xcyFKsE1crxV94tvyPav4WQ74+2rfjzqr
+                Rsm2bODMHi7Nds4aOkhTcICZNQhyHENa55LyG3XlL75sV1IXZg2oUoaUNBQ1ofEeWOgvYzs5Hc+2Hhva
+                fu3tCGEbWsF5YymrIykMAy9AyuqsCDkwB6jD9GdvJh42fJpwXicdct7rdYR5HNYpeQhnTawLuuNrjnLk
+                YyM1Rue1ZyFipP6mwbtOmUjxkKhV1Gap0FA9VJJXW0t15jxDlXF/yu/XyRbkqErShYSBTQitQdRrllll
+                kaHHOfhHtr9z3tX7/nkPa3il3vfBDIqSGE5Xdg8gZoZKrDS4jAqrACMuozKM640DgjyJcQsceFDI3C65
+                cqG/39eY/wA7WjGW6ws+73cPLy103lPvLaWZz6sIjFEZzbR2iskK50TpkUooQpymLrw7TyPaNu7e3Wz3
+                F6hv9EwSM1qwZiVBpTwNRSgA64zvup2C7y8w96vGO6238Qu4+Hevs8st0wCLB6NvCkof7xDxurJp+ari
+                gr1xyh4XvK2Tgpe0riXOEtLOeLeQnSsq/cNW7ybd4uvsjUiZbwh4lqVR8vEXEmgm1lW7YplAOVJwRMxi
+                Kd+L9uubS8WuY7O+ZRtM9NRNfwvH5cxlnmMyTnjfnvv9pMnfDZIufcEs0fuftqCBgCR+et1JPpyUU6nR
+                nLREtGq6nBqGFNyeYrn5xY5XcouDmSMJZCeXVZ+HZRNxkOTcWrccIrCpjke1LgMoVrLRzZxJCMVFuFRB
+                sVUfkp1MAauXPuRbJufI+LPt14JbO3zZ0INCZUYg1oOi16da4197L+xPdDtZ2X9wPHO4PGJLDct2UJaq
+                /wB6UtY3MNVpUFQ8iqPGpOXTDpXMfnx4L+eVv2RbXIrL9/z0Tj6YlZ+2U7atrLFqKN5KbYto9+q4cRcC
+                U71JRqzTApDCJS0qHUdbC3jk3bXfUtot33uCX0SxGokH5qAg0HhT+dcQ27SdjPfJ2Svt43PtzwO7tbjc
+                EVZTpDh0RmZMtQGRdiD8ccEhZP2wo0Ab9zYBadvzSecRL8K0gxGldYyLfs0zgpfQtL/SNR6+FMuuN7Py
+                D9UBIm1bHdmMDMeivTy+/wBMRmpEYJje8gpCisW12d1PFINVYqp3BrcbyphjF1AWKVyZT+nFTEwGKChh
+                Hcta60q5iN8j2iKFScEaf7Q/Xr5fvx19mtNyueI3lluVo67tLtDqQw6yvbUI8/vnOgriTn5rvJVw/wCX
+                vDrFeJsBZKd3pe9tZQs+4pmJeWddkCVvDRFnTUU+dpv5iLZMHJkXzxIvaVQBNWobBvuTuJyXj2/bPtdh
+                ZXySzRMGcD+n5aeNKZ5Y5N+xf2594+03enlnK+c8OmstnubSRIXkpod2uFYBaGp+QFh5CleuIsSgUOIh
+                tvWoez3/AKa0k+l545IwF0joMdi5Iit4ZQajTT6D5j4jFvb36q0/n/HBqXr4V/2Y/9KP5sAEMAiBg/cN
+                BoO9elaDQNQVQyjUJRlj7KGVFFkVmcTqc2CkqRXxz04QTVE1C9QKFQrWpa/NQAD5qD10jQxPTW2Xj/Dx
+                88Pk0GeSX8ua0FDqOfmdIyOCoAG4dKdh6iNKUEAAvQAAd/x0wBUYaAaD4nChIoi8jI1W6PUtn1+50H0/
+                VgAQApQoYQ7RLWpqAJjCIfqAjX31HTiiysFJ0w/1H/FP34ph4dKg27M4yrVgNR+7TwP8OmEqI0Ae6nyg
+                HdWgCXYKAOxe0Ng92nmGGIFbaTV+3+Jw+MISdaMnhU1pXx60GFERLWob1/cBq9xqUqFNqCGw6pyUcRrI
+                nz/0np/LDvRVW13Aq6uPmDGjGnUgfKB8MxhaiUpTbVqNA2EQEKhU3t6DtXVR/SlAjuUIkHjUiv7sAL2q
+                LcpLqiYkBQK0qcyaV6dRUYUDU+YKFGnuA3cbYBGhg2Af8NNdv/bgLCvx/kcPRTrWdJVib6A2v6jSleuV
+                cUj37GE24CJgLUKBUN6B76+zTRHbyhlmBTSNQzObDoPD/HhigUvvUS41r6hcZVGS+LfEj+2meKzCJxAw
+                UARpUKgO4BQDB/LsNaBppVp19aWQ+opyH+P5YrvGJJPTiKBSPxEqGJJ+61TmtDnQZHphKCYO0O0PTDcw
+                iAbAIhUPeao9Q3071GDIs8ZNqR18m8qgeXxwwKtwz2q0DwDMk0DAZdDkczXxwpTiAfKIGAQoIHAoABhE
+                BAQrUDUppHYKRCkZNehzOKkU0rQl1kV6mhDqqUPgaH732YsmGojWo0EfZUOu9PhquIyAKsK/QMUixBIJ
+                NfguX1Uyp9GEqPs7hH2AADUfhtprpRWPqAZdaDCFyAdKszeWk54uF+YRASiIgAiImMJf2hToPuANOYiO
+                8E0Z/AKeHnQYdFSdJIWhrImZJYg+YFDha/IAgO4D29tNigXcBAR+I/kOqEduIy8iyVdnNc60HhlXAJNd
+                u82n560Ap0A6UPj1xRQShUQ6hQOvvH311UVaHrgjd4YFkuOrYTtCtPhX86V07Xlq8P8AAxV9EV0Vy6/x
+                x//Tj71GlKjT3V21Bk/Nm2Zx9mAyXSPu+XhgqOk0jyGFqRmDngqPSu2ig8sFctPhhajSlRpWtK7V9/46
+                CAQQRUHBU0ArkDX6x0OEqI7CI03Hr7R6/rpqIkf3EA+jLA5Mo0yHUvkcx+3BUff06fDTz82ktmR0+H0Y
+                bQFdBHyeXh9mDQ/4hq/zH454VQEBVBRfIZYOvX2dPhpVZkyRiB8MsNZVbRqUHT0+H0eWDTWVW+8Afpw/
+                xr44Kj7x0UHlhgRFkeVUAlYAE+Jp0qepp4YK/wAdOJLJ6bGsda08K+dPPClVJYlRUjP44NAJUgqaEYGV
+                XFHUEfHBpDmanrh2FARAQEBEBDoIDQQ0hUMCrAEHCqzKwZWIYeIwVGojUaj1Go136/roAAAUD5fLDerv
+                Ifvt1PifpPjhKj79AVQagAHAMhpH3fLCiIjsIiIB0qOloMD/AIgCv8yjwOeEqPv0lBSlMsLU+eP/2Q==
+            </property>
+        </structure>
+        <structure>
+            <property name="name">Carnet_portada.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEBLAEsAAD/4QCMRXhpZgAASUkqAAgAAAADADEBAgAUAAAAMgAAADIBAgAUAAAA
+                RgAAAGmHBAABAAAAWgAAAAAAAABBZG9iZSBQaG90b3Nob3AgNy4wADIwMDQ6MDc6MjMgMTQ6MjA6MjAA
+                AwABoAMAAQAAAP//AAACoAQAAQAAAGgMAAADoAQAAQAAADoJAAAAAAAA/9sAQwACAgICAgECAgICAwIC
+                AwMGBAMDAwMHBQUEBggHCQgIBwgICQoNCwkKDAoICAsPCwwNDg4PDgkLEBEQDhENDg4O/9sAQwECAwMD
+                AwMHBAQHDgkICQ4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4O
+                /8AAEQgAeACiAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIB
+                AwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYn
+                KCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqi
+                o6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8B
+                AAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYS
+                QVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZX
+                WFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/Puiiivws/2YCiiigAoo
+                ooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiivq34CfsefFn48iDV9Os08
+                J+B2fD+ItXjZYpR3+zxj5pz7jCZ4LCtqVGrXmoU1dnj5nmuXZNhJYvH1Y0qa6yf4Lq32Su32PlKup8Me
+                BvGnjXURaeD/AAlrHii4LY2aVpstzg+5RSB+Nfvp8K/2CvgF8OLe2utW0N/iT4hjwWvvEWHgDeqWy/uw
+                P94OfevriWfwz4L8KIJp9K8I6HAMIHeKytox7Z2qK+ro8P1WuavNR8lr+O35n8zZv44ZfTqujlGFlWey
+                lJ8qfpFJyfz5Wfzv+H/2Gv2oPEUaSR/DKbR4WGQ+r6jbWpH1VpNw/wC+a9LtP+Ca/wC0XcRq09x4R08n
+                qs2tyMw/74hI/Wv1p8Qftafs2+GZ5ItT+MXh+WZCQ0enztfNn0/cK9eYXn/BQb9l61lZY/GGqX2D1t/D
+                t1g/99KtdX9m5NT0nW1/xI+Y/wCIg+KuYe9hMttHpahUf4ttH53z/wDBND9oSNMxat4NuD/dGsTKf1gr
+                ita/4J9/tP6RA8tv4P07XkX/AKBuu27MfosjIf0r9PIf+Ch37MUsm1/EmtW4/vSeHZyP/HQTXb6L+2z+
+                y/rjIkHxXstPkY8Lqdjc2v5s8YUfiaP7PySeka1v+3l+of69eLuE9+tlzkvOhUt/5K0fgb4v+Bfxk8BJ
+                JJ4v+GPiPRLdM7rmXS5HgGO/moCn615QCD0Nf1heGPiH4C8bWqv4P8b6F4pjdc7dL1aG4OPdVYkfiK8z
+                +Jf7MHwM+K1vOfF3w805dUkH/IW0uL7Deqf73mRY3n2cMPasanD/ADR5sPUv6/5r/I9fL/G+VGt7HOsC
+                4Pq4PVf9uTs//Jj+Yqiv0x+OP/BODxt4Rs7zxB8HtUk+IOiRgu+i3SLHqkS/7GMJPj0G1j2U1+at1a3V
+                jqdxZX1tLZXkEjRz288ZSSJ1OCrKeQQeCDXyuIwtfCz5asbfr6M/pbIuJMl4kw3t8trKolutpR/xReq+
+                6z6NkFFFFch9WFFFFABRRRQAUUUUAFFFXdNsZdT8RWGmwHE13cxwRk9mdgo/U0Eykoxcnsj9Gv2Hv2QL
+                P4pyR/Fn4mWJn8AWlyU0fSJAQuszIcM8nrAjDbj+NgQeFIP6c/Gr9pz4O/s8eH4tO8Raklxr0duo0/wr
+                okaPdBAvyAoCEgjwAAXI4+6D0r5h/ak/aTsP2Xfgf4Z+AvwiMEXji10OC2a8CKyaJbBAqybTw1xJguAe
+                gO8g5UH8/fgp+yX8af2ktel8X3ksuh+GL24Mt54t8Ql5HvWJ+ZoUJ33DZ/iyFz1btX3Ma31BLCYOHPV+
+                0/P/AIH3Lrrc/i+vlf8ArpVlxPxXifq2XJv2NO9nKPRre3Na7snOfS0VFnf/ABV/4KK/Gzxtc3Nn4HFp
+                8LtBYlU+wKLi/Zc/xXEgwp/65ouPWvkyDS/jD8Z/FLXNvYeLfifq0j/NOIrnUWBPq3zBfzAr91/hX+wh
+                8Afhrb211qPh9viN4hjwzah4kxLEGHdLYfulHpuDH3r6wub7wx4L8LR/bb3SfCOiQrhPOmisreMD0yVU
+                Cq/sjGYr38ZV+W/+SXyOf/iJvCnD3+zcLZYm9udrlb/CU5f9vNM/nn8PfsKftQeIIkkX4bnRIW6Pq+qW
+                1sQPdC5YfTbmvTLP/gmn+0NcIrXOoeD7DI5WTWZXI/75hI/Wv1b1/wDa8/Zq8NTSx6j8YNCuJkyGTTXk
+                vjkdv3KsP1rzG8/4KF/swW0hWLxRrF+AfvW/h24wf++wtH9m5LS0nWv/ANvL9Cv9f/FfMPewuXcselqF
+                R/jJtH5+T/8ABM34/wAcRaHXfBk7f3f7VnX+cFcTrP8AwT1/ad0qCSS28L6Vr6qM403XoCx+glKE1+l8
+                P/BRP9mWWQK+t6/bj+9J4elI/wDHSa7jRf24P2XdcdUi+KVtpsjHAXU9NurYfizR7R+Jo+oZHPSNW3/b
+                y/UP9ePF7Ce/Wy9yXnQnb/yVo/B7xP8AAr44/De5+3eIvhr4n8OiA7hfx6fI0SEdxNFlR9d1ejfDX9s7
+                9oX4YzwQWHjq48T6PEQG0rxLm/hIB+6Hc+an/AXFf0K+FviV8PfG8Ct4N8d6D4nDDITTNWhnf8UVsj8R
+                Xn/xK/Zn+B/xXtp/+Ex+HmmvqUinGq6fF9ivVP8Ae82LBb6NuHtR/YtSn+8wdb+vVf5C/wCIs4DH/wCx
+                8U5UpLrZXa9IVFdeqnc+bvgd/wAFC/hh8R76y0D4g2w+F/imYhI57ifzNLuHPGFnIBiJ9JBj/aNb/wC1
+                z+yL4e+Ofw+vPGvguzttN+K9pbedbXNvtWLXYwuRBMRwXI/1cvXOASVPy/Fvxx/4Ju+MfCtleeIPg3q0
+                nj3R4wXfQ71Vj1OJeuI2GEnwOwCN6BjXM/sj/tg+Jfgx4/s/hb8Vrm8m+HTXP2QHUVYXPhuXdtzhvmEI
+                P34z93llxgqx9aq/7pmcNHtL9e3zW3VAuHMvf/GSeHuJvOlrKi227dY2fvWf8srqX2ZXSR+edzbXFnqN
+                xZ3cElrdwStFPDKhV43U4ZWB5BBBBFQ19p/t9+C9L8I/8FFNcvtFWJdO8T6bb64BAQYzJKGSVlI4O942
+                kz/t18WV8ZXpOhWlSf2XY/rvJMzp51lGHzCCsqsIyt2bWq+T0Ciiiuc94KKKKACiiigAq3YXkuna7Zah
+                b/6+1uEmjz/eRgw/UVUq7ptjLqniPT9MgOJru5jgjJ7M7BR+ppq99CJ8vI+bbr6H6k/sq/s5Xv7SPxi8
+                QftJfHC3Oo+HtR1iW50/SpARHq04f5iw/wCfaLAjVP4im0/KpDfoN8bP2ovg9+z1osemeINRW98RR26i
+                x8K6IiPcqgGE3KCEgTAGCxHH3Qa+Yv2p/wBpWx/Zi+Cfhv4B/B9oYfG1rokFrJeqoZdDthGFV8dDcSYL
+                DP3Qd5BLLn8TNQ1G/wBX1271TVb6fUtSupWluru6maSWZ2OSzMxJYk9zX2dXGwyuHsKCvUfxSff9fyXr
+                c/kPLOEMb4i4tZxm8nSwEdKFGOj9mtIv+6mkru3NLpaKifdvxU/4KI/HDxzc3Nn4LktfhdoDEiNNMUT3
+                zL/t3Ljg/wDXNUr4h1/xN4j8V63JqXijX9R8R6g5Ja51O9kuJDn/AGnJNYlFfKVsTXxDvVk5f122P6Zy
+                nh3I8ipKnl2HhS80vefrJ+8/m2FFFFcx9MFFFFAEkMsttdx3FtK9vOhyksTlWU+oI5FfTnw0/bH/AGg/
+                hfPbxaX48uvEWjxYB0rxGTfwFc/dDOfMQf7jivl+itadWrRlzU5OL8tDyMwyrLc1o+xx1GNWPaUU/uvt
+                6o/eT4Hf8FD/AIZ/ES9svD/xHtB8MPFExCR3U0/m6VcOeOJjgwk+kg2/7ddV+1v+yR4d+PHw6uvGXg61
+                ttO+K1na+dZ3kG1YtcjC5EExHDMR/q5eoOASV6fz41+gn7Hn7ZWt/CTxZpXw++Iepzar8KrqUQwT3Dl5
+                dAZjgSRk8mDJ+aP+EfMuMEN9Vh80hiofVscrxf2u3r/mvmfzTn3htiuHMT/bvCE3CrT1dJttSXVRvq0+
+                sJXv0aaSPjjx7418U+L73w1Y+LvM/tHwtokfh6ITKVlWK3kkKpIDzuXfs+iCuCr7U/b88G6V4U/4KJ61
+                qGiiIad4n0u21weQQYzJKGSRlI4O94jJnuXNfFdfNYmnOlXlCTu07XP6I4exuGzHJMPjMNDkhUipcv8A
+                K5atfJ3QUUUVyn0oUUUUAFFFORHkmSONGkkdgqKoyWJ6ADuaAG1bsLyXTtcstQt+J7WdJo8/3lYMP1Fe
+                /wDh/wDZJ/aR8UaDDqekfCDXTZSoHie8SOzLqehCzOjEfhXnfj74RfE/4XXcMXxB8Dav4UEzbYJr60Ig
+                lPokoyjH2DGt5Ua8I88oNLvZ2+88GlnOS4uu8LSxNOc9uVTi5eeidzC8b+MNb+IHxe8SeNvEdx9p1vWt
+                QkvLtx90M7ZCr6KowqjsABXLUV6v4F+Bfxf+JnhS413wD8PdY8U6PDcm2lvLKAGNZQoYpkkZIDKTj1FQ
+                lUqy0TbfzZ2VK2AyvCx9rONKlG0VdqMV0Su7L0R5RRWz4h8O654S8ban4b8S6XcaJr2nzmG9sbpNksDj
+                +Fh9CD7g1u+BPhv47+J3ii60TwB4XvvFerW9sbme1sEDPHEGVS5yRxuZR+IqVGTlypa9upvPFYWlh/rE
+                6kVTtfmbSjZ7O+1vM4mivo3/AIZE/aX/AOiM+Iv+/Cf/ABVcr4o/Z6+OXgvw9Pq/ij4UeJtI0qBd095J
+                pbvDEB3Z0BCj3PFbPD14q7g0vRnk0s+yKtNU6WLpSk9kqkW38kzxyiun8HeC/FfxB8eW3hjwVoV14k8Q
+                XCO8FjZqGkdUUs5AJHRQT+FbXj74U/Ef4W3um2/xD8G6n4Rl1CNnshqEG0ThSA20gkEjIyM5GR6isuSb
+                hzpO3e2n3npyxuChilhZVYqq1dR5lzNa6qN7taPW3Rnn1Fd34C+GHxA+KOu32mfD7wpfeLNQs7cT3UFg
+                gZooywUMckcZIFSXXwr+Ilj8dovhjd+Eb+Dx/LKkUehsg+0s7oJFAGccoQ3XpT9nUcVLldn5ESx+AjWl
+                QlWipwXNKPMrqP8AM1e6Xm9DgKK+i/8Ahkb9pf8A6Ix4j/8AAdP/AIqj/hkb9pf/AKIx4j/8B0/+KrX6
+                tif+fcvuf+R5X+sfD3/QbS/8GQ/zPKPGPjzxB46g8JL4huPtUnh7w/DollKcljbQvI0YYnqQJNufRRXF
+                17Pon7O3xv8AEfiTxHo+hfDPWtU1TQLtbTWbaCFS9lMy7gj/ADcEjmuk/wCGRv2l/wDojHiP/wAB0/8A
+                iqfscTU97kk/kyY5xw7gYqgsTSglrbngt/e2v1vdeTPnSivol/2Sf2lI4Xkf4NeIlRFLMTbrwB1/ir53
+                YFXKsMMDgisp06lP44teqaPVwmZZdmHN9UrQqctr8slK19r2btezEooorI9MK/X/AP4JsfArw3qHhHWf
+                jd4j02DVNYi1RtO8NrcoHSy8tFaW4VTx5hLhFbqoVsfer8gK/cr/AIJnfEDRtW/ZQ1/4d+ekfiPQNZlv
+                WtiwDy2twFKygdwJFdT6ZXPUV9BksacsfFT7O3qfhvi3iMww3BVZ4RtXlFTa3UG9fk3ZPybWzPnz43f8
+                FFvinZ/tEeItC+F1to+jeFNH1CWyguL6w+1XF+YnKNKxZsKrFSVVRkDGTmvS7H9v74L/ABC/Y4uvDvx8
+                8JXmo+Ib6OW01XRdE03zba4XA2XETyuBExzkfMWVlyDjFfDnx6/Zi+MPgj9qPxbZ2ngDXfEWhX2rz3Oj
+                anpGly3cNzBJIXT5o1ba4DAMrYIIPbBP0x8N/wDgnJNr37J3/CXfE7xfffC7xewmu2s7i0jmt7GzRAVa
+                5UsrI/Ds3z/KpAIyDXbTrZxUxFSKV97qW342Xp38z4rH5T4VYPI8FiKk1T1g4zpN+1bte75eaT11el4u
+                1rPQ/NS00eXxB8SLfQfCtrc38uo6kLTSLeVR58xkk2RKwXjccqDjjOa/pB8KJ8P/ANkv9kj4W+Cde1BL
+                KG41G10U3SKP9K1K7YtLM2cYTfvYsfuoB6CvzV/4J3fBK18S/tTeIfijdH+1PC3gyZ7bRLt4Ci3t7JkJ
+                KFOcbIsvg8q0kfpX3D+0Dcfsg/FXxhYeHvjB8WLGy1TwtczwjTLfxKbT7NOxUSeYqg5kGwLk8jketdOV
+                UZYfCyxKspS0jzOytfX+vI+e8Ss2o55xDQyFqpPD0Fz1fZRc58zj7qt5Jq97W531R8p/8FMPgr9k8Q+H
+                /jlolpiG82aT4l8tekqg/Zp2/wB5QYyf9iMd686/4Jh/8nt+MP8AsTZv/SmCv1Xni+FP7RX7I/ijwL4d
+                8YWXjfwxcWH9kXGo2t2LqS3nWNWildu8qkRyZPUjNfmZ/wAE9fCes+BP+CmPxS8G+Ibc2ut6L4curK8j
+                I43pdwDI9VPDA9wQa2r4aNPNqVeHwzfTa/X79/vPMyjP6uM8McyyXGXVfCQslJNSdNtcuj1934fJcvc+
+                p/2mfjH+1p4F/aSTQ/gr8N5PFfg06RBOb5fC898PtDM4kTzEYDgBOOozXsH7Lvjz4/fED4b+JLn49/D+
+                LwXdwXUcekt9he0e+jZW8wPA7MQFO3DcBtxGOM18+/tNftqeOP2ff249O8F2nhvSPEPgj+x7W9vYZVkj
+                vW8x5BJ5cofaDhBjKEZ619I+N5dQ/aR/YTOsfAr4nXvhS71iyM+m39k6xmZwpD2dycF4TuyjFCGRhn5h
+                wfUpVIvF1JQqylKN/c0t8rn5vjsFWpcN4GnisBRoUsQoWxS5nJdbz5dm1umndXttdfnf8F9J8KaH/wAH
+                IfiPSvBCwR+G7e81VbeK1x5ULmxczRpjgKspkUAcADHav02+PfwX8LfH74Aax4B1uSG31WNRdaRqAAab
+                TLrDCKXHXY2GVh/Eu4dQCPxq/Yb0LW/DH/BX/RPDviWwn0vxBp0Gq2+oWl0MSRSrayhg3rz36HqM5r67
+                /au+PWu/s+f8FWPhz4s08SX3h+68GRWviLSVfAvbU3k5OAeBIn3kb1yOjGvMwVejDL6k60fdlNprsnb8
+                j9E4tybM8XxvgsNlVe+Io4SEqc76zlTc2tb29+3W6beujZ5//wAE8vBXiT4c/t6fGjwT4t09tM8Q6ToC
+                293C3IJF1GQ6n+JGUhlYcEEGsfxr/wArPWif9h7T/wD03pX6seE7X4feMte0n42+EvI1C71vw6tnDrFs
+                cfa7MyCVEkH95HBHPKkup9B+U/jX/lZ60T/sPaf/AOm9KrEYdYXCUaad17RNPybbRy5JntTiPiXNcdVp
+                unUeBqRnF9JxUIy87XWieq2ex+gP7S/iX9pHw5onhB/2dvCdp4rvJ57ga6l3BHIIECx+SRvljxkmTpnp
+                27/Jn/Czv+Cmmf8AkkGjf+ANr/8AJdfQ/wC2B8Rfj/8AD3w54Dm+A2gXWu3d9c3a6ytr4fOpGNEWIxEg
+                A7MlpOe+Pavhr/hpT/gohn/knmrf+G7f/wCIrbHVoQxUk51Vt8NrbLY8nhHKcXisgpVaeFwE0+bWu5Kq
+                /efxWdvT+7Y8D8P/ALZHx1+GXxg+J2pWcGg2viLxLrn2rxDDdaWZFjuoQYiqASfKBggjJ571+vH7GXxp
+                8afHf9ljUvGPjs2H9rweIprCP+zbUwR+UkULjKlm5y7c59K/no8Z2fiey+KWup4z0m60TxRNdvc6jZ3t
+                o1tLHJKfNOY2AKg78gY6EV+33/BM3/kwTWv+xzuf/Se3rysmxGIljfZyk7WejP1DxWyHJMNwisww+Hpx
+                rOVJc8V0tayf8tkkvJI+OvH3/BQj9oLRfi/428M2f/CMf2bY6xeWEHmaKzP5Uczxrk+ZydoHOK/OJ2Ly
+                s56sST+Nd38Vf+ToPiT/ANjTqH/pVJXBV83icRWrz/eSbte1z+gOHskyjJ8HGWAoRpOpGLlyq3NZaX+9
+                /eFFFFcZ9eFdX4K8ceLfh18RrDxb4I1668OeIbMnyLy0fBwfvIwOQ6kcFWBB7iuUoppuLutGY1aVKvSl
+                SqxUoyVmmrpp7pp6NH6W+H/+Cn3xg07w/Ha694J8MeIr1Fwb1PPtGkPqyKxXP+6APavC/jX+2t8afjb4
+                UufDOp3tl4T8I3PF1pOgxNELtRztmldmd1z/AA5CnuDXyNRXoTzDG1Ick6jaPg8HwLwjl+MWMw+ChGon
+                dOzdn3SbaTXSyVuh9s/CD9uXx/8ABP8AZ7074d+DfA3hX7BatLK19dxXDXFxNIxZppCJQpb7oHGMIo7V
+                8ZajqF7q3iC/1XUrl7zUb24e4uriQ5aWR2LOxPqSSfxqnRXNUr1qsIwnK6jsux9HgMkyrLMVWxWEoqFS
+                s7zlreTu3q231bPov9nv9pnx5+zjr3iK68IWenaxZa1BHHeafqyyNBvjYlJVCOpDgM69cEN7DHpNj+29
+                450z9snWfjdYeBPCtt4p1bw+uj6jbpFc/ZrhVdWWYjzd3mbY0TOcbVHGea+K6K0hi8TTgoRm0ou68med
+                i+FeHsdi6uKxGGjKpVjyzeqco6aOz12X3Lsey/HX42eIvj78cF8eeJ9K07R9TXTYrEW+lrIIdkZchvnZ
+                jk7znnHSuy/Z+/aq+JP7Oo1u08KR2GuaFqmJJ9I1hZHt45hgCePY6lX2jacHDDGR8ox80UVCxFeNb2yk
+                +bud1XIcnr5SsqqUIyw6SSg9klt56dHe59j6h+2b4tvf20PD/wAd4fh74U07xvpunzWNwbaO5EGopJEY
+                laZTLkuisQrAg4wDkKMeX/H/AOP/AIo/aI+KWkeLPFej6Xot9p+ljT4otJWRY2QSPJuPmOxzmQjrjAFe
+                EUVU8ViKkHCUrpu7833OXCcM5FgcVSxWHoKNSlDki7tuMNfdV29NXbtstD6x+AX7YvxR/Z88B6n4X8O2
+                ml+JPD11c/aYLLW0ldbKQ/fMJR1Kh+CynIyMjBJzymq/tH+LdW/b9tP2h59E0iPxVb3kN0unRrL9iLRQ
+                CFQQX34KjJ+brXzzRR9axHs40+Z2i7pdmUuGshWNr41YeKq14uM5LRyjK10+mtlfqfpcP+CofxmHTwH4
+                MH0hu/8A4/S/8PRPjP8A9CJ4N/79Xf8A8fr80KK6/wC08w/5+v8AD/I+X/4hxwP/ANAEP/Jv8z0r4vfE
+                /WfjL+0J4g+I/iCxs9N1bVzEZ7awDiBPLiSIbd7M3RAeT1r3f4C/tn/EH9nz4N3fgnwt4Y8Pazp0+qSa
+                g0+qxzmUO6IhUeXIoxiMds8mvj6iuOGJr06rqwlaT6+u59di+H8mx+WQyzE0FKhDlSg72XKrR630RseI
+                tauPEnxA13xFdxRwXeq6jPezRw52I8sjSMFyScAsQMmseiiuZtt3Z9DCEacFCKslogooopFhRRRQAUUU
+                UAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/2Q==
+            </property>
+        </structure>
+    </list-property>
+</report>

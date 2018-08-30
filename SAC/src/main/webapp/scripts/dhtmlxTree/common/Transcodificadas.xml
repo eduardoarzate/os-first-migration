@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<tree id="0">
+        <item text="Reportes Sigue Mi Tarjeta" id="reporte_2" im0="TransExtemp.png" im1="TransExtemp.png" im2="TransExtemp.png">
+              <item text="SICTRC0001 Reporte de Cuentas Transcodificadas por banco" id="rep_SICTRC0001"
+                    im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICTRC0001</userdata>
+                    <userdata name="rolAccMin">32</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">Trascodificada</userdata>
+              </item>
+              <item text="SICTRC0002 Reporte de Cuentas Activas por banco" id="rep_SICTRC0002"
+                     im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                     <userdata name="href">SICTRC0002</userdata>
+                     <userdata name="rolAccMin">32</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                     <userdata name="modulo">Trascodificada</userdata>
+              </item>
+        </item>
+</tree>

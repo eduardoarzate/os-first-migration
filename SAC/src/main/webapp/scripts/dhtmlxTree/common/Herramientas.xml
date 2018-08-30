@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+#################################################################################
+#                      MODIFICACIONES                                           #
+#################################################################################
+# Autor               :  Francisco Javier Cuamatzi                              #
+# Compania            :  Axia, consultores, S.A. DE C.V.                        #
+# Proyecto/Procliente :  P-25-5216-16                 Fecha: 30/08/2017         #
+#Modificacion         :  Ventana para reintegros de Merc Internacionales        #
+# Marca del Cambio    :  AXIA-FJCC-P-25-5216-16                                 #
+#################################################################################
+ -->
+<tree id="0" style="font-family: Verdana, Arial, Helvetica, sans-erif; font-size:11px;">
+    <!-- Modificacion: Marca de inicio    SAS-DRT F-52-8063-16  -->
+    <item text="Liberación de Cifras" id="liberacion" im0="datos_complementarios.png">
+        <userdata name="href">lstGrpSacii</userdata>
+        <userdata name="rolAccMin">32</userdata>
+        <userdata name="modulo">Herramientas</userdata>
+    </item>
+    <item text="Reintegros" id="reintegro" im0="datos_complementarios.png" >
+        <userdata name="href">reintegro</userdata>
+        <userdata name="rolAccMin">2</userdata>
+    </item>
+    <!-- 	
+	###############################################################################
+  #  Marca del Cambio: AXIA-FJCC-P-25-5216-16 Inicia la Modificacion 30/08/2017 #
+  ###############################################################################
+ -->
+    <item text="Reintegros Merc Int." id="reintegromi" im0="datos_complementarios.png" >    
+        <userdata name="href">reintegromi</userdata>
+        <userdata name="rolAccMin">2</userdata>
+    </item> 
+    <!-- 	
+	###############################################################################
+  #  Marca del Cambio: AXIA-FJCC-P-25-5216-16 Termina la Modificacion 30/08/2017 #
+  ###############################################################################
+ -->
+    <!-- <item text="Prefijos" id="prefijo" im0="datos_complementarios.png" >
+        <userdata name="href">losprefijos</userdata>
+        <userdata name="rolAccMin">32</userdata>
+    </item> -->
+    <item text="Monitoreo" id="monitoreo" im0="datos_complementarios.png" >
+        <userdata name="href">Monitor</userdata>
+        <userdata name="rolAccMin">32</userdata>
+        <userdata name="modulo">Herramientas</userdata>
+    </item>
+    <item text="Mantenimiento" id="mantenimiento" im0="datos_complementarios.png" >
+        <userdata name="href">manto</userdata>
+        <userdata name="rolAccMin">32</userdata>
+        <userdata name="modulo">Herramientas</userdata>
+    </item>
+    <item text="Tipo de Cambio" id="tipocambio" im0="datos_complementarios.png" >
+        <userdata name="href">tipocambio</userdata>
+        <userdata name="rolAccMin">2</userdata>
+        <userdata name="modulo">Herramientas</userdata>
+    </item>
+    <item text="Cierre de Periodo Diferencia de Cuotas (Arbitro Comercios)" id="cierreDifCuotas" im0="datos_complementarios.png" >
+        <userdata name="href">cierreDifCuotas</userdata>
+        <userdata name="rolAccMin">32</userdata>
+        <userdata name="modulo">Herramientas</userdata>
+    </item>
+    <!--Modificacion: Marca de inicio SAS-JAGG Z-02-2675-12-->
+    <item text="Mantenimiento Telefonica" id="MantTelef" im0="datos_complementarios.png" >	
+        <userdata name="href">MantTelef</userdata>
+        <userdata name="rolAccMin">32</userdata>
+        <userdata name="modulo">Herramientas</userdata>
+    </item>	
+    <item text="Mantenimiento Distribuidor" id="MantDistri" im0="datos_complementarios.png" >	
+        <userdata name="href">MantDistri</userdata>
+        <userdata name="rolAccMin">32</userdata>
+        <userdata name="modulo">Herramientas</userdata>
+    </item>	
+    <!--Modificacion: Marca de fin SAS-JAGG Z-02-2675-12-->	
+    <!-- Modificacion        :  Marca de Inicio GSOF-MVR-C-08-2129-12 -->
+    <item text="LACPI DEVOLUCIONES" id="lacpi" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+        <item text="LACPI ALTA" id="LACPIALTA" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png" >
+            <userdata name="href">AltasLACPI</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Herramientas</userdata>
+        </item>
+        <item text="LACPI REPORTE" id="LACPIREPORTE" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">ConsultaLACPI</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Herramientas</userdata>
+        </item>
+    </item>
+    <!-- Modificacion        :  Marca de Terminacion GSOF-MVR-C-08-2129-12 -->
+    <!-- Modificacion: Marca de fin    SAS-DRT F-52-8063-16  -->
+</tree>

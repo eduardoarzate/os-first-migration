@@ -1,0 +1,52 @@
+#login {
+	width: 448px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#head_login {
+	width: 448px;
+	height: 42px;
+	background-image: url(../pics/top-login.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin: 80px 0 2px 0;
+}
+
+#barAzul {
+	height: 15px;
+	background-color: #c69f16;
+	color:#fff;
+	text-align:center;
+	padding: 2px 0;
+}
+
+#barAzulDark {
+	height: 15px;
+	background-color: #626256;
+	color:#fff;
+	text-align:right;
+	padding: 3px 20px;
+}
+
+#contenido {
+	height: 130px;
+	background-color: #eece61;
+	color:#000;
+	text-align:center;
+	padding: 2px 0;
+}
+
+/* Formulario */
+
+form {
+	width:448px;
+	margin:15px auto;
+	}
+label {
+	display:block;
+	font-weight:bold;
+	}
+.textInput {
+	width:100px;
+	}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<tree id="0">
+	<item  text="Acerca de ..." id="acerca" im0="about.png" >
+		<userdata name="href">help/help.htm</userdata>
+	</item>
+	<!-- <item text="Metodologia de ..." id="metodologia" im0="metodologia.png">
+		<userdata name="href">help/help.htm</userdata>
+	</item>  -->
+</tree>

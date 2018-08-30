@@ -1,0 +1,1564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">MyEclipse Report Designer Version 1.0</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="initDate" id="3055">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">12/08/2011</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="endDate" id="3056">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">12/08/2011</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="cuenta" id="3057">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">4915662396923271</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="referencia" id="3058">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="comercio" id="3059">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="isRequired">false</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="ejecuto" id="2359">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">ggonzalez</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgLcl" id="3400">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgRmt" id="3401">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="3053">
+            <!--<property name="meDriver">SICB2DBP</property>-->
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">SICB2DBP</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Q1" id="3054">
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">Data Source</property>
+            <method name="beforeOpen"><![CDATA[this.queryText=
+" SELECT ";
+if ((params["cuenta"].value!="")&amp;&amp;(params["cuenta"].value!="null")&amp;&amp;(params["cuenta"].value!=null))
+{
+this.queryText+=" /*+ INDEX(TA TAC2_CUENTA_FK_I) */ ";
+}else 
+{
+this.queryText+=" /*+ INDEX(TA NDX_NUM_REF) */  ";
+}
+this.queryText+=" TA.FIID_ADQUIRENTE BANCO_ADQUIRENTE "+ 
+"       ,TA.NUMERO_COMERCIO NUMERO_COMERCIO  "+
+"       ,TA.NOMBRE_COMERCIO NOMBRE_COMERCIO  "+
+"       ,TA.RED_LOGICA RED_LOGICA_ADQ  "+
+"       ,TA.NUMERO NUMERO  "+
+"       ,TA.ENT_NUMERO_PROSA_ADQ ADQ "+ 
+"       ,E.NOMBRE DESC_ADQ  "+
+"       ,TA.ENT_NUMERO_PROSA_EMI EMI "+ 
+"       ,TA.FIID_EMISOR BANCO_EMISOR  "+
+"       ,EE.NOMBRE DESC_EMI  "+
+"       ,TA.ARCH_NUMERO FUENTE  "+
+"       ,TA.PROC_NUMERO PROC  "+
+"       ,TA.FIID_EMISOR BANCO_EMISOR_ "+ 
+"       ,TA.CUENTA CUENTA  "+
+"       ,TA.RED_LOGICA_EMI RED_LOGICA "+ 
+"       ,TA.TTR_NUMERO CVE_TXN  "+
+"       ,TT.DESCRIPCION  CVE_TXN_DESC "+ 
+"       ,TA.NUMERO_AUTORIZACION NO_AUT  "+
+"       ,TA.IMPORTE_TOTAL_TRANSAC IMPORTE  "+
+"       ,TA.FECHA_CONSUMO_TRANSAC FECHA_CONSUMO_TRANSAC "+ 
+"       ,TA.FECHA_CONSUMO_TRANSAC HORA_CONSUMO  "+
+"       ,TA.MODO_ENTRADA_POS MODO_ENT  "+
+"       ,TA.TIPO_CAPTURA TIPO_CAPTURA  "+
+"       ,AV.IND_EMV_CHIP TC  "+
+"       ,TA.TC||'    '||TA.TYP TYP "+ 
+"       ,TA.IND_TER_CAP TERM_CAP  "+
+"       ,TA.CODIGO_RESPUESTA_ISO COD_ISO "+ 
+"       ,TA.IND_COM_ELEC ICE  "+
+"       ,TA.NUMERO_REFERENCIA NUMERO_REFERENCIA "+ 
+" FROM SUPERSIC.TRANSACCIONES_ACEPTADAS TA  "+
+" INNER JOIN SUPERSIC.ENTIDADES E  "+
+"     ON TA.ENT_NUMERO_PROSA_ADQ = E.NUMERO_PROSA "+  
+" INNER JOIN SUPERSIC.ENTIDADES EE  "+
+"     ON TA.ENT_NUMERO_PROSA_EMI = EE.NUMERO_PROSA "+ 
+" INNER JOIN SUPERSIC.TIPOS_TRANSACCION TT "+ 
+"     ON TT.NUMERO = TA.TTR_NUMERO  "+
+" LEFT JOIN SUPERSIC.AGENCIAS_VIAJES AV "+ 
+"       ON AV.TAC_NUMERO = TA.NUMERO  ";
+if ((params["cuenta"].value!="")&amp;&amp;(params["cuenta"].value!="null")&amp;&amp;(params["cuenta"].value!=null))
+{
+this.queryText+=" WHERE TA.CUENTA = '"+params["cuenta"]+"' ";
+} else 
+{
+	this.queryText+=" WHERE TA.NUMERO_REFERENCIA = '"+params["referencia"]+"' ";
+}
+this.queryText+=" AND TA.FECHA_PROCESO_TRANSAC BETWEEN TO_DATE('"+params["initDate"]+"','dd/MM/yyyy') AND TO_DATE('"+params["endDate"]+"','dd/MM/yyyy') ";
+
+if ((params["referencia"].value!="")&amp;&amp;(params["referencia"].value!="null")&amp;&amp;(params["referencia"].value!=null)&amp;&amp;
+          (params["cuenta"].value!="")&amp;&amp;(params["cuenta"].value!="null")&amp;&amp;(params["cuenta"].value!=null)) 
+{
+	this.queryText+=" AND TA.NUMERO_REFERENCIA = '"+params["referencia"]+"' ";
+}
+
+if ((params["comercio"].value!="")&amp;&amp;(params["comercio"].value!="null")&amp;&amp;(params["comercio"].value!=null))
+{
+	this.queryText+=" AND TA.NUMERO_COMERCIO = "+params["comercio"]+" ";
+}]]></method>
+            <property name="queryText">select 
+from </property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.1in</property>
+            <property name="leftMargin">0.1in</property>
+            <property name="bottomMargin">0.1in</property>
+            <property name="rightMargin">0.1in</property>
+            <page-header>
+                <grid id="1936">
+                    <property name="width">100%</property>
+                    <column id="1937">
+                        <property name="width">22%</property>
+                    </column>
+                    <column id="1938">
+                        <property name="width">56%</property>
+                    </column>
+                    <column id="1939">
+                        <property name="width">22%</property>
+                    </column>
+                    <row id="1940">
+                        <cell id="1941">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <image id="2353">
+                                <property name="height">104px</property>
+                                <property name="width">140px</property>
+                                <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.URI=params['srvImgRmt']+'/Carnet_header.jpg';
+else
+this.URI=params['srvImgLcl']+'/pmr/reports/images/Carnet_header.jpg';]]></method>
+                                <property name="source">url</property>
+                                <expression name="uri">if(reportContext.getOutputFormat().equals('html'))
+'http://cvs.prosa.com.mx/comunicados/Carnet_header.jpg'
+else
+'http://10.247.220.132:38080/pmr/reports/images/Carnet_header.jpg'</expression>
+                            </image>
+                        </cell>
+                        <cell id="1942">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="textAlign">center</property>
+                            <text id="1949">
+                                <property name="fontSize">16pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[PROMOCION Y OPERACION S.A. DE C.V.]]></text-property>
+                            </text>
+                            <text id="1950">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Reporte LOG Autorizaciones]]></text-property>
+                            </text>
+                            <grid id="1951">
+                                <property name="width">65%</property>
+                                <column id="1952">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="1953">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="1954">
+                                    <property name="width">5%</property>
+                                </column>
+                                <column id="1955">
+                                    <property name="width">20%</property>
+                                </column>
+                                <row id="1956">
+                                    <cell id="1957">
+                                        <text id="1961">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Fecha del:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1958">
+                                        <data id="1931">
+                                            <property name="fontSize">12pt</property>
+                                            <structure name="dateTimeFormat">
+                                                <property name="category">Custom</property>
+                                                <property name="pattern">dd-MM-yyy</property>
+                                            </structure>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">initDate</property>
+                                                    <expression name="expression">params["initDate"]</expression>
+                                                    <property name="dataType">any</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">initDate</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1959">
+                                        <text id="1962">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[al]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1960">
+                                        <data id="1935">
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">endDate</property>
+                                                    <expression name="expression">params["endDate"]</expression>
+                                                    <property name="dataType">any</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">endDate</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="1943">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <grid id="1963">
+                                <property name="width">100%</property>
+                                <column id="1964">
+                                    <property name="width">1.4375in</property>
+                                </column>
+                                <column id="1965"/>
+                                <row id="1966">
+                                    <cell id="1967">
+                                        <property name="textAlign">center</property>
+                                        <text id="1975">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Fecha de proceso:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1968">
+                                        <property name="textAlign">center</property>
+                                        <text id="1768">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="dd-MM-yyyy">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="1969">
+                                    <cell id="1970">
+                                        <property name="textAlign">center</property>
+                                        <text id="1976">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Hora de proceso:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1971">
+                                        <property name="textAlign">center</property>
+                                        <text id="2354">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="marginTop">0pt</property>
+                                            <property name="paddingTop">1pt</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="HH:mm">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="1972">
+                                    <cell id="1973">
+                                        <property name="textAlign">center</property>
+                                        <text id="1977">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Página]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1974">
+                                        <property name="textAlign">center</property>
+                                        <grid id="1978">
+                                            <property name="width">100%</property>
+                                            <column id="1979"/>
+                                            <column id="1980"/>
+                                            <column id="1981"/>
+                                            <row id="1982">
+                                                <cell id="1983">
+                                                    <auto-text id="1784">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="type">page-number</property>
+                                                    </auto-text>
+                                                </cell>
+                                                <cell id="1984">
+                                                    <text id="1986">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="fontWeight">bold</property>
+                                                        <property name="contentType">auto</property>
+                                                        <text-property name="content"><![CDATA[de]]></text-property>
+                                                    </text>
+                                                </cell>
+                                                <cell id="1985">
+                                                    <auto-text id="1788">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="type">total-page</property>
+                                                    </auto-text>
+                                                </cell>
+                                            </row>
+                                        </grid>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="1944"/>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="1711">
+                    <property name="verticalAlign">top</property>
+                    <property name="width">100%</property>
+                    <column id="1712"/>
+                    <column id="1713">
+                        <property name="textAlign">right</property>
+                    </column>
+                    <row id="1714">
+                        <cell id="1715">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text id="1717">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[SICMOR0205H]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1716">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <grid id="1719">
+                                <property name="verticalAlign">top</property>
+                                <property name="height">0.2708333333in</property>
+                                <property name="width">2.0729166667in</property>
+                                <column id="1720">
+                                    <property name="width">1.0520833333in</property>
+                                </column>
+                                <column id="1721">
+                                    <property name="width">1.0208333333in</property>
+                                </column>
+                                <row id="1722">
+                                    <cell id="1723">
+                                        <property name="textAlign">left</property>
+                                        <text id="1725">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Usuario:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1724">
+                                        <property name="textAlign">left</property>
+                                        <data id="1718">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">center</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">ejecuto</property>
+                                                    <expression name="expression">params["ejecuto"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">ejecuto</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="NewSimpleMasterPage" id="6">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.1in</property>
+            <property name="leftMargin">0.1in</property>
+            <property name="bottomMargin">0.1in</property>
+            <property name="rightMargin">0.1in</property>
+            <page-footer>
+                <grid id="3068">
+                    <property name="verticalAlign">top</property>
+                    <property name="width">100%</property>
+                    <column id="3069"/>
+                    <column id="3070">
+                        <property name="textAlign">right</property>
+                    </column>
+                    <row id="3071">
+                        <cell id="3072">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text id="3073">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[SICMOR0205H]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="3074">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <grid id="3075">
+                                <property name="verticalAlign">top</property>
+                                <property name="height">0.2708333333in</property>
+                                <property name="width">2.0729166667in</property>
+                                <column id="3076">
+                                    <property name="width">1.0520833333in</property>
+                                </column>
+                                <column id="3077">
+                                    <property name="width">1.0208333333in</property>
+                                </column>
+                                <row id="3078">
+                                    <cell id="3079">
+                                        <property name="textAlign">left</property>
+                                        <text id="3080">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Usuario:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="3081">
+                                        <property name="textAlign">left</property>
+                                        <data id="3082">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">center</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">ejecuto</property>
+                                                    <expression name="expression">params["ejecuto"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">ejecuto</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1987">
+            <property name="masterPage">NewSimpleMasterPage</property>
+            <property name="pageBreakAfter">always</property>
+            <property name="width">100%</property>
+            <column id="1988"/>
+            <row id="1989">
+                <cell id="1990">
+                    <property name="textAlign">center</property>
+                    <image id="1993">
+                        <property name="height">120px</property>
+                        <property name="width">162px</property>
+                        <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.URI=params['srvImgRmt']+'/Carnet_portada.jpg';
+else
+this.URI=params['srvImgLcl']+'/pmr/reports/images/Carnet_portada.jpg';]]></method>
+                        <property name="source">url</property>
+                        <expression name="uri">if(reportContext.getOutputFormat().equals('html'))
+'http://cvs.prosa.com.mx/comunicados/Carnet_portada.jpg'
+else
+'http://10.247.220.132:38080/pmr/reports/images/Carnet_portada.jpg'</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="2034">
+                <property name="height">2.1in</property>
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="2035">
+                    <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.getStyle().backgroundImage=params['srvImgRmt']+'/reportHeader.png';
+else
+this.getStyle().backgroundImage=params['srvImgLcl']+'/pmr/reports/images/reportHeader.png';]]></method>
+                    <property name="backgroundImage">http://cvs.prosa.com.mx/comunicados/reportHeader.png</property>
+                    <property name="backgroundPositionX">center</property>
+                    <property name="backgroundPositionY">center</property>
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="paddingTop">1pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="2036">
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[PROMOCION Y OPERACION S.A. DE C.V.]]></text-property>
+                    </text>
+                    <text id="2037">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Reporte LOG Autorizaciones]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="1991">
+                <cell id="1992">
+                    <property name="textAlign">center</property>
+                    <grid id="1994">
+                        <property name="width">40%</property>
+                        <column id="1995"/>
+                        <column id="1996"/>
+                        <row id="1997">
+                            <cell id="1998">
+                                <text id="2018">
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Archivo:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="1999">
+                                <label id="2995">
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">SICMOR0205H</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="2000">
+                            <cell id="2001">
+                                <text id="2019">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">normal</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Ejecutó:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2002">
+                                <data id="1575">
+                                    <property name="textAlign">left</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ejecuto</property>
+                                            <expression name="expression">params["ejecuto"]</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ejecuto</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="2003">
+                            <cell id="2004">
+                                <text id="2020">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Fecha de Ejecución:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2005">
+                                <text id="1410">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<value-of format="dd-MM-yyy HH:mm">new Date()</value-of>]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="2006">
+                            <cell id="2007">
+                                <text id="2021">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Fecha del:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2008">
+                                <grid id="2025">
+                                    <property name="width">100%</property>
+                                    <column id="2026"/>
+                                    <column id="2027"/>
+                                    <column id="2028"/>
+                                    <row id="2029">
+                                        <cell id="2030">
+                                            <data id="1508">
+                                                <structure name="dateTimeFormat">
+                                                    <property name="category">Custom</property>
+                                                    <property name="pattern">dd-MM-yyy</property>
+                                                </structure>
+                                                <property name="textAlign">left</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">initDate</property>
+                                                        <expression name="expression">params["initDate"]</expression>
+                                                        <property name="dataType">any</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">initDate</property>
+                                            </data>
+                                        </cell>
+                                        <cell id="2031">
+                                            <text id="2033">
+                                                <property name="fontSize">9pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="textAlign">center</property>
+                                                <property name="contentType">auto</property>
+                                                <text-property name="content"><![CDATA[al  ]]></text-property>
+                                            </text>
+                                        </cell>
+                                        <cell id="2032">
+                                            <data id="1727">
+                                                <property name="textAlign">left</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">endDate</property>
+                                                        <expression name="expression">params["endDate"]</expression>
+                                                        <property name="dataType">any</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">endDate</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="2988">
+                            <cell id="2989">
+                                <text id="2991">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Cuenta:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2990">
+                                <data id="2992">
+                                    <property name="textAlign">left</property>
+                                    <list-property name="mapRules">
+                                        <structure>
+                                            <expression name="testExpr">row["cuenta"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value>null</value>
+                                            </simple-property-list>
+                                        </structure>
+                                        <structure>
+                                            <expression name="testExpr">row["cuenta"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value>'null'</value>
+                                            </simple-property-list>
+                                        </structure>
+                                        <structure>
+                                            <expression name="testExpr">row["cuenta"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value>''</value>
+                                            </simple-property-list>
+                                        </structure>
+                                    </list-property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">cuenta</property>
+                                            <expression name="expression">params["cuenta"]</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">cuenta</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="3048">
+                            <property name="textAlign">left</property>
+                            <cell id="3049">
+                                <text id="3051">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Referencia:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="3050">
+                                <data id="3052">
+                                    <list-property name="mapRules">
+                                        <structure>
+                                            <expression name="testExpr">row["referencia"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value>null</value>
+                                            </simple-property-list>
+                                        </structure>
+                                        <structure>
+                                            <expression name="testExpr">row["referencia"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value>'null'</value>
+                                            </simple-property-list>
+                                        </structure>
+                                        <structure>
+                                            <expression name="testExpr">row["referencia"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value>''</value>
+                                            </simple-property-list>
+                                        </structure>
+                                    </list-property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">referencia</property>
+                                            <expression name="expression">params["referencia"].value</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">referencia</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <grid id="3060">
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">100%</property>
+            <column id="3061"/>
+            <row id="3062">
+                <cell id="3063"/>
+            </row>
+            <row id="3064">
+                <cell id="3065">
+                    <table id="3083">
+                        <property name="fontSize">7pt</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">Q1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">BANCO_ADQUIRENTE</property>
+                                <expression name="expression">dataSetRow["BANCO_ADQUIRENTE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NUMERO_COMERCIO</property>
+                                <expression name="expression">dataSetRow["NUMERO_COMERCIO"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NOMBRE_COMERCIO</property>
+                                <expression name="expression">dataSetRow["NOMBRE_COMERCIO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">RED_LOGICA_ADQ</property>
+                                <expression name="expression">dataSetRow["RED_LOGICA_ADQ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NUMERO</property>
+                                <expression name="expression">dataSetRow["NUMERO"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ADQ</property>
+                                <expression name="expression">dataSetRow["ADQ"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DESC_ADQ</property>
+                                <expression name="expression">dataSetRow["DESC_ADQ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EMI</property>
+                                <expression name="expression">dataSetRow["EMI"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">BANCO_EMISOR</property>
+                                <expression name="expression">dataSetRow["BANCO_EMISOR"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DESC_EMI</property>
+                                <expression name="expression">dataSetRow["DESC_EMI"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FUENTE</property>
+                                <expression name="expression">dataSetRow["FUENTE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PROC</property>
+                                <expression name="expression">dataSetRow["PROC"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">BANCO_EMISOR_</property>
+                                <expression name="expression">dataSetRow["BANCO_EMISOR_"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CUENTA</property>
+                                <expression name="expression">dataSetRow["CUENTA"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">RED_LOGICA</property>
+                                <expression name="expression">dataSetRow["RED_LOGICA"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CVE_TXN</property>
+                                <expression name="expression">dataSetRow["CVE_TXN"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CVE_TXN_DESC</property>
+                                <expression name="expression">dataSetRow["CVE_TXN_DESC"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NO_AUT</property>
+                                <expression name="expression">dataSetRow["NO_AUT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">IMPORTE</property>
+                                <expression name="expression">dataSetRow["IMPORTE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">FECHA_CONSUMO_TRANSAC</property>
+                                <expression name="expression">dataSetRow["FECHA_CONSUMO_TRANSAC"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">HORA_CONSUMO</property>
+                                <expression name="expression">dataSetRow["HORA_CONSUMO"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">MODO_ENT</property>
+                                <expression name="expression">dataSetRow["MODO_ENT"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TIPO_CAPTURA</property>
+                                <expression name="expression">dataSetRow["TIPO_CAPTURA"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TC</property>
+                                <expression name="expression">dataSetRow["TC"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TYP</property>
+                                <expression name="expression">dataSetRow["TYP"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TERM_CAP</property>
+                                <expression name="expression">dataSetRow["TERM_CAP"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">COD_ISO</property>
+                                <expression name="expression">dataSetRow["COD_ISO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ICE</property>
+                                <expression name="expression">dataSetRow["ICE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NUMERO_REFERENCIA</property>
+                                <expression name="expression">dataSetRow["NUMERO_REFERENCIA"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">red</property>
+                                <property name="displayName">red</property>
+                                <expression name="expression">'Red logica Adquirente: '+dataSetRow["RED_LOGICA_ADQ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">comer</property>
+                                <property name="displayName">comer</property>
+                                <expression name="expression">'Comercio: '+dataSetRow["NUMERO_COMERCIO"]+' '+dataSetRow["NOMBRE_COMERCIO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">bco</property>
+                                <property name="displayName">bco</property>
+                                <expression name="expression">'Banco: '+dataSetRow["BANCO_ADQUIRENTE"]+' '+dataSetRow["ADQ"]+' '+dataSetRow["DESC_ADQ"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">num</property>
+                                <property name="displayName">num</property>
+                                <property name="dataType">integer</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>emi</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">COUNT</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["NUMERO"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">imp</property>
+                                <property name="displayName">imp</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>emi</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["IMPORTE"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                        </list-property>
+                        <column id="3144">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3145">
+                            <property name="width">4%</property>
+                        </column>
+                        <column id="3146">
+                            <property name="width">4%</property>
+                        </column>
+                        <column id="3147">
+                            <property name="width">4%</property>
+                        </column>
+                        <column id="3148">
+                            <property name="width">4%</property>
+                        </column>
+                        <column id="3149">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3150">
+                            <property name="width">9%</property>
+                        </column>
+                        <column id="3151">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3152">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3153">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3154">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3155">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3156">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="3157">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3158">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3159">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3160">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3161">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="3162">
+                            <property name="width">5%</property>
+                        </column>
+                        <group id="3163">
+                            <property name="groupName">adq</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["ADQ"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["ADQ"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                        </group>
+                        <group id="3205">
+                            <property name="groupName">comercio</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["NUMERO_COMERCIO"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["NUMERO_COMERCIO"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                        </group>
+                        <group id="3247">
+                            <property name="groupName">red</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["RED_LOGICA_ADQ"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["RED_LOGICA_ADQ"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                        </group>
+                        <group id="3289">
+                            <property name="groupName">emi</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["EMI"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["EMI"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <header>
+                                <row id="3371">
+                                    <cell id="3372">
+                                        <property name="colSpan">4</property>
+                                        <property name="rowSpan">1</property>
+                                        <data id="3396">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">bco</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="3376"/>
+                                    <cell id="3377"/>
+                                    <cell id="3378"/>
+                                    <cell id="3379"/>
+                                    <cell id="3380"/>
+                                    <cell id="3381"/>
+                                    <cell id="3382"/>
+                                    <cell id="3383"/>
+                                    <cell id="3384"/>
+                                    <cell id="3385"/>
+                                    <cell id="3386"/>
+                                    <cell id="3387"/>
+                                    <cell id="3388"/>
+                                    <cell id="3389"/>
+                                    <cell id="3390"/>
+                                </row>
+                                <row id="3351">
+                                    <cell id="3352">
+                                        <property name="colSpan">4</property>
+                                        <property name="rowSpan">1</property>
+                                        <data id="3395">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">comer</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="3356"/>
+                                    <cell id="3357"/>
+                                    <cell id="3358"/>
+                                    <cell id="3359"/>
+                                    <cell id="3360"/>
+                                    <cell id="3361"/>
+                                    <cell id="3362"/>
+                                    <cell id="3363"/>
+                                    <cell id="3364"/>
+                                    <cell id="3365"/>
+                                    <cell id="3366"/>
+                                    <cell id="3367"/>
+                                    <cell id="3368"/>
+                                    <cell id="3369"/>
+                                    <cell id="3370"/>
+                                </row>
+                                <row id="3331">
+                                    <cell id="3332">
+                                        <property name="colSpan">4</property>
+                                        <property name="rowSpan">1</property>
+                                        <data id="3394">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="resultSetColumn">red</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="3336"/>
+                                    <cell id="3337"/>
+                                    <cell id="3338"/>
+                                    <cell id="3339"/>
+                                    <cell id="3340"/>
+                                    <cell id="3341"/>
+                                    <cell id="3342"/>
+                                    <cell id="3343"/>
+                                    <cell id="3344"/>
+                                    <cell id="3345"/>
+                                    <cell id="3346"/>
+                                    <cell id="3347"/>
+                                    <cell id="3348"/>
+                                    <cell id="3349"/>
+                                    <cell id="3350"/>
+                                </row>
+                                <row id="3290">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <cell id="3291">
+                                        <label id="2946">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Número</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3292">
+                                        <label id="2757">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Adq</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3293">
+                                        <label id="2759">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Emi</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3294">
+                                        <label id="2761">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Fte</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3295">
+                                        <label id="2763">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Proc</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3296">
+                                        <label id="3010">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">FIID Emisora</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3297">
+                                        <label id="2767">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Cuenta</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3298">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="2771">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Red Lóg Emi</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3299">
+                                        <label id="2948">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Clave Tx</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3300">
+                                        <label id="2949">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Clave Tipo Tx</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3301">
+                                        <label id="2775">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">No Aut</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3302">
+                                        <label id="2777">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Importe</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3303">
+                                        <label id="2779">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Fecha Origen</text-property>
+                                        </label>
+                                        <label id="2961">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">DD MM YY hh mm ss</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3304">
+                                        <label id="2781">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Modo Ent.</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3305">
+                                        <label id="2783">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Tipo Cap</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3306">
+                                        <label id="2787">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Ind EMV</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3307">
+                                        <label id="2785">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Term Cap</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3308">
+                                        <label id="2799">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">Cod ISO.</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3309">
+                                        <label id="2821">
+                                            <property name="fontSize">8pt</property>
+                                            <text-property name="text">ICE</text-property>
+                                        </label>
+                                    </cell>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="3310">
+                                    <cell id="3311"/>
+                                    <cell id="3312"/>
+                                    <cell id="3313"/>
+                                    <cell id="3314"/>
+                                    <cell id="3315"/>
+                                    <cell id="3316"/>
+                                    <cell id="3317"/>
+                                    <cell id="3318"/>
+                                    <cell id="3319"/>
+                                    <cell id="3320">
+                                        <label id="3417">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <text-property name="text">Registros:</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="3321">
+                                        <data id="3418">
+                                            <property name="fontWeight">bold</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Currency</property>
+                                                <property name="pattern">#,##0</property>
+                                            </structure>
+                                            <property name="textAlign">center</property>
+                                            <property name="resultSetColumn">num</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="3322">
+                                        <data id="3419">
+                                            <property name="fontWeight">bold</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Currency</property>
+                                                <property name="pattern">$#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">imp</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="3323"/>
+                                    <cell id="3324"/>
+                                    <cell id="3325"/>
+                                    <cell id="3326"/>
+                                    <cell id="3327"/>
+                                    <cell id="3328"/>
+                                    <cell id="3329"/>
+                                </row>
+                            </footer>
+                        </group>
+                        <detail>
+                            <row id="3104">
+                                <property name="textAlign">center</property>
+                                <cell id="3105">
+                                    <data id="3397">
+                                        <property name="resultSetColumn">NUMERO</property>
+                                    </data>
+                                </cell>
+                                <cell id="3106">
+                                    <data id="3398">
+                                        <property name="resultSetColumn">ADQ</property>
+                                    </data>
+                                </cell>
+                                <cell id="3107">
+                                    <data id="3399">
+                                        <property name="resultSetColumn">EMI</property>
+                                    </data>
+                                </cell>
+                                <cell id="3108">
+                                    <data id="3402">
+                                        <property name="resultSetColumn">FUENTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="3109">
+                                    <data id="3403">
+                                        <property name="resultSetColumn">PROC</property>
+                                    </data>
+                                </cell>
+                                <cell id="3110">
+                                    <data id="3404">
+                                        <property name="resultSetColumn">BANCO_EMISOR</property>
+                                    </data>
+                                </cell>
+                                <cell id="3111">
+                                    <data id="3405">
+                                        <property name="resultSetColumn">CUENTA</property>
+                                    </data>
+                                </cell>
+                                <cell id="3112">
+                                    <data id="3406">
+                                        <property name="resultSetColumn">RED_LOGICA</property>
+                                    </data>
+                                </cell>
+                                <cell id="3113">
+                                    <data id="3407">
+                                        <property name="resultSetColumn">CVE_TXN</property>
+                                    </data>
+                                </cell>
+                                <cell id="3114">
+                                    <data id="3408">
+                                        <property name="resultSetColumn">TYP</property>
+                                    </data>
+                                </cell>
+                                <cell id="3115">
+                                    <data id="3409">
+                                        <property name="resultSetColumn">NO_AUT</property>
+                                    </data>
+                                </cell>
+                                <cell id="3116">
+                                    <data id="3410">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">IMPORTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="3117">
+                                    <grid id="3420">
+                                        <property name="width">100%</property>
+                                        <column id="3421"/>
+                                        <column id="3422"/>
+                                        <row id="3423">
+                                            <cell id="3424">
+                                                <data id="3426">
+                                                    <structure name="dateTimeFormat">
+                                                        <property name="category">Medium Date</property>
+                                                        <property name="pattern">Medium Date</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">FECHA_CONSUMO_TRANSAC</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="3425">
+                                                <data id="3427">
+                                                    <structure name="dateTimeFormat">
+                                                        <property name="category">Medium Time</property>
+                                                        <property name="pattern">Medium Time</property>
+                                                    </structure>
+                                                    <property name="resultSetColumn">HORA_CONSUMO</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </grid>
+                                </cell>
+                                <cell id="3118">
+                                    <data id="3411">
+                                        <property name="resultSetColumn">MODO_ENT</property>
+                                    </data>
+                                </cell>
+                                <cell id="3119">
+                                    <data id="3412">
+                                        <property name="resultSetColumn">TIPO_CAPTURA</property>
+                                    </data>
+                                </cell>
+                                <cell id="3120">
+                                    <data id="3413">
+                                        <property name="resultSetColumn">TC</property>
+                                    </data>
+                                </cell>
+                                <cell id="3121">
+                                    <data id="3414">
+                                        <property name="resultSetColumn">TERM_CAP</property>
+                                    </data>
+                                </cell>
+                                <cell id="3122">
+                                    <data id="3415">
+                                        <property name="resultSetColumn">COD_ISO</property>
+                                    </data>
+                                </cell>
+                                <cell id="3123">
+                                    <data id="3416">
+                                        <property name="resultSetColumn">ICE</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="3066">
+                <cell id="3067"/>
+            </row>
+        </grid>
+    </body>
+</report>

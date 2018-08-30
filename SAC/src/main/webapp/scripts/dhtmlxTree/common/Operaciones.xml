@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree id="0">
+
+	<item text="Cajeros" id="cajeros" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+		<item text="Alta de cajero" id="alta_c" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">cajeros</userdata>				
+		</item>
+		<item text="Consulta de cajero" id="consulta_c" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Consulta_de_cajero</userdata>				
+		</item>
+		<item text="Modificacion de cajero" id="modifica_c" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Modificacion_de_cajero</userdata>				
+		</item>
+		<item text="Baja de cajero" id="baja_c" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Baja_de_cajero</userdata>				
+		</item>
+	</item>		
+	
+	<item text="Participantes" id="participante" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+		<item text="Alta de participante" id="alta_p" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">participante</userdata>				
+		</item>
+		<item text="Consulta de participante" id="consulta_p" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Consulta_de_participante</userdata>				
+		</item>
+		<item text="Modificacion de participante" id="modifica_p" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Modificacion_de_participante</userdata>				
+		</item>
+		<item text="Baja de participante" id="baja_p" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Baja_de_participante</userdata>
+		</item>					
+	</item>
+	
+	<item text="Cajeros Participantes" id="cajero_participante" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+		<item text="Alta de cajero participante" id="alta_cp" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Alta_de_cajero_participante</userdata>				
+		</item>
+		<item text="Baja o Modificacion de cajero participante" id="modifica_cp" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Modificacion_de_cajero_participante</userdata>				
+		</item>
+	<!--	<item text="Baja de cajero participante" id="baja_cp" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+			<userdata name="href">Baja de cajero participante</userdata>				
+		</item>	-->
+	</item>
+	
+</tree>

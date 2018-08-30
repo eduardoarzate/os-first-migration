@@ -1,0 +1,2752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">MyEclipse Report Designer Version 1.0</property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <html-property name="description">Creates a blank report with no predefined content.</html-property>
+    <text-property name="displayName">Blank Report</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <parameters>
+        <scalar-parameter name="initDate" id="2357">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">16/05/2015</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="endDate" id="2358">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">22/05/2015</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="ejecuto" id="2359">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">ggonzalez</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="tipoLiq" id="2535">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">60</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="initDateHabAnt" id="2536">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">16/05/2015</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="endDateHabAnt" id="2537">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">22/05/2015</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgRmt" id="2887">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgLcl" id="2888">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="1016">
+            <!--<property name="meDriver">PMTUDBP</property>-->
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">PMTUDBP</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="siclir0320" id="2356">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ENTIDAD_PADRE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NOMBRE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CIRCUITO_LOCAL</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">INTRREDES</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">VISA</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ENTRANTE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">SALIENTE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">CORRESPONSAL</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="rowFetchLimit">800</property>
+            <property name="dataSource">Data Source</property>
+            <method name="beforeOpen"><![CDATA[this.queryText=
+//
+//-----------------------------------------------------------------------------
+//--Autor               : Ascencion Hernandez Huerta                         --
+//--Compania            : AXIA CONSULTORES, S.A. DE C.V.                     --
+//--Proyecto/Procliente : P-60-2646-14                      Fecha: 24/06/2015--
+//--Descripcion General : Incorporacion de Consubanco a Corresponsales con   --
+//--                    : Chedraui                                           --
+//--Modificacion        : Adquirente Chedrahui Emisor Consubanco             --
+//--Marca Del Cambio    : AXIA-AHH-P-60-2646-14                    24/06/2015--
+//-----------------------------------------------------------------------------
+//--Modificacion        : Mejoras en reporteador                             --
+//--Marca Del Cambio    : WELL-D-52-8122-17                        28/06/2017--
+//-----------------------------------------------------------------------------
+//
+//" -- 320 NUEVO "+
+" SELECT DATOS2.ENTIDAD_PADRE "+
+// Inicia marca de cambio WELL-D-52-8122-17 28/06/2017
+//"       ,(SELECT PE.DESCRIPCION FROM PMADMIN.PRSA_ENTIDADES PE WHERE DECODE(DATOS2.ENTIDAD_PADRE,131,PE.NUMERO_PROSA,PE.ENTIDAD_PADRE) = DATOS2.ENTIDAD_PADRE AND ROWNUM = 1) NOMBRE "+
+"       ,(SELECT PE.DESCRIPCION FROM PMADMIN.PRSA_ENTIDADES PE WHERE DECODE(DATOS2.ENTIDAD_PADRE,131,PE.NUMERO_PROSA,2,PE.NUMERO_PROSA,PE.ENTIDAD_PADRE) = DATOS2.ENTIDAD_PADRE AND ROWNUM = 1) NOMBRE "+
+// Fin marca de cambio WELL-D-52-8122-17 28/06/2017
+"       ,ROUND(SUM(DATOS2.CIRCUITO_LOCAL),2) CIRCUITO_LOCAL "+
+"       ,ROUND(SUM(DATOS2.INTRREDES),2) INTRREDES "+
+// INICIO INTEGRACION LIQ 15 HUB DE PAGOS SAS-JPM P-06-0527-12 16/01/2015
+"       ,ROUND(SUM(DATOS2.HUBESPECIALES),2) HUB_PAGOS "+
+// FIN INTEGRACION LIQ 15 HUB DE PAGOS SAS-JPM P-06-0527-12 16/01/2015
+"       ,ROUND(SUM(DATOS2.VISA),2) VISA "+
+"       ,ROUND(SUM(DATOS2.ENTRANTE),2) ENTRANTE "+
+"       ,ROUND(SUM(DATOS2.SALIENTE),2) SALIENTE "+
+// INICIA CORRESPONSAL
+"       ,ROUND(SUM(DATOS2.CORRESPONSAL),2) CORRESPONSAL "+
+// FIN CORRESPONSAL
+" FROM ( "+
+" SELECT (SELECT DECODE(DATOS.ENTIDAD,131,DATOS.ENTIDAD,PE.ENTIDAD_PADRE) FROM PMADMIN.PRSA_ENTIDADES PE WHERE PE.NUMERO_PROSA = DATOS.ENTIDAD AND ROWNUM = 1) ENTIDAD_PADRE "+
+"       ,SUM(CASE  "+
+"             WHEN DATOS.LIQ = 1 THEN DATOS.NETO "+
+"             ELSE 0 "+
+"        END) CIRCUITO_LOCAL "+
+"       ,SUM(CASE  "+
+"             WHEN DATOS.LIQ = 5 THEN DATOS.NETO "+
+"             ELSE 0 "+
+"        END) INTRREDES "+
+"       ,SUM(CASE   "+
+"             WHEN DATOS.LIQ = 15 THEN DATOS.NETO  "+
+"             ELSE 0  "+
+"        END) HUBESPECIALES  "+
+"       ,SUM(CASE  "+
+"             WHEN DATOS.LIQ = 6 THEN DATOS.NETO "+
+"             ELSE 0 "+
+"        END) VISA "+
+"       ,SUM(CASE  "+
+"             WHEN DATOS.LIQ = 2 THEN DATOS.NETO "+
+"             ELSE 0 "+
+"        END) ENTRANTE "+
+"       ,SUM(CASE  "+
+"             WHEN DATOS.LIQ = 3 THEN DATOS.NETO "+
+"             ELSE 0 "+
+"        END) SALIENTE "+
+// INICIA CORRESPONSAL
+"       ,SUM(CASE  "+
+"             WHEN DATOS.LIQ = 60 THEN DATOS.NETO "+
+"             ELSE 0 "+
+"        END) CORRESPONSAL "+
+// FIN CORRESPONSAL
+" FROM( "+
+//" -- INICIA LIQUIDACION ENTRANTE "+
+" SELECT 2 LIQ, ENTRANTE.ENTIDAD_PADRE ENTIDAD, ENTRANTE.TTR, "+
+"        CASE "+
+"          WHEN ENTRANTE.TTR IN (19,20,21) THEN -SUM(IMPORTE) "+
+"          ELSE SUM(IMPORTE) "+
+"        END NETO "+
+" FROM ( "+
+"  SELECT /*+ INDEX_SS(PRT) INDEX_SS(VBE) INDEX_SS(VBA) INDEX_SS(PTT) */ "+
+"        VBA.ENTIDAD_PADRE ENTIDAD_PADRE, "+
+"        PRT.PRT_TRAN_TYP TTR, "+
+"        ROUND(CASE "+
+"          WHEN PRT.PRT_TRAN_TYP IN (20,21) THEN -SUM(DECODE(PTT.NATURALEZA_CONTABLE, '-', -PRT.PRT_TRAN_AMT + PRT.PRT_INTCHG_FEE_AMT + PRT.PRT_INTCHG_IVA_AMT, PRT.PRT_TRAN_AMT - PRT.PRT_INTCHG_FEE_AMT - PRT.PRT_INTCHG_IVA_AMT)) "+
+"          ELSE SUM(DECODE(PTT.NATURALEZA_CONTABLE, '-', -PRT.PRT_TRAN_AMT + PRT.PRT_INTCHG_FEE_AMT + PRT.PRT_INTCHG_IVA_AMT, PRT.PRT_TRAN_AMT - PRT.PRT_INTCHG_FEE_AMT - PRT.PRT_INTCHG_IVA_AMT)) "+
+"        END,2) IMPORTE  "+
+"   FROM PMADMIN.PRSA_REJECTED_TXN PRT "+
+"        INNER JOIN PMADMIN.VW_BUS_EMI VBE "+
+"           ON PRT.PRT_ISS_BU = VBE.BU_TX_ISS "+
+"        INNER JOIN PMADMIN.VW_BUS_ACQ VBA "+
+"           ON PRT.PRT_ACQ_BU = VBA.BU_TX_ADQ "+
+"        INNER JOIN PMADMIN.PRSA_TIPOS_TRANSACCION PTT "+
+"           ON PRT.PRT_TRAN_TYP = PTT.NUMERO "+
+"  WHERE (PRT.PRT_PROC_DTE BETWEEN TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') "+
+"         AND PRT.PRT_TRAN_TYP <> 20 "+
+"          OR PRT.PRT_PROC_DTE >= TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') - 1 "+
+"         AND PRT.PRT_PROC_DTE <= TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') - 1 "+
+"         AND PRT.PRT_TRAN_TYP = 20) "+
+"    AND PRT.PRT_ARCH_NBR IN (45, 46, 1275, 1276) "+
+"    AND PRT.PRT_TRAN_TYP NOT IN (51,52,53) "+
+"   GROUP BY PRT.PRT_PROC_DTE, VBA.ENTIDAD_PADRE, VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ, VBE.BU_TX_ISS, "+
+"        CASE WHEN VBE.BU_TX_NAM_ISS LIKE '%DB%' THEN 'D' "+
+"             ELSE 'C' "+
+"        END, "+
+"        PRT.PRT_TRAN_TYP "+
+"  UNION ALL "+
+" SELECT /*+ INDEX_DESC(PTT) */ "+
+"        CASE WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (94, 95, 96, 97, 98) THEN PE.ENTIDAD_PADRE "+
+"             ELSE PTRV.PTRV_ENT_NUMERO_PROSA_ADQ END ENTIDAD_PADRE, "+
+"        PTRV.PTRV_TTR_NUMERO TTR, "+
+"        PTRV.PTRV_IMPORTE_TOTAL_TRANSAC - PTRV.PTRV_IMP_CUOTA_INTERCAMBIO - PTRV.PTRV_IMP_IVA_INTERCAMBIO IMPORTE "+
+"   FROM PMADMIN.PRSA_TXN_RECHAZADAS_VAL PTRV, "+
+"        PMADMIN.VW_BUS_ACQ VBA, "+
+"        PMADMIN.PRSA_ENTIDADES PE "+
+"  WHERE PTRV.PTRV_FECHA_PROCESO_TRANSAC BETWEEN TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') "+
+"    AND PTRV.PTRV_TLI_NUMERO = 2 "+
+"    AND (PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (94, 98, 95, 96, 97) "+
+"          OR PTRV.PTRV_ENT_NUMERO_PROSA_EMI IN (94, 98, 95, 96, 97)) "+ 
+"    AND PE.NUMERO_PROSA = PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+
+"    AND VBA.NUMERO_PROSA = PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+
+"  UNION ALL "+
+"  SELECT /*+ USE_NL(PTT,PE2) */ "+
+"        CASE WHEN PE.ENTIDAD_PADRE IN (95, 96, 97) THEN PE2.ENTIDAD_PADRE "+
+"             WHEN PE.ENTIDAD_PADRE = 31 "+
+"    AND PE.NUMERO_PROSA = 131 THEN PE.NUMERO_PROSA "+
+"             ELSE PE.ENTIDAD_PADRE END ENTIDAD_PADRE, "+
+"        PP.TTR_NUMERO TTR, "+
+"        ROUND(SUM(CASE "+
+"                     WHEN PP.TTR_NUMERO IN(11, 16, 19) THEN -(PP.TOTAL_IMPORTE - PP.IMPORTE_COMISION_INTERCAMB - PP.IVA_COMISION_INTERCAMB) "+
+"                     ELSE PP.TOTAL_IMPORTE - PP.IMPORTE_COMISION_INTERCAMB - PP.IVA_COMISION_INTERCAMB "+
+"                  END),2) IMPORTE "+
+"   FROM PMADMIN.PRSA_POSICIONES PP, "+
+"        PMADMIN.PRSA_ENTIDADES PE, "+
+"        PMADMIN.PRSA_ENTIDADES PE2 "+
+"  WHERE (PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') "+
+"         AND PP.TTR_NUMERO IN (1, 21, 10, 11, 15, 18, 9, 16, 19) "+
+"          OR PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDateHabAnt"]+"', 'DD/MM/YYYY') AND TO_DATE('"+params["initDateHabAnt"]+"', 'DD/MM/YYYY') "+
+"         AND PP.TTR_NUMERO IN (20, 24)) "+
+"    AND PP.TLI_NUMERO = 2 "+
+"    AND (PP.TTR_NUMERO IN (10, 11) "+
+"         AND PP.STTR_NUMERO NOT IN (100) "+
+"          OR PP.TTR_NUMERO NOT IN (10, 11)) "+
+"    AND PE2.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_ADQ "+
+"    AND PE.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_EMI "+
+"  GROUP BY PP.FECHA_PROCESO, PE.ENTIDAD_PADRE, PE2.ENTIDAD_PADRE, PE.NUMERO_PROSA, "+
+"  PE2.NUMERO_PROSA, PP.TIPO_TARJETA, PP.TTR_NUMERO "+
+" )ENTRANTE "+
+" GROUP BY ENTRANTE.ENTIDAD_PADRE, ENTRANTE.TTR "+
+//" -- TERMINA LIQUIDACION ENTRANTE "+
+" UNION ALL "+
+//" -- INICIA LIQUIDACION CIRCUITO LOCAL "+
+" SELECT CIRCUITO_LOCAL.LIQ "+
+"       ,CIRCUITO_LOCAL.ENTIDAD "+
+"       ,CIRCUITO_LOCAL.TTR "+
+"       ,SUM(CIRCUITO_LOCAL.IMPORTE+CIRCUITO_LOCAL.COMISION+CIRCUITO_LOCAL.IVA) NETO "+
+" FROM ( "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PP.ENT_NUMERO_PROSA_ADQ ENTIDAD "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN PP.TOTAL_IMPORTE "+
+"             ELSE -PP.TOTAL_IMPORTE "+
+"        END) IMPORTE "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN -PP.IMPORTE_COMISION_INTERCAMB "+
+"             ELSE PP.IMPORTE_COMISION_INTERCAMB "+
+"        END),2) COMISION "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN -PP.IVA_COMISION_INTERCAMB "+
+"             ELSE PP.IVA_COMISION_INTERCAMB "+
+"        END),2) IVA "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY')-1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')-1 "+
+" AND PP.TLI_NUMERO = 1 "+
+" AND PP.ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98,2198) "+
+" AND PP.ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98,2198) "+
+" AND PP.TTR_NUMERO NOT IN (51,52,53) "+
+" AND PP.CODIGO_MONEDA = 484 "+
+" AND PP.ARCH_NUMERO NOT IN (48,49,1006,2148) "+
+" GROUP BY PP.TLI_NUMERO "+
+"         ,PP.ENT_NUMERO_PROSA_ADQ "+
+"         ,PP.TTR_NUMERO "+
+" 		  ,PP.TIPO_TARJETA "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO "+
+"       ,PP.ENT_NUMERO_PROSA_EMI ENTIDAD "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN -PP.TOTAL_IMPORTE "+
+"             ELSE PP.TOTAL_IMPORTE "+
+"        END) IMPORTE "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN PP.IMPORTE_COMISION_INTERCAMB "+
+"             ELSE -PP.IMPORTE_COMISION_INTERCAMB "+
+"        END),2) COMISION "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN PP.IVA_COMISION_INTERCAMB "+
+"             ELSE -PP.IVA_COMISION_INTERCAMB "+
+"        END),2) IVA "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY')-1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')-1 "+
+" AND PP.TLI_NUMERO = 1 "+
+" AND PP.ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98,2198) "+
+" AND PP.ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98,2198) "+
+" AND PP.TTR_NUMERO NOT IN (51,52,53) "+
+" AND PP.CODIGO_MONEDA = 484 "+
+" AND PP.ARCH_NUMERO NOT IN (48,49,1006,2148) "+
+" GROUP BY PP.TLI_NUMERO "+
+"         ,PP.ENT_NUMERO_PROSA_EMI "+
+"         ,PP.TTR_NUMERO "+
+" 		  ,PP.TIPO_TARJETA "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PP.ENT_NUMERO_PROSA_ADQ ENTIDAD "+
+"       ,0 TTR "+
+"       ,0 IMPORTE "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN -PP.IMP_SOBRETASA "+
+"             ELSE PP.IMP_SOBRETASA "+
+"        END),2) SOBRETASA "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN -PP.IMP_IVA_SOBRETASA "+
+"             ELSE PP.IMP_IVA_SOBRETASA "+
+"        END),2) IVA_SOBRETASA "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY')-1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')-1 "+
+" AND PP.TLI_NUMERO = 1 "+
+" AND PP.ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98,2198) "+
+" AND PP.ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98,2198) "+
+" AND PP.TTR_NUMERO NOT IN (51,52,53) "+
+" AND PP.CODIGO_MONEDA = 484 "+
+" AND PP.ARCH_NUMERO NOT IN (48,49,1006,2148) "+
+" GROUP BY PP.TLI_NUMERO "+
+"         ,PP.ENT_NUMERO_PROSA_ADQ "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO "+
+"       ,PP.ENT_NUMERO_PROSA_EMI ENTIDAD "+
+"       ,0 TTR "+
+"       ,0 IMPORTE "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN PP.IMP_SOBRETASA "+
+"             ELSE -PP.IMP_SOBRETASA "+
+"        END),2) SOBRETASA "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (15,16,18,19,20,21) THEN PP.IMP_IVA_SOBRETASA "+
+"             ELSE -PP.IMP_IVA_SOBRETASA "+
+"        END),2) IVA_SOBRETASA "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY')-1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')-1 "+
+" AND PP.TLI_NUMERO = 1 "+
+" AND PP.ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98,2198) "+
+" AND PP.ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98,2198) "+
+" AND PP.TTR_NUMERO NOT IN (51,52,53) "+
+" AND PP.CODIGO_MONEDA = 484 "+
+" AND PP.ARCH_NUMERO NOT IN (48,49,1006,2148) "+
+" GROUP BY PP.TLI_NUMERO "+
+"         ,PP.ENT_NUMERO_PROSA_EMI "+
+" UNION ALL "+
+" SELECT 1 LIQ "+
+"       ,VBE.NUMERO_PROSA ENTIDAD "+
+"       ,23 TTR "+
+"       ,SUM(SFIT.FMI_CHRG_AMT)IMPORTE "+
+"       ,-SUM( "+
+"             CASE "+
+"               WHEN SFIT.FMI_TYP_C IN (22,23) THEN SFIT.FMI_COMM_AMT "+
+"               ELSE 0 "+
+"             END "+
+"          ) COMISION  "+
+"       ,-SUM( "+
+"             CASE "+
+"               WHEN SFIT.FMI_TYP_C IN (22,23) THEN SFIT.FMI_VAT_AMT "+
+"               ELSE 0 "+
+"             END "+
+"          ) IVA  "+
+" FROM SETTLEMENT.SV_FM_INT_TXN SFIT "+
+" INNER JOIN (SELECT * FROM PMADMIN.VW_BUS_EMI UNION SELECT * FROM PMADMIN.VW_BUS_ACQ) VBE "+
+"     ON VBE.BU_TX_ISS = SFIT.FMI_DB_CLR_BU "+
+" WHERE SFIT.FMI_DT BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND SFIT.FMI_NSI_CLR_ID = 22 "+
+" AND SFIT.FMI_TYP_C <> 16 "+
+" GROUP BY VBE.NUMERO_PROSA "+
+" UNION ALL "+
+" SELECT 1 LIQ "+
+"       ,VBA.NUMERO_PROSA ENTIDAD  "+
+"       ,23 TTR "+
+"       ,-SUM(SFIT.FMI_CHRG_AMT) IMPORTE "+
+"       ,SUM(SFIT.FMI_COMM_AMT) COMISION "+
+"       ,SUM(SFIT.FMI_VAT_AMT) IVA "+
+" FROM SETTLEMENT.SV_FM_INT_TXN SFIT  "+
+" INNER JOIN (SELECT * FROM PMADMIN.VW_BUS_ACQ UNION SELECT * FROM PMADMIN.VW_BUS_EMI) VBA  "+
+"     ON VBA.BU_TX_ADQ = SFIT.FMI_CR_CLR_BU  "+
+" WHERE SFIT.FMI_DT BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')  "+
+" AND SFIT.FMI_NSI_CLR_ID = 22 "+
+" AND SFIT.FMI_TYP_C <> 15  "+
+" GROUP BY VBA.NUMERO_PROSA "+
+" ) CIRCUITO_LOCAL "+
+" GROUP BY CIRCUITO_LOCAL.LIQ "+
+"       ,CIRCUITO_LOCAL.ENTIDAD "+
+"       ,CIRCUITO_LOCAL.TTR "+
+//" -- FIN LIQUIDACION CIRCUITO LOCAL "+
+" UNION ALL "+
+//" -- CAMBIO INTERREDES REDONDEO "+
+" SELECT 5 LIQ "+
+"       ,INTERREDES.ENTIDAD_PADRE "+
+"       ,INTERREDES.TTR "+
+"       ,SUM(INTERREDES.IMPORTE+INTERREDES.COMISION+INTERREDES.IVA) IMPORTE "+
+" FROM ( "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (20,21,23) THEN -PP.TOTAL_IMPORTE "+
+"             WHEN PP.TOT_TXS_CASHB != 0 THEN PP.TOTAL_IMPORTE "+
+"             ELSE PP.TOTAL_IMPORTE "+
+"        END) IMPORTE "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (20,21,23) THEN PP.IMPORTE_COMISION_COMERCIO "+
+"             WHEN PP.TOT_TXS_CASHB != 0 THEN -PP.TOT_COM_TARIFA_CASHB "+
+"             ELSE -PP.IMPORTE_COMISION_COMERCIO "+
+"        END),2) COMISION "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (20,21,23) THEN PP.IVA_COMISION_COMERCIO "+
+"             WHEN PP.TOT_TXS_CASHB != 0 THEN -PP.TOT_IVA_TARIFA_CASHB "+
+"             ELSE -PP.IVA_COMISION_COMERCIO "+
+"        END),2) IVA "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"     ON PE.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_EMI "+
+"     AND PE.TIE_NUMERO = 1 "+
+//" -- INICIO CAMBIO PARA CUANDRE DE CENTAVOS AGRUPACION POR INTERRED 07/08/2012 "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE1 "+
+"     ON PE1.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_ADQ "+
+//" -- FIN CAMBIO PARA CUANDRE DE CENTAVOS AGRUPACION POR INTERRED 07/08/2012 "+
+" WHERE ((PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO NOT IN (20,40)) "+
+"         OR "+
+"        (PP.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO IN (20,40))  "+
+"       ) "+
+" AND PP.TLI_NUMERO = 5 "+
+" GROUP BY PP.TLI_NUMERO "+
+"         ,PE.ENTIDAD_PADRE "+
+"         ,PE.NUMERO_PROSA "+
+"         ,PE1.NUMERO_PROSA "+
+"         ,PP.TIPO_TARJETA "+
+"         ,CASE "+
+"             WHEN PP.TTR_NUMERO = 1 AND PP.TOT_TXS_CASHB != 0 THEN 1 "+
+"             ELSE 0 "+
+"          END "+
+"         ,PP.TTR_NUMERO "+
+//" -- INICIO CAMBIO PARA CUANDRE DE CENTAVOS AGRUPACION POR INTERRED 07/08/2012 "+
+" 		  ,PE1.ENTIDAD_PADRE "+
+//" -- FIN CAMBIO PARA CUANDRE DE CENTAVOS AGRUPACION POR INTERRED 07/08/2012 "+
+" UNION ALL "+
+" SELECT PF.TLI_NUMERO LIQ "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PF.TTR_NUMERO TTR "+
+"       ,0 IMPORTE "+
+"       ,ROUND(SUM(PF.TOTAL_COMISION_EMI+PF.IMPORTE_ADMON_BENEFICIOS),2) COMISION "+
+"       ,ROUND(SUM(PF.TOTAL_IVA_COMISION_EMI+PF.IVA_ADMON_BENEFICIOS),2) IVA "+
+" FROM SUPERSIC.POSICIONES_FINALES@LG_PMTU_IFO_01 PF "+
+"     INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"         ON PF.ENT_NUMERO_PROSA = PE.NUMERO_PROSA "+
+" WHERE PF.FECHA BETWEEN TO_DATE('"+params["initDate"]+"','dd-MM-yyyy') and TO_DATE('"+params["endDate"]+"','dd-MM-yyyy') "+
+"       AND PF.TLI_NUMERO = 5 "+
+"       AND PE.TIE_NUMERO = 1 "+
+"       AND PF.TTR_NUMERO IN (20,40) "+
+"       AND PF.TIPO_TARJETA = 'C' "+
+" GROUP BY PF.TLI_NUMERO "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PF.TTR_NUMERO "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,SUM(PP.TOTAL_IMPORTE) IMPORTE "+
+"       ,-ROUND(SUM(PP.IMPORTE_COMISION_COMERCIO),2) COMIMSION "+
+"       ,-ROUND(SUM(PP.IVA_COMISION_COMERCIO),2) IVA "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"     ON PE.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_ADQ "+
+" WHERE PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND PP.TLI_NUMERO = 5 "+
+" AND PE.TIE_NUMERO = 1 "+
+" AND PP.TTR_NUMERO = 23 "+
+" GROUP BY PP.TLI_NUMERO "+
+"         ,PE.ENTIDAD_PADRE "+
+"         ,PP.TTR_NUMERO "+
+" ) INTERREDES "+
+" GROUP BY CASE  "+
+"             WHEN INTERREDES.TTR NOT IN (20,40) THEN 1 "+
+"             WHEN INTERREDES.TTR = 20 THEN 2 "+
+"             WHEN INTERREDES.TTR = 40 THEN 3 "+
+"        END "+
+"       ,CASE "+
+"             WHEN INTERREDES.TTR NOT IN (20,40) THEN 'LIQUIDACION INTERREDES' "+
+"             WHEN INTERREDES.TTR = 20 THEN 'PAGOS INTERREDES' "+
+"             WHEN INTERREDES.TTR = 40 THEN 'REVERSA DE PAGOS INTERREDES' "+
+"        END "+
+"       ,INTERREDES.ENTIDAD_PADRE "+
+"       ,INTERREDES.TTR  "+
+//" -- FIN CAMBIO INTERREDES REDONDEO "+
+//"-- INICIO INTEGRACION LIQ 15 HUB DE PAGOS SAS-JPM P-06-0527-12 16/01/2015"
+"  UNION ALL "+
+"  SELECT 15 LIQ "+
+"       ,HUBESPECIALES.ENTIDAD_PADRE "+
+"       ,HUBESPECIALES.TTR "+
+"       ,SUM(HUBESPECIALES.IMPORTE+HUBESPECIALES.COMISION+HUBESPECIALES.IVA) IMPORTE "+
+" FROM ( "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (1) THEN -PP.TOTAL_IMPORTE "+
+"             WHEN PP.TOT_TXS_CASHB != 0 THEN PP.TOTAL_IMPORTE "+
+"             ELSE PP.TOTAL_IMPORTE "+
+"        END) IMPORTE "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (1) THEN PP.IMPORTE_COMISION_COMERCIO "+
+"             WHEN PP.TOT_TXS_CASHB != 0 THEN -PP.TOT_COM_TARIFA_CASHB "+
+"             ELSE -PP.IMPORTE_COMISION_COMERCIO "+
+"        END),2) COMISION "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (1) THEN PP.IVA_COMISION_COMERCIO "+
+"             WHEN PP.TOT_TXS_CASHB != 0 THEN -PP.TOT_IVA_TARIFA_CASHB "+
+"             ELSE -PP.IVA_COMISION_COMERCIO "+
+"        END),2) IVA "+
+" FROM CHP.TBL_CHP_POSICIONES@LG_PMTU_PMTWEB_SCP_CHP PP "+
+" INNER JOIN HUB.TBL_HUB_ENTIDADES@LG_PMTU_PMTWEB_PWS_HUB PE "+
+"     ON PE.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_EMI "+
+"     AND PE.TIE_NUMERO = 1 "+
+" INNER JOIN HUB.TBL_HUB_ENTIDADES@LG_PMTU_PMTWEB_PWS_HUB PE1 "+
+"     ON PE1.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_ADQ "+
+" WHERE ((PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO NOT IN (20,40)) "+
+"         OR "+
+"        (PP.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO IN (20,40)) "+
+"       ) "+
+" AND PP.TLI_NUMERO = 15 "+
+" GROUP BY PP.TLI_NUMERO "+
+"         ,PE.ENTIDAD_PADRE "+
+"         ,PE.NUMERO_PROSA "+
+"         ,PE1.NUMERO_PROSA "+
+"         ,PP.TIPO_TARJETA "+
+"         ,CASE "+
+"             WHEN PP.TTR_NUMERO = 1 AND PP.TOT_TXS_CASHB != 0 THEN 1 "+
+"             ELSE 0 "+
+"          END "+
+"         ,PP.TTR_NUMERO "+
+" 		  ,PE1.ENTIDAD_PADRE "+
+"  UNION ALL "+
+"  SELECT PF.TLI_NUMERO LIQ "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PF.TTR_NUMERO TTR "+
+"       ,0 IMPORTE "+
+"       ,ROUND(SUM(PF.TOT_COM_EMISOR),2) COMISION "+
+"       ,ROUND(SUM(PF.TOT_IVA_EMISOR),2) IVA "+
+" FROM CHP.TBL_CHP_POSICIONES_FINALES@LG_PMTU_PMTWEB_SCP_CHP PF "+
+"     INNER JOIN HUB.TBL_HUB_ENTIDADES@LG_PMTU_PMTWEB_PWS_HUB PE "+
+"         ON PF.ENT_NUMERO_PROSA = PE.NUMERO_PROSA "+
+" WHERE PF.TTR_NUMERO IN (1) "+
+"       AND PF.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','dd-MM-yyyy') and TO_DATE('"+params["endDate"]+"','dd-MM-yyyy') "+
+"       AND PF.TIPO_TARJETA = 'C' "+
+"       AND PF.TLI_NUMERO = 15 "+
+"       AND PE.TIE_NUMERO = 1 "+
+" GROUP BY PF.TLI_NUMERO "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PF.TTR_NUMERO "+
+" UNION ALL "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,SUM(PP.TOTAL_IMPORTE) IMPORTE "+
+"       ,-ROUND(SUM(PP.IMPORTE_COMISION_COMERCIO),2) COMIMSION "+
+"       ,-ROUND(SUM(PP.IVA_COMISION_COMERCIO),2) IVA "+
+" FROM CHP.TBL_CHP_POSICIONES@LG_PMTU_PMTWEB_SCP_CHP PP "+
+" INNER JOIN HUB.TBL_HUB_ENTIDADES@LG_PMTU_PMTWEB_PWS_HUB PE "+
+"     ON PE.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_ADQ "+
+" WHERE PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND PP.TLI_NUMERO = 15 "+
+" AND PP.TTR_NUMERO = 1 "+
+" GROUP BY PP.TLI_NUMERO "+
+"         ,PE.ENTIDAD_PADRE "+
+"         ,PP.TTR_NUMERO "+
+" ) HUBESPECIALES "+
+" GROUP BY CASE "+
+"             WHEN HUBESPECIALES.TTR NOT IN (20,40) THEN 1 "+
+"             WHEN HUBESPECIALES.TTR = 20 THEN 2 "+
+"             WHEN HUBESPECIALES.TTR = 40 THEN 3 "+
+"        END "+
+"       ,CASE "+
+"             WHEN HUBESPECIALES.TTR NOT IN (20,40) THEN 'LIQUIDACION INTERREDES' "+
+"             WHEN HUBESPECIALES.TTR = 20 THEN 'PAGOS INTERREDES' "+
+"             WHEN HUBESPECIALES.TTR = 40 THEN 'REVERSA DE PAGOS INTERREDES' "+
+"        END "+
+"       ,HUBESPECIALES.ENTIDAD_PADRE "+
+"       ,HUBESPECIALES.TTR "+
+//"-- FIN INTEGRACION LIQ 15 HUB DE PAGOS SAS-JPM P-06-0527-12 16/01/2015 "+
+" UNION ALL  "+
+//" -- INICIA VISA "+
+" SELECT 6 LIQ  "+
+"       ,a.ENTIDAD ENTIDAD "+
+"       ,a.TTR TTR "+
+"       ,SUM(a.IMPORTE) IMPORTE  "+
+"   FROM (  "+
+" SELECT  S.TLI_NUMERO LIQ  "+
+"        ,E.ENT_NUMERO_PROSA ENTIDAD  "+
+"        ,0 TTR  "+
+"        ,SUM(TOTAL_IMPORTE) IMPORTE  "+
+"   FROM  SUPERSIC.SALDOS@LG_PMTU_IFO_01 S  "+
+"  INNER  JOIN SUPERSIC.ENTIDADES@LG_PMTU_IFO_01 E  "+
+"           ON E.NUMERO_PROSA  = S.ENT_NUMERO_PROSA  "+
+"  INNER  JOIN SUPERSIC.TIPOS_LIQUIDACION@LG_PMTU_IFO_01 TL  "+
+"         ON TL.NUMERO = TLI_NUMERO  "+
+"  WHERE  S.FECHA_MOVIMIENTO BETWEEN SUPERSIC.FNC_DIA_LIQ_ANTERIOR_VISA@LG_PMTU_IFO_01(TO_DATE('"+params["initDate"]+"','DD/MM/YYYY'))+1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')  "+
+"    AND  SUPERSIC.FNC_DIA_HABIL_VISA@LG_PMTU_IFO_01(TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')) = 0 "+
+"    AND  S.TLI_NUMERO IN(6)  "+
+"  GROUP  BY S.TLI_NUMERO  "+
+"          ,E.ENT_NUMERO_PROSA  "+
+" UNION ALL  "+
+" SELECT  S.TLI_NUMERO LIQ  "+
+"        ,E.ENT_NUMERO_PROSA ENTIDAD  "+
+"        ,0 TTR  "+
+"        ,SUM( NVL(TOTAL_IMP_BENEFICIOS, 0) + NVL(TOTAL_ADMON_BENEFICIOS, 0) + NVL(TOTAL_IVA_ADMON_BENEFICIOS, 0) + NVL(TOTAL_DCC_IMP, 0) ) IMPORTE  "+
+"   FROM  SUPERSIC.SALDOS@LG_PMTU_IFO_01 S  "+
+"  INNER  JOIN SUPERSIC.ENTIDADES@LG_PMTU_IFO_01 E  "+
+"           ON E.NUMERO_PROSA  = S.ENT_NUMERO_PROSA  "+
+"  INNER  JOIN SUPERSIC.TIPOS_LIQUIDACION@LG_PMTU_IFO_01 TL  "+
+"         ON TL.NUMERO = TLI_NUMERO  "+
+"  WHERE  S.FECHA_MOVIMIENTO BETWEEN SUPERSIC.FNC_DIA_LIQ_ANTERIOR_VISA@LG_PMTU_IFO_01(TO_DATE('"+params["initDate"]+"','DD/MM/YYYY'), 'S')+1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')  "+
+"    AND  SUPERSIC.FNC_DIA_HABIL_VISA@LG_PMTU_IFO_01(TO_DATE('"+params["endDate"]+"','DD/MM/YYYY'), 'S') = 0  "+
+"    AND  S.TLI_NUMERO IN(16)  "+
+"    AND  NVL(s.TOTAL_ADMON_BENEFICIOS,0) <> 0  "+
+"  GROUP  BY S.TLI_NUMERO  "+
+"          ,E.ENT_NUMERO_PROSA  "+
+" ) a  "+
+" GROUP  "+
+"    BY  a.ENTIDAD  "+
+"       ,a.TTR  "+
+//" -- TERMINA VISA "+
+" UNION ALL  "+
+//" -- INICIA CAMBIO DE SALIENTE "+
+" SELECT SALIENTE.LIQ "+
+"       ,SALIENTE.ENTIDAD_PADRE "+
+"       ,SALIENTE.TTR "+
+"       ,SUM(SALIENTE.IMPORTE+SALIENTE.COMISION+SALIENTE.IVA) IMPORTE  "+
+" FROM ( "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,CASE "+
+"             WHEN PE.ENTIDAD_PADRE IN (95,96,97) THEN PE2.ENTIDAD_PADRE "+
+"             ELSE PE.ENTIDAD_PADRE "+
+"        END ENTIDAD_PADRE "+
+"       ,CASE "+
+"             WHEN PE.ENTIDAD_PADRE IN (95,96,97) THEN PE2.NUMERO_PROSA "+
+"             ELSE PE.NUMERO_PROSA "+
+"        END HIJA "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,PP.TIPO_TARJETA TT "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (21,20,16,19) THEN PP.TOTAL_IMPORTE "+
+"             ELSE -PP.TOTAL_IMPORTE "+
+"        END) IMPORTE "+
+"       ,SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (21,20,16,19) THEN -PP.IMPORTE_COMISION_INTERCAMB "+
+"             ELSE PP.IMPORTE_COMISION_INTERCAMB "+
+"        END) COMISION "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (21,20,16,19) THEN -PP.IVA_COMISION_INTERCAMB "+
+"             ELSE PP.IVA_COMISION_INTERCAMB "+
+"        END),2) IVA "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"     ON PE.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_ADQ "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE2 "+
+"     ON PE2.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_EMI "+
+" INNER JOIN PMADMIN.PRSA_TIPOS_TRANSACCION PTT "+
+"     ON PTT.NUMERO = PP.TTR_NUMERO "+
+" WHERE ((PP.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO IN (1,21,9,15,16,18,19)) "+
+"     OR "+
+"      (PP.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO IN (20)) "+
+"     ) "+
+" AND PP.TLI_NUMERO = 3 "+
+" AND PP.TIPO_TARJETA IN ('D','C') "+
+" GROUP BY PP.TLI_NUMERO "+
+"       ,PE2.ENTIDAD_PADRE "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PE2.NUMERO_PROSA "+
+"       ,PE.NUMERO_PROSA "+
+"       ,PP.TTR_NUMERO "+
+"       ,PP.TIPO_TARJETA "+
+" UNION ALL "+
+" SELECT 3 LIQ "+
+"       ,DECODE(VBA.NUMERO_LN,'EGLO',PE.ENTIDAD_PADRE, VBA.ENTIDAD_PADRE) ENTIDAD_PADRE "+
+"       ,DECODE(VBA.NUMERO_LN,'EGLO',PE.NUMERO_PROSA, VBA.NUMERO_PROSA) HIJA "+
+"       ,0 TTR "+
+"       ,PTRV.PTRV_NATURALEZA_CONTABLE TT "+
+"       ,SUM(CASE "+
+"             WHEN PTRV.PTRV_TTR_NUMERO IN (21,20) THEN PTRV.PTRV_IMPORTE_TOTAL_TRANSAC "+
+"             ELSE -PTRV.PTRV_IMPORTE_TOTAL_TRANSAC "+
+"        END) IMPORTE "+
+"       ,SUM(CASE "+
+"             WHEN PTRV.PTRV_TTR_NUMERO IN (21,20) THEN -PTRV.PTRV_IMP_CUOTA_INTERCAMBIO "+
+"             ELSE PTRV.PTRV_IMP_CUOTA_INTERCAMBIO "+
+"        END) COMISION "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PTRV.PTRV_TTR_NUMERO IN (21,20) THEN -PTRV.PTRV_IMP_IVA_INTERCAMBIO "+
+"             ELSE PTRV.PTRV_IMP_IVA_INTERCAMBIO "+
+"        END),2) IVA "+
+" FROM PMADMIN.PRSA_TXN_RECHAZADAS_VAL PTRV "+
+" INNER JOIN PMADMIN.VW_BUS_ACQ VBA "+
+"     ON VBA.NUMERO_PROSA = PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"       ON PE.NUMERO_PROSA = PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+
+" WHERE PTRV.PTRV_FECHA_PROCESO_TRANSAC BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY')-1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')-1 "+
+" AND PTRV.PTRV_TTR_NUMERO NOT IN (53) "+
+" GROUP BY DECODE(VBA.NUMERO_LN,'EGLO',PE.ENTIDAD_PADRE,VBA.ENTIDAD_PADRE) "+
+"         ,DECODE(VBA.NUMERO_LN,'EGLO',PE.NUMERO_PROSA, VBA.NUMERO_PROSA) "+
+"         ,PTRV.PTRV_NATURALEZA_CONTABLE "+
+" UNION ALL "+
+" SELECT /*+ ORDERED */ 3 LIQ "+
+"       ,PP.ENT_NUMERO_PROSA_EMI ENTIDAD "+
+"       ,PP.ENT_NUMERO_PROSA_EMI HIJA "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,PP.TIPO_TARJETA TT "+
+"       ,-SUM(PP.TOTAL_IMPORTE) IMPORTE "+
+"       ,0 COMISION "+
+"       ,0 IVA  "+
+" FROM PMADMIN.PRSA_POSICIONES PP  "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE  "+
+"     ON PE.NUMERO_PROSA = PP.ENT_NUMERO_PROSA_EMI  "+
+" INNER JOIN PMADMIN.PRSA_TIPOS_TRANSACCION PTT  "+
+"     ON PTT.NUMERO = PP.TTR_NUMERO  "+
+" WHERE ((PP.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO = 20 )  "+
+"     OR (PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') AND PP.TTR_NUMERO != 20)) "+
+" AND PP.ENT_NUMERO_PROSA_ADQ IN (95,96,97)  "+
+" AND PP.ENT_NUMERO_PROSA_EMI IN (95,96,97)  "+
+" GROUP BY PP.ENT_NUMERO_PROSA_EMI   "+
+"       ,PP.TTR_NUMERO "+
+"       ,PP.TIPO_TARJETA "+
+" UNION ALL "+
+" SELECT MS.LIQ "+
+"       ,MS.ENTIDAD_PADRE "+
+"       ,MS.HIJA "+
+"       ,MS.TTR "+
+"       ,MS.TT "+
+"       ,SUM(CASE "+
+"             WHEN MS.DESCRIPCION = 'MISCELANEOS (A FAVOR)' THEN MS.IMPORTE "+
+"             WHEN MS.DESCRIPCION = 'MISCELANEOS (EN CONTRA)' THEN -MS.IMPORTE "+
+"             ELSE 0 "+
+"        END) IMPORTE "+
+"       ,SUM(CASE "+
+"             WHEN MS.DESCRIPCION = 'MISCELANEOS (A FAVOR)' THEN -MS.COMISION "+
+"             WHEN MS.DESCRIPCION = 'MISCELANEOS (EN CONTRA)' THEN MS.COMISION "+
+"             ELSE 0 "+
+"        END) COMISION "+
+"       ,SUM(CASE "+
+"             WHEN MS.DESCRIPCION = 'MISCELANEOS (A FAVOR)' THEN -MS.IVA "+
+"             WHEN MS.DESCRIPCION = 'MISCELANEOS (EN CONTRA)' THEN MS.IVA "+
+"             ELSE 0 "+
+"        END) IVA "+
+" FROM ( "+
+" SELECT 3 LIQ "+
+"       ,CASE "+
+"             WHEN VISTA.NUMERO_PROSA IN (95,96,97) THEN VISTA2.ENTIDAD_PADRE "+
+"             ELSE VISTA.ENTIDAD_PADRE "+
+"        END ENTIDAD_PADRE "+
+"       ,CASE "+
+"             WHEN VISTA.NUMERO_PROSA IN (95,96,97) THEN VISTA2.NUMERO_PROSA "+
+"             ELSE VISTA.NUMERO_PROSA "+
+"        END HIJA "+
+"       ,10 TTR "+
+"       ,CASE "+
+"             WHEN VISTA.NUMERO_PROSA IN (95,96,97) THEN 'MISCELANEOS (EN CONTRA)'  "+
+"             ELSE 'MISCELANEOS (A FAVOR)'  "+
+"        END DESCRIPCION "+
+"       ,'X' TT "+
+"       ,-ROUND(SUM(SFIT.FMI_CHRG_AMT),2) IMPORTE "+
+"       ,ROUND(SUM(SFIT.FMI_COMM_AMT),2) COMISION "+
+"       ,ROUND(SUM(SFIT.FMI_VAT_AMT),2) IVA "+
+" FROM SETTLEMENT.SV_FM_INT_TXN SFIT  "+
+" INNER JOIN (SELECT 'ADQ' TIPO, VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE, VBA.TIE_NUMERO, VBA.NUMERO_LN FROM PMADMIN.VW_BUS_ACQ VBA  "+
+"             UNION   "+
+"             SELECT 'EMI' TIPO, VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE, VBE.TIE_NUMERO, VBE.NUMERO_LN FROM PMADMIN.VW_BUS_EMI VBE  "+
+"            ) VISTA  "+
+"     ON VISTA.BU = SFIT.FMI_CR_CLR_BU  "+
+" INNER JOIN (SELECT 'ADQ' TIPO, VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE, VBA.TIE_NUMERO, VBA.NUMERO_LN FROM PMADMIN.VW_BUS_ACQ VBA  "+
+"             UNION   "+
+"             SELECT 'EMI' TIPO, VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE, VBE.TIE_NUMERO, VBE.NUMERO_LN FROM PMADMIN.VW_BUS_EMI VBE  "+
+"            ) VISTA2  "+
+"     ON VISTA2.BU = SFIT.FMI_DB_CLR_BU  "+
+" WHERE SFIT.FMI_DT BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY')-1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')-1  "+
+" AND FMI_NSI_CLR_ID = 33    "+
+" AND TRIM(FMI_OPER_ID) <> 'CZDCS030'  "+
+" GROUP BY VISTA.ENTIDAD_PADRE "+
+"         ,VISTA2.ENTIDAD_PADRE "+
+"         ,VISTA.NUMERO_PROSA "+
+"         ,VISTA2.NUMERO_PROSA "+
+"         ,VISTA.TIPO "+
+"         ,VISTA2.TIPO "+
+" UNION ALL "+
+" SELECT 3 LIQ "+
+"       ,VISTA.ENTIDAD_PADRE ENTIDAD_PADRE "+
+"       ,VISTA.NUMERO_PROSA HIJA "+
+"       ,10 TTR "+
+"       ,CASE "+
+"             WHEN PTS.PTS_CR_CNT >0 THEN 'MISCELANEOS (EN CONTRA)' "+
+"             ELSE 'MISCELANEOS (A FAVOR)' "+
+"        END DESCRIPCION "+
+"       ,'X' TT "+
+"       ,-ROUND(SUM(PTS.PTS_CR_TXN_AMT+PTS.PTS_DB_TXN_AMT),2) IMPORTE "+
+"       ,0 COMISION "+
+"       ,0 IVA "+
+" FROM PMADMIN.PRSA_TXN_SUMMARY PTS "+
+" INNER JOIN PMADMIN.PRSA_TXN_SUMMARY PTS2 "+
+"     ON PTS.PTS_CYCLE_ID = PTS2.PTS_CYCLE_ID    "+
+"     AND PTS.PTS_CYCLE_DT = PTS2.PTS_CYCLE_DT "+   
+"     AND PTS.PTS_NSI = PTS2.PTS_NSI    "+
+"     AND PTS.PTS_NSI_CLR_ID = PTS2.PTS_NSI_CLR_ID "+   
+"     AND PTS.PTS_SRCE_C = PTS2.PTS_SRCE_C    "+
+"     AND PTS.PTS_PROC_CD = PTS2.PTS_PROC_CD    "+
+"     AND PTS.PTS_TXN_TYP = PTS2.PTS_TXN_TYP    "+
+"     AND PTS.PTS_FROM_ACCT = PTS2.PTS_FROM_ACCT "+   
+"     AND PTS.PTS_TO_ACCT = PTS2.PTS_TO_ACCT    "+
+"     AND PTS.PTS_TXN_CD_SFX = PTS2.PTS_TXN_CD_SFX "+   
+"     AND PTS.PTS_CR_CNT = PTS2.PTS_DB_CNT    "+
+"     AND PTS.PTS_CR_TXN_AMT = PTS2.PTS_DB_TXN_AMT    "+
+"     AND PTS.PTS_CR_MRCH_FEE_AMT = PTS2.PTS_DB_MRCH_FEE_AMT    "+
+"     AND PTS.PTS_CR_MRCH_IVA_AMT = PTS2.PTS_DB_MRCH_IVA_AMT    "+
+"     AND PTS.PTS_CR_INTCHG_FEE_AMT = PTS2.PTS_DB_INTCHG_FEE_AMT    "+
+"     AND PTS.PTS_CR_INTCHG_IVA_AMT = PTS2.PTS_DB_INTCHG_IVA_AMT "+   
+"     AND PTS.PTS_DB_CNT = PTS2.PTS_CR_CNT    "+
+"     AND PTS.PTS_DB_TXN_AMT = PTS2.PTS_CR_TXN_AMT    "+
+"     AND PTS.PTS_DB_MRCH_FEE_AMT = PTS2.PTS_CR_MRCH_FEE_AMT    "+
+"     AND PTS.PTS_DB_MRCH_IVA_AMT = PTS2.PTS_CR_MRCH_IVA_AMT    "+
+"     AND PTS.PTS_DB_INTCHG_FEE_AMT = PTS2.PTS_CR_INTCHG_FEE_AMT    "+
+"     AND PTS.PTS_DB_INTCHG_IVA_AMT = PTS2.PTS_CR_INTCHG_IVA_AMT "+   
+" INNER JOIN PMADMIN.SZ_TC_GRP_RELATION STGR "+
+"     ON STGR.TCGR_PROC_CD = PTS.PTS_PROC_CD "+
+"     AND STGR.TCGR_SRCE_C = PTS.PTS_SRCE_C "+
+"     AND STGR.TCGR_TO_ACCT = PTS.PTS_TO_ACCT "+
+"     AND STGR.TCGR_TXN_CD_SFX = PTS.PTS_TXN_CD_SFX "+
+"     AND STGR.TCGR_TXN_TYP = PTS.PTS_TXN_TYP "+
+" INNER JOIN (SELECT 'ADQ' TIPO, VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE, VBA.TIE_NUMERO, VBA.NUMERO_LN FROM PMADMIN.VW_BUS_ACQ VBA "+
+"             UNION  "+
+"             SELECT 'EMI' TIPO, VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE, VBE.TIE_NUMERO, VBE.NUMERO_LN FROM PMADMIN.VW_BUS_EMI VBE "+
+"            ) VISTA "+
+"     ON VISTA.BU = PTS.PTS_CLR_BU "+
+"     AND VISTA.TIE_NUMERO = 1 "+
+"     AND VISTA.NUMERO_LN NOT IN ('EGLO','VISA','MDS') "+
+" INNER JOIN (SELECT VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE FROM PMADMIN.VW_BUS_ACQ VBA "+
+"             UNION  "+
+"             SELECT VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE FROM PMADMIN.VW_BUS_EMI VBE "+
+"            ) VISTA2 "+
+"     ON VISTA2.BU = PTS2.PTS_CLR_BU "+
+" WHERE PTS.PTS_CYCLE_DT BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY')-1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')-1 "+ 
+" AND PTS.PTS_NSI_CLR_ID = 33 "+
+" AND STGR.TCGR_GRP_ID IN (111,112) "+
+" GROUP BY VISTA.ENTIDAD_PADRE "+
+"         ,VISTA.NUMERO_PROSA "+
+"         ,VISTA2.NUMERO_PROSA "+
+"         ,CASE "+
+"             WHEN PTS.PTS_CR_CNT >0 THEN 'MISCELANEOS (EN CONTRA)' "+
+"             ELSE 'MISCELANEOS (A FAVOR)' "+
+"          END "+
+//"-- SELECT PP.TLI_NUMERO LIQ, "+
+//"--        PP.ENT_NUMERO_PROSA_EMI ENTIDAD_PADRE, "+
+//"--        PP.ENT_NUMERO_PROSA_EMI HIJA, "+
+//"--        PP.TTR_NUMERO TTR, "+
+//"--        'MISCELANEOS (A FAVOR)' DESCRIPCION, "+
+//"--        'X' TT, "+
+//"--        -SUM(PP.TOTAL_IMPORTE) IMPORTE, "+
+//"--        0 COMISION, "+
+//"--        0 IVA "+
+//"-- FROM PMADMIN.PRSA_POSICIONES PP "+
+//"-- WHERE PP.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+//"-- AND PP.TTR_NUMERO = 10 "+
+//"-- AND STTR_NUMERO IS NOT NULL "+
+//"-- AND PP.ENT_NUMERO_PROSA_EMI NOT IN (97,96,95) "+
+//"-- AND PP.TLI_NUMERO IN (3) "+
+//"-- GROUP BY PP.TLI_NUMERO, "+
+//"--          ENT_NUMERO_PROSA_EMI, "+
+//"--          TTR_NUMERO "+
+" ) MS "+
+" GROUP BY MS.LIQ "+
+"       ,MS.ENTIDAD_PADRE "+
+"       ,MS.HIJA "+
+"       ,MS.TTR "+
+"       ,MS.TT "+
+" ) SALIENTE "+
+" GROUP BY SALIENTE.LIQ "+
+"       ,SALIENTE.ENTIDAD_PADRE "+
+"       ,SALIENTE.TTR "+
+//" -- FIN CAMBIO DE SALIENTE "+
+//----------------------------------------------------------------------------//
+// Marca del Cambio: AXIA-AHH-P-60-2646-14 Inicia  la Modificacion 24/06/2015 //
+//----------------------------------------------------------------------------//
+//INICIA LIQUIDACION CORRESPONSAL
+" UNION ALL "+
+" SELECT CORRESPONSAL.LIQ "+
+"       ,CORRESPONSAL.ENTIDAD_PADRE "+
+"       ,CORRESPONSAL.TTR "+
+"       ,CORRESPONSAL.IMPORTE "+
+" FROM ( "+
+" SELECT PTA.TLI_NUMERO LIQ "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PTA.TTR_NUMERO TTR "+
+"       ,SUM(PTA.TOTAL_IMPORTE-PTA.IMP_SOBRETASA-PTA.IMP_IVA_SOBRETASA) IMPORTE "+
+"  FROM SSP.PRSA_POSICIONES@LG_PMTU_PMTWEB_IFO2_SSP PTA "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"     ON PE.ENTIDAD_PADRE = PTA.ENT_NUMERO_PROSA_ADQ "+
+" WHERE PTA.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND PTA.TLI_NUMERO = 60 "+
+" AND PTA.TTR_NUMERO IN (50,51) "+ 
+" GROUP BY PTA.TLI_NUMERO "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PTA.TTR_NUMERO "+
+" UNION ALL "+
+" SELECT PTA.TLI_NUMERO LIQ "+
+"       ,31 ENTIDAD "+
+"       ,PTA.TTR_NUMERO TTR "+
+"       ,-SUM(PTA.IMPORTE_COMISION_COMERCIO+PTA.IVA_COMISION_COMERCIO) IMPORTE "+
+"  FROM SSP.PRSA_POSICIONES@LG_PMTU_PMTWEB_IFO2_SSP PTA "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"    ON PE.ENTIDAD_PADRE = PTA.ENT_NUMERO_PROSA_ADQ "+
+" WHERE PTA.TLI_NUMERO   = 60 "+
+"   AND PTA.FECHA_LIQ    BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+"   AND PTA.TTR_NUMERO   IN (50,51) "+ 
+" GROUP BY PTA.TLI_NUMERO "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PTA.TTR_NUMERO "+
+" UNION ALL "+
+" SELECT PTA.TLI_NUMERO LIQ "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PTA.TTR_NUMERO TTR "+
+"       ,-SUM(PTA.TOTAL_IMPORTE-PTA.TOT_IMPORTE_CASHB-PTA.TOT_IVA_TARIFA_CASHB) IMPORTE "+
+"  FROM SSP.PRSA_POSICIONES@LG_PMTU_PMTWEB_IFO2_SSP PTA "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"     ON PE.ENTIDAD_PADRE = PTA.ENT_NUMERO_PROSA_EMI "+
+" WHERE PTA.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND PTA.TLI_NUMERO = 60 "+
+" AND PTA.TTR_NUMERO IN (50,51) "+ 
+" GROUP BY PTA.TLI_NUMERO "+
+"       ,PE.ENTIDAD_PADRE "+
+"       ,PTA.TTR_NUMERO "+
+" ) CORRESPONSAL "+
+//FIN LIQUIDACION CORRESPONSAL
+" ) DATOS "+
+" WHERE DECODE(DATOS.LIQ,1,22,2,32,3,33,5,26,6,6,DATOS.LIQ) IN ("+params["tipoLiq"]+") "+
+" GROUP BY DATOS.ENTIDAD "+
+" ORDER BY 1 "+
+" ) DATOS2 "+
+" GROUP BY DATOS2.ENTIDAD_PADRE "+
+//----------------------------------------------------------------------------//
+// Marca del Cambio: AXIA-AHH-P-60-2646-14 Termina la Modificacion 24/06/2015 //
+//----------------------------------------------------------------------------//
+" ORDER BY 1 ";]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ENTIDAD_PADRE</property>
+                    <property name="nativeName">ENTIDAD_PADRE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NOMBRE</property>
+                    <property name="nativeName">NOMBRE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CIRCUITO_LOCAL</property>
+                    <property name="nativeName">CIRCUITO_LOCAL</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">INTRREDES</property>
+                    <property name="nativeName">INTRREDES</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">VISA</property>
+                    <property name="nativeName">VISA</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ENTRANTE</property>
+                    <property name="nativeName">ENTRANTE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">SALIENTE</property>
+                    <property name="nativeName">SALIENTE</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">CORRESPONSAL</property>
+                    <property name="nativeName">CORRESPONSAL</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">HUB_PAGOS</property>
+                    <property name="nativeName">HUB_PAGOS</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select 
+from </property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="siclir0320b" id="2985">
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">Data Source</property>
+            <method name="beforeOpen"><![CDATA[this.queryText=
+//"-- NUEVO 320 ABAJO GENERAL "+
+" SELECT TABLA.ENTIDAD "+
+"       ,(SELECT PE.DESCRIPCION FROM PMADMIN.PRSA_ENTIDADES PE WHERE PE.NUMERO_PROSA = TABLA.ENTIDAD) DESC_ENTIDAD "+
+"       ,SUM(CASE "+
+"             WHEN TABLA.LIQ = 2 THEN -TABLA.IMP "+
+"             ELSE 0 "+
+"        END) ENTRANTE "+
+"       ,SUM(CASE "+
+"             WHEN TABLA.LIQ = 3 THEN TABLA.IMP "+
+"             ELSE 0 "+
+"        END) SALIENTE "+
+" FROM ( "+
+//" -- INICIA ENTRANTE "+
+" SELECT LIQ, ENTIDAD, TTR, SUM(IMP) IMP FROM ( "+
+"  SELECT PP.TLI_NUMERO LIQ "+
+"       ,CASE "+
+"          WHEN PP.ENT_NUMERO_PROSA_ADQ IN (95,96,97) THEN PP.ENT_NUMERO_PROSA_ADQ "+
+"          ELSE PP.ENT_NUMERO_PROSA_EMI "+
+"       END ENTIDAD "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,PP.TIPO_TARJETA NAT "+
+"       ,SUM(PP.NUMERO_TRANSACCIONES) TXS "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PP.TTR_NUMERO IN (16,19,20,21) THEN -PP.TOTAL_IMPORTE + PP.IMPORTE_COMISION_INTERCAMB + PP.IVA_COMISION_INTERCAMB "+
+"             WHEN PP.TTR_NUMERO = 10 THEN PP.TOTAL_IMPORTE "+
+"             WHEN PP.TTR_NUMERO = 11 THEN -PP.TOTAL_IMPORTE "+
+"             ELSE PP.TOTAL_IMPORTE - PP.IMPORTE_COMISION_INTERCAMB - PP.IVA_COMISION_INTERCAMB "+
+"         END),2) IMP "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE TLI_NUMERO = 2 "+
+"  AND (PP.TTR_NUMERO IN (10, 11) "+
+"        AND PP.STTR_NUMERO NOT IN (100) "+
+"        OR PP.TTR_NUMERO NOT IN (10, 11)) "+
+"  AND (PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') "+
+"        AND PP.TTR_NUMERO IN (1, 21, 10, 11, 15, 18, 9, 16, 19) "+
+"        OR PP.FECHA_PROCESO BETWEEN TO_DATE('"+params["initDateHabAnt"]+"', 'DD/MM/YYYY') AND TO_DATE('"+params["initDateHabAnt"]+"', 'DD/MM/YYYY') "+
+"        AND PP.TTR_NUMERO IN (20, 24)) "+
+" GROUP BY CASE "+
+"          WHEN PP.ENT_NUMERO_PROSA_ADQ IN (95,96,97) THEN PP.ENT_NUMERO_PROSA_ADQ "+
+"          ELSE PP.ENT_NUMERO_PROSA_EMI "+
+"       END "+
+"       ,PP.TTR_NUMERO "+
+"       ,PP.TLI_NUMERO "+
+"       ,PP.TIPO_TARJETA "+
+"       ,PP.ENT_NUMERO_PROSA_EMI "+
+"       ,PP.ENT_NUMERO_PROSA_ADQ "+
+"       ,PP.FECHA_PROCESO "+
+" UNION ALL "+
+"  SELECT 2 LIQ "+
+"       ,PRT.PRT_PROSA_ISS_ENTITY ENTIDAD "+
+"       ,CASE "+
+"           WHEN PRT.PRT_REJ_RSN = 'VAL-SINTAX' THEN TO_NUMBER('99') "+
+"           ELSE PRT.PRT_TRAN_TYP "+
+"        END TTR "+
+"       ,CASE "+
+"            WHEN PRT.PRT_NATURALEZA_CONTABLE = '+' THEN 'C' "+
+"            ELSE 'D' "+
+"        END NAT "+
+"       ,COUNT(1) TXS "+
+"       ,ROUND(SUM(CASE "+
+"             WHEN PRT.PRT_TRAN_TYP = 21 THEN -PRT.PRT_TRAN_AMT + PRT.PRT_INTCHG_FEE_AMT + PRT.PRT_INTCHG_IVA_AMT "+
+"             ELSE PRT.PRT_TRAN_AMT - PRT.PRT_INTCHG_FEE_AMT - PRT.PRT_INTCHG_IVA_AMT "+
+"         END),2) IMP "+
+" FROM PMADMIN.PRSA_REJECTED_TXN PRT "+
+" WHERE PRT.PRT_ARCH_NBR IN (45,46,1275,1276) "+
+" AND PRT.PRT_TRAN_TYP NOT IN (51,52,53) "+
+" AND (PRT.PRT_PROC_DTE BETWEEN TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') "+
+"         AND PRT.PRT_TRAN_TYP NOT IN (20, 24) "+
+"          OR PRT.PRT_PROC_DTE >= TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY') - 1 "+
+"         AND PRT.PRT_PROC_DTE <= TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY') - 1 "+
+"         AND PRT.PRT_TRAN_TYP IN (20, 24)) "+
+"         AND PRT.PRT_PROSA_ISS_ENTITY IN (95,96,97) "+
+" GROUP BY CASE "+
+"            WHEN PRT.PRT_NATURALEZA_CONTABLE = '+' THEN 'C' "+
+"            ELSE 'D' "+
+"          END, "+
+"          PRT.PRT_PROSA_ACQ_ENTITY, "+
+"          PRT.PRT_PROSA_ISS_ENTITY, "+
+"          CASE "+
+"             WHEN PRT.PRT_REJ_RSN = 'VAL-SINTAX' THEN TO_NUMBER('99') "+
+"             ELSE PRT.PRT_TRAN_TYP "+
+"          END, "+
+"          PRT.PRT_PROC_DTE "+
+" UNION ALL "+
+" SELECT PTRV.PTRV_TLI_NUMERO LIQ "+
+"      ,CASE "+
+"            WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+
+"            ELSE PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+
+"       END ENTIDAD "+
+"       ,PTRV.PTRV_TTR_NUMERO TTR "+
+"       ,PTRV.PTRV_NATURALEZA_CONTABLE NAT "+
+"       ,COUNT(1) TXS "+
+"      ,SUM(CASE "+
+"           WHEN PTRV.PTRV_TTR_NUMERO = 21 THEN -PTRV.PTRV_IMPORTE_TOTAL_TRANSAC + PTRV.PTRV_IMP_CUOTA_INTERCAMBIO + PTRV.PTRV_IMP_IVA_INTERCAMBIO "+
+"           ELSE PTRV.PTRV_IMPORTE_TOTAL_TRANSAC - PTRV.PTRV_IMP_CUOTA_INTERCAMBIO - PTRV.PTRV_IMP_IVA_INTERCAMBIO "+
+"           END "+
+"       ) IMP "+
+" FROM PMADMIN.PRSA_TXN_RECHAZADAS_VAL PTRV "+
+" INNER JOIN PMADMIN.PRSA_TIPOS_TRANSACCION PTT "+
+" ON PTRV.PTRV_TTR_NUMERO =  PTT.NUMERO "+
+" WHERE PTRV.PTRV_FECHA_PROCESO_TRANSAC BETWEEN TO_DATE('"+params["initDate"]+"','DD-MM-YYYY') AND  TO_DATE('"+params["endDate"]+"','DD-MM-YYYY') "+
+" AND PTRV.PTRV_TTR_NUMERO NOT IN (53) "+
+" AND (PTRV.PTRV_ENT_NUMERO_PROSA_ADQ NOT IN (94,95,96,97,98) OR PTRV.PTRV_ENT_NUMERO_PROSA_EMI NOT IN (94,95,96,97,98)) "+
+" GROUP BY CASE "+
+"            WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+
+"            ELSE PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+
+"          END "+
+"         ,PTRV.PTRV_NATURALEZA_CONTABLE "+
+"         ,PTRV_TTR_NUMERO "+
+"         ,PTRV.PTRV_TLI_NUMERO "+
+" ) GROUP BY LIQ, ENTIDAD, TTR "+
+//" -- TERMINA ENTRANTE "+
+" UNION ALL "+
+//" -- INICIA SALIENTE "+
+" SELECT LIQ, ENTIDAD, TTR, SUM(IMP) FROM ( "+
+" SELECT PP.TLI_NUMERO LIQ "+
+"       ,CASE "+
+"             WHEN PP.ENT_NUMERO_PROSA_ADQ NOT IN (95,96,97) THEN PP.ENT_NUMERO_PROSA_EMI "+
+"             ELSE PP.ENT_NUMERO_PROSA_ADQ "+
+"       END ENTIDAD "+
+"       ,PP.TTR_NUMERO TTR "+
+"       ,PP.TIPO_TARJETA "+
+"       ,SUM(PP.NUMERO_TRANSACCIONES) TXS "+
+"       ,ROUND(SUM(CASE "+
+"         WHEN PP.TTR_NUMERO IN (20,21) THEN -PP.TOTAL_IMPORTE + PP.IMPORTE_COMISION_INTERCAMB + PP.IVA_COMISION_INTERCAMB "+
+"         ELSE PP.TOTAL_IMPORTE - PP.IMPORTE_COMISION_INTERCAMB - PP.IVA_COMISION_INTERCAMB "+
+"        END),2) IMP "+
+" FROM PMADMIN.PRSA_POSICIONES PP "+
+" WHERE PP.TLI_NUMERO = 3 "+
+" AND PP.FECHA_LIQ BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND PP.TTR_NUMERO IN (1,21,20,15,9,18,16,19) "+
+" GROUP BY PP.ENT_NUMERO_PROSA_ADQ "+
+"       ,PP.ENT_NUMERO_PROSA_EMI "+
+"       ,PP.TTR_NUMERO "+
+"       ,PP.TIPO_TARJETA "+
+"       ,PP.TLI_NUMERO "+
+" UNION ALL "+
+"  SELECT TO_NUMBER('3') LIQ "+
+"       ,CASE "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ NOT IN (95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+
+"             ELSE PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+
+"       END EMISOR "+
+"       ,TO_NUMBER('99') TTR "+
+"       ,PTRV.PTRV_NATURALEZA_CONTABLE "+
+"       ,COUNT(1) TTX "+
+"       ,SUM(CASE "+
+"          WHEN PTRV.PTRV_TTR_NUMERO IN (20,21) THEN -PTRV.PTRV_IMPORTE_TOTAL_TRANSAC	+ PTRV.PTRV_IMP_CUOTA_INTERCAMBIO + PTRV.PTRV_IMP_IVA_INTERCAMBIO "+
+"          ELSE PTRV.PTRV_IMPORTE_TOTAL_TRANSAC - PTRV.PTRV_IMP_CUOTA_INTERCAMBIO - PTRV.PTRV_IMP_IVA_INTERCAMBIO "+
+"        END) IMPORTE "+
+" FROM PMADMIN.PRSA_TXN_RECHAZADAS_VAL PTRV "+
+" INNER JOIN PMADMIN.VW_BUS_ACQ VBA "+
+"     ON VBA.NUMERO_PROSA = PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+
+" INNER JOIN PMADMIN.PRSA_ENTIDADES PE "+
+"     ON PE.NUMERO_PROSA = PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+
+" WHERE PTRV.PTRV_FECHA_PROCESO_TRANSAC+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND PTRV.PTRV_TTR_NUMERO NOT IN (53) "+
+" GROUP BY CASE "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+
+"             ELSE PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+
+"       END "+
+"       ,CASE "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ IN (95,96,97) THEN 0 "+
+"             ELSE VBA.BU_TX_ADQ "+
+"       END "+
+"       ,CASE "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ NOT IN (95,96,97) THEN PTRV.PTRV_ENT_NUMERO_PROSA_EMI "+
+"             ELSE PTRV.PTRV_ENT_NUMERO_PROSA_ADQ "+
+"       END "+
+"       ,CASE "+
+"             WHEN PTRV.PTRV_ENT_NUMERO_PROSA_ADQ NOT IN (95,96,97) THEN 0 "+
+"             ELSE VBA.BU_TX_ADQ "+
+"       END "+
+"       ,PTRV.PTRV_NATURALEZA_CONTABLE "+
+" UNION ALL "+
+" SELECT TO_NUMBER('3') LIQ "+
+"       ,CASE "+
+"             WHEN VISTA.NUMERO_PROSA NOT IN (95,96,97) THEN VISTA2.NUMERO_PROSA "+
+"             ELSE VISTA.NUMERO_PROSA "+
+"        END EMISOR "+
+"       ,CASE "+
+"             WHEN VISTA.BU_TX_PARENT = 93 THEN 10 "+
+"             ELSE 11 "+
+"       END TTR "+
+"       ,CASE "+
+"             WHEN VISTA.NOMBRE LIKE '%DB%' THEN 'D' "+
+"             ELSE 'C' "+
+"       END TIPO_TARJETA "+
+"       ,COUNT(1) TTX "+
+"       ,ROUND(SUM( "+
+"             CASE "+
+"                 WHEN VISTA.BU_TX_PARENT = 93 THEN -(SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-FMI_VAT_AMT) "+
+"                 ELSE SFIT.FMI_CHRG_AMT-SFIT.FMI_COMM_AMT-FMI_VAT_AMT "+
+"             END "+
+"           ),2) IMPORTE "+
+" FROM SETTLEMENT.SV_FM_INT_TXN SFIT "+
+" INNER JOIN (SELECT VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE FROM PMADMIN.VW_BUS_ACQ VBA "+
+"             UNION "+
+"             SELECT VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE FROM PMADMIN.VW_BUS_EMI VBE "+
+"            ) VISTA "+
+"     ON VISTA.BU = SFIT.FMI_CR_CLR_BU "+
+" INNER JOIN (SELECT VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE FROM PMADMIN.VW_BUS_ACQ VBA "+
+"             UNION "+
+"             SELECT VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE FROM PMADMIN.VW_BUS_EMI VBE "+
+"            ) VISTA2 "+
+"     ON VISTA2.BU = SFIT.FMI_DB_CLR_BU "+
+" WHERE SFIT.FMI_DT+1 BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY') AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY') "+
+" AND FMI_NSI_CLR_ID = 33 "+
+" AND TRIM(FMI_OPER_ID) <> 'CZDCS030' "+
+" GROUP BY VISTA.NUMERO_PROSA "+
+"       ,VISTA.DESCRIPCION "+
+"       ,VISTA.BU_TX_PARENT "+
+"       ,VISTA2.NUMERO_PROSA "+
+"       ,VISTA2.DESCRIPCION "+
+"       ,VISTA2.BU_TX_PARENT "+
+"       ,CASE "+
+"             WHEN VISTA.BU_TX_PARENT = 93 THEN 10 "+
+"             ELSE 11 "+
+"       END "+
+"       ,CASE "+
+"             WHEN VISTA.NOMBRE LIKE '%DB%' THEN 'D' "+
+"             ELSE 'C' "+
+"       END "+
+" UNION ALL "+
+" SELECT TO_NUMBER('3') LIQ "+
+"       ,VISTA2.NUMERO_PROSA EMISOR "+
+"       ,CASE "+
+"             WHEN PTS.PTS_CR_CNT >0 THEN 10 "+
+"             ELSE 11 "+
+"       END TTR "+
+"       ,CASE "+
+"             WHEN VISTA2.NOMBRE LIKE 'DB' THEN 'D' "+
+"             ELSE 'C' "+
+"       END  TIPO_TARJETA "+
+"       ,SUM(PTS.PTS_DB_CNT + PTS.PTS_CR_CNT) TTX  "+
+"       ,SUM(CASE "+
+"              WHEN PTS.PTS_CR_CNT > 0 THEN  -(PTS.PTS_CR_TXN_AMT+PTS.PTS_DB_TXN_AMT) "+
+"              ELSE PTS.PTS_CR_TXN_AMT+PTS.PTS_DB_TXN_AMT "+
+"            END "+
+"         ) IMPORTE "+
+" FROM PMADMIN.PRSA_TXN_SUMMARY PTS "+
+" INNER JOIN PMADMIN.PRSA_TXN_SUMMARY PTS2 "+
+"     ON PTS.PTS_CYCLE_ID = PTS2.PTS_CYCLE_ID "+
+"     AND PTS.PTS_CYCLE_DT = PTS2.PTS_CYCLE_DT "+
+"     AND PTS.PTS_NSI = PTS2.PTS_NSI "+
+"     AND PTS.PTS_NSI_CLR_ID = PTS2.PTS_NSI_CLR_ID "+
+"     AND PTS.PTS_SRCE_C = PTS2.PTS_SRCE_C "+
+"     AND PTS.PTS_PROC_CD = PTS2.PTS_PROC_CD "+
+"     AND PTS.PTS_TXN_TYP = PTS2.PTS_TXN_TYP "+
+"     AND PTS.PTS_FROM_ACCT = PTS2.PTS_FROM_ACCT "+
+"     AND PTS.PTS_TO_ACCT = PTS2.PTS_TO_ACCT "+
+"     AND PTS.PTS_TXN_CD_SFX = PTS2.PTS_TXN_CD_SFX "+
+"     AND PTS.PTS_CR_CNT = PTS2.PTS_DB_CNT "+
+"     AND PTS.PTS_CR_TXN_AMT = PTS2.PTS_DB_TXN_AMT "+
+"     AND PTS.PTS_CR_MRCH_FEE_AMT = PTS2.PTS_DB_MRCH_FEE_AMT "+
+"     AND PTS.PTS_CR_MRCH_IVA_AMT = PTS2.PTS_DB_MRCH_IVA_AMT "+
+"     AND PTS.PTS_CR_INTCHG_FEE_AMT = PTS2.PTS_DB_INTCHG_FEE_AMT "+
+"     AND PTS.PTS_CR_INTCHG_IVA_AMT = PTS2.PTS_DB_INTCHG_IVA_AMT "+
+"     AND PTS.PTS_DB_CNT = PTS2.PTS_CR_CNT "+
+"     AND PTS.PTS_DB_TXN_AMT = PTS2.PTS_CR_TXN_AMT "+
+"     AND PTS.PTS_DB_MRCH_FEE_AMT = PTS2.PTS_CR_MRCH_FEE_AMT "+
+"     AND PTS.PTS_DB_MRCH_IVA_AMT = PTS2.PTS_CR_MRCH_IVA_AMT "+
+"     AND PTS.PTS_DB_INTCHG_FEE_AMT = PTS2.PTS_CR_INTCHG_FEE_AMT "+
+"     AND PTS.PTS_DB_INTCHG_IVA_AMT = PTS2.PTS_CR_INTCHG_IVA_AMT "+
+" INNER JOIN PMADMIN.SZ_TC_GRP_RELATION STGR "+
+"     ON STGR.TCGR_PROC_CD = PTS.PTS_PROC_CD "+
+"     AND STGR.TCGR_SRCE_C = PTS.PTS_SRCE_C "+
+"     AND STGR.TCGR_TO_ACCT = PTS.PTS_TO_ACCT "+
+"     AND STGR.TCGR_TXN_CD_SFX = PTS.PTS_TXN_CD_SFX "+
+"     AND STGR.TCGR_TXN_TYP = PTS.PTS_TXN_TYP "+
+" INNER JOIN (SELECT VBA.NUMERO_PROSA, VBA.DESCRIPCION, VBA.BU_TX_ADQ BU, VBA.BU_TX_PARENT, VBA.ENTIDAD_PADRE, VBA.BU_TX_NAM_ACQ NOMBRE FROM PMADMIN.VW_BUS_ACQ VBA "+
+"             UNION "+
+"             SELECT VBE.NUMERO_PROSA, VBE.DESCRIPCION, VBE.BU_TX_ISS BU, VBE.BU_TX_PARENT, VBE.ENTIDAD_PADRE, VBE.BU_TX_NAM_ISS NOMBRE FROM PMADMIN.VW_BUS_EMI VBE "+
+"            ) VISTA2 "+
+"     ON VISTA2.BU = PTS2.PTS_CLR_BU "+
+"     AND VISTA2.NUMERO_PROSA IN (95,96,97) "+
+" WHERE PTS.PTS_NSI_CLR_ID = 33 "+
+" AND STGR.TCGR_GRP_ID IN (111,112) "+
+" AND PTS.PTS_CYCLE_DT BETWEEN TO_DATE('"+params["initDate"]+"','DD/MM/YYYY')-1 AND TO_DATE('"+params["endDate"]+"','DD/MM/YYYY')-1 "+
+" GROUP BY VISTA2.NUMERO_PROSA "+
+"       ,VISTA2.DESCRIPCION "+
+"       ,VISTA2.BU "+
+"       ,CASE "+
+"             WHEN PTS.PTS_CR_CNT >0 THEN 10 "+
+"             ELSE 11 "+
+"       END "+
+"       ,CASE "+
+"             WHEN VISTA2.NOMBRE LIKE 'DB' THEN 'D' "+
+"             ELSE 'C' "+
+"       END "+
+" ) GROUP BY LIQ, ENTIDAD, TTR "+
+//" --TERMINA SALIENTE "+
+" ) TABLA "+
+" WHERE DECODE(TABLA.LIQ,2,32,3,33,TABLA.LIQ) IN (32,33) "+
+" GROUP BY TABLA.ENTIDAD ";]]></method>
+            <property name="queryText">select 
+from </property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="cuboPrincipal" id="2458">
+            <property name="defaultMeasureGroup">Summary Field</property>
+            <property name="dimensions">
+                <tabular-dimension name="grupoHorizontal" id="2461">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="2462">
+                            <property name="levels">
+                                <tabular-level name="DESC_LIQUIDACION" id="2463">
+                                    <property name="dataType">string</property>
+                                    <property name="levelType">dynamic</property>
+                                    <property name="columnName">DESC_LIQUIDACION</property>
+                                </tabular-level>
+                            </property>
+                            <property name="dataSet">siclir0320</property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="grupoVertical" id="2464">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="2465">
+                            <property name="levels">
+                                <tabular-level name="ENTIDAD" id="2486">
+                                    <property name="dataType">decimal</property>
+                                    <property name="levelType">dynamic</property>
+                                    <property name="columnName">ENTIDAD</property>
+                                </tabular-level>
+                                <tabular-level name="DESC_ENTIDAD" id="2485">
+                                    <property name="dataType">string</property>
+                                    <property name="levelType">dynamic</property>
+                                    <property name="columnName">DESC_ENTIDAD</property>
+                                </tabular-level>
+                            </property>
+                            <property name="dataSet">siclir0320</property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="2459">
+                    <property name="measures">
+                        <tabular-measure name="importeNeto" id="2460">
+                            <property name="function">sum</property>
+                            <expression name="measureExpression">dataSetRow["importeNeto"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">siclir0320</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.1in</property>
+            <property name="leftMargin">0.1in</property>
+            <property name="bottomMargin">0.1in</property>
+            <property name="rightMargin">0.1in</property>
+            <property name="showHeaderOnFirst">true</property>
+            <property name="headerHeight">1.4in</property>
+            <property name="footerHeight">0.5in</property>
+            <page-header>
+                <grid id="1936">
+                    <property name="width">100%</property>
+                    <column id="1937">
+                        <property name="width">22%</property>
+                    </column>
+                    <column id="1938">
+                        <property name="width">56%</property>
+                    </column>
+                    <column id="1939">
+                        <property name="width">22%</property>
+                    </column>
+                    <row id="1940">
+                        <cell id="1941">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <image id="2353">
+                                <property name="height">104px</property>
+                                <property name="width">140px</property>
+                                <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.URI=params['srvImgRmt']+'/Carnet_header.jpg';
+else
+this.URI=params['srvImgLcl']+'/pmr/reports/images/Carnet_header.jpg';]]></method>
+                                <property name="source">url</property>
+                                <expression name="uri">''</expression>
+                            </image>
+                        </cell>
+                        <cell id="1942">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="textAlign">center</property>
+                            <text id="1949">
+                                <property name="fontSize">16pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[PROMOCION Y OPERACION S.A. DE C.V.]]></text-property>
+                            </text>
+                            <text id="1950">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Reporte Consolidado de Saldos]]></text-property>
+                            </text>
+                            <grid id="1951">
+                                <property name="width">65%</property>
+                                <column id="1952">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="1953">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="1954">
+                                    <property name="width">5%</property>
+                                </column>
+                                <column id="1955">
+                                    <property name="width">20%</property>
+                                </column>
+                                <row id="1956">
+                                    <cell id="1957">
+                                        <text id="1961">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Fecha del:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1958">
+                                        <data id="1931">
+                                            <property name="fontSize">12pt</property>
+                                            <structure name="dateTimeFormat">
+                                                <property name="category">Custom</property>
+                                                <property name="pattern">dd-MM-yyy</property>
+                                            </structure>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">initDate</property>
+                                                    <expression name="expression">params["initDate"]</expression>
+                                                    <property name="dataType">any</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">initDate</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1959">
+                                        <text id="1962">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[al]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1960">
+                                        <data id="1935">
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">endDate</property>
+                                                    <expression name="expression">params["endDate"]</expression>
+                                                    <property name="dataType">any</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">endDate</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="1943">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <grid id="1963">
+                                <property name="width">100%</property>
+                                <column id="1964">
+                                    <property name="width">1.4375in</property>
+                                </column>
+                                <column id="1965"/>
+                                <row id="1966">
+                                    <cell id="1967">
+                                        <property name="textAlign">center</property>
+                                        <text id="1975">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Fecha de proceso:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1968">
+                                        <property name="textAlign">center</property>
+                                        <text id="1768">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="dd-MM-yyyy">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="1969">
+                                    <cell id="1970">
+                                        <property name="textAlign">center</property>
+                                        <text id="1976">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Hora de proceso:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1971">
+                                        <property name="textAlign">center</property>
+                                        <text id="2354">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="marginTop">0pt</property>
+                                            <property name="paddingTop">1pt</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="HH:mm">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="1972">
+                                    <cell id="1973">
+                                        <property name="textAlign">center</property>
+                                        <text id="1977">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Página]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1974">
+                                        <property name="textAlign">center</property>
+                                        <grid id="1978">
+                                            <property name="width">100%</property>
+                                            <column id="1979"/>
+                                            <column id="1980"/>
+                                            <column id="1981"/>
+                                            <row id="1982">
+                                                <cell id="1983">
+                                                    <auto-text id="1784">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="type">page-number</property>
+                                                    </auto-text>
+                                                </cell>
+                                                <cell id="1984">
+                                                    <text id="1986">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="fontWeight">bold</property>
+                                                        <property name="contentType">auto</property>
+                                                        <text-property name="content"><![CDATA[de]]></text-property>
+                                                    </text>
+                                                </cell>
+                                                <cell id="1985">
+                                                    <auto-text id="1788">
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="type">total-page</property>
+                                                    </auto-text>
+                                                </cell>
+                                            </row>
+                                        </grid>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="1944"/>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="1711">
+                    <property name="verticalAlign">top</property>
+                    <property name="width">100%</property>
+                    <column id="1712"/>
+                    <column id="1713">
+                        <property name="textAlign">right</property>
+                    </column>
+                    <row id="1714">
+                        <cell id="1715">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text id="1717">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[SICLIR0320]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1716">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <grid id="1719">
+                                <property name="verticalAlign">top</property>
+                                <property name="height">0.2708333333in</property>
+                                <property name="width">2.0729166667in</property>
+                                <column id="1720">
+                                    <property name="width">1.0520833333in</property>
+                                </column>
+                                <column id="1721">
+                                    <property name="width">1.0208333333in</property>
+                                </column>
+                                <row id="1722">
+                                    <cell id="1723">
+                                        <property name="textAlign">left</property>
+                                        <text id="1725">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Usuario:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1724">
+                                        <property name="textAlign">left</property>
+                                        <data id="1718">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">center</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">ejecuto</property>
+                                                    <expression name="expression">params["ejecuto"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">ejecuto</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="NewSimpleMasterPage" id="2907">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.1in</property>
+            <property name="leftMargin">0.1in</property>
+            <property name="bottomMargin">0.1in</property>
+            <property name="rightMargin">0.1in</property>
+            <property name="headerHeight">1.4in</property>
+            <page-footer>
+                <grid id="2908">
+                    <property name="verticalAlign">top</property>
+                    <property name="width">100%</property>
+                    <column id="2909"/>
+                    <column id="2910">
+                        <property name="textAlign">right</property>
+                    </column>
+                    <row id="2911">
+                        <cell id="2912">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text id="2913">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[SICLIR0320]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="2914">
+                            <property name="fontSize">smaller</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <grid id="2915">
+                                <property name="verticalAlign">top</property>
+                                <property name="height">0.2708333333in</property>
+                                <property name="width">2.0729166667in</property>
+                                <column id="2916">
+                                    <property name="width">1.0520833333in</property>
+                                </column>
+                                <column id="2917">
+                                    <property name="width">1.0208333333in</property>
+                                </column>
+                                <row id="2918">
+                                    <cell id="2919">
+                                        <property name="textAlign">left</property>
+                                        <text id="2920">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Usuario:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="2921">
+                                        <property name="textAlign">left</property>
+                                        <data id="2922">
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">center</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">ejecuto</property>
+                                                    <expression name="expression">params["ejecuto"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">ejecuto</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1987">
+            <property name="masterPage">NewSimpleMasterPage</property>
+            <property name="pageBreakAfter">always</property>
+            <property name="width">100%</property>
+            <column id="1988"/>
+            <row id="1989">
+                <cell id="1990">
+                    <property name="textAlign">center</property>
+                    <image id="1993">
+                        <property name="height">120px</property>
+                        <property name="width">162px</property>
+                        <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.URI=params['srvImgRmt']+'/Carnet_portada.jpg';
+else
+this.URI=params['srvImgLcl']+'/pmr/reports/images/Carnet_portada.jpg';]]></method>
+                        <property name="source">url</property>
+                        <expression name="uri">''</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="2034">
+                <property name="height">2.1in</property>
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="2035">
+                    <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.getStyle().backgroundImage=params['srvImgRmt']+'/reportHeader.png';
+else
+this.getStyle().backgroundImage=params['srvImgLcl']+'/pmr/reports/images/reportHeader.png';]]></method>
+                    <property name="backgroundImage">reports/images/reportHeader.png</property>
+                    <property name="backgroundPositionX">center</property>
+                    <property name="backgroundPositionY">center</property>
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="paddingTop">1pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="2036">
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[PROMOCION Y OPERACION S.A. DE C.V.]]></text-property>
+                    </text>
+                    <text id="2037">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Reporte Consolidado de Saldos]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="1991">
+                <cell id="1992">
+                    <property name="textAlign">center</property>
+                    <grid id="1994">
+                        <property name="width">40%</property>
+                        <column id="1995"/>
+                        <column id="1996"/>
+                        <row id="1997">
+                            <cell id="1998">
+                                <text id="2018">
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Archivo:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="1999">
+                                <text id="2749">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[SICLIR0320]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="2000">
+                            <cell id="2001">
+                                <text id="2019">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="fontStyle">normal</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Ejecutó:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2002">
+                                <data id="1575">
+                                    <property name="textAlign">left</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ejecuto</property>
+                                            <expression name="expression">params["ejecuto"]</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ejecuto</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="2003">
+                            <cell id="2004">
+                                <text id="2020">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Fecha de Ejecución:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2005">
+                                <text id="1410">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<value-of format="dd-MM-yyy HH:mm">new Date()</value-of>]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="2006">
+                            <cell id="2007">
+                                <text id="2021">
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Fecha del:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="2008">
+                                <grid id="2025">
+                                    <property name="width">100%</property>
+                                    <column id="2026"/>
+                                    <column id="2027"/>
+                                    <column id="2028"/>
+                                    <row id="2029">
+                                        <cell id="2030">
+                                            <data id="1508">
+                                                <structure name="dateTimeFormat">
+                                                    <property name="category">Custom</property>
+                                                    <property name="pattern">dd-MM-yyy</property>
+                                                </structure>
+                                                <property name="textAlign">left</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">initDate</property>
+                                                        <expression name="expression">params["initDate"]</expression>
+                                                        <property name="dataType">any</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">initDate</property>
+                                            </data>
+                                        </cell>
+                                        <cell id="2031">
+                                            <text id="2033">
+                                                <property name="fontSize">9pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="textAlign">center</property>
+                                                <property name="contentType">auto</property>
+                                                <text-property name="content"><![CDATA[al  ]]></text-property>
+                                            </text>
+                                        </cell>
+                                        <cell id="2032">
+                                            <data id="1727">
+                                                <property name="textAlign">left</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">endDate</property>
+                                                        <expression name="expression">params["endDate"]</expression>
+                                                        <property name="dataType">any</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">endDate</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <grid id="2923">
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">100%</property>
+            <column id="2924"/>
+            <row id="2925">
+                <cell id="2926"/>
+            </row>
+            <row id="2927">
+                <cell id="2928">
+                    <table id="2931">
+                        <property name="fontSize">8pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">siclir0320</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ENTIDAD_PADRE</property>
+                                <expression name="expression">dataSetRow["ENTIDAD_PADRE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CIRCUITO_LOCAL</property>
+                                <expression name="expression">dataSetRow["CIRCUITO_LOCAL"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">INTRREDES</property>
+                                <expression name="expression">dataSetRow["INTRREDES"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">HUB_PAGOS</property>
+                                <expression name="expression">dataSetRow["HUB_PAGOS"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VISA</property>
+                                <expression name="expression">dataSetRow["VISA"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ENTRANTE</property>
+                                <expression name="expression">dataSetRow["ENTRANTE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SALIENTE</property>
+                                <expression name="expression">dataSetRow["SALIENTE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NOMBRE</property>
+                                <expression name="expression">dataSetRow["NOMBRE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">BCO</property>
+                                <property name="displayName">BCO</property>
+                                <expression name="expression">dataSetRow["ENTIDAD_PADRE"]+' '+dataSetRow["NOMBRE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SUM</property>
+                                <property name="displayName">SUM</property>
+                                <expression name="expression">row["CIRCUITO_LOCAL"]+row["INTRREDES"]+row["HUB_PAGOS"]+row["VISA"]+row["ENTRANTE"]+row["SALIENTE"]+row["CORRESPONSAL"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CL</property>
+                                <property name="displayName">CL</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["CIRCUITO_LOCAL"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">EN</property>
+                                <property name="displayName">EN</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["ENTRANTE"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SA</property>
+                                <property name="displayName">SA</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["SALIENTE"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">IN</property>
+                                <property name="displayName">IN</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["INTRREDES"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">HU</property>
+                                <property name="displayName">HU</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["HUB_PAGOS"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">VI</property>
+                                <property name="displayName">VI</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VISA"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SU</property>
+                                <property name="displayName">SU</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["SUM"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">CORRESPONSAL</property>
+                                <property name="displayName">CORRESPONSAL</property>
+                                <expression name="expression">dataSetRow["CORRESPONSAL"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CO</property>
+                                <property name="displayName">CO</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["CORRESPONSAL"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">80</property>
+                        <list-property name="filter">
+                            <structure>
+                                <property name="operator">not-between</property>
+                                <expression name="expr">row["ENTIDAD_PADRE"]</expression>
+                                <simple-property-list name="value1">
+                                    <value>94</value>
+                                </simple-property-list>
+                                <expression name="value2">98</expression>
+                            </structure>
+                        </list-property>
+                        <column id="2956">
+                            <property name="width">20%</property>
+                        </column>
+                        <column id="2957">
+                            <property name="width">13%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (row["CL"]!=0 &amp;&amp; row["CL"]!=null)
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="2958">
+                            <property name="width">13%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (row["EN"]!=0 &amp;&amp; row["EN"]!=null)
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="2959">
+                            <property name="width">13%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (row["SA"]!=0 &amp;&amp; row["SA"]!=null)
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="2960">
+                            <property name="width">13%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (row["IN"]!=0 &amp;&amp; row["IN"]!=null)
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="4001">
+                            <property name="width">13%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (row["HU"]!=0 &amp;&amp; row["HU"]!=null)
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="2961">
+                            <property name="width">13%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (row["VI"]!=0 &amp;&amp; row["VI"]!=null)
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="3026">
+                            <property name="width">13%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">//if (row["CO"]!=0 &amp;&amp; row["CO"]!=null)
+//if (row["CO"]!=null)
+if (params["tipoLiq"].value.indexOf("60")==-1)
+	true
+else
+	false</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="2962">
+                            <property name="width">15%</property>
+                        </column>
+                        <header>
+                            <row id="2932">
+                                <cell id="2933">
+                                    <label id="2963">
+                                        <text-property name="text">Banco</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2934">
+                                    <label id="2964">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liquidación Circuito Local</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2935">
+                                    <label id="2965">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liquidación Entrante</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2936">
+                                    <label id="2966">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liquidación Saliente</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2937">
+                                    <label id="2967">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liquidación Interredes</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="4010">
+                                    <label id="4011">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liquidación Interrede Especial</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2938">
+                                    <label id="2968">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liq. Visa y MasterCard Internacional</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="3023">
+                                    <label id="3031">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liq. Corresponsal</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2939">
+                                    <label id="2969">
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Suma</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="2940">
+                                <property name="fontWeight">normal</property>
+                                <cell id="2941">
+                                    <data id="2976">
+                                        <property name="resultSetColumn">BCO</property>
+                                    </data>
+                                </cell>
+                                <cell id="2942">
+                                    <data id="2971">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">CIRCUITO_LOCAL</property>
+                                    </data>
+                                </cell>
+                                <cell id="2943">
+                                    <data id="2972">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">ENTRANTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="2944">
+                                    <data id="2973">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SALIENTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="2945">
+                                    <data id="2974">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">INTRREDES</property>
+                                    </data>
+                                </cell>
+                                <cell id="4002">
+                                    <data id="4003">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">HUB_PAGOS</property>
+                                    </data>
+                                </cell>
+                                <cell id="2946">
+                                    <data id="2975">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VISA</property>
+                                    </data>
+                                </cell>
+                                <cell id="3024">
+                                    <data id="3032">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">CORRESPONSAL</property>
+                                    </data>
+                                </cell>
+                                <cell id="2947">
+                                    <data id="2977">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SUM</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="2948">
+                                <cell id="2949">
+                                    <label id="2978">
+                                        <text-property name="text">TOTAL</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2950">
+                                    <data id="2979">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">CL</property>
+                                    </data>
+                                </cell>
+                                <cell id="2951">
+                                    <data id="2980">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">EN</property>
+                                    </data>
+                                </cell>
+                                <cell id="2952">
+                                    <data id="2981">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SA</property>
+                                    </data>
+                                </cell>
+                                <cell id="2953">
+                                    <data id="2982">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">IN</property>
+                                    </data>
+                                </cell>
+                                <cell id="4004">
+                                    <data id="4005">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">HU</property>
+                                    </data>
+                                </cell>
+                                <cell id="2954">
+                                    <data id="2983">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VI</property>
+                                    </data>
+                                </cell>
+                                <cell id="3025">
+                                    <data id="3035">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">CO</property>
+                                    </data>
+                                </cell>
+                                <cell id="2955">
+                                    <data id="2984">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SU</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="2929">
+                <property name="height">60%</property>
+                <cell id="2930">
+                    <table id="2986">
+                        <property name="fontSize">8pt</property>
+                        <property name="width">60%</property>
+                        <property name="dataSet">siclir0320b</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ENTIDAD</property>
+                                <expression name="expression">dataSetRow["ENTIDAD"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DESC_ENTIDAD</property>
+                                <expression name="expression">dataSetRow["DESC_ENTIDAD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ENTRANTE</property>
+                                <expression name="expression">dataSetRow["ENTRANTE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SALIENTE</property>
+                                <expression name="expression">dataSetRow["SALIENTE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">BCO</property>
+                                <property name="displayName">BCO</property>
+                                <expression name="expression">row["ENTIDAD"]+' '+row["DESC_ENTIDAD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EN</property>
+                                <property name="displayName">EN</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["ENTRANTE"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SA</property>
+                                <property name="displayName">SA</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["SALIENTE"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SU</property>
+                                <property name="displayName">SU</property>
+                                <expression name="expression">row["ENTRANTE"]+row["SALIENTE"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SU2</property>
+                                <property name="displayName">SU2</property>
+                                <expression name="expression">row["EN"]+row["SA"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <column id="2999">
+                            <property name="width">25%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (params["tipoLiq"].value.indexOf("33")!=-1 || params["tipoLiq"].value.indexOf("32")!=-1)
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="3000">
+                            <property name="width">25%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (row["EN"]!=0 &amp;&amp; row["EN"]!=null &amp;&amp; params["tipoLiq"].value.indexOf("32")!=-1 )
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="3001">
+                            <property name="width">25%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (row["SA"]!=0 &amp;&amp; row["SA"]!=null &amp;&amp; params["tipoLiq"].value.indexOf("33")!=-1 )
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <column id="3005">
+                            <property name="width">25%</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">if (params["tipoLiq"].value.indexOf("33")!=-1 || params["tipoLiq"].value.indexOf("32")!=-1)
+	false
+else
+	true</expression>
+                                </structure>
+                            </list-property>
+                        </column>
+                        <header>
+                            <row id="3017">
+                                <cell id="3018">
+                                    <label id="3022"/>
+                                </cell>
+                                <cell id="3019"/>
+                                <cell id="3020"/>
+                                <cell id="3021"/>
+                            </row>
+                            <row id="2987">
+                                <cell id="2988">
+                                    <label id="3006">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Banco</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2989">
+                                    <label id="3007">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liquidación Entrante</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="2990">
+                                    <label id="3008">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Liquidación Saliente</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="3002">
+                                    <label id="3009">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text">Suma</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="2991">
+                                <cell id="2992">
+                                    <data id="3010">
+                                        <property name="resultSetColumn">BCO</property>
+                                    </data>
+                                </cell>
+                                <cell id="2993">
+                                    <data id="3011">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">ENTRANTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="2994">
+                                    <data id="3012">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SALIENTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="3003">
+                                    <data id="3015">
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SU</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="2995">
+                                <cell id="2996"/>
+                                <cell id="2997">
+                                    <data id="3013">
+                                        <property name="fontWeight">bold</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">EN</property>
+                                    </data>
+                                </cell>
+                                <cell id="2998">
+                                    <data id="3014">
+                                        <property name="fontWeight">bold</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SA</property>
+                                    </data>
+                                </cell>
+                                <cell id="3004">
+                                    <data id="3016">
+                                        <property name="fontWeight">bold</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Currency</property>
+                                            <property name="pattern">$#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SU2</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

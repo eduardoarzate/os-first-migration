@@ -1,0 +1,582 @@
+body {
+   font-family: arial, helvetica, sans-serif;
+  	voice-family: "\"}\"";
+  	voice-family: inherit;
+  	font-size: small;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	display:table;
+	margin-left : auto;
+    margin-right : auto;
+    text-align: center;
+}
+
+img {
+	border: none;
+}
+
+#wrapper 
+{
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	text-aling:left;
+}
+
+/* primer columna*/
+#leftPanel {
+	width: 230px;
+	text-align: left;
+}
+
+.ocultar
+{
+	display: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	font-weight: normal;
+}
+
+td 
+{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+th 
+{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+form 
+{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+input
+ {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+textarea 
+{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+select 
+{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   visibility: visible;
+}
+
+.small 
+{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 9px;
+}
+
+.big 
+{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 18px;
+}
+
+.bodystyle 
+{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+.box1 
+{
+   padding: 3px;
+   border-width: thin; 
+   border-style: solid;
+   border-color: #CCCCCC #666666 #666666 #CCCCCC;
+}
+
+.box2 
+{
+   border-width: 3px;
+   border-style: solid;
+   padding: 5px;
+}
+
+/* Style of the web work portal's footer (footer.jsp) */
+.footer 
+{
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 10px;
+   font-weight: normal;
+   color: #FFFF00;
+   background-color: #606060
+}
+
+.tabletitle
+{
+   background-color: #999999;
+}
+
+.tablecell
+{
+   background-color: #606060;
+}
+
+.tabletitle2
+{
+   background-color: #E9E9E9;  
+}
+
+.tablecell2
+{
+   background-color: #FFFFFF;
+   color: #E9E9E9;
+}
+
+.tableDetails 
+{
+	border:1px solid #ccc;  
+}
+
+.tableHeader 
+{
+	height: 30px;
+	background-image: url(../pics/menu.gif);
+	background-attachment:  scroll;
+	background-repeat: repeat;
+	background-position: left top;
+	margin: 2px 2px 0 2px;
+	padding: 3px 0 0 20px;
+	font-weight: bold; 
+	color:#fff;
+	vertical-align: middle;
+	direction: ltr; 
+	word-spacing: normal;
+	line-height: 13.2px;
+}
+
+.tableRow
+{
+	color: #000;
+	text-align: center;
+	font-family: Arial,Verdana,sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	vertical-align: middle;
+	direction: ltr; 
+	word-spacing: normal;
+	line-height: 13.2px
+}
+
+.tableRowValues
+{
+	border-top: 1px solid #ccc; 
+	border-right: 1px solid #ccc;
+}
+
+.selectedRow
+{
+   background-color: #FFEDA8;
+   cursor: pointer;
+   color: #000;
+   text-align: center;
+   font-family: Arial,Verdana,sans-serif;
+   font-size: 11px;
+   font-style: normal;
+   vertical-align: middle;
+   direction: ltr; 
+   word-spacing: normal;
+   line-height: 13.2px
+}
+
+.normalRow
+{
+   background-color: #FFFFFF;
+   cursor: default;
+   color: #000;
+   text-align: center;
+   font-family: Arial,Verdana,sans-serif;
+   font-size: 11px;
+   font-style: normal;
+   vertical-align: middle;
+   direction: ltr; 
+   word-spacing: normal;
+   line-height: 13.2px
+}
+
+/* Style of the web work portal's table cells */
+.datosTablaTransDaily {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   color: #494949;
+   background-color: #FFFFFF;
+}
+
+.tbl_border {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	font-weight: bold;
+	color: #000000;
+	border: 1px solid #CE000C;
+}
+.td_header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+	background-image: url(../pics/menu.gif);
+	background-repeat: repeat-x;
+}
+.td_header_p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: bold;
+	line-height: normal;
+	vertical-align: center;
+	font-variant: normal;
+	text-transform: none;
+	padding-top: 5px;
+	color: #FFFFFF;
+	background-image: url(../pics/backgroundHeaderTable.JPG);
+	background-repeat: repeat-x;
+}
+.td_data {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #22568F;
+}
+
+#btnLstTOC
+{
+	font-weight: bold;
+}
+
+.titulo {
+	height: 21px;
+	background-image: url(../pics/menu.gif);
+	background-attachment: scroll;
+	background-repeat: repeat-x;
+	background-position: left top;
+	padding-top: 8px;
+	padding-left: 20px;
+	font-weight: bold;
+	color:#fff;
+}
+
+/* navegador*/
+#linkList {
+	font-weight: normal;
+}
+#linkList ul {
+	margin: 0;
+	padding: 0 0 20px 0;
+}
+#linkList li {
+	line-height: 1.3em; 
+	background-color: #606060; 
+	display: block; 
+	padding: 3px 0 3px 10px;
+	margin-bottom: 2px;
+	list-style-type: none;
+	text-decoration: none; 
+}
+#linkList li a:link {
+	color: #FFFFFF;
+	text-decoration: none; 
+}
+#linkList li a:visited {
+	color: #FFFFFF;
+	text-decoration: none; 
+}
+
+/* segunda columna*/
+#rightPanel {
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#header {
+	width: 100%;
+	height: 70px;
+	background-image: url(../pics/header.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin: 0 0 10px 0;
+}
+
+#logotipo {
+	width: 199px;
+	height: 79px;
+	background-image: url(../pics/logotipo.jpg);
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin: 40px 0 20px 15px;
+}
+
+#bar {
+	max-width: 100%;
+	height: 25px;
+	background-image: url(../pics/menu.gif);
+	background-attachment: scroll;
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+/*Marketing*/
+#marketing {
+	width:730px;
+	height: 310px;
+	margin-top: 16px;
+	margin-left: 2px;
+	padding-bottom: 40px;
+	position: relative;
+}
+
+#marketing_left {
+	width:240px;
+	left: -50px;
+	position: absolute;
+}
+
+#marketing_center {
+	width:240px;
+	left: 246px;
+	position: absolute;
+}
+
+#marketing_right {
+	width:240px;
+	left: 543px;
+	position: absolute;
+}
+
+#title_marketing{
+	top: -20px;
+	position:relative;
+}
+
+#imageSalida{
+	top: -37px;
+	position:relative;
+}
+
+#marketing_left_text{
+	width: 230px;
+	text-align:justify;
+	top: -10px;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 100;
+	position: relative;
+}
+
+#marketing_center_text{
+	width: 230px;
+	text-align:justify;
+	padding-top: 9px;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 100;
+}
+
+#marketing_right_text{
+	width: 230px;
+	text-align:justify;
+	top: -10px;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 100;
+	position: relative;
+}
+
+/*Link*/
+#imageLink{
+	border: none;
+}
+#links a:link{
+	color: #3e4545;
+	text-decoration: none;
+	border-bottom: 1px solid #303030; 
+}
+
+#links a:visited{
+	color: #3e4545;
+	text-decoration: none;
+	border-bottom: 1px solid #303030; 
+}
+
+#links a:hover {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid #303030; 
+}
+
+#links a:active{
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid #303030; 
+}
+
+/*tabla*/
+#tabla {
+	width: 100% ;
+	height: 160px;
+	border: 1px solid #CE000C;
+	margin-bottom:20px;
+}
+#tablam {
+	width: 50% ;
+	height: 65px;
+	border: 1px solid #CE000C;
+	background-image: url(../pics/menu.gif);
+	background-attachment: scroll;
+	background-repeat: repeat-x;
+	background-position: left top;
+	font-weight: bold; 
+	text-align: center;
+}
+#tituloTab {
+	height: 20px;
+	background-image: url(../pics/menu.gif);
+	background-attachment: scroll;
+	background-repeat: repeat-x;
+	background-position: left top;
+	margin: 2px 2px 0 2px;
+	padding: 3px 0 0 20px;
+	font-weight: bold; 
+	color:#fff;
+	text-align: left;
+}
+#tituloTabL {
+	height: 20px;
+	background-image: url(../pics/menu.gif);
+	background-attachment: scroll;
+	background-repeat: repeat-x;
+	background-position: left top;
+	margin: 2px 2px 0 2px;
+	padding: 3px 0 0 20px;
+	font-weight: bold; 
+	color:#000000;
+	text-align: center;
+}
+/*footer*/
+#footer 
+{
+	width: 100%;
+	height: 25px;
+	background-image: url(../pics/menuf.gif);
+	background-attachment: scroll;
+	background-repeat: repeat-x;
+	background-position: left top;	text-align:center;
+	color: #C67E0D;
+	padding-top: 5px;
+	clear: both;
+}
+#footer a:link{
+	color: #FF6A00;
+	text-decoration: none;
+}
+
+#footer a:visited{
+	color: #4C4C4C;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #4C4C4C;
+	text-decoration: none;
+}
+
+#footer a:active{
+	color: #4C4C4C;
+	text-decoration: none;
+}
+
+#copy {
+	font-size: x-small;
+	color: #999999;
+	text-align: center;
+}
+
+#hm1
+{
+	width: 600px;
+	height: 70px;
+	background-image: url(../pics/header1.jpg);
+	background-repeat: no-repeat;
+}
+
+#hm2
+{
+	witdh: 20px;
+	height: 70px;
+	background-image: url(../pics/headerext.jpg);
+	background-repeat: repeat-x;
+	background-position: center;
+}
+
+#hm3
+{
+	width: 250px;
+	height: 70px;
+	background-image: url(../pics/header2.jpg);
+	background-repeat: no-repeat;
+	background-position: right;
+	
+	}
+	
+/*Inicia WELLCOM Marca de cambio N-08-2253-12*/
+#hm4
+{
+	width: 600px;
+	height: 20px;
+	background-image: url(../pics/footer1.jpg);
+	background-repeat: no-repeat;
+}
+
+#hm5
+{
+	witdh: 20px;
+	height: 20px;
+	background-image: url(../pics/footerext.jpg);
+	background-repeat: repeat-x;
+	background-position: center;
+}
+
+#hm6
+{
+	width: 250px;
+	height: 20px;
+	background-image: url(../pics/footer2.jpg);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+/*Fin WELLCOM Marca de cambio N-08-2253-12*/
+
+.tablaReportsPrincipal {
+   background-color: #DDFFAA;
+}

@@ -1,0 +1,2 @@
+MAVEN_MIRROR_URL=http://nexus-repository-manager-cicd.cloudapp.qa.prosa.com.mx/repository/thirdparty/
+OPENSHIFT_AUTO_DEPLOY_EXPLODED=false

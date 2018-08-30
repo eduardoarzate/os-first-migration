@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0" style="font-family: Verdana, Arial, Helvetica, sans-erif; font-size:11px;">	
+    <item text="Consultar FAQs, Tutoriales, Manuales" id="soporte" im0="datos_complementarios.png">	
+        <userdata name="href">soporte</userdata>
+        <userdata name="rolAccMin">2</userdata>
+        <!-- Modificacion: Marca de inicio    SAS-DRT F-52-8063-16  -->
+        <userdata name="modulo">Herramientas</userdata>
+        <!-- Modificacion: Marca de fin    SAS-DRT F-52-8063-16  -->
+    </item>
+</tree>

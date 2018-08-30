@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<tree id="0">
+	<item text="Parametros de Configuración" id="parametros" im0="parametros_configuracion.png">
+		<userdata name="href">TblLgtParametros_s</userdata>
+	</item>
+	<item text="Componentes" id="Componentes" im0="componentes.png">
+		<userdata name="href">TblSgrComponentes_s</userdata>	
+	</item>
+	<item text="Seguridad" id="Seguridad" im0="seguridad.png">
+		<userdata name="href">TblSgrPermisos_s</userdata>
+	</item>
+	
+</tree>

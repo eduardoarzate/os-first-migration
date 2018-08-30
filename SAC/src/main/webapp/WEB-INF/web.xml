@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*###############################################################################
+# Nombre del Programa : webProd.xml                                             #
+# Autor               :  JOAQUIN MOJICA Q.                                      #
+# Compania            :  WELLCOM S.A. DE C.V.                                   #
+# Proyecto/Procliente :  P-08-299-04                       FECHA:15/10/2008     #
+# Descripcion General :                                     #
+#                                                                               #
+# Programa Dependiente:                                                         #
+# Programa Subsecuente:                                                         #
+# Cond. de ejecucion  :                                                         #
+#                                                                               #
+#                                                                               #
+# Dias de ejecucion   :  A Peticion del web, se pueden ejecutar n instancias    #
+#################################################################################
+#               MODIFICACIONES                                  #
+# Autor               : Victor H Montoya G                                      #
+# Compania            : eNova                                                   #
+# Proyecto/Procliente : Z-04-3155-11                 Fecha: 27/12/2011          #
+# Modificacion        : servlet finder                                          #
+#################################################################################
+# Autor               : Manuel Villalobos                                       #
+# Compania            : GSOF                                                    #
+# Proyecto/Procliente : C-08-2129-12                        Fecha: 16/DIC/2014  #
+# Modificacion        : Se agrega el Displaytag                                 #
+#################################################################################
+# Autor               : MANUEL VILLALOBOS                                       #
+# Compania            : GSOF                                                    #
+# Proyecto/Procliente : B-54-2092-15                         Fecha:  03/06/2015 #
+# Modificacion        : Se agregan Reportes con JasperReports                   #
+# Marca del Cambio    : GSOF-MVR-B-54-2092-15                                   #
+#################################################################################
+# Autor               :  Daniel Ramírez Torres                                  #
+# Compania            :  SAS S.A. DE C.V.                                       #
+# Proyecto/Procliente :  F-52-8063-16                 Fecha: 27/02/2017         #
+# Modificacion        :  Mejora Conexiones  SAC2                                #
+# Marca del Cambio    :  SAS-DRT F-52-8063-16                                   #
+#################################################################################
+#                               MODIFICACIONES                                  #
+# Autor               : Juan Rodriguez Gonzalez                                 #
+# Compania            : IDSYS                                                   #
+# Proyecto/Procliente : P-22-0136-14                 Fecha: 13/06/2017          #
+# Modificacion        : servlet trasco                                          #
+# Marca del Cambio    : IDSYS-JRG-P-22-0136-14                                  #
+#################################################################################
+
+-->
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <context-param>
+        <description>If usr can only access the report resources under working folder. Default is false</description>
+        <param-name>WORKING_FOLDER_ACCESS_ONLY</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <description>The generated document files directory. Default to ${Context Root}/documents</description>
+        <param-name>BIRT_VIEWER_DOCUMENT_FOLDER</param-name>
+        <param-value>/WEB-INF/report-engine/documents</param-value>
+    </context-param>
+    <context-param>
+        <description>If turn on the function that supports print on the server side(ON|OFF).Default to on.</description>
+        <param-name>BIRT_VIEWER_PRINT_SERVERSIDE</param-name>
+        <param-value>OFF</param-value>
+    </context-param>
+    <context-param>
+        <description>Memory size(MB) for creating cube.</description>
+        <param-name>BIRT_VIEWER_CUBE_MEMORY_SIZE</param-name>
+        <param-value/>
+    </context-param>
+    <context-param>
+        <description>Directory to store all birt report script libraries (JARs). Default to ${Context Root}/scriptlib</description>
+        <param-name>BIRT_VIEWER_SCRIPTLIB_DIR</param-name>
+        <param-value>/WEB-INF/report-engine/scriptlib</param-value>
+    </context-param>
+    <context-param>
+        <description>If always overwrite generated document file. Default to true</description>
+        <param-name>BIRT_OVERWRITE_DOCUMENT</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <description>Output images/charts directory. Default to ${Context Root}/report/images</description>
+        <param-name>BIRT_VIEWER_IMAGE_DIR</param-name>
+        <param-value>WEB-INF/report-engine/images</param-value>
+    </context-param>
+    <context-param>
+        <description>BIRT viewer extended configuration file</description>
+        <param-name>BIRT_VIEWER_CONFIG_FILE</param-name>
+        <param-value>WEB-INF/report-engine/viewer.properties</param-value>
+    </context-param>
+    <context-param>
+        <description>Dataset rows limited when preview report. Default to return all rows</description>
+        <param-name>BIRT_VIEWER_MAX_ROWS</param-name>
+        <param-value/>
+    </context-param>
+    <context-param>
+        <description>Cube fetch row levels limited when preview report (Only support to preview a report design file using preview pattern). Default to return all levels</description>
+        <param-name>BIRT_VIEWER_MAX_CUBE_ROWLEVELS</param-name>
+        <param-value/>
+    </context-param>
+    <context-param>
+        <description>Default locale setting</description>
+        <param-name>BIRT_VIEWER_LOCALE</param-name>
+        <param-value>en-US</param-value>
+    </context-param>
+    <context-param>
+        <description>Cube fetch column levels limited when preview report (Only support to preview a report design file using preview pattern). Default to return all levels</description>
+        <param-name>BIRT_VIEWER_MAX_CUBE_COLUMNLEVELS</param-name>
+        <param-value/>
+    </context-param>
+    <context-param>
+        <description>Report resources(design files or document files) directory for preview. Default to ${Context Root}</description>
+        <param-name>BIRT_VIEWER_WORKING_FOLDER</param-name>
+        <param-value/>
+    </context-param>
+    <context-param>
+        <description>Report Engine logs directory. Default to ${Context Root}/logs</description>
+        <param-name>BIRT_VIEWER_LOG_DIR</param-name>
+        <param-value>WEB-INF/report-engine/logs</param-value>
+    </context-param>
+    <context-param>
+        <description>Resource location directory(library files, images files or others). Default to ${Context Root}</description>
+        <param-name>BIRT_RESOURCE_PATH</param-name>
+        <param-value/>
+    </context-param>
+    <context-param>
+        <description>If force optimized HTML output.Default to true</description>
+        <param-name>HTML_ENABLE_AGENTSTYLE_ENGINE</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <description>Report engine log level.( ALL|SEVERE|WARNING|INFO|CONFIG|FINE|FINER|FINEST|OFF )</description>
+        <param-name>BIRT_VIEWER_LOG_LEVEL</param-name>
+        <param-value>WARNING</param-value>
+    </context-param>
+    <context-param>
+        <description>Direccion en la que se ubican de los reportes</description>
+        <param-name>UBICACION_REPORTES</param-name>
+        <param-value>reports</param-value>
+    </context-param>
+    <context-param>
+        <description>Direccion del servidor local de imagenes como url </description>
+        <param-name>SERV_IMG_LOCAL</param-name>
+        <param-value>http://10.255.198.61:38080</param-value>
+    </context-param>
+    <context-param>
+        <description>Direccion del servidor remoto de imagenes como url </description>
+        <param-name>SERV_IMG_REMOTO</param-name>
+        <param-value>https://aplicpm.prosa.com.mx/imgpmr</param-value>
+    </context-param>
+    <context-param>
+        <description>Nombre del logger de la aplicacion</description>
+        <param-name>APP_LOGGER_NAME</param-name>
+        <param-value>pmr</param-value>
+    </context-param>
+    <context-param>
+        <description>Nombre del archivo log de la aplicacion</description>
+        <param-name>APP_LOGGER_FILE</param-name>
+        <param-value>logs/pmrLog.log</param-value>
+    </context-param>
+    <context-param>
+        <description>ACTIVAR O DESACTIVAR EL LOG</description>
+        <param-name>APP_LOGGER_ACTIVE</param-name>
+        <param-value>TRUE</param-value>
+    </context-param>
+    <context-param>
+        <description>Nivel de detalle del log</description>
+        <param-name>APP_LOGGER_LEVEL</param-name>
+        <param-value>ALL</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.eclipse.birt.report.listener.ViewerHttpSessionListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.eclipse.birt.report.listener.ViewerServletContextListener</listener-class>
+    </listener>
+    <!-- Marca de Inicio GSOF-MVR-C-08-2129-12 -->
+    <filter>
+        <filter-name>ResponseOverrideFilter</filter-name>
+        <filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ResponseOverrideFilter</filter-name>
+        <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ResponseOverrideFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <!-- Marca de Terminacion GSOF-MVR-C-08-2129-12 -->
+    <servlet>
+        <servlet-name>EngineServlet</servlet-name>
+        <servlet-class>org.eclipse.birt.report.servlet.BirtEngineServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewerServlet</servlet-name>
+        <servlet-class>org.eclipse.birt.report.servlet.ViewerServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <!--Modificacion: Marca de inicio ENOVA-VHMG Z-04-3155-11-->
+    <servlet>
+        <servlet-name>findrev</servlet-name>
+        <servlet-class>com.prosa.mx.pmr.servlet.findrev</servlet-class>
+    </servlet>
+    <!--Modificacion: Marca de terminacion ENOVA-VHMG Z-04-3155-11-->
+    <!--
+    <servlet>
+        <servlet-name>ControllerServlet</servlet-name>
+        <servlet-class>com.wellcom.prosa.sacii.ControllerServlet</servlet-class>
+        <init-param>
+            <param-name>dataSourceName</param-name>
+            <param-value>PMTUDBP</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcConnectionType</param-name>
+            <param-value>ds</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcDriver</param-name>
+            <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcUrl</param-name>
+            <param-value>jdbc:oracle:thin:@10.255.220.165:1590:PMTU</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcUserName</param-name>
+            <param-value>pmtweb</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcPassword</param-name>
+            <param-value>q2g</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dataSourceNameSICB2</param-name>
+            <param-value>SICB2DBP</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcUrlSICB2</param-name>
+            <param-value>jdbc:oracle:thin:@10.255.220.165:1529:SICB2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcUserNameSICB2</param-name>
+            <param-value>pmtweb</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcPasswordSICB2</param-name>
+            <param-value>q2g</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_ENTIDADES</param-name>
+            <param-value>pmadmin.PRSA_ENTIDADES</param-value>
+        </init-param>
+        <init-param>
+            <param-name>VW_BUS_ACQ</param-name>
+            <param-value>pmadmin.VW_BUS_ACQ</param-value>
+        </init-param>
+        <init-param>
+            <param-name>VW_BUS_EMI</param-name>
+            <param-value>pmadmin.VW_BUS_EMI</param-value>
+        </init-param>
+        <init-param>
+            <param-name>SZ_TC_GRP</param-name>
+            <param-value>settlement.SZ_TC_GRP</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_TIPOS_TRANSACCION</param-name>
+            <param-value>pmadmin.PRSA_TIPOS_TRANSACCION</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_CIFRAS_CTRL</param-name>
+            <param-value>pmadmin.PRSA_CIFRAS_CTRL</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_BITACORA_ARCHIVOS</param-name>
+            <param-value>pmadmin.PRSA_BITACORA_ARCHIVOS</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_ARCHIVOS</param-name>
+            <param-value>pmadmin.PRSA_ARCHIVOS</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_SETL_IND</param-name>
+            <param-value>pmadmin.PRSA_SETL_IND</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_RPT_IND</param-name>
+            <param-value>pmadmin.PRSA_RPT_IND</param-value>
+        </init-param>
+        <init-param>
+            <param-name>CD_TXN_CD</param-name>
+            <param-value>core.CD_TXN_CD</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_DBL_FIID</param-name>
+            <param-value>pmadmin.PRSA_DBL_FIID</param-value>
+        </init-param>
+        <init-param>
+            <param-name>baseURL</param-name>
+            <param-value/>
+        </init-param>
+    </servlet>
+    -->
+    <!--Modificacion: SAS-DRT F-52-8063-16 Marca de Inicio-->
+    <servlet>
+        <servlet-name>ControllerServletGen</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletGen</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletMonitoreo</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletMonitoreo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletCompensacion</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletCompensacion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletEmisorDolares</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletEmisorDolares</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletIntegracion</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletIntegracion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletAdquirente</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletAdquirente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletExtemporaneas</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletExtemporaneas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletMasterVisa</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletMasterVisa</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletPromociones</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletPromociones</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletInterfaces</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletInterfaces</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletPrepago</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletPrepago</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletClickash</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletClickash</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletHubCarnet</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletHubCarnet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletVentaTA</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletVentaTA</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletDCC</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletDCC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletReLiquid</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletReLiquid</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletMonitoreoH</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletMonitoreoH</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletLiquidacionH</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletLiquidacionH</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletIntegracionH</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletIntegracionH</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletAdquirienteH</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletAdquirienteH</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletPromocionesH</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletPromocionesH</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletInformativa</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletInformativa</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletHerramientas</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletHerramientas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControllerServletMiscelaneos</servlet-name>
+        <servlet-class>com.wellcom.prosa.Controladores.ControllerServletMiscelaneos</servlet-class>
+    </servlet>
+    <!--Modificacion: SAS-DRT F-52-8063-16 Marca de Fin-->
+    <!--
+    <servlet>
+        <servlet-name>ExcelServlet</servlet-name>
+        <servlet-class>com.wellcom.io.ExcelServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PDFServlet</servlet-name>
+        <servlet-class>com.wellcom.io.PDFServlet</servlet-class>
+    </servlet>
+    -->
+    <servlet>
+        <servlet-name>ReloadServlet</servlet-name>
+        <servlet-class>com.wellcom.prosa.sacii.ReloadServlet</servlet-class>
+        <init-param>
+            <param-name>VW_BUS_ACQ</param-name>
+            <param-value>pmadmin.VW_BUS_ACQ</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_CIFRAS_CTRL</param-name>
+            <param-value>pmadmin.PRSA_CIFRAS_CTRL</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_BITACORA_ARCHIVOS</param-name>
+            <param-value>pmadmin.PRSA_BITACORA_ARCHIVOS</param-value>
+        </init-param>
+        <init-param>
+            <param-name>VW_BUS_EMI</param-name>
+            <param-value>pmadmin.vw_bus_emi</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_ENTIDADES</param-name>
+            <param-value>pmadmin.prsa_entidades</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_DBL_FIID</param-name>
+            <param-value>pmadmin.prsa_dbl_fiid</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_ARCHIVOS</param-name>
+            <param-value>pmadmin.PRSA_ARCHIVOS</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_TXN_ACEPTADAS</param-name>
+            <param-value>pmadmin.PRSA_TXN_ACEPTADAS</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PRSA_TIPOS_TRANSACCION</param-name>
+            <param-value>pmadmin.PRSA_TIPOS_TRANSACCION</param-value>
+        </init-param>
+    </servlet>
+    <!--Modificacion: GSOF-MVR-B-54-2092-15 Marca de Inicio-->
+    <servlet>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>net.sf.jasperreports.j2ee.servlets.ImageServlet</servlet-class>
+    </servlet>
+    <!--Modificacion: Marca de inicio  IDSYS-JRG-P-22-0136-14-->
+    <servlet>
+        <servlet-name>ControllerServletTrascod</servlet-name>
+        <servlet-class>com.wellcom.prosa.sacii.Controladores.ControllerServletTrascod</servlet-class>
+    </servlet>
+    <!--Modificacion: Marca de termino IDSYS-JRG-P-22-0136-14-->
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/image</url-pattern>
+    </servlet-mapping>
+    <!--Modificacion: GSOF-MVR-B-54-2092-15 Marca de Terminacion-->
+    <!--Modificacion: Marca de inicio ENOVA-VHMG Z-04-3155-11-->
+    <servlet-mapping>
+        <servlet-name>findrev</servlet-name>
+        <url-pattern>/findrev</url-pattern>
+    </servlet-mapping>
+    <!--Modificacion: Marca de terminacion ENOVA-VHMG Z-04-3155-11-->
+    <!--Modificacion: SAS-DRT F-52-8063-16 Marca de Inicio-->
+    <!--<servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern>/ControllerServlet</url-pattern>
+    </servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>ControllerServletMonitoreo</servlet-name>
+        <url-pattern>/ControllerServletMonitoreo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletCompensacion</servlet-name>
+        <url-pattern>/ControllerServletCompensacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletInformativa</servlet-name>
+        <url-pattern>/ControllerServletInformativa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletEmisorDolares</servlet-name>
+        <url-pattern>/ControllerServletEmisorDolares</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletIntegracion</servlet-name>
+        <url-pattern>/ControllerServletIntegracion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletAdquirente</servlet-name>
+        <url-pattern>/ControllerServletAdquirente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletExtemporaneas</servlet-name>
+        <url-pattern>/ControllerServletExt</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletPromociones</servlet-name>
+        <url-pattern>/ControllerServletProm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletMasterVisa</servlet-name>
+        <url-pattern>/ControllerServletMasVi</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletInterfaces</servlet-name>
+        <url-pattern>/ControllerServletInterf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletPrepago</servlet-name>
+        <url-pattern>/ControllerServletPrep</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletClickash</servlet-name>
+        <url-pattern>/ControllerServletClick</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletHubCarnet</servlet-name>
+        <url-pattern>/ControllerServletHub</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletVentaTA</servlet-name>
+        <url-pattern>/ControllerServletVTA</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletDCC</servlet-name>
+        <url-pattern>/ControllerServletReDCC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletReLiquid</servlet-name>
+        <url-pattern>/ControllerServletReLQ</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletMonitoreoH</servlet-name>
+        <url-pattern>/ControllerServletMonitH</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletLiquidacionH</servlet-name>
+        <url-pattern>/ControllerServletLiqH</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletIntegracionH</servlet-name>
+        <url-pattern>/ControllerServletIntegH</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletAdquirienteH</servlet-name>
+        <url-pattern>/ControllerServletAdquiH</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletPromocionesH</servlet-name>
+        <url-pattern>/ControllerServletPromoH</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletHerramientas</servlet-name>
+        <url-pattern>/ControllerServletHerr</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletMiscelaneos</servlet-name>
+        <url-pattern>/ControllerServletMisc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServletGen</servlet-name>
+        <url-pattern>/ControllerServletGen</url-pattern>
+    </servlet-mapping>
+    <!--Modificacion: SAS-DRT F-52-8063-16 Marca de fin-->
+   <!--
+    <servlet-mapping>
+        <servlet-name>ExcelServlet</servlet-name>
+        <url-pattern>/ExcelServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PDFServlet</servlet-name>
+        <url-pattern>/PDFServlet</url-pattern>
+    </servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>ViewerServlet</servlet-name>
+        <url-pattern>/frameset</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EngineServlet</servlet-name>
+        <url-pattern>/document</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EngineServlet</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EngineServlet</servlet-name>
+        <url-pattern>/parameter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EngineServlet</servlet-name>
+        <url-pattern>/extract</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewerServlet</servlet-name>
+        <url-pattern>/run</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EngineServlet</servlet-name>
+        <url-pattern>/preview</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EngineServlet</servlet-name>
+        <url-pattern>/output</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReloadServlet</servlet-name>
+        <url-pattern>/ReloadServlet</url-pattern>
+    </servlet-mapping>
+    <!--Modificacion: Marca de Inicio  IDSYS-JRG-P-22-0136-14-->
+    <servlet-mapping>
+        <servlet-name>ControllerServletTrascod</servlet-name>
+        <url-pattern>/ControllerServletTrascod</url-pattern>
+    </servlet-mapping>
+    <!--Modificacion: Marca de termino IDSYS-JRG-P-22-0136-14-->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    <jsp-config>
+        <taglib>
+            <taglib-uri>/birt.tld</taglib-uri>
+            <taglib-location>/WEB-INF/report-engine/tlds/birt.tld</taglib-location>
+        </taglib>
+        <!-- Modificacion        :  Marca de Inicio GSOF-MVR-C-08-2129-12 -->
+        <!-- Tag Library displaytag Descriptor-->
+        <taglib>
+            <taglib-uri>http://displaytag.sourceforge.net/</taglib-uri>
+            <taglib-location>/WEB-INF/displaytag-11.tld</taglib-location>
+        </taglib>
+        <!-- Modificacion        :  Marca de Terminacion GSOF-MVR-C-08-2129-12 -->
+    </jsp-config>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+    <!--<resource-ref>
+        <description>Oracle Datasource example</description>
+        <res-ref-name>jdbc/JndiTest</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+    <resource-ref>
+        <description>Oracle Datasource example</description>
+        <res-ref-name>jdbc/sacweb</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>-->
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/errorPage.jsp</location>
+    </error-page>
+    <session-config>
+        <session-timeout>180</session-timeout>
+    </session-config>
+</web-app>

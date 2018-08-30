@@ -1,0 +1,67 @@
+body
+
+p
+
+th {font-weight: bold}
+
+td
+
+input
+
+textarea
+
+.areatitle {font-weight: bold; ; color: #ffffff}
+
+.button-label {
+	text-decoration : none; 
+	color: #ffffff; 
+	background-color:#666699;
+	border: 0px;
+	font-size:13px;
+}
+
+h1 {font-weight: bold}
+
+h2 {font-weight: bold}
+
+h3 {font-weight: bold}
+
+.small-font {font-size: smaller}
+
+.pagelink {text-decoration: underline; color: #0000ff}
+
+.message-text {font-weight: bold}
+
+.message-title {font-size: larger; font-weight: bold}
+
+.error-border {background-color: #FF0000}
+
+.warning-border {background-color: #ffcc33}
+
+.information-border {background-color: #9999cc}
+
+.tab {font-weight: bold; text-decoration : none}
+
+.toolbar-link {color: #000000; text-decoration: none}
+
+.banner-links {	
+color: #000000;
+font-size: 12px
+}
+
+.button-label-black {text-decoration : none; color: #000000}
+
+.ComBtn {padding: 2px; margin: 1px; border: 1px solid #F5F8FF;}
+.ComBtnOver {padding: 2px; margin: 1px; border: 1px solid blue; background-color: white}
+tr.TrMsgHL {background-color: #CCC;}
+table.TbXMail {background-color: #fff;}
+table.TbXMail tr{border-bottom: solid 1px #d8d8d8; padding: 1mm 1mm 0mm}
+table.TbXMail th{background-color: #fff; border-bottom: solid 1px #d8d8d8; 
+  padding: 2mm 2mm 1mm;}
+table.TbXMail td{border-bottom: solid 1px #d8d8d8; padding: 1mm 1mm 0mm;}
+
+
+a:link {  text-decoration: underline; font-family: Arial, Helvetica, sans-serif }
+a:active { text-decoration: underline; font-family: Arial, Helvetica, sans-serif }
+a:visited {  text-decoration: underline; font-family: Arial, Helvetica, sans-serif }
+

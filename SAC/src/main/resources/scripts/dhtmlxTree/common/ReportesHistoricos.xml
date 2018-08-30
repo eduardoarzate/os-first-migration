@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0">	
+    <!-- Modificacion: Marca de inicio    SAS-DRT F-52-8063-16  -->			
+    <item text = "Monitoreo y Cifras de Control" id="reporte_1" im0="MonitoreoCifrasControl.png" im1="MonitoreoCifrasControl.png" im2="MonitoreoCifrasControl.png">
+        <item text="Monitoreo de Transacciones" id="reporte_1_1" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICMOF0100 Detalle de Transacciones Aceptadas" id="rep_SICMOF0100" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICMOF0100H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">MonitoreCCH</userdata>
+            </item>
+            <item text="SICMOR0100 Reporte de Transacciones Aceptadas por Comercio" id="rep_SICMOR0100" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICMOR0100H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">MonitoreCCH</userdata>
+            </item>		        			    
+            <item text="SICMOR0200 Reporte de Transacciones Aceptadas Adquirente" id="rep_SICMOR0200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <!-- <userdata name="href">CONSTRUCCION</userdata> -->
+                <userdata name="href">SICMOR0200H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+            </item>
+            <item text="SICMOR0205 LOG Autorizaciones" id="rep_SICMOR0205" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICMOR0205H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">MonitoreCCH</userdata>
+            </item>
+            <item text="SICMOR0300 Reporte de Transacciones Aceptadas Emisor" id="rep_SICMOR0300" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <!-- <userdata name="href">CONSTRUCCION</userdata> -->
+                <userdata name="href">SICMOR0300H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+            </item>
+            <item text="SICMOR0301 Reporte de Transacciones con Cashback" id="rep_SICMOR0301" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <!-- <userdata name="href">CONSTRUCCION</userdata> -->
+                <userdata name="href">SICMOR0301H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+            </item>
+            <item text="SICMOR0305 Transacciones Aceptadas (Totales por Emisor)" id="rep_SICMOR0305" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICMOR0305H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">MonitoreCCH</userdata>
+            </item>
+            <item text="SICMOR0330 Verificador de Transacciones enviadas por Bancomer/Banamex/Eglobal" id="rep_SICMOR0330" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <!-- <userdata name="href">CONSTRUCCION</userdata> -->
+                <userdata name="href">SICMOR0330H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+            </item>
+        </item>
+    </item>
+    <item text = "Liquidacion" id="reporte_2" im0="Liquidacion.png" im1="Liquidacion.png" im2="Liquidacion.png">
+        <item text="E-Global" id="eglobal" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIR0360 Reporte de Contracargos y Representaciones" id="rep_SICLIR0360" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICLIR0360H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">LiquidacionH</userdata>
+            </item>
+            <item text="SICLIR0460 Reporte de Transacciones Extemporaneas por Emisor" id="rep_SICLIR0460" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICLIR0460H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">LiquidacionH</userdata>
+            </item>
+            <item text="SICLIR0461 Reporte de Transacciones Extemporaneas por Adquirente" id="rep_SICLIR0461" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICLIR0461H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">LiquidacionH</userdata>
+            </item>
+        </item>
+        <item text="Interredes" id="interredes" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+            <!--Marca del Cambio : WELL-JMQ-Z-09-2573-12 Inicia la Modificacion       05/03/2013 -->
+            <item text="SICLIR0110H OPAM - Liquidación de Interredes de Bancos Socios" id="rep_SICLIR0110OPAMH" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICLIR0110OPAMH</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">LiquidacionH</userdata>
+            </item>
+            <!--Marca del Cambio : WELL-JMQ-Z-09-2573-12 termina la Modificacion       05/03/2013 -->
+            <item text="SICLIR0430 Depositos por Banco e Interred" id="rep_SICLIR0430" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICLIR0430H</userdata>
+                <userdata name="rolAccMin">8</userdata>
+                <userdata name="modulo">LiquidacionH</userdata>
+            </item>
+            <item text="SICMOR0360 Reporte de Transacciones Aceptadas Interredes por Emisor (Detalle)" id="rep_SICMOR0360" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICMOR0360H</userdata>
+                <userdata name="rolAccMin">8</userdata>
+                <userdata name="modulo">LiquidacionH</userdata>
+            </item>			
+        </item>		
+    </item>	
+    <item text = "Integracion - Respuestas de Intercambio " id="reporte_3" im0="Integracion.png" im1="Integracion.png" im2="Integracion.png">
+        <item text = "Reportes de Intercambio" id="reporte_3_1" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text = "Prosa" id="reporte_3_1_1" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+                <item text="SICMIR0290 Transacciones Recibidas por PROSA" id="rep_SICMIR0290" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0290H</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">IntegracionH</userdata>				
+                </item>
+            </item>
+            <item text = "Pos" id="reporte_3_1_2" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+                <item text="SICMIR0040 Reporte Integral de Transacciones por Comercio" id="rep_SICMIR0400" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0040H</userdata>
+                    <userdata name="rolAccMin">12</userdata>				
+                    <userdata name="modulo">IntegracionH</userdata>				
+                </item>
+                <item text="SICMIF0150 Consulta Integral de Transacciones por comercio" id="rep_SICMIF0150" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIF0150H</userdata>
+                    <userdata name="rolAccMin">2</userdata>				
+                    <userdata name="modulo">IntegracionH</userdata>				
+                </item>
+            </item>
+        </item>	
+    </item>
+    <item text = "Bancos Socios Adquirente en Dolares" id="reporte_11" im0="BancosSAdqDol.png" im1="BancosSAdqDol.png" im2="BancosSAdqDol.png">
+        <item text = "Operacion" id="reporte_11_1" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">							
+            <item text="SICMIRB040 Transacciones por Comercio" id="rep_SICMIRB040" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+                <userdata name="href">SICMIRB040H</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">AdquirienteH</userdata>
+            </item>
+        </item>
+    </item>
+    <item text = "Promociones" id="reporte_5" im0="Promociones.png" im1="Promociones.png" im2="Promociones.png">
+        <item text = "Liquidacion Complementaria Sobretasa" id="reporte_5_1" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICPRO001 Transacciones con Promocion por Comercio" id="rep_SICPRO001" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICPRO001H</userdata>
+                <userdata name="rolAccMin">2</userdata>				
+                <userdata name="modulo">PromocionesH</userdata>
+            </item>
+            <item text="SICPRO002 Reporte de Transacciones con Promocion" id="rep_SICPRO002" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICPRO002H</userdata>
+                <userdata name="rolAccMin">2</userdata>				
+                <userdata name="modulo">PromocionesH</userdata>
+            </item>
+            <item text="SICPRO003 Reporte de Transacciones Consolidado con Promocion" id="rep_SICPRO003" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICPRO003H</userdata>
+                <userdata name="rolAccMin">2</userdata>				
+                <userdata name="modulo">PromocionesH</userdata>
+            </item>
+            <item text="SICMORQ200 Reporte de Transacciones sin Promocion" id="rep_SICMORQ200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORQ200H</userdata>
+                <userdata name="rolAccMin">2</userdata>				
+                <userdata name="modulo">PromocionesH</userdata>
+            </item>
+        </item>	
+    </item>
+    <!-- Modificacion: Marca de fin    SAS-DRT F-52-8063-16  -->
+</tree>

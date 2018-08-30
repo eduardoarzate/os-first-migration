@@ -1,0 +1,2814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_20090202 Build &lt;2.3.2.v20090218-0730></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="initDate" id="281">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="endDate" id="286">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Adquiriente" id="287">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="ejecuto" id="1017">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgRmt" id="6037">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgLcl" id="6038">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">x</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="VTC" id="1016">
+            <property name="meDriver">POOL_VTC</property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">IFODBP</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Datos" id="58">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">AGRUPADOR</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">AGRUPADOR</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_NOMBRE_ARCHIVO</property>
+                    <property name="analysis">dimension</property>
+                    <property name="displayName">VTC_NOMBRE_ARCHIVO</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_ARCH_NUMERO</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_ARCH_NUMERO</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TIPOTRANSACCION</property>
+                    <property name="analysis">dimension</property>
+                    <property name="displayName">TIPOTRANSACCION</property>
+                </structure>
+                <structure>
+                    <property name="columnName">NOMBRE</property>
+                    <property name="analysis">dimension</property>
+                    <property name="displayName">NOMBRE</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IMPORTE_TOTAL_TRANSAC</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IMPORTE_TOTAL_TRANSAC</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VENTAS</property>
+                    <property name="analysis">dimension</property>
+                    <property name="displayName">VENTAS</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_NOM_DISTRIBUIDOR</property>
+                    <property name="analysis">dimension</property>
+                    <property name="displayName">VTC_NOM_DISTRIBUIDOR</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_NOM_TELEFONICA</property>
+                    <property name="analysis">dimension</property>
+                    <property name="displayName">VTC_NOM_TELEFONICA</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_NUM_TELEFONO</property>
+                    <property name="analysis">dimension</property>
+                    <property name="displayName">VTC_NUM_TELEFONO</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IMP_COM_A_DISTRIBUIR</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IMP_COM_A_DISTRIBUIR</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IVA_COM_A_DISTRIBUIR</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IVA_COM_A_DISTRIBUIR</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IMP_COM_ADQUIRENTE</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IMP_COM_ADQUIRENTE</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IMP_COM_COMERCIO</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IMP_COM_COMERCIO</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IMP_IVA_COMERCIO</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IMP_IVA_COMERCIO</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IMP_COM_PROSA</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IMP_COM_PROSA</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IMP_TAR_DISTRIBUIDOR</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IMP_TAR_DISTRIBUIDOR</property>
+                </structure>
+                <structure>
+                    <property name="columnName">VTC_IVA_TAR_DISTRIBUIDOR</property>
+                    <property name="analysis">measure</property>
+                    <property name="displayName">VTC_IVA_TAR_DISTRIBUIDOR</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">AGRUPADOR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">VTC_NOMBRE_ARCHIVO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">VTC_ARCH_NUMERO</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">TIPOTRANSACCION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">NOMBRE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">VTC_IMPORTE_TOTAL_TRANSAC</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">VENTAS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">VTC_NOM_DISTRIBUIDOR</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">VTC_NOM_TELEFONICA</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">VTC_NUM_TELEFONO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">VTC_IMP_COM_A_DISTRIBUIR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">VTC_IVA_COM_A_DISTRIBUIR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">VTC_IMP_COM_ADQUIRENTE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">VTC_IMP_COM_COMERCIO</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">VTC_IMP_IVA_COMERCIO</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">VTC_IMP_COM_PROSA</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">VTC_IMP_TAR_DISTRIBUIDOR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">VTC_IVA_TAR_DISTRIBUIDOR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">VTC_FECHA_CONSUMO_TRANSAC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">BANCOTODOS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">VTC_IMP_CUOTA_INTER</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">VTC_IMP_IVA_INTER</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">VTC_FECHA_PROCESO_TRANSAC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">VTC_IMP_IVA_ADQUIRENTE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">VTC</property>
+            <method name="beforeOpen"><![CDATA[this.queryText=
+ " SELECT rownum AS AGRUPADOR, D.VTC_NOMBRE_ARCHIVO, D.VTC_ARCH_NUMERO, "+
+ " D.vtc_naturaleza_contable AS TIPOTRANSACCION, "+
+ " LI.DESCRIPCION AS NOMBRE, D.VTC_IMPORTE_TOTAL_TRANSAC, 'VENTAS' VENTAS, "+
+ " D.VTC_ENT_NUMERO_PROSA_ADQ AS VTC_ENT_NUMERO_PROSA_ADQ, "+
+ " D.VTC_NOM_DISTRIBUIDOR, D.VTC_NOM_TELEFONICA, D.VTC_NUM_TELEFONO, "+
+ " D.VTC_IMP_COM_A_DISTRIBUIR, D.VTC_IVA_COM_A_DISTRIBUIR, D.VTC_IMP_COM_ADQUIRENTE,  "+
+ " D.VTC_IMP_COM_COMERCIO, D.VTC_IMP_IVA_COMERCIO, D.VTC_IMP_COM_PROSA,  "+
+ " D.VTC_IMP_TAR_DISTRIBUIDOR, D.VTC_IVA_TAR_DISTRIBUIDOR, "+
+ " to_char (D.VTC_FECHA_CONSUMO_TRANSAC , 'dd-mm-yyyy') as VTC_FECHA_CONSUMO_TRANSAC,   "+
+ " LI.DESCRIPCION AS BANCOTODOS, "+ 
+ "  D.VTC_IMP_CUOTA_INTER,D.VTC_IMP_IVA_INTER,    "+
+ " to_char (D.VTC_FECHA_PROCESO_TRANSAC , 'dd-mm-yyyy') as VTC_FECHA_PROCESO_TRANSAC, D.VTC_IMP_IVA_ADQUIRENTE "+
+ " FROM VTC.TBL_VTC_DETAILS_TXN D, PMADMIN.PRSA_ENTIDADES@LG_IFO_PMTU LI  "+
+ " WHERE LI.NUMERO_PROSA = D.VTC_ENT_NUMERO_PROSA_ADQ  "+
+ "   AND D.VTC_FECHA_PROCESO_TRANSAC >= TO_DATE('"+params["initDate"]+"', 'DD/MM/YYYY')    "+
+ "   AND D.VTC_FECHA_PROCESO_TRANSAC <= TO_DATE('"+params["endDate"]+"', 'DD/MM/YYYY')    "+
+ "   AND D.VTC_ENT_NUMERO_PROSA_ADQ IN ("+params["Adquiriente"]+") "+
+ " ORDER BY D.VTC_FECHA_PROCESO_TRANSAC,D.VTC_NOM_DISTRIBUIDOR,D.VTC_NOM_TELEFONICA,D.vtc_naturaleza_contable  ";
+  
+  ]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">AGRUPADOR</property>
+                    <property name="nativeName">AGRUPADOR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">VTC_NOMBRE_ARCHIVO</property>
+                    <property name="nativeName">VTC_NOMBRE_ARCHIVO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">VTC_ARCH_NUMERO</property>
+                    <property name="nativeName">VTC_ARCH_NUMERO</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">TIPOTRANSACCION</property>
+                    <property name="nativeName">TIPOTRANSACCION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">NOMBRE</property>
+                    <property name="nativeName">NOMBRE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">VTC_IMPORTE_TOTAL_TRANSAC</property>
+                    <property name="nativeName">VTC_IMPORTE_TOTAL_TRANSAC</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">VENTAS</property>
+                    <property name="nativeName">VENTAS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                    <property name="nativeName">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">VTC_NOM_DISTRIBUIDOR</property>
+                    <property name="nativeName">VTC_NOM_DISTRIBUIDOR</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">VTC_NOM_TELEFONICA</property>
+                    <property name="nativeName">VTC_NOM_TELEFONICA</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">VTC_NUM_TELEFONO</property>
+                    <property name="nativeName">VTC_NUM_TELEFONO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">VTC_IMP_COM_A_DISTRIBUIR</property>
+                    <property name="nativeName">VTC_IMP_COM_A_DISTRIBUIR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">VTC_IVA_COM_A_DISTRIBUIR</property>
+                    <property name="nativeName">VTC_IVA_COM_A_DISTRIBUIR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">VTC_IMP_COM_ADQUIRENTE</property>
+                    <property name="nativeName">VTC_IMP_COM_ADQUIRENTE</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">VTC_IMP_COM_COMERCIO</property>
+                    <property name="nativeName">VTC_IMP_COM_COMERCIO</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">VTC_IMP_IVA_COMERCIO</property>
+                    <property name="nativeName">VTC_IMP_IVA_COMERCIO</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">VTC_IMP_COM_PROSA</property>
+                    <property name="nativeName">VTC_IMP_COM_PROSA</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">VTC_IMP_TAR_DISTRIBUIDOR</property>
+                    <property name="nativeName">VTC_IMP_TAR_DISTRIBUIDOR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">VTC_IVA_TAR_DISTRIBUIDOR</property>
+                    <property name="nativeName">VTC_IVA_TAR_DISTRIBUIDOR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">VTC_FECHA_CONSUMO_TRANSAC</property>
+                    <property name="nativeName">VTC_FECHA_CONSUMO_TRANSAC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">BANCOTODOS</property>
+                    <property name="nativeName">BANCOTODOS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">VTC_IMP_CUOTA_INTER</property>
+                    <property name="nativeName">VTC_IMP_CUOTA_INTER</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">VTC_IMP_IVA_INTER</property>
+                    <property name="nativeName">VTC_IMP_IVA_INTER</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">VTC_FECHA_PROCESO_TRANSAC</property>
+                    <property name="nativeName">VTC_FECHA_PROCESO_TRANSAC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">VTC_IMP_IVA_ADQUIRENTE</property>
+                    <property name="nativeName">VTC_IMP_IVA_ADQUIRENTE</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <structure name="designerState">
+                <property name="version">1.0</property>
+                <property name="stateContentAsString">&lt;?xml version="1.0"
+					encoding="UTF-8"?>
+					&lt;SQLQueryBuilder
+					editorInputType="SQLBuilderStorageEditorInput" name="Datos"
+					version="1.0">
+					&lt;SQLStatement>SELECT 1 AS AGRUPADOR,
+					D.VTC_NOMBRE_ARCHIVO, D.VTC_ARCH_NUMERO,&amp;#x0A;
+					(CASE WHEN
+					D.VTC_ARCH_NUMERO = 195 THEN &amp;apos;ARCHIVO TRXS. T
+					C/D&amp;apos; ELSE &amp;apos;ARCHIVO TRXS. EFECTIVO&amp;apos; END)
+					AS TIPOTRANSACCION,&amp;#x0A; LI.NOMBRE,
+					D.VTC_IMPORTE_TOTAL_TRANSAC, &amp;apos;VENTAS&amp;apos;,
+					D.VTC_ENT_NUMERO_PROSA_ADQ,&amp;#x0A; D.VTC_NOM_DISTRIBUIDOR,
+					D.VTC_NOM_TELEFONICA, D.VTC_NUM_TELEFONO,&amp;#x0A;
+					D.VTC_IMP_COM_A_DISTRIBUIR, D.VTC_IVA_COM_A_DISTRIBUIR,
+					D.VTC_IMP_COM_ADQUIRENTE,&amp;#x0A; D.VTC_IMP_COM_COMERCIO,
+					D.VTC_IMP_IVA_COMERCIO, D.VTC_IMP_COM_PROSA,&amp;#x0A;
+					D.VTC_IMP_TAR_DISTRIBUIDOR, D.VTC_IVA_TAR_DISTRIBUIDOR&amp;#x0A;
+					FROM VTC.TBL_VTC_DETAILS_TXN D, SUPERSIC.ENTIDADES@LG_ACL_SIC
+					LI&amp;#x0A; WHERE LI.NUMERO_PROSA =
+					D.VTC_ENT_NUMERO_PROSA_ADQ&amp;#x0A; AND
+					D.VTC_FECHA_PROCESO_TRANSAC =
+					&amp;apos;10-10-2012&amp;apos;&amp;#x0A; AND
+					D.VTC_ENT_NUMERO_PROSA_ADQ = 7&amp;#x0A;&lt;/SQLStatement>
+					&lt;connInfo>Oracle_10:VTC:IFOD:vtc&lt;/connInfo>
+					&lt;omitSchemaInfo>false:true:&lt;/omitSchemaInfo>
+					&lt;editorInputUsageOptions>useWindowState=true&lt;/editorInputUsageOptions>
+					&lt;windowState height="331" version="1.0" width="569">
+					&lt;control height="94" isHideable="true" isVisible="true"
+					name="SQLSourceViewer" width="542"/>
+					&lt;control height="104"
+					isHideable="true" isVisible="true"
+					name="DesignViewer"
+					width="555"/>
+					&lt;control height="95" isHideable="true"
+					isVisible="true" name="GraphControl"
+					width="547"/>
+					&lt;control
+					height="99" isHideable="true" isVisible="false"
+					name="OutlineViewer" width="156"/>
+					&lt;/windowState>
+					&lt;/SQLQueryBuilder></property>
+            </structure>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube - Datos" id="295">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="296">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="297">
+                            <property name="levels">
+                                <tabular-level name="VTC_IMPORTE_TOTAL_TRANSAC" id="298">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">VTC_IMPORTE_TOTAL_TRANSAC</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="dataSet">Datos</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">us-letter</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.1in</property>
+            <property name="leftMargin">0.1in</property>
+            <property name="bottomMargin">0.1in</property>
+            <property name="rightMargin">0.1in</property>
+            <property name="showHeaderOnFirst">false</property>
+            <page-header>
+                <grid id="1936">
+                    <property name="width">100%</property>
+                    <column id="1937">
+                        <property name="width">22%</property>
+                    </column>
+                    <column id="1938">
+                        <property name="width">56%</property>
+                    </column>
+                    <column id="1939">
+                        <property name="width">22%</property>
+                    </column>
+                    <row id="1940">
+                        <cell id="1941">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <image id="1942">
+                                <property name="height">104px</property>
+                                <property name="width">140px</property>
+                                <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.URI=params['srvImgRmt']+'/Carnet_header.jpg';
+else
+this.URI=params['srvImgLcl']+'/pmr/reports/images/Carnet_header.jpg';]]></method>
+                                <property name="source">url</property>
+                                <expression name="uri">''</expression>
+                            </image>
+                        </cell>
+                        <cell id="1943">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="textAlign">center</property>
+                            <text id="1944">
+                                <property name="fontFamily">serif</property>
+                                <property name="fontSize">16pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[PROMOCION Y OPERACION S.A. DE C.V.]]></text-property>
+                            </text>
+                            <text id="1945">
+                                <property name="fontFamily">serif</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Reporte detalles de transacciones tiempo aire por Adquiriente]]></text-property>
+                            </text>
+                            <grid id="1946">
+                                <property name="width">65%</property>
+                                <column id="1947">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="1948">
+                                    <property name="width">20%</property>
+                                </column>
+                                <column id="1949">
+                                    <property name="width">5%</property>
+                                </column>
+                                <column id="1950">
+                                    <property name="width">20%</property>
+                                </column>
+                                <row id="1951">
+                                    <cell id="1952">
+                                        <text id="1954">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Fecha del:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1955">
+                                        <data id="22366">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">initDate</property>
+                                                    <expression name="expression">params["initDate"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">initDate</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1957">
+                                        <text id="1958">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[al]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1959">
+                                        <data id="22367">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">endDate</property>
+                                                    <expression name="expression">params["endDate"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">endDate</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="1961">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <grid id="1962">
+                                <property name="width">100%</property>
+                                <column id="1963">
+                                    <property name="width">1.4375in</property>
+                                </column>
+                                <column id="1964"/>
+                                <row id="1965">
+                                    <cell id="1966">
+                                        <property name="textAlign">center</property>
+                                        <text id="1967">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Fecha de proceso:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1968">
+                                        <property name="textAlign">center</property>
+                                        <text id="1969">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="dd-MM-yyyy">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="1970">
+                                    <cell id="1971">
+                                        <property name="textAlign">center</property>
+                                        <text id="1972">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Hora de proceso:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1973">
+                                        <property name="textAlign">center</property>
+                                        <text id="1974">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="marginTop">0pt</property>
+                                            <property name="paddingTop">1pt</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="HH:mm">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="1975">
+                                    <cell id="1976">
+                                        <property name="textAlign">center</property>
+                                        <text id="1977">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Página]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1978">
+                                        <property name="textAlign">center</property>
+                                        <grid id="1979">
+                                            <property name="width">100%</property>
+                                            <column id="1980"/>
+                                            <column id="1981"/>
+                                            <column id="1982"/>
+                                            <row id="1983">
+                                                <cell id="1984">
+                                                    <auto-text id="1785">
+                                                        <property name="fontFamily">serif</property>
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="type">page-number</property>
+                                                    </auto-text>
+                                                </cell>
+                                                <cell id="1986">
+                                                    <text id="1987">
+                                                        <property name="fontFamily">serif</property>
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="fontWeight">bold</property>
+                                                        <property name="contentType">auto</property>
+                                                        <text-property name="content"><![CDATA[de]]></text-property>
+                                                    </text>
+                                                </cell>
+                                                <cell id="1988">
+                                                    <auto-text id="1789">
+                                                        <property name="fontFamily">serif</property>
+                                                        <property name="fontSize">12pt</property>
+                                                        <property name="type">total-page</property>
+                                                    </auto-text>
+                                                </cell>
+                                            </row>
+                                        </grid>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="1990"/>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="22354">
+                    <property name="width">100%</property>
+                    <column id="22355"/>
+                    <column id="22356"/>
+                    <row id="22357">
+                        <cell id="22318">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <text id="22320">
+                                <property name="fontFamily">serif</property>
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[VTCDEAD01]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="22319">
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="textAlign">right</property>
+                            <grid id="22321">
+                                <property name="textAlign">left</property>
+                                <property name="width">2.073in</property>
+                                <column id="22322"/>
+                                <column id="22323"/>
+                                <row id="22324">
+                                    <cell id="22325">
+                                        <text id="22335">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Usuario:]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="22326">
+                                        <data id="22336">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">12pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">ejecuto</property>
+                                                    <expression name="expression">params["ejecuto"].value</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">ejecuto</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="8">
+            <property name="pageBreakAfter">always</property>
+            <property name="width">100%</property>
+            <column id="9"/>
+            <row id="12">
+                <cell id="10">
+                    <property name="textAlign">center</property>
+                    <image id="2353">
+                        <property name="height">104px</property>
+                        <property name="width">140px</property>
+                        <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.URI=params['srvImgRmt']+'/Carnet_header.jpg';
+else
+this.URI=params['srvImgLcl']+'/pmr/reports/images/Carnet_header.jpg';]]></method>
+                        <property name="source">url</property>
+                        <expression name="uri">''</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="2034">
+                <property name="height">2.1in</property>
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="2035">
+                    <method name="onRender"><![CDATA[if(reportContext.getOutputFormat().equalsIgnoreCase('HTML'))
+this.getStyle().backgroundImage=params['srvImgRmt']+'/reportHeader.png';
+else
+this.getStyle().backgroundImage=params['srvImgLcl']+'/pmr/reports/images/reportHeader.png';]]></method>
+                    <property name="backgroundImage">reports/images/reportHeader.png</property>
+                    <property name="backgroundPositionX">center</property>
+                    <property name="backgroundPositionY">center</property>
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="paddingTop">1pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="2036">
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[PROMOCION Y OPERACION S.A. DE C.V.]]></text-property>
+                    </text>
+                    <text-data id="4431">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <expression name="valueExpr">"Reporte detalles de transacciones tiempo aire por Adquiriente"</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="16">
+                <cell id="17">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <grid id="22259">
+                        <property name="height">0in</property>
+                        <property name="width">40%</property>
+                        <column id="22260">
+                            <property name="width">1.9791666666666667in</property>
+                        </column>
+                        <column id="22261">
+                            <property name="width">1.9791666666666667in</property>
+                        </column>
+                        <row id="22262">
+                            <cell id="22263">
+                                <property name="textAlign">center</property>
+                                <text id="22265">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Archivo:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="22264">
+                                <property name="textAlign">center</property>
+                                <text id="22266">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontSize">medium</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="verticalAlign">middle</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[VTCDEAD01]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="22267">
+                            <cell id="22268">
+                                <property name="textAlign">center</property>
+                                <text id="22284">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Ejecutó:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="22285">
+                                <property name="textAlign">center</property>
+                                <data id="22286">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontSize">medium</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ejecuto</property>
+                                            <expression name="expression">params["ejecuto"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ejecuto</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="22269">
+                            <cell id="22270">
+                                <property name="textAlign">center</property>
+                                <text id="22287">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Fecha de ejecución:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="22271">
+                                <property name="textAlign">center</property>
+                                <text id="22288">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontSize">medium</property>
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="22272">
+                            <cell id="22273">
+                                <property name="textAlign">center</property>
+                                <text id="22289">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Fecha del:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="22274">
+                                <property name="textAlign">center</property>
+                                <grid id="22290">
+                                    <property name="width">100%</property>
+                                    <column id="22291"/>
+                                    <column id="22292"/>
+                                    <column id="22293"/>
+                                    <row id="22294">
+                                        <cell id="22295">
+                                            <data id="22365">
+                                                <property name="fontFamily">serif</property>
+                                                <property name="fontSize">medium</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">initDate</property>
+                                                        <expression name="expression">params["initDate"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">initDate</property>
+                                            </data>
+                                        </cell>
+                                        <cell id="22297">
+                                            <text id="22298">
+                                                <property name="fontFamily">serif</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="contentType">auto</property>
+                                                <text-property name="content"><![CDATA[al]]></text-property>
+                                            </text>
+                                        </cell>
+                                        <cell id="22299">
+                                            <data id="22364">
+                                                <property name="fontFamily">serif</property>
+                                                <property name="fontSize">medium</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">endDate</property>
+                                                        <expression name="expression">params["endDate"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">endDate</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="22281">
+                            <cell id="22282">
+                                <property name="textAlign">center</property>
+                                <text id="22300">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Banco Adquiriente:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="22283">
+                                <data id="22328">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontSize">medium</property>
+                                    <property name="dataSet">Datos</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">BANCOTODOS</property>
+                                            <property name="displayName">BANCOTODOS</property>
+                                            <expression name="expression">dataSetRow["BANCOTODOS"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">BANCOTODOS</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="22314">
+                            <cell id="22315">
+                                <property name="textAlign">center</property>
+                                <text id="22317">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Clave Adquiriente:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="22316">
+                                <data id="22329">
+                                    <property name="fontFamily">serif</property>
+                                    <property name="fontSize">medium</property>
+                                    <property name="dataSet">Datos</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                                            <property name="displayName">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                                            <expression name="expression">dataSetRow["VTC_ENT_NUMERO_PROSA_ADQ"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <grid id="22358">
+            <property name="width">100%</property>
+            <column id="22359"/>
+            <row id="22360">
+                <cell id="22361">
+                    <table id="158">
+                        <property name="width">100%</property>
+                        <property name="dataSet">Datos</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">VTC_NOMBRE_ARCHIVO</property>
+                                <expression name="expression">dataSetRow["VTC_NOMBRE_ARCHIVO"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_ARCH_NUMERO</property>
+                                <expression name="expression">dataSetRow["VTC_ARCH_NUMERO"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TIPOTRANSACCION</property>
+                                <expression name="expression">dataSetRow["TIPOTRANSACCION"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NOMBRE</property>
+                                <expression name="expression">dataSetRow["NOMBRE"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMPORTE_TOTAL_TRANSAC</property>
+                                <expression name="expression">dataSetRow["VTC_IMPORTE_TOTAL_TRANSAC"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VENTAS</property>
+                                <expression name="expression">dataSetRow["VENTAS"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_ENT_NUMERO_PROSA_ADQ</property>
+                                <expression name="expression">dataSetRow["VTC_ENT_NUMERO_PROSA_ADQ"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_NOM_DISTRIBUIDOR</property>
+                                <expression name="expression">dataSetRow["VTC_NOM_DISTRIBUIDOR"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_NOM_TELEFONICA</property>
+                                <expression name="expression">dataSetRow["VTC_NOM_TELEFONICA"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_NUM_TELEFONO</property>
+                                <expression name="expression">dataSetRow["VTC_NUM_TELEFONO"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_COM_A_DISTRIBUIR</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_COM_A_DISTRIBUIR"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IVA_COM_A_DISTRIBUIR</property>
+                                <expression name="expression">dataSetRow["VTC_IVA_COM_A_DISTRIBUIR"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_COM_ADQUIRENTE</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_COM_ADQUIRENTE"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_COM_COMERCIO</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_COM_COMERCIO"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_IVA_COMERCIO</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_IVA_COMERCIO"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_COM_PROSA</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_COM_PROSA"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_TAR_DISTRIBUIDOR</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_TAR_DISTRIBUIDOR"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IVA_TAR_DISTRIBUIDOR</property>
+                                <expression name="expression">dataSetRow["VTC_IVA_TAR_DISTRIBUIDOR"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaImporte</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMPORTE_TOTAL_TRANSAC"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaVTC_IVA_COM_A_DISTRIBUIR</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IVA_COM_A_DISTRIBUIR"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaVTC_IMP_COM_ADQUIRENTE</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_ADQUIRENTE"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaVTC_IMP_COM_COMERCI</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_COMERCIO"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaVTC_IMP_IVA_COMERCIO</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_IVA_COMERCIO"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaVTC_IMP_COM_PROSA</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_PROSA"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaVTC_IMP_TAR_DISTRIBUIDOR</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_TAR_DISTRIBUIDOR"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaVTC_IVA_TAR_DISTRIBUIDOR</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IVA_TAR_DISTRIBUIDOR"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_FECHA_CONSUMO_TRANSAC</property>
+                                <expression name="expression">dataSetRow["VTC_FECHA_CONSUMO_TRANSAC"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_CUOTA_INTER</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_CUOTA_INTER"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_IVA_INTER</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_IVA_INTER"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaIvaCuotaIntercambio</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_IVA_INTER"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaComDistribuir</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_A_DISTRIBUIR"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaCuotaIntercambio</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_CUOTA_INTER"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaCuotaIvaIntercambio</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_IVA_INTER"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaImporteTotalTransaccion</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMPORTE_TOTAL_TRANSAC"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaCuotaIntercambioTotal</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_CUOTA_INTER"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaCuotaIvaIntercambioTotal</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_IVA_INTER"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaImporteIvaComDistribuir</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_A_DISTRIBUIR"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">SumaTotalIvaComDistribuir</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IVA_COM_A_DISTRIBUIR"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaTotalVTC_IMP_COM_ADQUIRENTE</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_ADQUIRENTE"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaTotalVTC_IMP_COM_COMERCIO</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_COMERCIO"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaTotalVTC_IMP_IVA_COMERCIO</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_IVA_COMERCIO"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaTotalVTC_IMP_COM_PROSA</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_PROSA"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaTotalVTC_IVA_TAR_DISTRIBUIDOR</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IVA_TAR_DISTRIBUIDOR"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaTotalVTC_IMP_TAR_DISTRIBUIDOR</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_TAR_DISTRIBUIDOR"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_FECHA_PROCESO_TRANSAC</property>
+                                <expression name="expression">dataSetRow["VTC_FECHA_PROCESO_TRANSAC"]
+					</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">VTC_IMP_IVA_ADQUIRENTE</property>
+                                <expression name="expression">dataSetRow["VTC_IMP_IVA_ADQUIRENTE"]
+					</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaImporteIvaAdquiriente</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_IVA_ADQUIRENTE"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaTotalImporteIvaAdquiriente</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_IVA_ADQUIRENTE"]
+							</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">TotalTransacciones</property>
+                                <property name="dataType">integer</property>
+                                <property name="aggregateFunction">COUNT</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_PROSA"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaVTC_IMP_COM_PROSA1</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_PROSA"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                            <structure>
+                                <property name="name">sumaTotalVTC_IMP_COM_PROSA1</property>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value">row["VTC_IMP_COM_PROSA"]</expression>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                        </list-property>
+                        <column id="1084">
+                            <property name="width">25px</property>
+                        </column>
+                        <column id="1090">
+                            <property name="width">25px</property>
+                        </column>
+                        <column id="241">
+                            <property name="width">20px</property>
+                        </column>
+                        <column id="243">
+                            <property name="width">50px</property>
+                        </column>
+                        <column id="244">
+                            <property name="width">50px</property>
+                        </column>
+                        <column id="245">
+                            <property name="width">55px</property>
+                        </column>
+                        <column id="458">
+                            <property name="width">20px</property>
+                        </column>
+                        <column id="1034">
+                            <property name="width">32px</property>
+                        </column>
+                        <column id="1040">
+                            <property name="width">32px</property>
+                        </column>
+                        <column id="246">
+                            <property name="width">25px</property>
+                        </column>
+                        <column id="247">
+                            <property name="width">25px</property>
+                        </column>
+                        <column id="248">
+                            <property name="width">30px</property>
+                        </column>
+                        <column id="1077">
+                            <property name="width">32px</property>
+                        </column>
+                        <column id="249">
+                            <property name="width">25px</property>
+                        </column>
+                        <column id="250">
+                            <property name="width">25px</property>
+                        </column>
+                        <column id="251">
+                            <property name="width">25px</property>
+                        </column>
+                        <column id="22372">
+                            <property name="width">20px</property>
+                        </column>
+                        <column id="252">
+                            <property name="width">32px</property>
+                        </column>
+                        <column id="253">
+                            <property name="width">32px</property>
+                        </column>
+                        <group id="299">
+                            <property name="groupName">NewTableGroup1</property>
+                            <property name="sortDirection">desc</property>
+                            <expression name="keyExpr">row["NOMBRE"]
+				</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["NOMBRE"]
+					</expression>
+                            </structure>
+                            <property name="hideDetail">false</property>
+                            <header>
+                                <row id="300">
+                                    <cell id="1080">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="1091">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Fecha de Proceso</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="1086">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="1025">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Fecha de consumo</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="303">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="338">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Tipo Txs</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="305">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="341">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Distribuidor</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="306">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="344">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Telefonica</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="307">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="346">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Número
+Telefonico</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="454">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="339">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Importe</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="1030">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="1041">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Cuota
+Intercambio </text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="1036">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="1042">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">IVA
+Intercambio </text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="308">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="352">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Comision a Distribuir</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="309">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="354">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">IVA a
+Distribuir</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="310">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="356">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Comision
+Adquirente</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="1073">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="1078">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">IVA
+Adquiriente</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="311">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="358">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Comision
+Comercio</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="312">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="360">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">IVA
+Comercio</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="313">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="362">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Comision
+Prosa</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="22368">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="22373">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">IVA Prosa</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="314">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="364">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Tarifa
+Distribuidor</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="315">
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="366">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">IVA
+Distribuidor</text-property>
+                                        </label>
+                                    </cell>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="316">
+                                    <cell id="1082">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                    </cell>
+                                    <cell id="1088">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                    </cell>
+                                    <cell id="319">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                    </cell>
+                                    <cell id="321">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                    </cell>
+                                    <cell id="322">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="1028">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="resultSetColumn">NOMBRE</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="323">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <label id="22363">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">7pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Total</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="456">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="374">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">SumaImporte</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1032">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="1049">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">SumaCuotaIntercambio</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1038">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="1050">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">SumaCuotaIvaIntercambio</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="324">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="1047">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">SumaComDistribuir</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="325">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="412">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaVTC_IVA_COM_A_DISTRIBUIR</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="326">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="413">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaVTC_IMP_COM_ADQUIRENTE</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1075">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="1096">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaImporteIvaAdquiriente</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="327">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="414">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaVTC_IMP_COM_COMERCI</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="328">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="449">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaVTC_IMP_IVA_COMERCIO</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="329">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="450">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaVTC_IMP_COM_PROSA</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="22370">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="22377">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaVTC_IMP_COM_PROSA1</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="330">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="451">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaVTC_IMP_TAR_DISTRIBUIDOR</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="331">
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="textAlign">center</property>
+                                        <data id="452">
+                                            <property name="fontFamily">serif</property>
+                                            <property name="fontSize">6pt</property>
+                                            <property name="paddingRight">1pt</property>
+                                            <property name="numberAlign">right</property>
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0.00</property>
+                                            </structure>
+                                            <property name="textAlign">right</property>
+                                            <property name="resultSetColumn">sumaVTC_IVA_TAR_DISTRIBUIDOR</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </footer>
+                        </group>
+                        <detail>
+                            <row id="191">
+                                <cell id="1081">
+                                    <property name="textAlign">center</property>
+                                    <data id="1093">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="resultSetColumn">VTC_FECHA_PROCESO_TRANSAC</property>
+                                    </data>
+                                </cell>
+                                <cell id="1087">
+                                    <property name="textAlign">center</property>
+                                    <data id="1026">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="resultSetColumn">VTC_FECHA_CONSUMO_TRANSAC</property>
+                                    </data>
+                                </cell>
+                                <cell id="194">
+                                    <property name="textAlign">center</property>
+                                    <data id="335">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="resultSetColumn">TIPOTRANSACCION</property>
+                                    </data>
+                                </cell>
+                                <cell id="196">
+                                    <property name="textAlign">center</property>
+                                    <data id="342">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="resultSetColumn">VTC_NOM_DISTRIBUIDOR</property>
+                                    </data>
+                                </cell>
+                                <cell id="197">
+                                    <property name="textAlign">center</property>
+                                    <data id="345">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="resultSetColumn">VTC_NOM_TELEFONICA</property>
+                                    </data>
+                                </cell>
+                                <cell id="198">
+                                    <data id="347">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">VTC_NUM_TELEFONO</property>
+                                    </data>
+                                </cell>
+                                <cell id="455">
+                                    <property name="textAlign">center</property>
+                                    <data id="343">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMPORTE_TOTAL_TRANSAC</property>
+                                    </data>
+                                </cell>
+                                <cell id="1031">
+                                    <property name="textAlign">center</property>
+                                    <data id="1044">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_CUOTA_INTER</property>
+                                    </data>
+                                </cell>
+                                <cell id="1037">
+                                    <property name="textAlign">center</property>
+                                    <data id="1046">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_IVA_INTER</property>
+                                    </data>
+                                </cell>
+                                <cell id="199">
+                                    <property name="textAlign">center</property>
+                                    <data id="353">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_COM_A_DISTRIBUIR</property>
+                                    </data>
+                                </cell>
+                                <cell id="200">
+                                    <property name="textAlign">center</property>
+                                    <data id="355">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IVA_COM_A_DISTRIBUIR</property>
+                                    </data>
+                                </cell>
+                                <cell id="201">
+                                    <property name="textAlign">center</property>
+                                    <data id="357">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_COM_ADQUIRENTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="1074">
+                                    <property name="textAlign">center</property>
+                                    <data id="1095">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_IVA_ADQUIRENTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="202">
+                                    <property name="textAlign">center</property>
+                                    <data id="359">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_COM_COMERCIO</property>
+                                    </data>
+                                </cell>
+                                <cell id="203">
+                                    <property name="textAlign">center</property>
+                                    <data id="361">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_IVA_COMERCIO</property>
+                                    </data>
+                                </cell>
+                                <cell id="204">
+                                    <property name="textAlign">center</property>
+                                    <data id="363">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_COM_PROSA</property>
+                                    </data>
+                                </cell>
+                                <cell id="22369">
+                                    <property name="textAlign">center</property>
+                                    <data id="22374">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_COM_PROSA</property>
+                                    </data>
+                                </cell>
+                                <cell id="205">
+                                    <property name="textAlign">center</property>
+                                    <data id="365">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IMP_TAR_DISTRIBUIDOR</property>
+                                    </data>
+                                </cell>
+                                <cell id="206">
+                                    <property name="textAlign">center</property>
+                                    <data id="367">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">VTC_IVA_TAR_DISTRIBUIDOR</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="223">
+                                <property name="height">0in</property>
+                                <cell id="1083">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                </cell>
+                                <cell id="1089">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                </cell>
+                                <cell id="226">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                </cell>
+                                <cell id="228">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <label id="1099">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">7pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="marginTop">0pt</property>
+                                        <text-property name="text">Total Transacciones</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="229">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1098">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="resultSetColumn">TotalTransacciones</property>
+                                    </data>
+                                </cell>
+                                <cell id="230">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <label id="22362">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">7pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Total General</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="457">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1053">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SumaImporteTotalTransaccion</property>
+                                    </data>
+                                </cell>
+                                <cell id="1033">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1056">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SumaCuotaIntercambioTotal</property>
+                                    </data>
+                                </cell>
+                                <cell id="1039">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1058">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaCuotaIvaIntercambioTotal</property>
+                                    </data>
+                                </cell>
+                                <cell id="231">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1060">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SumaImporteIvaComDistribuir</property>
+                                    </data>
+                                </cell>
+                                <cell id="232">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1061">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">SumaTotalIvaComDistribuir</property>
+                                    </data>
+                                </cell>
+                                <cell id="233">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1062">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaTotalVTC_IMP_COM_ADQUIRENTE</property>
+                                    </data>
+                                </cell>
+                                <cell id="1076">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1097">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaTotalImporteIvaAdquiriente</property>
+                                    </data>
+                                </cell>
+                                <cell id="234">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1063">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaTotalVTC_IMP_COM_COMERCIO</property>
+                                    </data>
+                                </cell>
+                                <cell id="235">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1066">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaTotalVTC_IMP_IVA_COMERCIO</property>
+                                    </data>
+                                </cell>
+                                <cell id="236">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1067">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaTotalVTC_IMP_COM_PROSA</property>
+                                    </data>
+                                </cell>
+                                <cell id="22371">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="22379">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaTotalVTC_IMP_COM_PROSA1</property>
+                                    </data>
+                                </cell>
+                                <cell id="237">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1071">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaTotalVTC_IMP_TAR_DISTRIBUIDOR</property>
+                                    </data>
+                                </cell>
+                                <cell id="238">
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="textAlign">center</property>
+                                    <data id="1070">
+                                        <property name="fontFamily">serif</property>
+                                        <property name="fontSize">6pt</property>
+                                        <property name="marginTop">0pt</property>
+                                        <property name="paddingRight">1pt</property>
+                                        <property name="numberAlign">right</property>
+                                        <structure name="numberFormat">
+                                            <property name="category">Fixed</property>
+                                            <property name="pattern">#,##0.00</property>
+                                        </structure>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">sumaTotalVTC_IVA_TAR_DISTRIBUIDOR</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

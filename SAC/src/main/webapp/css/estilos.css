@@ -1,0 +1,559 @@
+/*---------------------------------------------------------------------------- */
+/*Nombre del Programa : estilos.css                                            */
+/*Autor               : Manuel Villalobos                                      */
+/*Compania            : GSOF                                                   */
+/*Proyecto/Procliente : C-08-2129-12                        Fecha: 11/FEB/2015 */
+/*Descripcion General : ARCHIVO DE ESTILOS                                     */
+/*Programa Dependiente: N/A                                                    */
+/*Programa Subsecuente: N/A                                                    */
+/*Cond. de ejecucion  : N/A                                                    */
+/*Dias de ejecucion   : N/A                                 Horario: N/A       */
+/*                             MODIFICACIONES                                  */
+/*---------------------------------------------------------------------------- */
+/*Autor               :                                                        */
+/*Compania            :                                                        */
+/*Proyecto/Procliente :                                     Fecha:             */
+/*Modificacion        :                                                        */
+/*Marca del cambio    :                                                        */
+/*---------------------------------------------------------------------------- */
+/*Numero de Parametros:                                                        */
+/*Parametros Entrada  :                                    Formato:            */
+/*                                                                             */
+/*Parametros Salida   : N/A                                Formato: N/A        */
+/*---------------------------------------------------------------------------- */
+
+/* ANCHO DE COLUMNAS PARA EVENTOS */
+.colconsulta1 {
+   width:10%;
+   text-align:left ; 
+   color: #000;
+}
+
+.colconsulta2 {
+   width:17%;
+   text-align:left ;  
+   color: #000;
+}
+
+.colconsulta3 {
+   width:23%;
+   text-align:left ; 
+   color: #000;
+}
+
+.colconsulta4 {
+   width:15%;
+   text-align:right ; 
+   color: #000;
+}
+
+.colconsulta5 {
+   width:20%;
+   text-align:left ; 
+   color: #000;
+}
+
+.colconsulta6 {
+   width:18%;
+   text-align:left ; 
+   color: #000;
+}
+
+table.anchotabla {
+    width:700px;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+table.anchotabla2 {
+    width:350px;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+
+
+table.anchotabla td, table.anchotabla2 td, table.anchotabla3 td, table.anchotabla4 td, table.anchotabla5 td, table.anchotabla6 td, table.anchotabla th, table.anchotabla2 th, table.anchotabla3 th, table.anchotabla4 th, table.anchotabla5 th, table.anchotabla6 th {
+    border: 1px solid #ccc;
+}
+
+table.anchotabla td, table.anchotabla2 td, table.anchotabla3 td, table.anchotabla4 td, table.anchotabla5 td, table.anchotabla6 td  {
+    padding: 0px 4px 0px 4px !important;
+}
+
+/* ANCHO DE COLUMNAS PARA TERMINALES */
+.coldato1 {
+   width:10%;
+   text-align:left ;
+   color: #000;
+}
+
+.coldato2 {
+   width:90%;
+   text-align:left ;  
+   color: #000;
+}
+
+/* ESTILO DE MARCO PARA TABLAS */
+.marco {
+    border: 2px slategray solid;
+    padding: 4px 4px 4px 4px;
+}
+
+/* CENTRADO DE OBJETOS */
+.centrado {
+    vertical-align:middle;
+}
+
+/* CENTRADO DE CELDAS */
+.centro {
+    text-align:center;
+}
+
+.derecha {
+    text-align:right;
+}
+
+.izquierda {
+    text-align:left;
+}
+
+/* COLOR BAJO TODAS LAS LINEAS DEL TITULO DE PAGINA */
+hr {
+    border: 2px slategray solid;
+}
+
+/* TITULOS DE COLUMNAS */
+.titcol {
+    background-color: #D1220D;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:12pt ;
+    text-align:center ;                 
+    font-weight:bold ;
+    color:#FFFFFF;
+    padding: 0px 0px 0px 0px
+}
+
+/* ESTILO DE LIGAS */
+a.miliga {
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:12pt ;
+    color:#D1220D;
+    font-color:#D1220D;
+    font-weight:bold ;
+}
+
+/* ESTILO DE LIGAS */
+a.miliga:hover {
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:14pt ;
+    color:#D1220D;
+    font-color:#D1220D;
+    font-weight:bold ;
+    cursor:hand;
+}
+
+/* ESTILO DE COLUMNAS DE TABLAS */
+td {
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:10pt ;
+}
+
+/* ESTILO DE CAMPOS DE CAPTURA Y LISTAS DESPLEGABLES*/
+.textbox {
+    color: #000;
+    background-color: #FFF;
+    font-weight:bold ;
+    font-size:10pt ;
+    vertical-align : middle;
+}
+
+/* ESTILO DE CAMPOS NO EDITABLES */
+.noeditable {
+    color: #000;
+    background-color: #E2E6E9;
+    font-weight:bold ;
+    font-size:10pt ;
+    vertical-align : middle;
+}
+
+/* ESTILO DE BOTONES */
+.button {
+    font-family:Arial, Helvetica, sans-serif ;
+    color: #000;
+    background-color: lightgray;
+    font-size: 11px;
+    border: 1px solid #660;
+    padding: 4px;
+    font-weight:bold ;
+    cursor:hand;
+}
+
+/* ESTILO DE DATOS NO TABLAS */
+.dato {
+    background-color: #fff;
+    color:#D1220D;
+    font-color:#D1220D;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:12pt ;
+    text-align:left ;                 
+    font-weight:bold ;
+    border:1;
+    padding: 0px 0px 0px 15px;
+}
+
+/* ESTILO DE BOTONES, PARA SECCION DE REGISTRO DE USUARIO */
+.botones2 {
+    background-color: #fff;
+    color:#D1220D;
+    font-color:#D1220D;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:12pt ;
+    text-align:left ;                 
+    font-weight:bold ;
+    border:0;
+    align:center;
+    cursor:hand;
+}
+
+/* ESTILO DE BOTONES, PARA SECCION DE ACCIONES */
+.botones {
+    background-color: #fff;
+    color:#D1220D;
+    font-color:#D1220D;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:12pt ;
+    text-align:left ;                 
+    font-weight:bold ;
+    border:0;
+    padding: 15px 0px 15px 20px;
+    cursor:hand;
+}
+
+/* ESTILO DE ETIQUETAS MOSTRADAS NO TABLAS */
+.etiqueta {
+    background-color: #fff;
+    color:#000000;
+    font-color:#000000;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:10pt ;
+    text-align:left ;                 
+    font-weight:bold ;
+    border:0;
+    padding-left: 20px;
+}
+
+/* ESTILO DE ETIQUETAS MOSTRADAS EN LISTAS DESPLEGABLES */
+.etiquetaListado {
+    background-color: #fff;
+    color:#000000;
+    font-color:#000000;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:10pt ;
+    text-align:left ;                 
+    font-weight:bold ;
+    border:0;
+    padding-left: 20px;
+    vertical-align:middle;
+}
+
+/* ESTILO DE TITULOS, CENTRADO */
+.titulo {
+    background-color: #fff;
+    color:#000000;
+    font-color:#000000;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:16pt ;
+    text-align:center ;                 
+    font-weight:bold ;
+    border:0;
+}
+
+/* ESTILO DE TITULOS, A LA IZQUIERDA */
+.titulo2 {
+    height: 20px;
+    background-image: url(../pics/menu.gif);
+    background-attachment: scroll;
+    background-repeat: repeat-x;
+    background-position: left top;
+    margin: 2px 2px 0 2px;
+    padding: 3px 0 0 20px;
+    font-weight: bold; 
+    color:#fff;
+    text-align: left;
+}
+
+/* ESTILO DE TITULOS, A LA IZQUIERDA */
+.titulo3 {
+    background-color: #fff;
+    color:#000;
+    font-color:#000;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:12pt ;
+    text-align:center ;                 
+    font-weight:bold ;
+    border:0;
+}
+
+/* ESTILO DE TITULOS, CENTRADO, MAS PEQUENIO */
+.titulo4 {
+    background-color: #fff;
+    color:#D1220D;
+    font-color:#D1220D;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:12pt ;
+    text-align:center ;                 
+    font-weight:bold ;
+    border:0;
+}
+
+/* ESTILO DE DATOS COPIANDO LOS TITULOS DE COLUMNAS */
+.titulodatos {
+    background-color: #D1220D;
+    font-family:Arial, Helvetica, sans-serif ; 
+    font-weight:bold ;
+    font-size:12pt ;    
+    color:#FFFFFF;
+}
+
+
+/* ESTILO DE TITULOS, IZQUIERDA, MAS PEQUENIO */
+.titulo5 {
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:10pt ;
+    font-weight:bold ;
+    border:0;
+}
+
+/* ESTILO DE MENSAJES DE ERROR */
+.error {
+    background-color: #fff;
+    color:#FF0000;
+    font-color:#FF0000;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:10pt ;
+    text-align:left ;                 
+    font-weight:bold ;
+    border:0;
+    padding: 0px 0px 0px 10px;
+}
+
+/* ESTILO DE MENSAJES DE RESULTADO */
+.mensaje {
+    background-color: #fff;
+    color:#D1220D;
+    font-color:#FF0000;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:10pt ;
+    text-align:left ;                 
+    font-weight:bold ;
+    border:0;
+    padding: 0px 0px 0px 10px;
+}
+
+/* ESTILO DE MARGEN */
+.margen {
+    background-color: #fff;
+    color:#D1220D;
+    font-color:#D1220D;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:10pt ;
+    text-align:left ;                 
+    font-weight:bold ;
+    border:0;
+    padding: 0px 5px 0px 25px;
+}
+
+/* ESTILO DE MARGEN DE TABLA */
+.margentabla {
+    background-color: #fff;
+    border:0;
+    padding: 15px 5px 0px 25px;
+}
+
+/* ESTILO DE MARGEN DE CELDA */
+.margencelda {
+    padding: 0px 5px 0px 5px;
+}
+
+/* ESTILO DE CELDAS VACIAS */
+.vacio {
+    background-color: #fff;
+    padding: 0px 3px 0px 3px;
+    border:0;
+}
+
+/* ESTILO DE RENGLON PAR */
+.par {
+    background-color: #eee;
+}
+
+/* ESTILO DE RENGLON IMPAR */
+.impar {
+    background-color: #fff;
+}
+
+/* ESTILO DE RENGLON TOTAL DE GRUPO */
+.total_grupo {
+    background-color: #E2E6E9;
+    font-weight:bold ;
+}
+
+/* ESTILO DE RENGLON ENCABEZADO */
+.encabezado {
+    background-color: #ffffff;
+    font-weight:bold ;
+}
+
+/* ESTILO DE RENGLON TOTAL DE REPORTE */
+.total {
+    background-color: #e0eeee;
+    font-weight:bold ;
+}
+
+/* ESTILO DE DATOS DENTRO DE TITULOS DE COLUMNAS */
+th.datos {
+    background-color: #6F7070;
+    font-family:Arial, Helvetica, sans-serif ; 
+    font-weight:bold ;
+    font-size:10pt ;    
+    color:#FFFFFF;
+}
+
+/* ESTILO DE BORDES DE TABLAS */
+table.simple2 {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+/* ESTILO DE BORDES TITULOS Y COLUMNAS DE TABLAS */
+table.simple2 td,table.simple2 th {
+    border: 1px solid #000;
+}
+
+/* ESTILO DE BORDES DE TABLAS, PARA LISTAS NAVEGABLES */
+table.simple {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+/* ESTILO DE BORDES TITULOS Y COLUMNAS DE TABLAS, PARA LISTAS NAVEGABLES */
+table.simple td,table.simple th {
+    border: 1px solid #ccc;
+}
+
+/* TITULOS DE COLUMNAS */
+thead th {
+    background-color: #D1220D;
+    font-family:Arial, Helvetica, sans-serif ;  
+    font-size:10pt ;
+    text-align:center ;                 
+    font-weight:bold ;
+    color:#FFFFFF;
+    padding: 0px 0px 0px 0px
+}
+
+table.simple td {
+    padding: 0px 4px 0px 4px !important;
+}
+
+/* ESTILO DE COLOR DE TABLAS, PARA LISTAS NAVEGABLES */
+table.simple td.textRed {
+    color: #b11;
+}
+
+/* ESTILO DE RENGLON PAR, PARA LISTAS NAVEGABLES */
+tr.even {
+    background-color: #F6CECE;
+}
+
+/* ESTILO DE RENGLON IMPAR, PARA LISTAS NAVEGABLES */
+tr.odd {
+    background-color: #fff;
+}
+
+/* ESTILO DE TITULOS DE TABLAS, ORDENADOS EN LISTAS NAVEGABLES */
+th.sorted {
+    background-color: #D1220D;
+    font-weight:bold ;
+    color:#FFFFFF;
+    font-size:10pt !important;
+}
+
+/* ESTILO DE TITULOS DE TABLAS, ORDENABLES EN LISTAS NAVEGABLES */
+th.sortable a {
+    background-color: #D1220D;
+    background-position: right;
+    width: 100%;
+    color:#FFFFFF;
+    font-size:10pt !important;
+}
+
+/* ESTILO DE TABLAS, AL PASAR EL CURSOR EN LISTAS NAVEGABLES */
+th a:hover {
+    text-decoration: underline;
+    color: #E6E6E6;
+}
+
+/* ESTILO DE TITULOS DE TABLAS, QUE SE PUEDEN ORDENAR EN LISTAS NAVEGABLES */
+th.sorted a {
+    background-position: right;
+//    display: block;
+    width: 100%;
+    font-weight:bold ;
+    color:#FFFFFF;
+}
+
+th.order1 a {
+    background-color: #D1220D;
+}
+
+th.order2 a {
+    background-color: #D1220D;
+}
+
+/* ESTILO DE SECCION INFERIOR, TOTALES, EN LISTAS NAVEGABLES */
+span.pagebanner {
+    background-color: #eee;
+    border: 1px dotted #999;
+    padding: 2px 4px 2px 4px;
+    margin-top: 15px;
+    display: block;
+    border-bottom: none;
+    color: #000;
+    text-align: left;
+}
+
+/* ESTILO DE SECCION DE LIGAS, EN LISTAS NAVEGABLES */
+span.pagelinks {
+    background-color: #eee;
+    border: 1px dotted #999;
+    padding: 2px 4px 2px 4px;
+    display: block;
+    border-top: none;
+    margin-bottom: none;
+    color: #000;
+    text-align: left;
+}
+
+/* ESTILOS PARA EXPORTAR */
+div.exportlinks {
+    background-color: #eee;
+    border: 1px dotted #999;
+    padding: 2px 4px 2px 4px;
+    display: block;
+    margin-bottom: none;
+   color: #000;
+}
+
+span.export {
+    padding: 0 4px 1px 20px;
+    display:inline; display:inline-block;
+    cursor: pointer;
+}
+
+span.excel {
+    background-image: url(../img/ico_file_excel.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}

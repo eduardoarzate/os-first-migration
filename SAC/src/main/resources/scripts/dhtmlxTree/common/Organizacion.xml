@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<tree id="0">
+	<item text="Participantes" id="participantes" im0="participante.png" >
+		<userdata name="href">TblUsrUsuarios</userdata>
+	</item>
+	<item text="Unidades Organizacionales" id="unidades" im0="unidades_organizacionales.png">
+		<userdata name="href">TblUsrOus</userdata>
+	</item>
+	<item text="Roles" id="roles" im0="roles.png">
+		<userdata name="href">TblUsrRoles</userdata>
+	</item>
+		
+</tree>

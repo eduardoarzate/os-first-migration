@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Pantalla de Reporte</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #000080;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #000080;
+ text-decoration: underline;
+}
+span.rvts6 /* Font Hint */
+{
+ color: #aca899;
+}
+span.rvts7 /* Font Hint Title */
+{
+ font-size: 15pt;
+ font-family: 'Tahoma', 'Geneva', sans-serif;
+ font-weight: bold;
+ color: #716f64;
+}
+span.rvts8 /* Font Hint Bold */
+{
+ font-weight: bold;
+ color: #aca899;
+}
+span.rvts9 /* Font Hint Italic */
+{
+ font-style: italic;
+ color: #aca899;
+}
+span.rvts10
+{
+}
+span.rvts11
+{
+ font-weight: bold;
+}
+span.rvts12
+{
+ font-style: italic;
+ font-weight: bold;
+}
+span.rvts13
+{
+ font-size: 16pt;
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts14
+{
+ font-size: 11pt;
+}
+span.rvts15
+{
+ color: #000000;
+}
+span.rvts16
+{
+ font-size: 11pt;
+ font-style: italic;
+ font-weight: bold;
+}
+span.rvts17
+{
+ font-size: 12pt;
+ font-family: 'Times New Roman', 'Times', serif;
+}
+span.rvts18
+{
+ font-size: 12pt;
+ font-family: 'Times New Roman', 'Times', serif;
+ color: #003366;
+}
+span.rvts19
+{
+ font-size: 16pt;
+ font-weight: bold;
+ color: #003366;
+}
+span.rvts20
+{
+ font-size: 30pt;
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts21 /* Font Style */
+{
+ font-size: 16pt;
+ font-family: 'Tahoma', 'Geneva', sans-serif;
+ color: #ffffff;
+}
+span.rvts22 /* Font Style */
+{
+ font-family: 'MS Sans Serif', 'Geneva', sans-serif;
+ color: #808080;
+}
+span.rvts23 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts24, span.rvts24 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ margin: 0px 0px 0px 36px;
+}
+.rvps3
+{
+ margin: 0px 27px 0px 36px;
+}
+.rvps4
+{
+ text-align: left;
+ text-indent: 0px;
+ page-break-after: avoid;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps5
+{
+ text-align: justify;
+ margin: 0px 0px 0px 36px;
+}
+.rvps6
+{
+ text-align: justify;
+}
+.rvps7
+{
+ text-align: right;
+}
+.rvps8
+{
+ text-align: justify;
+ margin: 0px 27px 0px 32px;
+}
+.rvps9
+{
+ text-align: center;
+ margin: 0px 27px 0px 32px;
+}
+.rvps10
+{
+ text-align: justify;
+ margin: 0px 27px 0px 0px;
+}
+.rvps11
+{
+ text-align: center;
+ margin: 0px 0px 0px 32px;
+}
+.rvps12
+{
+ text-align: left;
+ text-indent: 0px;
+ line-height: 1.50;
+ page-break-after: avoid;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps13 /* Paragraph Style */
+{
+ background: #9fbed0;
+ padding: 5px 5px 2px 5px;
+ margin: -5px -5px 18px -5px;
+}
+.rvps14 /* Paragraph Style */
+{
+ text-align: center;
+ background: #e4e4e4;
+ margin: 20px 0px 0px 0px;
+}
+.rvps15 /* Paragraph Style */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-bottom: none;
+ border-left: none;
+ background: #ffffff;
+ padding: 3px 0px 0px 0px;
+ margin: 27px 0px 0px 0px;
+}
+--></style>
+<link rel="StyleSheet" href="hnd.css" type="text/css"/>
+<script type="text/javascript">if(top.frames.length == 0) { top.location.href="../Manual Operativo SAC2.htm?PantalladeReporte.html"; }</script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.cookie.js"></script>
+<script type="text/javascript" src="hnd.js"></script>
+<meta name="generator" content="HelpNDoc Freeware Edition"></head>
+<body>
+<p class=rvps13><span class=rvts21>Ayuda SAC2</span></p>
+<p class=rvps7><img border=0 width=144 height=42 alt="" hspace=1 vspace=1 src="img_30.jpg"></p>
+<h1 class=rvps12><img border=0 width=796 height=2 alt="" hspace=1 vspace=1 src="img_31.jpg"></h1>
+<h1 class=rvps12><span class=rvts0><span class=rvts20><br></span></span></h1>
+<h3 class=rvps4><span class=rvts0><span class=rvts13>Pantalla de Reporte</span></span></h3>
+<p class=rvps5><span class=rvts10><br></span></p>
+<p class=rvps5><span class=rvts10><br></span></p>
+<p class=rvps3><span class=rvts10>Muestra los campos con la información necesaria para generar un reporte.</span></p>
+<p class=rvps3><span class=rvts10><br></span></p>
+<p class=rvps6><span class=rvts10><br></span></p>
+<p class=rvps6><span class=rvts10><br></span></p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_32.jpg"></p>
+<p><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps3><span class=rvts10>A continuación se dará una descripción general de los elementos&nbsp; que conforman una pantalla de </span><span class=rvts11>REPORTE.</span></p>
+<p class=rvps1><span class=rvts10><br></span></p>
+<p><span class=rvts10><br></span></p>
+<p class=rvps2><span class=rvts11>Sus Componentes:</span></p>
+<p class=rvps2><span class=rvts10><br></span></p>
+<p class=rvps2><span class=rvts11><br></span></p>
+<div class=rvps1><div align=center><table border=1 cellpadding=0 cellspacing=-1 style="border-width: 0px; border-collapse: collapse;">
+<tr valign=top>
+<td width=261 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none; background-color: #99ccff;"><p class=rvps1><span class=rvts12>Componente</span></p>
+</td>
+<td width=112 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none; background-color: #99ccff;"><p class=rvps1><span class=rvts12>Nombre</span></p>
+</td>
+<td width=211 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none; background-color: #99ccff;"><p class=rvps1><span class=rvts12>Descripción</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=261 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><br></p>
+<p class=rvps1><img border=0 width=157 height=103 alt="" hspace=1 vspace=1 src="img_33.jpg"></p>
+</td>
+<td width=112 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11>Fecha Inicio</span></p>
+</td>
+<td width=211 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10>Al dar clic en el icono despliega un calendario para seleccionar un margen de&nbsp; fecha inicio.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=261 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1>&nbsp;&nbsp; </p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_34.jpg"></p>
+</td>
+<td width=112 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11>Fecha Fin</span></p>
+</td>
+<td width=211 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10>Al dar clic en el icono despliega un calendario para seleccionar la fecha de cierre.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=261 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_35.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=112 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11>Número de</span></p>
+<p class=rvps1><span class=rvts11>Transacción </span></p>
+</td>
+<td width=211 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10>Permite seleccionar un tipo de reporte existente en la aplicación.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=261 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_36.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=112 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11>Banco Adquirente</span></p>
+</td>
+<td width=211 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10>Permite elegir el Banco Adquiriente de su interés.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=261 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_37.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=112 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11>Banco Emisor</span></p>
+</td>
+<td width=211 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10>Permite elegir el Banco Emisor </span></p>
+<p class=rvps1><span class=rvts10>de su interés.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=261 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_38.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=112 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11>Fuente</span></p>
+</td>
+<td width=211 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10>Permite elegir la fuente de su interés.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=261 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts14><br></span></p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_39.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=112 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11>Mostrar Reporte</span></p>
+</td>
+<td width=211 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10>El botón de Mostrar Reporte&nbsp; permite ir a los datos del archivo que selecciono.</span></p>
+</td>
+</tr>
+</table>
+</div></div>
+<p class=rvps2><span class=rvts11><br></span></p>
+<p class=rvps8><span class=rvts15><br></span></p>
+<p class=rvps8><span class=rvts15><br></span></p>
+<p class=rvps8><span class=rvts15><br></span></p>
+<p class=rvps8><span class=rvts15><br></span></p>
+<p class=rvps8><span class=rvts15>Al darle los parámetros de aplicación del reporte que uno desee visualizar se despliega la pantalla del reporte deseado. </span></p>
+<p class=rvps8><span class=rvts10><br></span></p>
+<p class=rvps8><span class=rvts10><br></span></p>
+<p class=rvps8><span class=rvts10><br></span></p>
+<p class=rvps8><span class=rvts10><br></span></p>
+<p class=rvps9><img border=0 alt="" hspace=1 vspace=1 src="img_40.jpg"></p>
+<p class=rvps10><span class=rvts10><br></span></p>
+<p class=rvps8><span class=rvts10><br></span></p>
+<p class=rvps8><span class=rvts10><br></span></p>
+<p class=rvps8><span class=rvts10><br></span></p>
+<p class=rvps8><span class=rvts10>A continuación se dará una descripción de los componentes de una pantalla de Reporte.</span></p>
+<p class=rvps8><span class=rvts10><br></span></p>
+<p class=rvps11><span class=rvts10><br></span></p>
+<p class=rvps11><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span class=rvts11>Barra de Herramientas</span></p>
+<p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11><br></span></p>
+<div class=rvps1><div align=center><table border=1 cellpadding=0 cellspacing=-1 style="border-width: 0px; border-collapse: collapse;">
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none; background-color: #99ccff;"><p class=rvps1><span class=rvts16>Icono</span></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none; background-color: #99ccff;"><p class=rvps1><span class=rvts16>Nombre</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none; background-color: #99ccff;"><p class=rvps1><span class=rvts16>Descripción</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts17><br></span></p>
+<p class=rvps1><img border=0 width=169 height=77 alt="" hspace=1 vspace=1 src="img_41.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11>Procesando</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10>Indicador de proceso para entrar al reporte.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><img border=0 width=32 height=32 alt="" hspace=1 vspace=1 src="img_42.jpg"></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11>Índice del reporte</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10>Muestra el índice de todo reporte que este dado de alta para seleccionar el que convenga.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts17><br></span></p>
+<p class=rvps1><img border=0 width=30 height=30 alt="" hspace=1 vspace=1 src="img_43.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11>Exportar Datos</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10>Ayuda a exportar los datos.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts17> </span><img border=0 width=30 height=30 alt="" hspace=1 vspace=1 src="img_44.jpg"></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11>Exportar reporte</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10>Ayuda a exportar el reporte en cualquiera de los formatos existentes.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts17><br></span></p>
+<p class=rvps1><img border=0 width=32 height=32 alt="" hspace=1 vspace=1 src="img_45.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11>Botón de Imprimir</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10>Imprime el reporte seleccionado.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts17>&nbsp; </span></p>
+<p class=rvps1><span class=rvts17>&nbsp;&nbsp;&nbsp;&nbsp; </span><img border=0 width=136 height=26 alt="" hspace=1 vspace=1 src="img_46.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11>Muestra num. de paginas</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10> Muestra el número de páginas del reporte.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts17><br></span></p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_47.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11><br></span></p>
+<p class=rvps1><span class=rvts11>Paginado</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts10><br></span></p>
+<p class=rvps1><span class=rvts10>Permite cambiar de página.</span></p>
+</td>
+</tr>
+<tr valign=top>
+<td width=188 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts17><br></span></p>
+<p class=rvps1><img border=0 alt="" hspace=1 vspace=1 src="img_48.jpg"></p>
+<p class=rvps1><br></p>
+</td>
+<td width=152 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts11>Go to page</span></p>
+</td>
+<td width=212 valign=middle style="border-width : 1px; border-color: #000000; border-style: solid; border-top: none; border-right: none; border-bottom: none; border-left: none;"><p class=rvps1><span class=rvts15><br></span></p>
+<p class=rvps1><span class=rvts15>Permite ir a una</span><span class=rvts18> </span><span class=rvts10> página específica.</span></p>
+</td>
+</tr>
+</table>
+</div></div>
+<p><span class=rvts10><br></span></p>
+<p><span class=rvts19><br></span></p>
+<p class=rvps14><span class=rvts22>Copyright © 2010,WELLCOM</span></p>
+
+</body></html>

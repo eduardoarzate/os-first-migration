@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<doc>
+    <LDAPAUTH>
+        <ADMCONNECT>
+            <FACTORY value="com.sun.jndi.ldap.LdapCtxFactory"/>
+            <URL value="ldap://10.255.220.32:6389/"/>
+            <AUTHENTICATION value="simple"/>
+            <INITIALCONTEXT value="o=prosa.com.mx,o=isp"/>
+            <PROTOCOL value=""/>
+            <ADMUSER value="cn=IdentitySSO,ou=People,o=isp"/>
+            <ADMPASSWORD value="La6kw.wvvp3"/>
+        </ADMCONNECT>
+        <PEOPLE value=""/>
+        <APPLICATION value="ou=PMRPT,ou=Aplicaciones"/>
+    </LDAPAUTH>
+</doc>
+
+
+

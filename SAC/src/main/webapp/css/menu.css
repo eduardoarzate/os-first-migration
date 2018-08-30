@@ -1,0 +1,96 @@
+/* <style> */
+
+/* ----- Required ----------------------------------------------------------- */
+
+div.vert_menu
+{
+  position: absolute;
+  visibility: hidden;
+  display: none;
+  border: 1px solid #BED6F8;
+  background-color: #EAF3FF;
+  z-index: 100;
+}
+
+div.vert_menu iframe
+{
+	display:none;/*sorry for IE5*/
+	display/**/:block;/*sorry for IE5*/
+	position:absolute;/*must have*/
+	top:0;/*must have*/
+	left:0;/*must have*/
+	z-index:-1;/*must have*/
+	filter:mask();/*must have*/
+	border: 0px;;
+}
+
+img.icon_menu
+{
+	position: absolute;
+	margin: 5px;
+	vertical-align: middle;
+}
+
+img.icon_expand
+{
+	position: absolute;
+	margin: 10 10 10 10;
+	vertical-align: middle;
+}
+
+div.menu a 
+{ 
+	display: block;
+	float: none;
+}
+
+div.vert_menu a 
+{ 
+	display: block; 
+	float: none;
+}
+
+div.sample2 div.menu a, div.sample2 div.vert_menu a
+{
+  height: 29px;
+  line-height: 25px;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: "Times New Roman", Serif;
+  font-weight: bold;
+  font-size: 10px;
+  color: #000066;
+}
+
+div.sample2 div.menu a 
+{ 
+	margin-right:  -1px; 
+}
+
+div.sample2 div.vert_menu a 
+{ 
+	margin-bottom: -1px; 
+}
+
+div.sample2 div.vert_menu a:hover
+{
+  color: #000066;
+  border: 1px solid #E5973E;
+  background-color: #FFE9AF;
+}
+
+div.sample2 div.menu a.active,
+div.sample2 div.menu a.active:hover
+{
+  color: #000066;
+  border: 1px solid #BED6F8;
+  background-color: #EAF3FF;
+}
+
+div.sample2 div.vert_menu a.active, div.sample2 div.vert_menu a.active:hover
+{
+	color: #000066;
+	border: 1px solid #E5973E;
+	background-color: #FFE9AF;
+	
+}

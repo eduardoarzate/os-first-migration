@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree id="0">
+	<item text="Vale Electrónico" id="vale" im0="tarjeta24x21.gif" im1="tarjeta24x21.gif" im2="tarjeta24x21.gif">
+		<userdata name="href">Vale Electrónico</userdata>
+		
+		<item text = "Control de Cifras" id="vale_1" im0="processBamMenu.gif" >
+			<userdata name="href">TblMolTefsAcumulado</userdata>
+		</item>
+		
+		<item text = "Transacciones TEFS" id="vale_2" im0="supply.gif">
+			<userdata name="href">TblMolTefsTrxs</userdata>
+		</item>
+		
+		<item text = "Transacciones B24" id="vale_3" im0="import.gif">
+			<userdata name="href">index</userdata>
+		</item>
+		
+		<item text = "Conciliación Diaria" id="vale_4" im0="nonwork.png">
+			<userdata name="href">RptCncDiaria</userdata>
+		</item>
+		
+		<item text = "Totales por TEFS" id="vale_5" im0="pie3D.gif">
+			<userdata name="href">RptTotalesTefs</userdata>
+		</item>
+		
+		<item text = "Liquidación a Comercio" id="vale_6" im0="shopping_cart.png">
+			<userdata name="href">RptLiqComercio</userdata>
+		</item>
+		
+		<item text = "Información de Tarjetas" id="vale_7" im0="tools2.gif">
+			<userdata name="href">RptEmpresasTarjetas</userdata>
+		</item>
+		
+		<item text = "Estado de Cuenta" id="vale_8" im0="view_plan.gif">
+			<userdata name="href">RptEstadoCuenta</userdata>
+		</item>
+	</item>
+	
+	<item text="PrePago" id="prepago" im0="prepago.png" im1="prepago.png" im2="prepago.png">
+		<userdata name="href">PrePago</userdata>
+		<item text = "Comisiones" id="prepago_1" im0="view_plan.gif">
+			<userdata name="href">TblPrpComisiones_s</userdata>
+		</item>
+	</item>
+</tree>

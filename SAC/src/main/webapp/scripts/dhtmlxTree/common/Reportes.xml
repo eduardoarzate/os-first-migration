@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0">
+    <!-- Modificacion: Marca de inicio    SAS-DRT F-52-8063-16  -->
+    <item text="Monitoreo y Cifras de Control" id="reporte_1"
+          im0="MonitoreoCifrasControl.png" im1="MonitoreoCifrasControl.png" im2="MonitoreoCifrasControl.png">
+        <item text="Monitoreo de Transacciones" id="reporte_1_1" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICMOF0100 Detalle de Transacciones Aceptadas" id="rep_SICMOF0100"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOF0100</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOF0120 Detalle de Transacciones Rechazadas" id="rep_SICMOF0120"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOF0120</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0100 Reporte de Transacciones Aceptadas por Comercio"
+                  id="rep_SICMOR0100" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0100</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0200 Reporte de Transacciones Aceptadas por Adquirente"
+                  id="rep_SICMOR0200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0200</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0205 LOG Autorizaciones" id="rep_SICMOR0205"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0205</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0210 Reporte de Transacciones Rechazadas" id="rep_SICMOR0210"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0210</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0300 Reporte de Transacciones Aceptadas por Emisor"
+                  id="rep_SICMOR0300" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0300</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0301 Reporte de Transacciones con Cashback"
+                  id="rep_SICMOR0301" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0301</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0305 Transacciones Aceptadas (Totales por Emisor)"
+                  id="rep_SICMOR0305" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0305</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item
+                text="SICLIR0310 Transacciones Rechazadas de Sintaxis por Bancomer/Banamex/E-Global"
+                id="rep_SICLIR0310" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0310</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0310 Transacciones Aceptadas (Totales por Adquirente)"
+                  id="rep_SICMOR0310" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0310</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item
+                text="SICMOR0330 Verificador de Transacciones Enviadas por Bancomer/ Banamex/ E-Global"
+                id="rep_SICMOR0330" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0330</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item text="SICMOR0340 Rechazos de Sintaxis por Emisor" id="rep_SICMOR0340"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0340</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <!--Marca del Cambio : WELLCOM German Gonzalez Inicia la Modificacion  P-54-2452-14    30/07/2014 -->
+            <item text="SICMOR0350 Reporte de Transacciones con Reverso" id="rep_SICMOR0350" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0350</userdata>
+                <userdata name="rolAccMin">4</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <!--Marca del Cambio : WELLCOM German Gonzalez Finaliza la Modificacion  P-54-2452-14    30/07/2014 -->
+            <item text="SICMORPTLF Reporte LOG Adquirente" id="rep_SICMORPTLF"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORPTLF</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <!--Marca del Cambio : WELL-JMQ-N-08-2379-12 Inicia la Modificacion      25/06/2012 -->
+            <item text="SICMORRECH Reporte LOG Rechazos" id="rep_SICMORRECH" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORRECH</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <!-- Marca del Cambio : WELL-JMQ-N-08-2379-12 Finaliza la Modificacion   25/06/2012 -->
+        </item>
+        <item text="Cifras de Control" id="reporte_1_2" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICMOR0150 Comparacion de Cifras de Control por Archivo"
+                  id="rep_SICMOR0150" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0150</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <item
+                text="SICMOR0170 Reporte de Cifras de Control de Archivos de Entrada"
+                id="rep_SICMOR0170" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0170</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <!--item
+                text="SICMOR0171 Reporte de Aclaraciones de Bancos Adquirentes MI"
+                id="rep_SICMOR0171" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0171</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item-->
+            <!--Modificacion: Marca de INICIO SAS-LERC C-52-8021-16 05/09/16-->
+            <!--
+                        <item
+                            text="SICMOR0180 Reporte de Cifras de Control de Archivos de Entrada (Consolidado)"
+                            id="rep_SICMOR0180" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                            <userdata name="href">SICMOR0180</userdata>
+                            <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+                        </item>
+                        <item text="SICMOR0240 Reporte de Integración de Fuentes" id="rep_SICMOR0240"
+                            im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                            <userdata name="href">SICMOR0240</userdata>
+                            <userdata name="rolAccMin">12</userdata>
+                            <userdata name="modulo">Monitoreo</userdata>
+                        </item>
+                        <item text="SICMOR0270 Reporte de Archivos Enviados a Tsys" id="rep_SICMOR0270"
+                            im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                            <userdata name="href">SICMOR0270</userdata>
+                            <userdata name="rolAccMin">2</userdata>
+                            <userdata name="modulo">Monitoreo</userdata>
+                        </item>
+            -->
+            <item text="SICMOR0280 Reporte de Cifras de Control de Archivos de Salida"
+                  id="rep_SICMOR0280" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0280</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Monitoreo</userdata>
+            </item>
+            <!--
+                        <item text="SICMOR0810 Reporte de Cifras para Custodia de Vouchers"
+                            id="rep_SICMOR0810" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                            <userdata name="href">SICMOR0810</userdata>
+                            <userdata name="rolAccMin">32</userdata>
+                            <userdata name="modulo">Monitoreo</userdata>
+                        </item>
+                        <item
+                            text="SICMOR0290 Reporte de Cifras de Control de Archivos de Salida (Consolidado)"
+                            id="rep_SICMOR0290" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                            <userdata name="href">SICMOR0290</userdata>
+                            <userdata name="rolAccMin">2</userdata>
+                            <userdata name="modulo">Monitoreo</userdata>
+                        </item>
+            -->
+            <!--Modificacion: Marca de FIN SAS-LERC C-52-8021-16 05/09/16-->	
+        </item>
+    </item>
+    <item text="Compensacion" id="reporte_2" im0="Liquidacion.png" im1="Liquidacion.png"
+          im2="Liquidacion.png">
+        <item text="E-Global" id="eglobal" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICLIF0320 Diferencia de Cuotas (Arbitro Comercios)" id="rep_SICLIF0320"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIF0320</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0050 Compensacion Entrante" id="rep_SICLIR0050"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0050</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0060 Compensacion Saliente" id="rep_SICLIR0060"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0060</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0077 Consolidado Saliente E-Global" id="rep_SICLIR0077"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0077</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0087 Consolidado Entrante E-Global" id="rep_SICLIR0087"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0087</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0090 Reporte de Compensacion" id="rep_SICLIR0090"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0090</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0100 Reporte de Compensacion E-GLOBAL Entrante/Saliente"
+                  id="rep_SICLIR0100" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0100</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0350 Reporte de Miscelaneos" id="rep_SICLIR0350"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0350</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0360 Reporte de Contracargos y Representaciones"
+                  id="rep_SICLIR0360" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0360</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0450 Reporte de Diferencias de Comisiones de E-Global"
+                  id="rep_SICLIR0450" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0450</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0460 Transacciones Extemporaneas por Emisor"
+                  id="rep_SICLIR0460" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0460</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0461 Transacciones Extemporaneas por Adquirente"
+                  id="rep_SICLIR0461" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0461</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <!-- Marca del Cambio : SAS-LERC-F-52-2173-15 Inicia la Modificacion 25/03/2015 -->
+            <item text="SICLIR0462 Transacciones Extemporaneas por Adquirente 2"
+                  id="rep_SICLIR0462" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0462</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+        </item>
+        <!-- Marca del Cambio : SAS-LERC-F-52-2173-15 Fin la Modificacion  25/03/2015 -->
+        <item text="Circuito Local" id="cicuitolocal" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIR0010 Reporte de Compensaciones Complementarias"
+                  id="rep_SICLIR0010" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0010</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0011 Reporte de Compensaciones Complementarias PROSA"
+                  id="rep_SICLIR0011" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0011</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0020 Reporte de Compensacion Circuito Local"
+                  id="rep_SICLIR0020" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0020</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item
+                text="SICLIR0030 Reporte Consolidado de la Compensacion Circuito Local"
+                id="rep_SICLIR0030" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0030</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0040 Reporte de Saldos Diarios" id="rep_SICLIR0040"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0040</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <!-- Modificacion        :  Marca de Inicio GSOF-MVR-B-54-2092-15 -->
+            <item text="SICLIRPA01 Reporte de Liquidacion de Pagos AMEX"
+                  id="rep_SICLIRPA01" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRPA01</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <!-- Modificacion        :  Marca de Terminacion GSOF-MVR-B-54-2092-15 -->
+        </item>
+        <item text="Proceso de Liquidacion" id="procesoliq" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIR0500 Reporte de Transacciones Reintegradas"
+                  id="rep_SICLIR0500" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0500</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0501 Reporte de Transacciones Reintegradas OFF-LINE"
+                  id="rep_SICLIR0510" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0501</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <!--Modificacion: Marca de inicio ENOVA-VHMG Z-04-3155-11 -->
+            <item text="SICLIF0301 Reverso Tx Disminucion Fraudes Visa Mcard"
+                  id="rep_SICLIF0301" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIF0301</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <!--Modificacion: Marca de terminacion ENOVA-VHMG Z-04-3155-11 -->
+        </item>
+        <item text="Interredes" id="interredes" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICLIR0110 Compensacion de Interredes de Bancos Socios"
+                  id="rep_SICLIR0110" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0110</userdata>
+                <userdata name="rolAccMin">3</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <!--Marca del Cambio : WELL-JMQ-Z-09-2573-12 Inicia la Modificacion       05/03/2013 -->
+            <item text="SICLIR0110 OPAM - Compensacion de Interredes de Bancos Socios" id="rep_SICLIR0110OPAM" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0110OPAM</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <!--Marca del Cambio : WELL-JMQ-Z-09-2573-12 termina la Modificacion      05/03/2013 -->
+            <item text="SICLIR0120 Compensacion Interredes" id="rep_SICLIR0120"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0120</userdata>
+                <userdata name="rolAccMin">3</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item
+                text="SICLIR0130 Consolidado de Bancos Socios de la Compensacion de Interredes"
+                id="rep_SICLIR0130" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0130</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0140 Consolidado Interredes" id="rep_SICLIR0140"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0140</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0430 Depositos por Banco e Interred" id="rep_SICLIR0430"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0430</userdata>
+                <userdata name="rolAccMin">3</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item
+                text="SICMOR0360 Reporte de Transacciones Aceptadas Interredes por Emisor (Detalle)"
+                id="rep_SICMOR0360" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOR0360</userdata>
+                <userdata name="rolAccMin">3</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+        </item>
+        <item text="Visa-Mastercard" id="visaMastercard" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIR0150 Reporte Liquidación Nacional/Internacional"
+                  id="rep_SICLIR0150" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0150</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0160 Reporte de Cuotas Visa" id="rep_SICLIR0160"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png.png">
+                <userdata name="href">SICLIR0160</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0170 Consolidado de la Compensación Visa/MasterCard"
+                  id="rep_SICLIR0170" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0170</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIR0180 Saldos de la Liquidación Visa / Mastercard"
+                  id="rep_SICLIR0180" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0180</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+        </item>
+        <item text="Corresponsales" id="corresponsal" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLICI200 Reporte Corresponsales Detalle integradores" id="rep_SICLICI200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLICI200</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLICE300 Reporte Corresponsales Detalle Bancos Emisores" id="rep_SICLICE300" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLICE300</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLICC200 Reporte Corresponsales Detalle Comercios Adquirentes" id="rep_SICLICC200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLICC200</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLICP200 Reporte Corresponsales Detalle PROSA" id="rep_SICLICP200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLICP200</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIRC110 Reporte Corresponsales Liquidación" id="rep_SICLIRC110" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRC110</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLIRC120 Reporte Corresponsales Liquidación." id="rep_SICLIRC120" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRC120</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLICA170 Reporte Consolidado Corresponsales Adquirentes" id="rep_SICLICA170" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLICA170</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICLICE170 Reporte Consolidado Corresponsales Bancos Emisores" id="rep_SICLICE170" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLICE170</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+        </item>
+        <!-- Modificacion        :  Marca de Inicio GSOF-MVR-P-53-2727-14 -->
+        <item text="Camaras de Compensacion" id="camaras" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICCMR0001 Reporte Batch para Camaras de Compensacion"
+                  id="rep_SICCMR0001" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICCMR0001</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMR0002 Reporte Batch para Titulares de Marca"
+                  id="rep_SICCMR0002" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png.png">
+                <userdata name="href">SICCMR0002</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMR0050 Reporte de la Compensacion Camara E-Global"
+                  id="rep_SICCMR0050" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICCMR0050</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMR0060 Reporte de la Compensacion Camara Prosa"
+                  id="rep_SICCMR0060" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICCMR0060</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMR0065 Consulta de Saldos Camara por Grupo"
+                  id="rep_SICCMR0065" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICCMR0065</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMR0077 Reporte Consolidado Camara Prosa"
+                  id="rep_SICCMR0077" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png.png">
+                <userdata name="href">SICCMR0077</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMR0087 Reporte Consolidado Camara E-Global"
+                  id="rep_SICCMR0087" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICCMR0087</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMRC200 Reporte Consolidado Total por Camara de Compensacion"
+                  id="rep_SICCMRC200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICCMRC200</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMRC320 Reporte Consolidado de Saldos por Camara de Compensacion"
+                  id="rep_SICCMRC320" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICCMRC320</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+            <item text="SICCMRC330 Reporte Consolidado de Saldos por Marca"
+                  id="rep_SICCMRC330" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICCMRC330</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Compensacion</userdata>
+            </item>
+        </item>
+        <!-- Modificacion        :  Marca de Terminacion GSOF-MVR-P-53-2727-14-->
+        <item text="SICLIF0060 Consulta de Saldos por Entidad" id="rep_SICLIF0060"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIF0060</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">Compensacion</userdata>
+        </item>
+        <item text="SICLIF0065 Consulta de Saldos por Grupo" id="rep_SICLIF0065"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIF0065</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">Compensacion</userdata>
+        </item>
+        <item text="SICLIR0200 Consolidado Compensacion Total" id="rep_SICLIR0200"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIR0200</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">Compensacion</userdata>
+        </item>
+        <item text="SICLIR0320 Consolidado de Saldos" id="rep_SICLIR0320"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIR0320</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Compensacion</userdata>
+        </item>
+        <item text="SICLIRP320 Consolidado de Saldos" id="rep_SICLIRP320"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRP320</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Compensacion</userdata>
+        </item>
+    </item>
+    <item text="Compensacion Informativa Pesos-Dolares" id="reporte_10"
+          im0="LiquidacionDolares.png" im1="LiquidacionDolares.png" im2="LiquidacionDolares.png">
+        <item text="E-Global" id="reporte_10_1" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICLIRI050 Liquidacion Entrante" id="rep_SICLIRI050"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI050</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item text="SICLIRI060 Liquidacion Saliente" id="rep_SICLIRI060"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI060</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item text="SICLIRI077 Consolidado Saliente E-Global" id="rep_SICLIRI077"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI077</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item text="SICLIRI087 Consolidado Entrante E-Global" id="rep_SICLIRI087"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI087</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item text="SICLIRI360 Reporte de Contracargos y Representaciones"
+                  id="rep_SICLIRI360" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI360</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+        </item>
+        <item text="Circuito Local" id="reporte_10_1_2" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIRI020 Reporte de Liquidacion Circuito Local"
+                  id="rep_SICLIRI020" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI020</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item
+                text="SICLIRI030 Reporte Consolidado de la Liquidacion Circuito Local"
+                id="rep_SICLIRI030" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI030</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item text="SICLIRI040 Reporte de Saldos Diarios" id="rep_SICLIRI040"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI040</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+        </item>
+        <item text="Interredes" id="reporte_10_1_3" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIRI110 Liquidacion de Interredes de Bancos Socios"
+                  id="rep_SICLIRI110" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI110</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item text="SICLIRI120 Liquidacion Interredes" id="rep_SICLIRI120"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI120</userdata>
+                <userdata name="rolAccMin">3</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item
+                text="SICLIRI130 Consolidado de Bancos Socios de la Liquidación de Interredes"
+                id="rep_SICLIRI130" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI130</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item text="SICLIRI140 Consolidado Interredes" id="rep_SICLIRI140"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI140</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+            <item
+                text="SICMORI360 Reporte de Transacciones Aceptadas Interredes por Emisor (Detalle)"
+                id="rep_SICMORI360" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORI360</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Informativa</userdata>
+            </item>
+        </item>
+        <!--item text="Visa-Mastercard" id="reporte_10_1_4" im0="RepNivel1.png"
+            im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIRI150 Reporte Liquidación Nacional/Internacional"
+                id="rep_SICLIRI150" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRI150</userdata>
+                <userdata name="rolAccMin">2</userdata>
+            </item>
+        </item-->
+        <item text="SICLIFI060 Consulta de Saldos por Entidad" id="rep_SICLIFI060"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIFI060</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">Informativa</userdata>
+        </item>
+        <!--item text="SICLIFI065 Consulta de Saldos por Grupo" id="rep_SICLIFI065"
+            im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIFI065</userdata>
+            <userdata name="rolAccMin">2</userdata>
+        </item-->
+        <item text="SICLIRI200 Consolidado Liquidacion Total" id="rep_SICLIRI200"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRI200</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">Informativa</userdata>
+        </item>
+        <item text="SICLIRI320 Consolidado de Saldos" id="rep_SICLIRI320"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRI320</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Informativa</userdata>
+        </item>
+    </item>
+    <item text="Compensacion Emisor Dolares" id="reporte_9" im0="LiquidacionDolares.png"
+          im1="LiquidacionDolares.png" im2="LiquidacionDolares.png">
+        <item text="Monitoreo y Cifras de Control" id="reporte_9_1" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="Monitoreo de Transacciones" id="reporte_9_1_1" im0="RepNivel1.png"
+                  im1="RepNivel1.png" im2="RepNivel1.png">
+                <item text="SICMORD210 Reporte Transacciones Rechazadas" id="rep_SICMORD210"
+                      im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMORD210</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">emisorDolares</userdata>
+                </item>
+                <item
+                    text="SICLIRD310 Transacciones Rechazadas de Sintaxis por Bancomer/Banamex/E-Global"
+                    id="rep_SICLIRD310" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICLIRD310</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">emisorDolares</userdata>
+                </item>
+            </item>
+        </item>
+        <item text="Cifras de Control" id="reporte_9_1_2" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICMORD280 Cifras de Control de Archivos de Salida Dólares"
+                  id="rep_SICMORD280" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORD280</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+        </item>
+        <item text="Circuito Local" id="bancossocios" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIRD020 Reporte de Liquidacion Normal" id="rep_SICLIRD020"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD020</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD030 Reporte Consolidado de la Liquidacion de Normal"
+                  id="rep_SICLIRD030" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD030</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD040 Reporte de Saldos Diarios" id="rep_SICLIRD040"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD040</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+        </item>
+        <item text="E-Global" id="bancomerbanamex" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIRD050 Liquidacion Entrante" id="rep_SICLIRD050"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD050</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD060 Liquidacion Saliente" id="rep_SICLIRD060"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD060</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD077 Consolidado Saliente E-Global" id="rep_SICLIRD077"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD077</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD087 Consolidado Entrante E-Global" id="rep_SICLIRD087"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD087</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+        </item>
+        <item text="Interredes" id="interred" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICLIRD110 Liquidacion de Bancos Socios" id="rep_SICLIRD110"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD110</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD120 Liquidacion Interredes" id="rep_SICLIRD120"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD120</userdata>
+                <userdata name="rolAccMin">3</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD130 Consolidado de Bancos Socios" id="rep_SICLIRD130"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD130</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD140 Consolidado Interredes" id="rep_SICLIRD140"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD140</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item
+                text="SICMORD360 Reporte de Transacciones Aceptadas Interredes por Emisor (Detalle)"
+                id="rep_SICMORD360" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORD360</userdata>
+                <userdata name="rolAccMin">3</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+        </item>
+        <item text="Visa" id="reporte_9_1_algo" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="Incoming" id="reporte_9_1_algo_" im0="RepNivel1.png"
+                  im1="RepNivel1.png" im2="RepNivel1.png">
+                <item text="SICMIRD121 BASE-II-48 fee-collection / founds disbursement"
+                      id="rep_SICMIRD121" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIRD121</userdata>
+                    <userdata name="modulo">emisorDolares</userdata>
+                </item>
+                <item
+                    text="SICMIRD122 Transacciones Carnet Visa en el Extranjero Dólares"
+                    id="rep_SICMIRD122" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIRD122</userdata>
+                    <userdata name="modulo">emisorDolares</userdata>
+                </item>
+                <!--item text="SICMIRD127_VSS Reporte VSS Visa" id="rep_SICMIRD127_VSS"
+                im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png"> <userdata name="href">SICMIRD127_VSS</userdata>
+                </item -->
+                <item
+                    text="SICMIRD370 Compensacion de transacciones recibidas de Visa Dolares"
+                    id="rep_SICMIRD370" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIRD370</userdata>
+                    <userdata name="modulo">emisorDolares</userdata>
+                </item>
+            </item>
+            <item text="Outgoing" id="reporte_9_1_2" im0="RepNivel1.png"
+                  im1="RepNivel1.png" im2="RepNivel1.png">
+
+            </item>
+        </item>
+        <item text="Visa - MasterCard" id="reporte_9_1_algo1" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIRD150 Reporte Liquidación Nacional/Internacional Dólares"
+                  id="rep_SICLIRD150" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD150</userdata> 
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item text="SICLIRD170 Totales del Intercambio Internacional Dólares"
+                  id="rep_SICLIRD170" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD170</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+            <item
+                text="SICLIRD180 Reporte Saldos del intercambio local e internacional Dólares"
+                id="rep_SICLIRD180" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRD180</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">emisorDolares</userdata>
+            </item>
+        </item>
+        <item text="SICLIFD060 Consulta de Saldos por Entidad" id="rep_SICLIFD060"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIFD060</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">emisorDolares</userdata>
+        </item>
+        <!--item text="SICLIFD065 Consulta de Saldos por Grupo" id="rep_SICLIFD065"
+        im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png"> <userdata name="href">SICLIFD065</userdata>
+        <userdata name="rolAccMin">2</userdata> </item -->
+        <item text="SICLIRD200 Consolidado Liquidacion Total" id="rep_SICLIRD200"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRD200</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">emisorDolares</userdata>
+        </item>
+        <item text="SICLIRD320 Consolidado de Saldos" id="rep_SICLIRD320"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRD320</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">emisorDolares</userdata>
+        </item>
+    </item>
+    <item text="Integracion - Respuestas de Intercambio " id="reporte_3"
+          im0="Integracion.png" im1="Integracion.png" im2="Integracion.png">
+        <item text="Reportes de Intercambio" id="reporte_3_1" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="Prosa" id="reporte_3_1_1" im0="RepNivel1.png" im1="RepNivel1.png"
+                  im2="RepNivel1.png">
+                <item text="SICMIR0290 Transacciones Recibidas por PROSA" id="rep_SICMIR0290"
+                      im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0290</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item text="SICMIR0300 Reporte Integral de Transacciones por Emisor"
+                      id="rep_SICMIR0300" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0300</userdata>
+                    <userdata name="rolAccMin">8</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item
+                    text="SICMIR0301 Reporte Integral de Transacciones de Emisor Adquiridas por Banamex/Bancomer"
+                    id="rep_SICMIR0301" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0301</userdata>
+                    <userdata name="rolAccMin">8</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item text="SICMIR0420 Resumen de Adquirente" id="rep_SICMIR0420"
+                      im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0420</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+            </item>
+            <item text="Pos" id="reporte_3_1_2" im0="RepNivel1.png" im1="RepNivel1.png"
+                  im2="RepNivel1.png">
+                <item text="SICMIR0040 Reporte Integral de Transacciones por Comercio"
+                      id="rep_SICMIR0400" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0040</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item text="SICMIR0340 Reporte de Transacciones Rechazadas PTLF"
+                      id="rep_SICMIR0340" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0340</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item text="SICMIF0150 Consulta Integral de Transacciones por Comercio"
+                      id="rep_SICMIF0150" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIF0150</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item text="SICMIR0450 Reporte Consolidado de Transacciones por Banco"
+                      id="rep_SICMIR0450" im0="RepNivel2.png" im1="rRepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIR0450</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item text="SICMIF0450 Reporte Integral de Transacciones por Comercio"
+                      id="rep_SICMIF0450" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICMIF0450</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+            </item>
+            <!--		#Marca de cambio: SAS-DRT B-54-2904-15  Inicia Modificación  # -->
+            <item text="Reportes Consolidado" id="repconciliacion" im0="RepNivel1.png"
+                  im1="RepNivel1.png" im2="RepNivel1.png">
+                <item text="SICLIR0300 Reporte Consolidado Adquirente"
+                      id="rep_CNNconciliacion_Adq" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICLIR0300</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item text="SICLIR0400 Reporte Consolidado Emisor"
+                      id="rep_CNNconciliacion_Emi" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">SICLIR0400</userdata>
+                    <userdata name="rolAccMin">2</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+                <item text="SICMIR0130 Reporte Lectura T140" id="rep_tipo_transferencia" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                    <userdata name="href">repTipoTransfer</userdata>
+                    <userdata name="rolAccMin">32</userdata>
+                    <userdata name="modulo">integracion</userdata>
+                </item>
+            </item>
+            <!--        #Marca de cambio:  SAS-DRT B-54-2904-15  Fin de Modificación #   -->
+            <item text="SICMIR0054 Cifras de Control de Archivos a Transmitir"
+                  id="rep_SICMIR0054" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0054</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">integracion</userdata>
+            </item>
+        </item>
+    </item>
+    <item text="Bancos Socios Adquirente en Dolares" id="reporte_11"
+          im0="BancosSAdqDol.png" im1="BancosSAdqDol.png" im2="BancosSAdqDol.png">
+        <item text="Operacion" id="reporte_11_1" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICMIFB450 Integral Transacciones por Comercio" id="rep_SICMIFB450"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIFB450</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB054 Cifras de Control de Archivos a Transmitir"
+                  id="rep_SICMIRB054" im0="RepNivel2.png" im1="rRepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB054</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB145 Visa / Master Card Outgoing" id="rep_SICMIRB145"
+                  im0="RepNivel2.png" im1="rRepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB145</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item
+                text="SICMIRB290 Reporte Integral de Transacciones Recibidas por PROSA"
+                id="rep_SICMIRB290" im0="RepNivel2.png" im1="rRepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB290</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB040 Transacciones por Comercio" id="rep_SICMIRB040"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB040</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB420 Resumen de Adquirente" id="rep_SICMIRB420"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB420</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB450 Consolidado de Transacciones por Banco"
+                  id="rep_SICMIRB450" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB450</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMOFB100 Detalle de Transacciones Aceptadas" id="rep_SICMOFB100"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOFB100</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMOFB120 Detalle de Transacciones Rechazadas" id="rep_SICMOFB120"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMOFB120</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item
+                text="SICMORB170 Reporte de Cifras de Control de Archivos de Entrada"
+                id="rep_SICMORB170" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORB170</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMORB210 Transacciones Rechazadas" id="rep_SICMORB210"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORB210</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+        </item>
+        <item text="Visa Incoming" id="reporte_11_2" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item
+                text="SICMIRB121 Reporte BASE-II-48 fee-collection/founds disbursement"
+                id="rep_SICMRB121" im0="RepNivel2.png" im1="RepNivel2.png" im2="reportes.png">
+                <userdata name="href">SICMIRB121</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB124 Combinacion de Primeros Chargebacks" id="rep_SICMRB124"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="reportes.png">
+                <userdata name="href">SICMIRB124</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB126  Solicitud de Documentos Visa" id="rep_SICMRB126"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="reportes.png">
+                <userdata name="href">SICMIRB126</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB127_VSS Reporte VSS Visa" id="rep_SICMRB127_VSS"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="reportes.png">
+                <userdata name="href">SICMIRB127_VSS</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+        </item>
+        <item text="Mastercard Incoming" id="reporte_11_3" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICMIRB127_MASTER REPORTES BIN LOCAL" id="rep_SICMRB127_MASTER"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB127_MASTER</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB141 Solicitud de Documentos Mastercard " id="rep_SICMRB141"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB141</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB142 Transacciones Miscelaneas " id="rep_SICMRB142"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB142</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB144 Combinación Chargebacks - Receptor(Internacional) "
+                  id="rep_SICMRB144" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB144</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICMIRB148 Reporte MCBS (851)" id="rep_SICMRB148"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIRB148</userdata>
+                <userdata name="rolAccMin">12</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+        </item>
+        <item text="Visa - MasterCard" id="reporte_11_4" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICLIRB150 Reporte Liquidacion Nacional/Internacional Dolares"
+                  id="rep_SICLIRB150" im0="RepNivel2.png" im1="RepNivel2.png" im2="reportes.png">
+                <userdata name="href">SICLIRB150</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICLIRB170 Totales del Intercambio Internacional Dolares"
+                  id="rep_SICLIRB170" im0="RepNivel2.png" im1="RepNivel2.png" im2="reportes.png">
+                <userdata name="href">SICLIRB170</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+            <item text="SICLIRB180 Reporte Saldos del intercambio local e internacional Dólares"
+                  id="rep_SICLIRB180" im0="RepNivel2.png" im1="RepNivel2.png" im2="reportes.png">
+                <userdata name="href">SICLIRB180</userdata>
+                <userdata name="modulo">adquirenteD</userdata>
+            </item>
+        </item>
+    </item>
+    <!--Modificación Fin Compensacion SAS-DRT F-52-8063-16   -->
+  
+
+
+
+    <item text="Transacciones Extemporaneas" id="reporte_4" im0="TransExtemp.png"
+          im1="TransExtemp.png" im2="TransExtemp.png">
+        <item text="SICLIR0560 Reporte de Transacciones Extemporaneas"
+              id="rep_SICLIR0560" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIR0560</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">Extem</userdata>
+        </item>
+    </item>
+    <item text="Promociones" id="reporte_5" im0="Promociones.png" im1="Promociones.png"
+          im2="Promociones.png">
+        <item text="Liquidacion Complementaria Sobretasa" id="reporte_5_1"
+              im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICPRO001 Transacciones con Promocion por Comercio"
+                  id="rep_SICPRO001" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICPRO001</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Promoc</userdata>
+                
+            </item>
+            <item text="SICPRO002 Reporte de Transacciones con Promocion"
+                  id="rep_SICPRO002" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICPRO002</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Promoc</userdata>
+            </item>
+            <item text="SICPRO003 Reporte de Transacciones Consolidado con Promocion"
+                  id="rep_SICPRO003" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICPRO003</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Promoc</userdata>
+            </item>
+            <item text="SICMORQ200 Reporte de Transacciones sin Promocion"
+                  id="rep_SICMORQ200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMORQ200</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">Promoc</userdata>
+            </item>
+        </item>
+        <item text="SICMPD0450 Reporte de Transacciones con Promocion"
+              id="rep_SICMPD0450" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICMPD0450</userdata>
+            <userdata name="rolAccMin">12</userdata>
+            <userdata name="modulo">Promoc</userdata>
+        </item>
+    </item>
+    <item text="Mastercard" id="reporte_5_5" im0="MC.png" im1="MC.png"
+          im2="MC.png">
+        <item text="Incoming" id="reporte_5_5_1" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICMIR0127_MASTER Reporte BIN Local" id="rep_SICMR0127_MASTER"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0127_MASTER</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0141 Solicitud de Documentos Mastercard" id="rep_SICMIR0141"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0141</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0142 Transacciones Miscelaneas" id="rep_SICMIR0142"
+                  im0="RepNivel2.png" im1="RepNivel2a.png" im2="RepNivel2a.png">
+                <userdata name="href">SICMIR0142</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0144 Combinación Chargebacks - Receptor(Internacional)"
+                  id="rep_SICMIR0144" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0144</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0147 Reporte MDS (728)" id="rep_SICMIR0147"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0147</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0148 Reporte MCBS (851)" id="rep_SICMIR0148"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0148</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0148 Reporte MCBS (852)" id="rep_SICMIR0148b"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0148b</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+        </item>
+        <item text="Outgoing" id="reporte_5_5_2" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICMIR0145 Outgoing Internacional Mastercard" id="rep_SICMIR0145MC"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0145MC</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR2145 Outgoing Internacional Mastercard" id="rep_SICMIR2145"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR2145</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+        </item>
+    </item>
+    
+    <item text="Visa" id="reporte_6" im0="VS.png" im1="VS.png" im2="VS.png">
+        <item text="Incoming" id="reporte_6_1" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICMIR0121 BASE-II-48 fee-collection / founds disbursement"
+                  id="rep_SICMIR0121" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0121</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0122 Transacciones Carnet Visa en el Extranjero"
+                  id="rep_SICMIR0122" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0122</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0124 Combinacion de 1ros Chargebacks (Internacional)"
+                  id="rep_SICMIR0124" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0124</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0126 Solicitud de Documentos Visa" id="rep_SICMIR0126"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0126</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0127_BINES Reporte Edit Package" id="rep_SICMIR0127_BINES"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0127_BINES</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0127_VSS Reportes vss visa" id="rep_SICMIR0127_VSS"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0127_VSS</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0128 Reportes VISA" id="rep_SICMIR0127_LIV"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0127_LIV</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <!--        #Marca de cambio:  B-54-2904-15  Inicio de Modificación  SAS-DRT B-54-2904-15    #   -->            
+            <item text="SICMIR0129 Reporte Mercados Internacionales" id="rep_127_mi" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0129</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <!--        #Marca de cambio:  B-54-2904-15  Fin de Modificación  SAS-DRT B-54-2904-15    #   -->                    
+            <item text="SICMIR0370 Transacciones Recibidas Visa" id="rep_SICMIR0370"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0370</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR0380 Total Transacciones Carnet Visa en el Extranjero"
+                  id="rep_SICMIR0380" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0380</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIRV140 Rerporte de Representaciones Visa " id="rep_SICMIRV140"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="modulo">mastervisa</userdata>
+                <userdata name="href">SICMIRV140</userdata>
+            </item>
+        </item>
+        <item text="Outgoing" id="reporte_6_2" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <item text="SICMIR0145 Outgoing Internacional Visa" id="rep_SICMIR0145"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR0145</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICMIR1145 Outgoing Internacional Visa" id="rep_SICMIR1145"
+                  im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICMIR1145</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+        </item>
+        <item text="Liquidación Prosa - Visa" id="reporte_6_3" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <item text="SICVSA0010 Reporte de Liquidación Internacional VISA"
+                  id="rep_SICVSA0010" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICVSA0010</userdata>
+                <userdata name="rolAccMin">2</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item
+                text="SICVSA0020 Consolidado de Liquidación Visa por Entidad (Dólares)"
+                id="rep_SICVSA0020" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICVSA0020</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item
+                text="SICVSA0030 Consolidado de Liquidación Visa por Entidad (Pesos y Dólares)"
+                id="rep_SICVSA0030" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICVSA0030</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICVSA0040 Reporte de Conciliación Liquidacion Visa POS"
+                  id="rep_SICVSA0040" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICVSA0040</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+            <item text="SICVSA0050 Reporte de Transacciones Rechazadas Visa"
+                  id="rep_SICVSA0050" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICVSA0050</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">mastervisa</userdata>
+            </item>
+        </item>
+    </item>
+    <item text="Interfases" id="reporte_7" im0="Interfaces.png" im1="Interfaces.png"
+          im2="Interfaces.png">
+        <userdata name="rolAccMin">32</userdata>
+        <item text="Contabilidad" id="reporte_7_1" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <userdata name="rolAccMin">32</userdata>
+            <item text="SICLIR0580 Reporte de Liquidaciones Complementarias"
+                  id="rep_SICLIR0580" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0580</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+            <item text="SICLIR0640 Reporte de Gastos Liquidacion Circuito Local"
+                  id="rep_SICLIR0640" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0640</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+            <item text="SICLIR0650 Reporte de Ingresos Liquidacion Circuito Local"
+                  id="rep_SICLIR0650" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0650</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+            <item
+                text="SICLIR0670 Reporte Cuota Adquirente Bancomer / Banamex / E-Global"
+                id="rep_SICLIR0670" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0670</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+            <item text="SICLIR0680 Reporte Cuota Previa Bancomer / Banamex / E-Global"
+                  id="rep_SICLIR0680" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0680</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+            <item text="SICLIRP670 Reporte Cuota Adquirente Pagos Bancos"
+                  id="rep_SICLIRP670" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRP670</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+            <item text="SICLIRP680 Reporte Cuota Adquirente Pagos Interredes"
+                  id="rep_SICLIRP680" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIRP680</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+        </item>
+        <item text="Facturacion" id="reporte_7_2" im0="RepNivel1.png"
+              im1="RepNivel1.png" im2="RepNivel1.png">
+            <userdata name="rolAccMin">32</userdata>
+            <item
+                text="SICLIR0470 Reporte de Liquidaciones Complementarias de Facturacion por Folio"
+                id="rep_SICLIR0470" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0470</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+        </item>
+        <item text="Tesoreria" id="reporte_7_3" im0="RepNivel1.png" im1="RepNivel1.png"
+              im2="RepNivel1.png">
+            <userdata name="rolAccMin">32</userdata>
+            <!--Modificacion: Marca de inicio SAS-JPM P-53-2934-14-->
+            <item text="Liquidacion nacional por marca" id="camarasCompensacion" im0="RepNivel1.png"
+                  im1="RepNivel1.png" im2="RepNivel1.png">
+                <item text="SICLMNIR01 - Reporte Consolidado Interredes (por marca)" id="rep_SICLMNIR01" im0="RepNivel2.png">
+                    <userdata name="rolAccMin">32</userdata>
+                    <userdata name="href">SICLMNIR01</userdata>
+                    <userdata name="modulo">interfac</userdata>
+                </item>
+                <item text="SICLMNPR01 - Reporte Consolidado de Bancos Socios de la Liquidación de Interredes (por marca)" id="rep_SICCAMC0002" im0="RepNivel2.png">
+                    <userdata name="rolAccMin">32</userdata>
+                    <userdata name="href">SICLMNPR01</userdata>
+                    <userdata name="modulo">interfac</userdata>
+                </item>
+                <item text="SICLMNTT01 - Reporte Consolidado de Cifras POS (por marca)" id="rep_SICCAMC0003" im0="RepNivel2.png">
+                    <userdata name="rolAccMin">32</userdata>
+                    <userdata name="href">SICLMNTT01</userdata>
+                    <userdata name="modulo">interfac</userdata>
+                </item>
+            </item>
+            <item
+                text="SICLIR0440 Reporte de Liquidaciones Complementarias de Facturacion"
+                id="rep_SICLIR0440" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+                <userdata name="href">SICLIR0440</userdata>
+                <userdata name="rolAccMin">32</userdata>
+                <userdata name="modulo">interfac</userdata>
+            </item>
+            <!--Modificacion: Marca de fin SAS-JPM P-53-2934-14-->
+        </item>
+    </item>
+    <item text="Prepago" id="reporte_8" im0="Prepagos.png" im1="Prepagos.png"
+          im2="Prepagos.png">
+        <userdata name="rolAccMin">32</userdata>
+        <item text="SICPRE001 Saldos por Cuenta Carnet Emisor Prepago"
+              id="rep_SICPRE001" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICPRE001</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Prepago</userdata>
+        </item>
+        <item text="SICPRE002 Transacciones Pendientes" id="rep_SICPRE002"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICPRE002</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Prepago</userdata>
+        </item>
+        <item text="SICPRE003 Resumen de Transacciones" id="rep_SICPRE003"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICPRE003</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Prepago</userdata>
+        </item>
+        <item text="SICPRE004 Estado de Resultados Prepago" id="rep_SICPRE004"
+              im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICPRE004</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">Prepago</userdata>
+        </item>
+    </item>
+    <!--Modificacion: Marca de inicio SAS-MEVP P-02-0216-12-->
+    <item text = "Reportes Click Cash" id="reporte_10_CCA" im0="Integracion.png" im1="Integracion.png" im2="Integracion.png">
+        <userdata name="rolAccMin">2</userdata>
+        <!--Modificacion: Marca de inicio SAS-LERC P-02-0216-12-->
+        <item text="Reporte de Transacciones Clicash (Acumulado por Banco"
+              id="rep_ccaDet001" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">Mxvrtda001</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">Click</userdata>
+        </item>
+        <item text="Reporte de Transacciones Clicash (Detalle por Adquiriente"
+              id="rep_ccaDetAll001" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">Mxvrtac001</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">Click</userdata>
+        </item>
+        <!--Modificacion: Marca de fin SAS-LERC P-02-0216-12 -->
+    </item>
+        
+    <!--Modificacion: Marca de fin SAS-MEVP P-02-0216-12  SICMOR0310-->
+    <!--Modificacion: Marca de inicio SAS-JPM P-06-0527-13 20/08/14-->
+    <item text = "Hub Carnet" id="reporte_12_HUB" im0="hub.png" im1="hub.png" im2="hub.png">
+        <userdata name="rolAccMin">2</userdata>
+        <item text="SICLIRH0110 Liquidacion HUB de PAGOS Bancos Socios"
+              id="rep_hub_10" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRH0110</userdata>
+            <userdata name="rolAccMin">3</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <item text="SICLIRH0120 Liquidación HUB de Pagos"
+              id="rep_hub_01" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRH0120</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <item text="SICLIRH0130 Reporte liquidacion HUBCARNET vista emisores"
+              id="rep_hub_02" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRH0130</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <item text="SICLIRH0135 Reporte liquidacion HUBCARNET vista PROSA"
+              id="rep_hub_03" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRH0135</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <item text="SICLIRH0140 Reporte liquidacion HUBCARNET vista Adquirientes"
+              id="rep_hub_04" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRH0140</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <item text="SICLIRH0430 Depositos por Banco"
+              id="rep_hub_05" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRH0430</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <item text="SICLIRHP320 Consolidado de Saldos HUBCARNET"
+              id="rep_hub_07" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIRHP320</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <item text="SICMTRH001 Reporte match entre PMT y HUB de Pagos"
+              id="rep_hub_08" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICMTRH001</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <item text="SICCOMR001 Reporte de Comisiones"
+              id="rep_hub_09" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICCOMR001</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <!--Modificacion: Marca de Inicio SAS-LMRV P-21-0013-16 12/07/16-->
+        <item text="SICMORH Detalle Transacciones HUBCARNET Vista Cliente"
+              id="rep_hub_010" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICMORH</userdata>
+            <userdata name="rolAccMin">3</userdata>
+            <userdata name="modulo">HubCarn</userdata>
+        </item>
+        <!--Modificacion: Marca de fin SAS-LMRV P-21-0013-16 12/07/16-->
+    </item>     
+    <!--Modificacion: Marca de fin SAS-JPM P-06-0527-13 20/08/14-->
+    <!--Modificacion: Marca de inicio SAS-JAGG Z-02-2675-12-->
+    <item text = "Venta Tiempo Aire" id="reporte_9_venta" im0="celular.png" im1="celular.png" im2="celular.png">
+        <userdata name="rolAccMin">32</userdata>
+        <item text="Reporte Detalle Adquiriente" id="rep_Detalle_Adquiriente" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">repvtDetAdq</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">VentaTA</userdata>
+        </item>
+        <item text="Reporte Detalle Telefonica" id="rep_Detalle_Telefonica" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">repvtDetTel</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">VentaTA</userdata>
+        </item>
+        <item text="Reporte Detalle Distribuidor" id="rep_Detalle_Distribuidor" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">repvtDetDis</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">VentaTA</userdata>
+        </item>
+        <item text="Reporte Acumulado Adquiriente" id="rep_Acumulado_Adquiriente" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">repvtAcuAdq</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">VentaTA</userdata>
+        </item>
+        <item text="Reporte Acumulado Telefonica" id="rep_Acumulado_Telefonica" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">repvtAcuTel</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">VentaTA</userdata>
+        </item>
+        <item text="Reporte Acumulado Distribuidor" id="rep_Acumulado_Distribuidor" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">repvtAcuDis</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">VentaTA</userdata>
+        </item>
+        <item text="Reporte Acumulado Distribuidor tipo pago" id="rep_Acumulado_Distribuidor_Tipo_Pago" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">repvtAcuDisTipoPago</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">VentaTA</userdata>
+        </item>
+        <item text="Reporte Acumulado Comercio" id="rep_Acumulado_Comercio" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">repvtAcuCom</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">VentaTA</userdata>
+        </item>
+    </item>
+    <!-- Modificacion: Marca de fin    SAS-DRT F-52-8063-16  -->
+    <!--Modificacion: Marca de fin SAS-JAGG Z-02-2675-12-->
+	<!--Modificacion: Marca de inicio SAS-DRT-P-20-0115-16 -->
+    <item text = "American Express AMEX" id="reporte_11_amex" im0="amex.png" im1="amex.png" im2="amex.png">
+        <userdata name="rolAccMin">2</userdata>
+        <item text="Reporte Conciliacion PROSA" id="rep_conc_prosa" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+            <userdata name="href">repConcProsaAmex</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">AmeX</userdata>				        
+        </item>	
+        <item text="Reporte AMEX EPAPE Detalle (ROC, SOC)" id="rep_amex_epape" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+            <userdata name="href">rptAmexEpape</userdata>	
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">AmeX</userdata>
+        </item>
+        <item text="Reporte AMEX EPAPE Detalle Ajustes" id="rep_amex_epape_ajustes" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+            <userdata name="href">rptAmexEpapeAjustes</userdata>	
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">AmeX</userdata>
+        </item>
+    </item>
+    <!--Modificacion: Marca de fin SAS-DRT-P-20-0115-16 -->
+</tree>

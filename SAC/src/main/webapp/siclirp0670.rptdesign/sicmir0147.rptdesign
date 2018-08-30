@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">MyEclipse Report Designer Version 1.0</property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <html-property name="description">Creates a blank report with no predefined content.</html-property>
+    <method name="initialize"><![CDATA[function redondeo (valor,numDecimales){
+	var multiploDiez=Math.pow(10,numDecimales);
+	var k=valor*multiploDiez;
+	var result;
+	if(k<0)
+		result=(-1.0)*Math.round(Math.abs(k))/multiploDiez;
+	else
+		result=Math.round(k)/multiploDiez;
+	return result;
+}
+
+reportContext.setPersistentGlobalVariable("redondeo",redondeo);
+
+  function capitalize (str){
+    return str.replace(/\w+/g, function(a){
+        return a.charAt(0).toUpperCase() + a.slice(1).toLowerCase();
+    });
+};
+
+reportContext.setPersistentGlobalVariable("capitalize",capitalize);]]></method>
+    <text-property name="displayName">Blank Report</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <parameters>
+        <scalar-parameter name="ejecuto" id="2342">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">ggonzalez</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="initDate" id="2858">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">FECHA_INICIO</text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">100721</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="banco" id="2859">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <text-property name="promptText">banco</text-property>
+            <property name="controlType">text-box</property>
+            <property name="defaultValue">2</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgLcl" id="3949">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="srvImgRmt" id="3950">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <property name="distinct">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="Data Source" id="3920">
+            <property name="HOME">/aplic/prod/pmt/pmr/mcd</property>
+            <property name="DELIMTYPE">SEMICOLON</property>
+            <property name="CHARSET">ISO-8859-15</property>
+            <property name="INCLCOLUMNNAME">NO</property>
+            <property name="INCLTYPELINE">NO</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="q_1" id="3921">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">COLUMN_1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="beforeOpen"><![CDATA[this.queryText="SELECT COLUMN_1 FROM 728"+params["initDate"]+"_"+params["banco"]]]></method>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">COLUMN_1</property>
+                    <property name="nativeName">COLUMN_1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <property name="queryText">select "COLUMN_1" from 728100721_2 : {"COLUMN_1","COLUMN_1",STRING}</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="NewStyle" id="3391">
+            <property name="fontSize">9pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">Portrait</property>
+            <property name="topMargin">2.5cm</property>
+            <property name="leftMargin">2.65cm</property>
+            <property name="bottomMargin">2.5cm</property>
+            <property name="rightMargin">2.65cm</property>
+            <property name="fontSize">10.5pt</property>
+        </simple-master-page>
+        <simple-master-page name="NewSimpleMasterPage" id="3951">
+            <property name="orientation">Portrait</property>
+            <property name="topMargin">2.5cm</property>
+            <property name="leftMargin">2.65cm</property>
+            <property name="bottomMargin">2.5cm</property>
+            <property name="rightMargin">2.65cm</property>
+            <property name="fontSize">10.5pt</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="3941">
+            <property name="masterPage">Simple MasterPage</property>
+            <property name="width">100%</property>
+            <column id="3942"/>
+            <row id="3943">
+                <cell id="3944"/>
+            </row>
+            <row id="3945">
+                <cell id="3946">
+                    <table id="3923">
+                        <property name="fontSize">8pt</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">q_1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">COLUMN_1</property>
+                                <expression name="expression">dataSetRow["COLUMN_1"].substring(2,dataSetRow["COLUMN_1"].length)</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">50</property>
+                        <column id="3932">
+                            <property name="width">96%</property>
+                        </column>
+                        <column id="3936">
+                            <property name="width">2%</property>
+                        </column>
+                        <header>
+                            <row id="3967">
+                                <cell id="3968"/>
+                                <cell id="3969"/>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="3927">
+                                <cell id="3928">
+                                    <data id="3929">
+                                        <property name="fontFamily">"Courier New"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <structure name="stringFormat">
+                                            <property name="category">Custom</property>
+                                            <property name="pattern">^</property>
+                                        </structure>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">COLUMN_1</property>
+                                    </data>
+                                </cell>
+                                <cell id="3934"/>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="3970">
+                                <cell id="3971"/>
+                                <cell id="3972"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="3947">
+                <cell id="3948"/>
+            </row>
+        </grid>
+    </body>
+</report>

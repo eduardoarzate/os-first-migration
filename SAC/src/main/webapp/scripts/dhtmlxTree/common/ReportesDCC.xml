@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0">
+    <!-- Modificacion: Marca de inicio    SAS-DRT F-52-8063-16  -->
+    <!--<item text="Reportes Master Card" id="reporte_1" im0="TransExtemp.png"
+        im1="TransExtemp.png" im2="TransExtemp.png">
+        <item text="SICLIR0560 Reporte de Transacciones Extemporaneas"
+            id="rep_SICLIR0560" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICLIR0560</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+    </item>-->
+    <item text="Reportes VISA DCC" id="reporte_2" im0="TransExtemp.png"
+          im1="TransExtemp.png" im2="TransExtemp.png">
+        <item text="SICDCC0010 Reporte Liquidacion Internacional Visa DCC"
+              id="rep_SICDCC0010" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0010</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+    </item>
+    <item text="Reportes Master Card DCC" id="reporte_1" im0="TransExtemp.png"
+          im1="TransExtemp.png" im2="TransExtemp.png">     
+        <item text="SICDCC0020 Reporte Liquidacion Internacional Mastercard DCC"
+              id="rep_SICDCC0020" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0020</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+        <item text="SICDCC0030 Consolidado de Liquidacion DCC por Marca"
+              id="rep_SICDCC0030" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0030</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+        <item text="SICDCC0040 Consolidado de Liquidacion DCC por Entidad Prosa"
+              id="rep_SICDCC0040" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0040</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+        <item text="SICDCC0060 Reporte de Transacciones DCC"
+              id="rep_SICDCC0060" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0060</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+        <item text="SICDCC0070 Consolidado de la Liquidacion Diaria DCC"
+              id="rep_SICDCC0070" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0070</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+        <item text="SICDCC0080 Reporte de Rechazos de Transacciones DCC"
+              id="rep_SICDCC0080" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0080</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+        <item text="SICDCC0090 Reporte de comisiones de Operacion Adquirente DCC FINTRAX"
+              id="rep_SICDCC0090" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0090</userdata>
+            <userdata name="rolAccMin">32</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+        <item text="SICDCC0100 Transacciones Aceptadas DCC por Comercio"
+              id="rep_SICDCC0100" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+            <userdata name="href">SICDCC0100</userdata>
+            <userdata name="rolAccMin">2</userdata>
+            <userdata name="modulo">RepDCC</userdata>
+        </item>
+    </item>
+    <!-- Modificacion: Marca de fin    SAS-DRT F-52-8063-16  -->
+</tree>

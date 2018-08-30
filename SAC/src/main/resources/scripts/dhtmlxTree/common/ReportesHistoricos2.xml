@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<tree id="0">	
+		<item text = "Monitoreo y Cifras de Control" id="reporte_1" im0="MonitoreoCifrasControl.png" im1="MonitoreoCifrasControl.png" im2="MonitoreoCifrasControl.png">
+			<item text="Monitoreo de Transacciones" id="reporte_1_1" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+				<item text="SICMOF0100 Detalle de Transacciones Aceptadas" id="rep_SICMOF0100" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICMOF0100</userdata>
+		        	<userdata name="rolAccMin">2</userdata>
+		        </item>
+		        <!-- <item text="SICMOR0200 Reporte de Transacciones Aceptadas por Adquirente" id="rep_SICMOR0200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICMOR0200</userdata>
+		        	<userdata name="rolAccMin">2</userdata>
+		    	</item> -->
+		        <!-- <item text="SICMOR0100 Reporte de Transacciones Aceptadas por Comercio" id="rep_SICMOR0100" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        <userdata name="href">SICMOR0100</userdata>
+		        <userdata name="rolAccMin">2</userdata>
+		        </item> --> 					        
+		        <item text="SICMOR0205 LOG Autorizaciones" id="rep_SICMOR0205" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICMOR0205</userdata>
+		        	<userdata name="rolAccMin">2</userdata>
+		        </item>
+		        <!-- <item text="SICMOR0210 Reporte de Transacciones Rechazadas" id="rep_SICMOR0210" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICMOR0210</userdata>
+		        	<userdata name="rolAccMin">2</userdata>
+		        </item> 
+		        <item text="SICMOR0300 Reporte de Transacciones Aceptadas por Emisor" id="rep_SICMOR0300" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICMOR0300</userdata>
+		        	<userdata name="rolAccMin">2</userdata>
+		    	</item>-->
+		        <item text="SICMOR0305 Transacciones Aceptadas (Totales por Emisor)" id="rep_SICMOR0305" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICMOR0305</userdata>
+		        	<userdata name="rolAccMin">2</userdata>
+		        </item>		        			   
+		</item>
+		<!-- <item text="Cifras de Control" id="reporte_1_2" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+			<item text="SICMOR0150 Comparacion de Cifras de Control por Archivo" id="rep_SICMOR0150" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        <userdata name="href">SICMOR0150</userdata>
+		        <userdata name="rolAccMin">2</userdata>
+		    </item>
+		    <item text="SICMOR0170 Reporte de Cifras de Control de Archivos de Entrada" id="rep_SICMOR0170" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        <userdata name="href">SICMOR0170</userdata>
+		        <userdata name="rolAccMin">2</userdata>
+		    </item>
+		    <item text="SICMOR0810 Reporte de Cifras para Custodia de Vouchers" id="rep_SICMOR0810" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        <userdata name="href">SICMOR0810</userdata>
+		        <userdata name="rolAccMin">2</userdata>
+		    </item>
+		</item> -->		
+		<item text="Interredes" id="interredes" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+		        <!-- <item text="SICLIR0110 Liquidacion de Interredes de Bancos Socios" id="rep_SICLIR0110" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICLIR0110</userdata>
+		        	<userdata name="rolAccMin">8</userdata>
+		        </item>
+		        <item text="SICLIR0120 Liquidacion Interredes" id="rep_SICLIR0120" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICLIR0120</userdata>
+		        	<userdata name="rolAccMin">16</userdata>
+		        </item>
+		        <item text="SICLIR0130 Consolidado de la Liquidacion de Interredes de Bancos Socios" id="rep_SICLIR0130" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICLIR0130</userdata>
+		        	<userdata name="rolAccMin">32</userdata>
+		        </item>		        			
+		        <item text="SICLIR0140 Consolidado Interredes" id="rep_SICLIR0140" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICLIR0140</userdata>
+		        	<userdata name="rolAccMin">32</userdata>
+		        </item> -->
+		        <item text="SICLIR0430 Depositos por Banco e Interred" id="rep_SICLIR0430" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICLIR0430</userdata>
+		        	<userdata name="rolAccMin">16</userdata>
+		        </item>
+		         <item text="SICMOR0360 Reporte de Transacciones Aceptadas Interredes por Emisor (Detalle)" id="rep_SICMOR0360" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">							
+		        	<userdata name="href">SICMOR0360</userdata>
+		        	<userdata name="rolAccMin">8</userdata>
+		        </item>   				
+		</item>		 
+		<!-- <item text="SICLIF0060 Consulta de Saldos por Entidad" id="rep_SICLIF0060" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+		      <userdata name="href">SICLIF0060</userdata>
+		      <userdata name="rolAccMin">2</userdata>				
+		</item>
+		<item text="SICLIF0065 Consulta de Saldos por Grupo" id="rep_SICLIF0065" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+		      <userdata name="href">SICLIF0065</userdata>
+		      <userdata name="rolAccMin">2</userdata> 							
+		</item>
+		<item text="SICLIR0200 Consolidado Liquidacion Total" id="rep_SICLIR0200" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+		      <userdata name="href">SICLIR0200</userdata>
+		      <userdata name="rolAccMin">2</userdata> 							
+		</item>
+		<item text="SICLIR0320 Consolidado de Saldos" id="rep_SICLIR0320" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+		      <userdata name="href">SICLIR0320</userdata>
+		      <userdata name="rolAccMin">32</userdata> 							
+		</item> -->
+		</item>		
+		 <item text = "Integracion - Respuestas de Intercambio " id="reporte_3" im0="Integracion.png" im1="Integracion.png" im2="Integracion.png">
+			<item text = "Reportes de Intercambio" id="reporte_3_1" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+				 <item text = "Prosa" id="reporte_3_1_1" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+					<item text="SICMIR0290 Transacciones Recibidas por PROSA" id="rep_SICMIR0290" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+						<userdata name="href">SICMIR0290</userdata>
+						<userdata name="rolAccMin">2</userdata>				
+					</item>
+					<!--<item text="SICMIR0300 Reporte Integral de Transacciones por Emisor" id="rep_SICMIR0300" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+						<userdata name="href">SICMIR0300</userdata>
+						<userdata name="rolAccMin">8</userdata>				
+					</item>
+					<item text="SICMIR0420 Resumen de Adquirente" id="rep_SICMIR0420" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+						<userdata name="href">SICMIR0420</userdata>
+        			    <userdata name="rolAccMin">2</userdata>				
+					</item> -->
+				</item>
+				<!-- <item text = "Pos" id="reporte_3_1_2" im0="RepNivel1.png" im1="RepNivel1.png" im2="RepNivel1.png">
+					<item text="SICMIR0450 Reporte Consolidado de Transacciones por Banco" id="rep_SICMIR0450" im0="RepNivel2.png" im1="rRepNivel2.png" im2="RepNivel2.png">
+						<userdata name="href">SICMIR0450</userdata>
+						<userdata name="rolAccMin">2</userdata>				
+					</item>							
+				</item> 
+					<item text="SICMIR0054 Cifras de Control de Archivos a Transmitir" id="rep_SICMIR0054" im0="RepNivel2.png" im1="RepNivel2.png" im2="RepNivel2.png">
+						<userdata name="href">SICMIR0054</userdata>
+						<userdata name="rolAccMin">2</userdata>				
+					</item> -->
+			</item>					
+		</item>		
+</tree>
